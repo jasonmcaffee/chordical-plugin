@@ -21,7 +21,7 @@ class ChordicalAudioProcessorEditor  : public AudioProcessorEditor
 {
 public:
     ChordicalAudioProcessorEditor (ChordicalAudioProcessor&);
-    ~ChordicalAudioProcessorEditor();
+    ~ChordicalAudioProcessorEditor();//destructor
 
     //==============================================================================
     void paint (Graphics&) override;
@@ -33,5 +33,9 @@ private:
     ChordicalAudioProcessor& processor;
     Slider midiVolume; // [1]
     AudioSynthesiserDemo audioSynthesiserDemo;
+
+    MidiKeyboardState keyboardState;
+    MidiKeyboardComponent keyboardComponent  { keyboardState, MidiKeyboardComponent::horizontalKeyboard};
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessorEditor)
 };

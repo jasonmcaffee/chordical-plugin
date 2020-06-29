@@ -8,6 +8,9 @@
   ==============================================================================
 */
 
+//https://www.youtube.com/watch?v=kxKEFTQRZPI
+//https://www.youtube.com/watch?v=ddqwAJilnes
+
 #include "ChordicalAudioProcessor.h"
 #include "PluginEditor.h"
 
@@ -24,6 +27,15 @@ ChordicalAudioProcessor::ChordicalAudioProcessor()
 )
 #endif
 {
+
+    synth.clearSounds();
+    synth.clearVoices(); //clean up before next note?
+    for (auto i = 0; i < 4; ++i){
+        synth.addVoice (new SineWaveVoice());   // These voices will play our custom sine-wave sounds..
+
+    }
+    synth.addSound(new SineWaveSound());
+
 }
 
 ChordicalAudioProcessor::~ChordicalAudioProcessor()
@@ -35,11 +47,14 @@ void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+//    synthAudioSource.prepareToPlay(samplesPerBlock, sampleRate);
+    synth.setCurrentPlaybackSampleRate (sampleRate);
+
+
 }
 
 
-void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
-{
+void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
 //    std::cout << "process block";R
     ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
@@ -54,18 +69,21 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+//    // This is the place where you'd normally do the guts of your plugin's
+//    // audio processing...
+//    // Make sure to reset the state if your inner loop is processing
+//    // the samples and the outer loop is handling the channels.
+//    // Alternatively, you can process the samples with the channels
+//    // interleaved by keeping the same state.
+//    for (int channel = 0; channel < totalNumInputChannels; ++channel)
+//    {
+//        auto* channelData = buffer.getWritePointer (channel);
+//
+//
+//        // ..do something to the data...
+//    }
 
-        // ..do something to the data...
-    }
+    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 }
 //
 //void renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)

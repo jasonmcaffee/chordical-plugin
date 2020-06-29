@@ -2410,14 +2410,6 @@ JuceHeader.h
 ../Synthesizer/SynthAudioSource.h
 /Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
 
-/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
-ChordicalAudioProcessor.h
-/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
-PluginEditor.h
-/Users/jason/dev/vst-chordical/Source/PluginEditor.h
-./Components/AudioSynthesiserDemo.h
-/Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
-
 /Users/jason/dev/vst-chordical/Source/PluginEditor.h
 JuceHeader.h
 -

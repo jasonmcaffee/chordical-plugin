@@ -1,5 +1,8 @@
 #include <JuceHeader.h>
 
+
+//NOTE cant use this audio source with a plugin.  No go. https://forum.juce.com/t/simple-sampler-example/34674/9
+
 // This is an audio source that streams the output of our demo synth.
 struct SynthAudioSource  : public AudioSource{
     SynthAudioSource (MidiKeyboardState& keyState)  : keyboardState (keyState){
@@ -44,8 +47,8 @@ struct SynthAudioSource  : public AudioSource{
 
     void releaseResources() override {}
 
-    void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
-    {
+//    void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override{
+    void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override{
         // the synth always adds its output to the audio buffer, so we have to clear it
         // first..
         bufferToFill.clearActiveBufferRegion();
