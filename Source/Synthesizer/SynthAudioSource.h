@@ -1,13 +1,10 @@
 #include <JuceHeader.h>
 
 // This is an audio source that streams the output of our demo synth.
-struct SynthAudioSource  : public AudioSource
-{
-    SynthAudioSource (MidiKeyboardState& keyState)  : keyboardState (keyState)
-    {
+struct SynthAudioSource  : public AudioSource{
+    SynthAudioSource (MidiKeyboardState& keyState)  : keyboardState (keyState){
         // Add some voices to our synth, to play the sounds..
-        for (auto i = 0; i < 4; ++i)
-        {
+        for (auto i = 0; i < 4; ++i){
             synth.addVoice (new SineWaveVoice());   // These voices will play our custom sine-wave sounds..
             synth.addVoice (new SamplerVoice());    // and these ones play the sampled sounds
         }
@@ -16,14 +13,12 @@ struct SynthAudioSource  : public AudioSource
         setUsingSineWaveSound();
     }
 
-    void setUsingSineWaveSound()
-    {
+    void setUsingSineWaveSound(){
         synth.clearSounds();
         synth.addSound (new SineWaveSound());
     }
 
-    void setUsingSampledSound()
-    {
+    void setUsingSampledSound(){
         WavAudioFormat wavFormat;
 
         std::unique_ptr<AudioFormatReader> audioReader (wavFormat.createReaderFor (createAssetInputStream ("cello.wav"), true));
@@ -42,10 +37,8 @@ struct SynthAudioSource  : public AudioSource
         ));
     }
 
-    void prepareToPlay (int /*samplesPerBlockExpected*/, double sampleRate) override
-    {
+    void prepareToPlay (int /*samplesPerBlockExpected*/, double sampleRate) override{
         midiCollector.reset (sampleRate);
-
         synth.setCurrentPlaybackSampleRate (sampleRate);
     }
 

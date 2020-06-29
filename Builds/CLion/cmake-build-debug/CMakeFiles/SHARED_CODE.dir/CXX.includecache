@@ -2397,6 +2397,8 @@ JuceHeader.h
 -
 
 /Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
+JuceHeader.h
+-
 ../Utils/DemoUtilities.h
 /Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h
 ../Utils/AudioLiveScrollingDisplay.h
