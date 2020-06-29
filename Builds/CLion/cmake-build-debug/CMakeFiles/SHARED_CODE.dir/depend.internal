@@ -5487,13 +5487,9 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioPr
  /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
  /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp
  /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
- /Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
  /Users/jason/dev/vst-chordical/Source/PluginEditor.h
  /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
  /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
- /Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
- /Users/jason/dev/vst-chordical/Source/Utils/AudioLiveScrollingDisplay.h
- /Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o
  ../../../JuceLibraryCode/AppConfig.h
  ../../../JuceLibraryCode/JuceHeader.h
@@ -5996,11 +5992,5 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
  /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h
  /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
  /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
- /Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
  /Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
  /Users/jason/dev/vst-chordical/Source/PluginEditor.h
- /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
- /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
- /Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
- /Users/jason/dev/vst-chordical/Source/Utils/AudioLiveScrollingDisplay.h
- /Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h

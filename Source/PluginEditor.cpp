@@ -10,13 +10,13 @@
 
 #include "ChordicalAudioProcessor.h"
 #include "PluginEditor.h"
-#include "./Components/AudioSynthesiserDemo.h"
+
 //==============================================================================
 ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (ChordicalAudioProcessor& p): AudioProcessorEditor (&p), processor (p){
     std::cout << "hello";
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    setSize (700, 600);
 
 //    // these define the parameters of our slider object
 //    midiVolume.setSliderStyle (Slider::LinearBarVertical);
@@ -31,6 +31,7 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (ChordicalAudioProc
 
 //    addAndMakeVisible(audioSynthesiserDemo);
     addAndMakeVisible (keyboardComponent);
+    addAndMakeVisible (versionLabel);
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor()
@@ -45,7 +46,7 @@ void ChordicalAudioProcessorEditor::paint (Graphics& g)
 
     g.setColour (Colours::white);
     g.setFont (15.0f);
-    g.drawFittedText ("This is Chordical!", getLocalBounds(), Justification::centred, 1);
+    g.drawFittedText ("3.0", getLocalBounds(), Justification::centred, 1);
 }
 
 void ChordicalAudioProcessorEditor::resized()

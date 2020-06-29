@@ -2391,32 +2391,18 @@ ChordicalAudioProcessor.h
 /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
 PluginEditor.h
 /Users/jason/dev/vst-chordical/Source/PluginEditor.h
+Synthesizer/Sine/SineWaveVoice.h
+/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
 
 /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
 JuceHeader.h
 -
-
-/Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
-JuceHeader.h
--
-../Utils/DemoUtilities.h
-/Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h
-../Utils/AudioLiveScrollingDisplay.h
-/Users/jason/dev/vst-chordical/Source/Utils/AudioLiveScrollingDisplay.h
-../Synthesizer/Sine/SineWaveSound.h
-/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
-../Synthesizer/Sine/SineWaveVoice.h
-/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
-../Synthesizer/SynthAudioSource.h
-/Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
 
 /Users/jason/dev/vst-chordical/Source/PluginEditor.h
 JuceHeader.h
 -
 ChordicalAudioProcessor.h
 /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
-./Components/AudioSynthesiserDemo.h
-/Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
 
 /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
 JuceHeader.h
@@ -2425,14 +2411,6 @@ JuceHeader.h
 /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
 JuceHeader.h
 -
-
-/Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
-JuceHeader.h
--
-
-/Users/jason/dev/vst-chordical/Source/Utils/AudioLiveScrollingDisplay.h
-
-/Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h
-JuceHeader.h
--
+./SineWaveSound.h
+/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
 

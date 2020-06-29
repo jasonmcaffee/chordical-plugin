@@ -13,6 +13,7 @@
 
 #include "ChordicalAudioProcessor.h"
 #include "PluginEditor.h"
+#include "Synthesizer/Sine/SineWaveVoice.h"
 
 //==============================================================================
 ChordicalAudioProcessor::ChordicalAudioProcessor()

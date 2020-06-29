@@ -12,7 +12,6 @@
 
 #include <JuceHeader.h>
 #include "ChordicalAudioProcessor.h"
-#include "./Components/AudioSynthesiserDemo.h"
 
 //==============================================================================
 /**
@@ -32,10 +31,10 @@ private:
     // access the processor object that created it.
     ChordicalAudioProcessor& processor;
     Slider midiVolume; // [1]
-    AudioSynthesiserDemo audioSynthesiserDemo;
 
     MidiKeyboardState keyboardState;
     MidiKeyboardComponent keyboardComponent  { keyboardState, MidiKeyboardComponent::horizontalKeyboard};
 
+    Label versionLabel    { "VersionLabel",  "Version 1" };
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessorEditor)
 };

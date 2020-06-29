@@ -1,5 +1,5 @@
 #include <JuceHeader.h>
-
+#include "./SineWaveSound.h"
 struct SineWaveVoice  : public SynthesiserVoice
 {
     SineWaveVoice() {}

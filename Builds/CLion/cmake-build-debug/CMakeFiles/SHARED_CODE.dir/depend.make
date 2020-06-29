@@ -5486,13 +5486,9 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioPr
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/PluginEditor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/Utils/AudioLiveScrollingDisplay.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h
 
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: ../../../JuceLibraryCode/AppConfig.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: ../../../JuceLibraryCode/JuceHeader.h
@@ -5995,12 +5991,6 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/Components/AudioSynthesiserDemo.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/PluginEditor.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/Synthesizer/SynthAudioSource.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/Utils/AudioLiveScrollingDisplay.h
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/Utils/DemoUtilities.h
 
