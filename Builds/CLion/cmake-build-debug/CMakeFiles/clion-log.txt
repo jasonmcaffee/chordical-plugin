@@ -1,0 +1,9 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/jason/dev/vst-chordical/Builds/CLion
+failed to find AudioUnit/AudioUnit.r
+/Users/jason/dev/JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU.r:28: ### /Library/Developer/CommandLineTools/usr/bin/Rez - SysError 0 during open of "AudioUnit.r".
+Fatal Error!
+/Users/jason/dev/JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_AU.r:28: ### /Library/Developer/CommandLineTools/usr/bin/Rez - Fatal Error, can't recover.
+AudioUnit.r: ### /Library/Developer/CommandLineTools/usr/bin/Rez - Since errors occurred, /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/chordical-plugin.rsrc's resource fork was not written.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug
