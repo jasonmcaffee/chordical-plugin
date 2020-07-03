@@ -12,6 +12,9 @@
 
 #include <JuceHeader.h>
 
+using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
+using Node = juce::AudioProcessorGraph::Node;
+
 //==============================================================================
 /**
 */
@@ -55,8 +58,20 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    void initializeGraph();
+    void connectAudioNodes();
+    void connectMidiNodes();
+
 private:
     //==============================================================================
-    Synthesiser synth;
+    Synthesiser synth; //<-- original osc voice player. may go away once graph is implemented.
+
+    //audio processor graph & nodes
+    std::unique_ptr<juce::AudioProcessorGraph> mainProcessor;
+    Node::Ptr audioInputNode;
+    Node::Ptr audioOutputNode;
+    Node::Ptr midiInputNode;
+    Node::Ptr midiOutputNode;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessor)
 };

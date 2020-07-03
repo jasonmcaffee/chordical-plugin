@@ -8,6 +8,9 @@
 #include "PluginEditor.h"
 #include "Synthesizer/Sine/SineWaveVoice.h"
 
+using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
+using Node = juce::AudioProcessorGraph::Node;
+
 //==============================================================================
 ChordicalAudioProcessor::ChordicalAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
@@ -18,10 +21,10 @@ ChordicalAudioProcessor::ChordicalAudioProcessor()
 #endif
                                   .withOutput ("Output", AudioChannelSet::stereo(), true)
 #endif
-)
+),
 #endif
+          mainProcessor  (new juce::AudioProcessorGraph())
 {
-
     synth.clearSounds();
     synth.clearVoices(); //clean up before next note?
     for (auto i = 0; i < 4; ++i){
@@ -38,48 +41,65 @@ ChordicalAudioProcessor::~ChordicalAudioProcessor()
 }
 
 //==============================================================================
+/**
+ * any pre-playback initialisation
+ * @param sampleRate
+ * @param samplesPerBlock
+ */
 void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
-//    synthAudioSource.prepareToPlay(samplesPerBlock, sampleRate);
+    //create a synth as first demo
     synth.setCurrentPlaybackSampleRate (sampleRate);
 
-
+    //create an audio graph processor
+    mainProcessor->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), sampleRate, samplesPerBlock);
+    mainProcessor->prepareToPlay(sampleRate, samplesPerBlock);
+    initializeGraph();
 }
 
 
+/**
+ *
+ * & param is used to pass references to variables defined in the calling function, or its ancestors, or at global level.
+ * @param buffer
+ * @param midiMessages
+ */
 void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
-//    std::cout << "process block";R
-    ScopedNoDenormals noDenormals;
+    ScopedNoDenormals noDenormals; //Helper class providing an RAII-based mechanism for temporarily disabling denormals on your CPU.  https://www.ccoderun.ca/juce/api/classjuce_1_1ScopedNoDenormals.html#details
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
-
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
-    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+    // In case we have more outputs than inputs, this code clears any output channels that didn't contain input data, (because these aren't guaranteed to be empty - they may contain garbage). This is here to avoid people getting screaming feedback
+    // when they first compile a plugin, but obviously you don't need to keep this code if your algorithm always overwrites all the output channels.
+    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i){
         buffer.clear (i, 0, buffer.getNumSamples());
-
-//    // This is the place where you'd normally do the guts of your plugin's
-//    // audio processing...
-//    // Make sure to reset the state if your inner loop is processing
-//    // the samples and the outer loop is handling the channels.
-//    // Alternatively, you can process the samples with the channels
-//    // interleaved by keeping the same state.
-//    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-//    {
-//        auto* channelData = buffer.getWritePointer (channel);
-//
-//
-//        // ..do something to the data...
-//    }
+    }
 
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+    mainProcessor->processBlock(buffer, midiMessages);
 }
+
+void ChordicalAudioProcessor::initializeGraph(){
+    mainProcessor->clear();
+    //https://stackoverflow.com/questions/37514509/advantages-of-using-stdmake-unique-over-new-operator
+    audioInputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::audioInputNode));
+    audioOutputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::audioOutputNode));
+    midiInputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiInputNode));
+    midiOutputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiOutputNode));
+
+    connectAudioNodes();
+    connectMidiNodes();
+}
+
+void ChordicalAudioProcessor::connectAudioNodes(){
+    for(int channel = 0; channel < 2; ++channel){
+        mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {audioOutputNode->nodeID, channel}});
+    }
+}
+
+void ChordicalAudioProcessor::connectMidiNodes(){
+    mainProcessor->addConnection({ {midiInputNode->nodeID, juce::AudioProcessorGraph::midiChannelIndex}, {midiOutputNode->nodeID, juce::AudioProcessorGraph::midiChannelIndex} });
+}
+
 
 //==============================================================================
 
@@ -155,24 +175,15 @@ void ChordicalAudioProcessor::releaseResources()
 #ifndef JucePlugin_PreferredChannelConfigurations
 bool ChordicalAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
-#if JucePlugin_IsMidiEffect
-    ignoreUnused (layouts);
-    return true;
-#else
-    // This is the place where you check if the layout is supported.
-    // In this template code we only support mono or stereo.
-    if (layouts.getMainOutputChannelSet() != AudioChannelSet::mono()
-        && layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
+    if (layouts.getMainInputChannelSet()  == juce::AudioChannelSet::disabled()
+        || layouts.getMainOutputChannelSet() == juce::AudioChannelSet::disabled())
         return false;
 
-    // This checks if the input layout matches the output layout
-#if ! JucePlugin_IsSynth
-    if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
+    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
+        && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
         return false;
-#endif
 
-    return true;
-#endif
+    return layouts.getMainInputChannelSet() == layouts.getMainOutputChannelSet();
 }
 #endif
 

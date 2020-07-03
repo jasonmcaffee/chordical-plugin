@@ -1,5 +1,9 @@
 #include <JuceHeader.h>
 #include "./SineWaveSound.h"
+
+/**
+ * Responsible for filling the AudioBuffer with sound based on angle and number of samples passed to the renderNextBlock function.
+ */
 struct SineWaveVoice  : public SynthesiserVoice {
     SineWaveVoice() {}
 
