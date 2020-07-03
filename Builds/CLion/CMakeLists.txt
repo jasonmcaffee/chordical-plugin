@@ -20,7 +20,7 @@ add_library (VST3 MODULE
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp"
     "PkgInfo"
-        ../../Source/Processors/ProcessorBase.h ../../Source/Processors/OscillatorProcessor.h)
+)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/VST3/juce_VST3_Wrapper.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -35,7 +35,7 @@ add_library (AU MODULE
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm"
     "PkgInfo"
-        ../../Source/Processors/ProcessorBase.h ../../Source/Processors/OscillatorProcessor.h)
+)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/AU/juce_AU_Wrapper.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -46,7 +46,7 @@ set_source_files_properties ("../../../JUCE/modules/juce_audio_processors/format
 add_executable (STANDALONE_PLUGIN
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp"
-        ../../Source/Processors/ProcessorBase.h ../../Source/Processors/OscillatorProcessor.h)
+)
 
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 
@@ -859,6 +859,62 @@ add_library (SHARED_CODE STATIC
     "../../../JUCE/modules/juce_data_structures/juce_data_structures.cpp"
     "../../../JUCE/modules/juce_data_structures/juce_data_structures.mm"
     "../../../JUCE/modules/juce_data_structures/juce_data_structures.h"
+    "../../../JUCE/modules/juce_dsp/containers/juce_AudioBlock.h"
+    "../../../JUCE/modules/juce_dsp/containers/juce_AudioBlock_test.cpp"
+    "../../../JUCE/modules/juce_dsp/containers/juce_SIMDRegister.h"
+    "../../../JUCE/modules/juce_dsp/containers/juce_SIMDRegister_Impl.h"
+    "../../../JUCE/modules/juce_dsp/containers/juce_SIMDRegister_test.cpp"
+    "../../../JUCE/modules/juce_dsp/filter_design/juce_FilterDesign.cpp"
+    "../../../JUCE/modules/juce_dsp/filter_design/juce_FilterDesign.h"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_Convolution.cpp"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_Convolution.h"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_FFT.cpp"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_FFT.h"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_FFT_test.cpp"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_Windowing.cpp"
+    "../../../JUCE/modules/juce_dsp/frequency/juce_Windowing.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_FastMathApproximations.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_LogRampedValue.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_LogRampedValue_test.cpp"
+    "../../../JUCE/modules/juce_dsp/maths/juce_LookupTable.cpp"
+    "../../../JUCE/modules/juce_dsp/maths/juce_LookupTable.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_Matrix.cpp"
+    "../../../JUCE/modules/juce_dsp/maths/juce_Matrix.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_Matrix_test.cpp"
+    "../../../JUCE/modules/juce_dsp/maths/juce_Phase.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_Polynomial.h"
+    "../../../JUCE/modules/juce_dsp/maths/juce_SpecialFunctions.cpp"
+    "../../../JUCE/modules/juce_dsp/maths/juce_SpecialFunctions.h"
+    "../../../JUCE/modules/juce_dsp/native/juce_avx_SIMDNativeOps.cpp"
+    "../../../JUCE/modules/juce_dsp/native/juce_avx_SIMDNativeOps.h"
+    "../../../JUCE/modules/juce_dsp/native/juce_fallback_SIMDNativeOps.h"
+    "../../../JUCE/modules/juce_dsp/native/juce_neon_SIMDNativeOps.cpp"
+    "../../../JUCE/modules/juce_dsp/native/juce_neon_SIMDNativeOps.h"
+    "../../../JUCE/modules/juce_dsp/native/juce_sse_SIMDNativeOps.cpp"
+    "../../../JUCE/modules/juce_dsp/native/juce_sse_SIMDNativeOps.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_Bias.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_FIRFilter.cpp"
+    "../../../JUCE/modules/juce_dsp/processors/juce_FIRFilter.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_FIRFilter_test.cpp"
+    "../../../JUCE/modules/juce_dsp/processors/juce_Gain.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_IIRFilter.cpp"
+    "../../../JUCE/modules/juce_dsp/processors/juce_IIRFilter.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_IIRFilter_Impl.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_LadderFilter.cpp"
+    "../../../JUCE/modules/juce_dsp/processors/juce_LadderFilter.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_Oscillator.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_Oversampling.cpp"
+    "../../../JUCE/modules/juce_dsp/processors/juce_Oversampling.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_ProcessContext.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_ProcessorChain.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_ProcessorDuplicator.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_ProcessorWrapper.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_Reverb.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_StateVariableFilter.h"
+    "../../../JUCE/modules/juce_dsp/processors/juce_WaveShaper.h"
+    "../../../JUCE/modules/juce_dsp/juce_dsp.cpp"
+    "../../../JUCE/modules/juce_dsp/juce_dsp.mm"
+    "../../../JUCE/modules/juce_dsp/juce_dsp.h"
     "../../../JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.cpp"
     "../../../JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.h"
     "../../../JUCE/modules/juce_events/broadcasters/juce_ActionListener.h"
@@ -1459,16 +1515,17 @@ add_library (SHARED_CODE STATIC
     "../../JuceLibraryCode/include_juce_core.mm"
     "../../JuceLibraryCode/include_juce_cryptography.mm"
     "../../JuceLibraryCode/include_juce_data_structures.mm"
+    "../../JuceLibraryCode/include_juce_dsp.mm"
     "../../JuceLibraryCode/include_juce_events.mm"
     "../../JuceLibraryCode/include_juce_graphics.mm"
     "../../JuceLibraryCode/include_juce_gui_basics.mm"
     "../../JuceLibraryCode/include_juce_gui_extra.mm"
     "../../JuceLibraryCode/include_juce_opengl.mm"
     "../../JuceLibraryCode/JuceHeader.h"
-        ../../Source/Processors/ProcessorBase.h ../../Source/Processors/OscillatorProcessor.h)
+)
 
-set_source_files_properties ("../../Source/ChordicalAudioProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("../../Source/Components/PluginEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/PluginProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/PluginEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2273,6 +2330,62 @@ set_source_files_properties ("../../../JUCE/modules/juce_data_structures/values/
 set_source_files_properties ("../../../JUCE/modules/juce_data_structures/juce_data_structures.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_data_structures/juce_data_structures.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_data_structures/juce_data_structures.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/containers/juce_AudioBlock.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/containers/juce_AudioBlock_test.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/containers/juce_SIMDRegister.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/containers/juce_SIMDRegister_Impl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/containers/juce_SIMDRegister_test.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/filter_design/juce_FilterDesign.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/filter_design/juce_FilterDesign.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_Convolution.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_Convolution.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_FFT.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_FFT.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_FFT_test.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_Windowing.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/frequency/juce_Windowing.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_FastMathApproximations.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_LogRampedValue.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_LogRampedValue_test.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_LookupTable.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_LookupTable.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_Matrix.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_Matrix.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_Matrix_test.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_Phase.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_Polynomial.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_SpecialFunctions.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/maths/juce_SpecialFunctions.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_avx_SIMDNativeOps.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_avx_SIMDNativeOps.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_fallback_SIMDNativeOps.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_neon_SIMDNativeOps.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_neon_SIMDNativeOps.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_sse_SIMDNativeOps.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/native/juce_sse_SIMDNativeOps.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_Bias.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_FIRFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_FIRFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_FIRFilter_test.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_Gain.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_IIRFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_IIRFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_IIRFilter_Impl.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_LadderFilter.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_LadderFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_Oscillator.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_Oversampling.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_Oversampling.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_ProcessContext.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_ProcessorChain.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_ProcessorDuplicator.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_ProcessorWrapper.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_Reverb.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_StateVariableFilter.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/processors/juce_WaveShaper.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/juce_dsp.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/juce_dsp.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../../JUCE/modules/juce_dsp/juce_dsp.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_events/broadcasters/juce_ActionBroadcaster.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_events/broadcasters/juce_ActionListener.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2881,7 +2994,7 @@ if (CMAKE_BUILD_TYPE STREQUAL Debug)
 execute_process (COMMAND uname -m OUTPUT_VARIABLE JUCE_ARCH_LABEL OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 target_include_directories (VST3 PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -2961,7 +3074,7 @@ add_custom_command (TARGET VST3 POST_BUILD
 )
 
 target_include_directories (AU PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3002,7 +3115,7 @@ if (RC_COMPILER)
         ${RC_COMPILER}
         -d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I "$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase" -I "$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers"
         -isysroot "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
-        -I "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+        -I "/Users/jason/dev/VST_SDK/VST3_SDK"
         -I "${PROJECT_SOURCE_DIR}/../../JuceLibraryCode"
         -I "/Users/jason/dev/JUCE/modules"
         -I "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3068,7 +3181,7 @@ add_custom_command (TARGET AU POST_BUILD
 )
 
 target_include_directories (STANDALONE_PLUGIN PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3134,7 +3247,7 @@ target_link_libraries (STANDALONE_PLUGIN PRIVATE
 )
 
 target_include_directories (SHARED_CODE PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3210,7 +3323,7 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
 execute_process (COMMAND uname -m OUTPUT_VARIABLE JUCE_ARCH_LABEL OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 target_include_directories (VST3 PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3292,7 +3405,7 @@ add_custom_command (TARGET VST3 POST_BUILD
 )
 
 target_include_directories (AU PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3334,7 +3447,7 @@ if (RC_COMPILER)
         ${RC_COMPILER}
         -d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I "$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase" -I "$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers"
         -isysroot "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
-        -I "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+        -I "/Users/jason/dev/VST_SDK/VST3_SDK"
         -I "${PROJECT_SOURCE_DIR}/../../JuceLibraryCode"
         -I "/Users/jason/dev/JUCE/modules"
         -I "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3401,7 +3514,7 @@ add_custom_command (TARGET AU POST_BUILD
 )
 
 target_include_directories (STANDALONE_PLUGIN PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
@@ -3469,7 +3582,7 @@ target_link_libraries (STANDALONE_PLUGIN PRIVATE
 )
 
 target_include_directories (SHARED_CODE PRIVATE
-    "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+    "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"

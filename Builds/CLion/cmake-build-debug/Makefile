@@ -540,6 +540,33 @@ Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm
 	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s
 .PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s
 
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o
+
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.o
+
+# target to build an object file
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o
+
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.i
+
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.i
+
+# target to preprocess a source file
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.i
+
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.s
+
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.s
+
+# target to generate assembly for a file
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.s
+
 Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o
 
 .PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.o
@@ -783,6 +810,9 @@ help:
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.o"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.i"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.s"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.o"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.i"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.s"

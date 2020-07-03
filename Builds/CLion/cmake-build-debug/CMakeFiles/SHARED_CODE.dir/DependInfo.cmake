@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o"
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o"
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o"
+  "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o"
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o"
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o"
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o"
@@ -44,7 +45,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+  "/Users/jason/dev/VST_SDK/VST3_SDK"
   "../../../JuceLibraryCode"
   "/Users/jason/dev/JUCE/modules"
   "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"

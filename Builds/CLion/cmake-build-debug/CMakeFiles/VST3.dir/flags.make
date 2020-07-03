@@ -6,5 +6,5 @@ CXX_FLAGS =  -fno-common -Wswitch -Wunused-variable -Wparentheses -Wnon-virtual-
 
 CXX_DEFINES = -DDEBUG=1 -DJUCER_XCODE_MAC_F6D2F4CF=1 -DJUCE_APP_VERSION=0.0.1 -DJUCE_APP_VERSION_HEX=0x1 -DJucePlugin_Build_AAX=0 -DJucePlugin_Build_AU=0 -DJucePlugin_Build_AUv3=0 -DJucePlugin_Build_RTAS=0 -DJucePlugin_Build_Standalone=0 -DJucePlugin_Build_Unity=0 -DJucePlugin_Build_VST3=1 -DJucePlugin_Build_VST=0 -DVST3_EXPORTS -D_DEBUG=1
 
-CXX_INCLUDES = -I/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode -I/Users/jason/dev/JUCE/modules -I/Users/jason/dev/JUCE/modules/juce_audio_plugin_client 
+CXX_INCLUDES = -I/Users/jason/dev/VST_SDK/VST3_SDK -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode -I/Users/jason/dev/JUCE/modules -I/Users/jason/dev/JUCE/modules/juce_audio_plugin_client 
 

@@ -27,7 +27,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/Users/jason/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK"
+  "/Users/jason/dev/VST_SDK/VST3_SDK"
   "../../../JuceLibraryCode"
   "/Users/jason/dev/JUCE/modules"
   "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
