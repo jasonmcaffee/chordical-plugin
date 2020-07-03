@@ -8,7 +8,7 @@
   ==============================================================================
 */
 
-#include "ChordicalAudioProcessor.h"
+#include "../ChordicalAudioProcessor.h"
 #include "PluginEditor.h"
 
 //==============================================================================

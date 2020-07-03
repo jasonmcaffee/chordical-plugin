@@ -4631,10 +4631,10 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp">
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginEditor.h">
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Builds/CLion/CMakeLists.txt">

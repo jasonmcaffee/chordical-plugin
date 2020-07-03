@@ -5,7 +5,7 @@
 //cascading plugin with AudioProcessorGraph https://docs.juce.com/master/tutorial_audio_processor_graph.html
 
 #include "ChordicalAudioProcessor.h"
-#include "PluginEditor.h"
+#include "Components/PluginEditor.h"
 #include "Services/Synthesizer/Sine/SineWaveVoice.h"
 
 using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;

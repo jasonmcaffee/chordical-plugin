@@ -702,32 +702,32 @@ Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s:
 	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
 .PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
 
-Users/jason/dev/chordical-plugin/Source/PluginEditor.o: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.o: Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
 
-.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.o
 
 # target to build an object file
-Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
-.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
 
-Users/jason/dev/chordical-plugin/Source/PluginEditor.i: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
+Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.i: Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i
 
-.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.i
 
 # target to preprocess a source file
-Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
-.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
+Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i
 
-Users/jason/dev/chordical-plugin/Source/PluginEditor.s: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
+Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.s: Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s
 
-.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.s
 
 # target to generate assembly for a file
-Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
-.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
+Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s
 
 # Help Target
 help:
@@ -801,9 +801,9 @@ help:
 	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o"
 	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i"
 	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s"
-	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.o"
-	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.i"
-	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.s"
+	@echo "... Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.o"
+	@echo "... Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.i"
+	@echo "... Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.s"
 .PHONY : help
 
 

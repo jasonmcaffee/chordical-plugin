@@ -53,8 +53,8 @@ set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juc
 add_library (SHARED_CODE STATIC
     "../../Source/ChordicalAudioProcessor.cpp"
     "../../Source/ChordicalAudioProcessor.h"
-    "../../Source/PluginEditor.cpp"
-    "../../Source/PluginEditor.h"
+    "../../Source/Components/PluginEditor.cpp"
+    "../../Source/Components/PluginEditor.h"
     "../../../JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h"
     "../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp"
     "../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h"
@@ -1468,7 +1468,7 @@ add_library (SHARED_CODE STATIC
 )
 
 set_source_files_properties ("../../Source/ChordicalAudioProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties ("../../Source/PluginEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties ("../../Source/Components/PluginEditor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h" PROPERTIES HEADER_FILE_ONLY TRUE)

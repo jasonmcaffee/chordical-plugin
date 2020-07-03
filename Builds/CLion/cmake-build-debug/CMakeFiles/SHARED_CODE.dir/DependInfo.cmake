@@ -20,7 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o"
   "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o"
   "/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o"
-  "/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o"
+  "/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "ChordicalAudioProcessor.h"
+#include "../ChordicalAudioProcessor.h"
 
 //==============================================================================
 /**
