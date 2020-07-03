@@ -2386,31 +2386,31 @@ utils/juce_OpenGLAppComponent.h
 
 /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
 
-/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp
+/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp
 ChordicalAudioProcessor.h
-/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
+/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
 PluginEditor.h
-/Users/jason/dev/vst-chordical/Source/PluginEditor.h
-Synthesizer/Sine/SineWaveVoice.h
-/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
+/Users/jason/dev/chordical-plugin/Source/PluginEditor.h
+Services/Synthesizer/Sine/SineWaveVoice.h
+/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
 
-/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
+/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
 JuceHeader.h
 -
 
-/Users/jason/dev/vst-chordical/Source/PluginEditor.h
+/Users/jason/dev/chordical-plugin/Source/PluginEditor.h
 JuceHeader.h
 -
 ChordicalAudioProcessor.h
-/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.h
+/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
 
-/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
+/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
 JuceHeader.h
 -
 
-/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveVoice.h
+/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
 JuceHeader.h
 -
 ./SineWaveSound.h
-/Users/jason/dev/vst-chordical/Source/Synthesizer/Sine/SineWaveSound.h
+/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
 

@@ -2298,11 +2298,11 @@ misc/juce_AnimatedAppComponent.h
 
 /Users/jason/dev/JUCE/modules/juce_gui_extra/misc/juce_WebBrowserComponent.h
 
-/Users/jason/dev/vst-chordical/JuceLibraryCode/AppConfig.h
+/Users/jason/dev/chordical-plugin/JuceLibraryCode/AppConfig.h
 
-/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp
+/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp
 AppConfig.h
-/Users/jason/dev/vst-chordical/JuceLibraryCode/AppConfig.h
+/Users/jason/dev/chordical-plugin/JuceLibraryCode/AppConfig.h
 juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp
 -
 

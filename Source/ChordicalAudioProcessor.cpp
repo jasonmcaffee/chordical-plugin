@@ -6,7 +6,7 @@
 
 #include "ChordicalAudioProcessor.h"
 #include "PluginEditor.h"
-#include "Synthesizer/Sine/SineWaveVoice.h"
+#include "Services/Synthesizer/Sine/SineWaveVoice.h"
 
 using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
 using Node = juce::AudioProcessorGraph::Node;

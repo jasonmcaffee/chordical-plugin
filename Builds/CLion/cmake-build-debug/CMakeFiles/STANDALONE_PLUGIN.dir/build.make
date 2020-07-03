@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jason/dev/vst-chordical/Builds/CLion
+CMAKE_SOURCE_DIR = /Users/jason/dev/chordical-plugin/Builds/CLion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/STANDALONE_PLUGIN.dir/depend.make
@@ -57,31 +57,31 @@ include CMakeFiles/STANDALONE_PLUGIN.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/STANDALONE_PLUGIN.dir/flags.make
 
-CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o: CMakeFiles/STANDALONE_PLUGIN.dir/flags.make
-CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp
+CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o: CMakeFiles/STANDALONE_PLUGIN.dir/flags.make
+CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp
 
-CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp > CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
+CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp > CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
 
-CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp -o CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
+CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp -o CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
 
 # Object files for target STANDALONE_PLUGIN
 STANDALONE_PLUGIN_OBJECTS = \
-"CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o"
+"CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o"
 
 # External object files for target STANDALONE_PLUGIN
 STANDALONE_PLUGIN_EXTERNAL_OBJECTS =
 
-chordical-plugin.app/Contents/MacOS/chordical-plugin: CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
+chordical-plugin.app/Contents/MacOS/chordical-plugin: CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
 chordical-plugin.app/Contents/MacOS/chordical-plugin: CMakeFiles/STANDALONE_PLUGIN.dir/build.make
 chordical-plugin.app/Contents/MacOS/chordical-plugin: libchordical-plugin.a
 chordical-plugin.app/Contents/MacOS/chordical-plugin: CMakeFiles/STANDALONE_PLUGIN.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable chordical-plugin.app/Contents/MacOS/chordical-plugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable chordical-plugin.app/Contents/MacOS/chordical-plugin"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/STANDALONE_PLUGIN.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -94,6 +94,6 @@ CMakeFiles/STANDALONE_PLUGIN.dir/clean:
 .PHONY : CMakeFiles/STANDALONE_PLUGIN.dir/clean
 
 CMakeFiles/STANDALONE_PLUGIN.dir/depend:
-	cd /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jason/dev/vst-chordical/Builds/CLion /Users/jason/dev/vst-chordical/Builds/CLion /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jason/dev/chordical-plugin/Builds/CLion /Users/jason/dev/chordical-plugin/Builds/CLion /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/STANDALONE_PLUGIN.dir/depend
 

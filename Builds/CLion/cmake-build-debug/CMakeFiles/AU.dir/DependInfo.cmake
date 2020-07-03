@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm" "/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o"
-  "/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm" "/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o"
+  "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o"
+  "/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm" "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -37,7 +37,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/DependInfo.cmake"
+  "/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

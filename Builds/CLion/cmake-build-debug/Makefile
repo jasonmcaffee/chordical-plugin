@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jason/dev/vst-chordical/Builds/CLion
+CMAKE_SOURCE_DIR = /Users/jason/dev/chordical-plugin/Builds/CLion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,572 +162,572 @@ VST3/fast:
 	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/build
 .PHONY : VST3/fast
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.o
-
-# target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o
-
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i
-
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.i
-
-# target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i
-
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s
-
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.s
-
-# target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s
-
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o
-
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o:
-	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i:
-	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s:
-	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o:
-	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o:
+	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i:
-	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i:
+	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s:
-	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s:
+	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o:
-	$(MAKE) -f CMakeFiles/STANDALONE_PLUGIN.dir/build.make CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o:
+	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i:
-	$(MAKE) -f CMakeFiles/STANDALONE_PLUGIN.dir/build.make CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i:
+	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s:
-	$(MAKE) -f CMakeFiles/STANDALONE_PLUGIN.dir/build.make CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s:
+	$(MAKE) -f CMakeFiles/AU.dir/build.make CMakeFiles/AU.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o:
-	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o:
+	$(MAKE) -f CMakeFiles/STANDALONE_PLUGIN.dir/build.make CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i:
-	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i:
+	$(MAKE) -f CMakeFiles/STANDALONE_PLUGIN.dir/build.make CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s:
-	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s:
+	$(MAKE) -f CMakeFiles/STANDALONE_PLUGIN.dir/build.make CMakeFiles/STANDALONE_PLUGIN.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o:
+	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i:
+	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s:
+	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.o: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.i: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i
 
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.s: Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s
-.PHONY : Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s
 
-Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.o: Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o
 
-.PHONY : Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o
-.PHONY : Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o
 
-Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.i: Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i
 
-.PHONY : Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i
-.PHONY : Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i
 
-Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.s: Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s
 
-.PHONY : Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s
-.PHONY : Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s
+Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s
 
-Users/jason/dev/vst-chordical/Source/PluginEditor.o: Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o
+Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o: Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
 
-.PHONY : Users/jason/dev/vst-chordical/Source/PluginEditor.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o
 
 # target to build an object file
-Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o
-.PHONY : Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o
+Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
 
-Users/jason/dev/vst-chordical/Source/PluginEditor.i: Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i
+Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i: Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
 
-.PHONY : Users/jason/dev/vst-chordical/Source/PluginEditor.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i
 
 # target to preprocess a source file
-Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i
-.PHONY : Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i
+Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
 
-Users/jason/dev/vst-chordical/Source/PluginEditor.s: Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s
+Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s: Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
 
-.PHONY : Users/jason/dev/vst-chordical/Source/PluginEditor.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s
 
 # target to generate assembly for a file
-Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s
-.PHONY : Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s
+Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
+
+Users/jason/dev/chordical-plugin/Source/PluginEditor.o: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.o
+
+# target to build an object file
+Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+
+Users/jason/dev/chordical-plugin/Source/PluginEditor.i: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
+
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.i
+
+# target to preprocess a source file
+Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
+
+Users/jason/dev/chordical-plugin/Source/PluginEditor.s: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
+
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.s
+
+# target to generate assembly for a file
+Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
 
 # Help Target
 help:
@@ -741,69 +741,69 @@ help:
 	@echo "... STANDALONE_PLUGIN"
 	@echo "... SHARED_CODE"
 	@echo "... VST3"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.s"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.o"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.i"
-	@echo "... Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.s"
-	@echo "... Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.o"
-	@echo "... Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.i"
-	@echo "... Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.s"
-	@echo "... Users/jason/dev/vst-chordical/Source/PluginEditor.o"
-	@echo "... Users/jason/dev/vst-chordical/Source/PluginEditor.i"
-	@echo "... Users/jason/dev/vst-chordical/Source/PluginEditor.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_1.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_AU_2.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_Standalone.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.s"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.s"
+	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o"
+	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i"
+	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.o"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.i"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.s"
 .PHONY : help
 
 

@@ -6,7 +6,7 @@
   <component name="CidrRootsConfiguration">
     <sourceRoots>
       <file path="$PROJECT_DIR$/Source/Components" />
-      <file path="$PROJECT_DIR$/Source/Synthesizer" />
+      <file path="$PROJECT_DIR$/Source/Services/Synthesizer" />
       <file path="$PROJECT_DIR$/Source/Utils" />
     </sourceRoots>
   </component>

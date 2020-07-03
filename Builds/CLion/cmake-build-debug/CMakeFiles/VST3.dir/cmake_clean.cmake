@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/VST3.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o"
+  "CMakeFiles/VST3.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp.o"
   "chordical-plugin.vst3/Contents/./PkgInfo"
   "chordical-plugin.vst3/Contents/MacOS/chordical-plugin"
   "chordical-plugin.vst3/Contents/MacOS/chordical-plugin.pdb"

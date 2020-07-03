@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jason/dev/vst-chordical/Builds/CLion
+CMAKE_SOURCE_DIR = /Users/jason/dev/chordical-plugin/Builds/CLion
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SHARED_CODE.dir/depend.make
@@ -57,270 +57,270 @@ include CMakeFiles/SHARED_CODE.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SHARED_CODE.dir/flags.make
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o -c /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o -c /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o: /Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o -c /Users/jason/dev/vst-chordical/Source/PluginEditor.cpp
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o -c /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/Source/PluginEditor.cpp > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/Source/PluginEditor.cpp -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.s
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o: /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o -c /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o: CMakeFiles/SHARED_CODE.dir/flags.make
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o: /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o -c /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.i
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm > CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.i
 
-CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.s
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm -o CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s
 
 # Object files for target SHARED_CODE
 SHARED_CODE_OBJECTS = \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o" \
-"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o"
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o" \
+"CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o"
 
 # External object files for target SHARED_CODE
 SHARED_CODE_EXTERNAL_OBJECTS =
 
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/ChordicalAudioProcessor.cpp.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/Source/PluginEditor.cpp.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_basics.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_devices.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_formats.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_processors.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_audio_utils.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_core.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_cryptography.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_data_structures.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_events.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_graphics.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_basics.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_gui_extra.mm.o
-libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/vst-chordical/JuceLibraryCode/include_juce_opengl.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o
+libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o
 libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/build.make
 libchordical-plugin.a: CMakeFiles/SHARED_CODE.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library libchordical-plugin.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library libchordical-plugin.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/SHARED_CODE.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SHARED_CODE.dir/link.txt --verbose=$(VERBOSE)
 
@@ -334,6 +334,6 @@ CMakeFiles/SHARED_CODE.dir/clean:
 .PHONY : CMakeFiles/SHARED_CODE.dir/clean
 
 CMakeFiles/SHARED_CODE.dir/depend:
-	cd /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jason/dev/vst-chordical/Builds/CLion /Users/jason/dev/vst-chordical/Builds/CLion /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug /Users/jason/dev/vst-chordical/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jason/dev/chordical-plugin/Builds/CLion /Users/jason/dev/chordical-plugin/Builds/CLion /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug /Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SHARED_CODE.dir/depend
 
