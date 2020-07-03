@@ -1,7 +1,6 @@
 #include <JuceHeader.h>
 #include "./SineWaveSound.h"
-struct SineWaveVoice  : public SynthesiserVoice
-{
+struct SineWaveVoice  : public SynthesiserVoice {
     SineWaveVoice() {}
 
     bool canPlaySound (SynthesiserSound* sound) override{

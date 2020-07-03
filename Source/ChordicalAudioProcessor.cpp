@@ -1,15 +1,8 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
-
-  ==============================================================================
-*/
-
+//setup instructions
 //https://www.youtube.com/watch?v=kxKEFTQRZPI
 //https://www.youtube.com/watch?v=ddqwAJilnes
+
+//cascading plugin with AudioProcessorGraph https://docs.juce.com/master/tutorial_audio_processor_graph.html
 
 #include "ChordicalAudioProcessor.h"
 #include "PluginEditor.h"
@@ -39,6 +32,7 @@ ChordicalAudioProcessor::ChordicalAudioProcessor()
 
 }
 
+//destructor
 ChordicalAudioProcessor::~ChordicalAudioProcessor()
 {
 }
@@ -86,47 +80,6 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
 
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 }
-//
-//void renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
-//{
-//    if (angleDelta != 0.0){
-//        if (tailOff > 0.0){
-//            while (--numSamples >= 0){
-//                auto currentSample = (float)(std::sin(currentAngle) * level * tailOff);
-//
-//                for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
-//                    outputBuffer.addSample(i, startSample, currentSample);
-//
-//                currentAngle += angleDelta;
-//                ++startSample;
-//
-//                tailOff *= 0.99;
-//
-//                if (tailOff <= 0.005){
-//                    clearCurrentNote();
-//                    angleDelta = 0.0;
-//                    break;
-//                }
-//            }
-//        }
-//        else{
-//            while (--numSamples >= 0){
-//                auto currentSample = (float)(std::sin(currentAngle) * level);
-//
-//                for (auto i = outputBuffer.getNumChannels(); --i >= 0;)
-//                    outputBuffer.addSample(i, startSample, currentSample);
-//
-//                currentAngle += angleDelta;
-//                ++startSample;
-//            }
-//        }
-//    }
-//}
-//void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
-//{
-//
-//}
-
 
 //==============================================================================
 
