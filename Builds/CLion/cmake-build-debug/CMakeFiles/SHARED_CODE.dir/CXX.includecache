@@ -2545,10 +2545,14 @@ Components/PluginEditor.h
 /Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.h
 Services/Synthesizer/Sine/SineWaveVoice.h
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
+Processors/ProcessorBase.h
+/Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
 Processors/OscillatorProcessor.h
 /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
 Processors/GainProcessor.h
 /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
+Processors/FilterProcessor.h
+/Users/jason/dev/chordical-plugin/Source/Processors/FilterProcessor.h
 
 /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
 JuceHeader.h
@@ -2560,11 +2564,11 @@ JuceHeader.h
 ../ChordicalAudioProcessor.h
 /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
 
+/Users/jason/dev/chordical-plugin/Source/Processors/FilterProcessor.h
+
 /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
 
 /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
-ProcessorBase.h
-/Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
 
 /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
 JuceHeader.h

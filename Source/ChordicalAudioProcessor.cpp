@@ -7,8 +7,10 @@
 #include "ChordicalAudioProcessor.h"
 #include "Components/PluginEditor.h"
 #include "Services/Synthesizer/Sine/SineWaveVoice.h"
+#include "Processors/ProcessorBase.h"
 #include "Processors/OscillatorProcessor.h"
 #include "Processors/GainProcessor.h"
+#include "Processors/FilterProcessor.h"
 
 using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
 using Node = juce::AudioProcessorGraph::Node;
@@ -51,9 +53,6 @@ void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
     //create a synth as first demo
     synth.setCurrentPlaybackSampleRate (sampleRate);
 
-    //create an audio graph processor
-    mainProcessor->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), sampleRate, samplesPerBlock);
-    mainProcessor->prepareToPlay(sampleRate, samplesPerBlock);
     initializeGraph();
 //    updateGraph();
 }
@@ -80,68 +79,58 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
     mainProcessor->processBlock(buffer, midiMessages);
 }
 
-//
-//void ChordicalAudioProcessor::updateGraph (){
-////    for (auto connection : mainProcessor->getConnections()){
-////        mainProcessor->removeConnection (connection);
-////    }
-////
-////    for (auto node : mainProcessor->getNodes()){
-////        mainProcessor->removeNode(node);
-////    }
-//
-//    //connect a new oscillator processor
-//    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>());
-//    auto gainNode = mainProcessor->addNode(std::make_unique<GainProcessor>());
-//
-//    oscillatorNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
-//    gainNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
-//
-//    //add a connection for 2 channels per processor
-//    for(int channel = 0; channel < 2; ++channel){
-//        //connect the oscillator to the gain
-//        mainProcessor->addConnection({ { oscillatorNode->nodeID, channel }, { gainNode->nodeID, channel}});
-//        //connect the oscillator to inpt, and gain to last
-//        mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {oscillatorNode->nodeID, channel}});
-//        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
-//    }
-//
-//    connectMidiNodes();
-//    //enable buses on all nodes
-//    for(auto node : mainProcessor->getNodes()){
-//        node->getProcessor()->enableAllBuses();
-//    }
-//}
 
 void ChordicalAudioProcessor::initializeGraph(){
+
+    auto mainBusNumInputChannels = getMainBusNumInputChannels();
+    auto mainBusNumOutputChannels = getMainBusNumOutputChannels();
+    auto sampleRate = getSampleRate();
+    auto blockSize = getBlockSize();
+    std::cout << "initializeGraph. mainBusNumInputChannels: " << mainBusNumInputChannels << ", mainBusNumOutputChannels: " << mainBusNumOutputChannels << std::endl;
+
     //delete all nodes and connections
     mainProcessor->clear();
+
+    //create an audio graph processor
+    mainProcessor->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
+    mainProcessor->prepareToPlay(getSampleRate(), getBlockSize());
+
     //https://stackoverflow.com/questions/37514509/advantages-of-using-stdmake-unique-over-new-operator
-    audioInputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::audioInputNode));
-    audioOutputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::audioOutputNode));
-    midiInputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiInputNode));
-    midiOutputNode = mainProcessor->addNode(std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiOutputNode));
+    audioInputNode  = mainProcessor->addNode (std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::audioInputNode));
+    audioOutputNode = mainProcessor->addNode (std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::audioOutputNode));
+    midiInputNode   = mainProcessor->addNode (std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiInputNode));
+    midiOutputNode  = mainProcessor->addNode (std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiOutputNode));
 
 //    connectAudioNodes();
 //    connectMidiNodes();
-
-    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>());
     auto gainNode = mainProcessor->addNode(std::make_unique<GainProcessor>());
+    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>());
+    auto filterNode = mainProcessor->addNode(std::make_unique<FilterProcessor>());
 
-    oscillatorNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
     gainNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
+    oscillatorNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
+    filterNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
 
     //add a connection for 2 channels per processor
     for(int channel = 0; channel < 2; ++channel){
-        mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {oscillatorNode->nodeID, channel}});
+
+//        mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {oscillatorNode->nodeID, channel}});
+
         //connect the oscillator to the gain
-//        mainProcessor->addConnection({ { oscillatorNode->nodeID, channel }, { gainNode->nodeID, channel}});
+//        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {gainNode->nodeID, channel} });
+//
+
 //        //connect the oscillator to inpt, and gain to last
 //        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
-        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {audioOutputNode->nodeID, channel}});
+//
+//        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {filterNode->nodeID, channel} });
+//        mainProcessor->addConnection({ {filterNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
+
+        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {audioOutputNode->nodeID, channel}}); //works
 
 
     }
+
 
     connectMidiNodes();
     //enable buses on all nodes
@@ -235,6 +224,12 @@ void ChordicalAudioProcessor::releaseResources()
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
+/**
+ * Since we are dealing with a plugin, we need to implement the isBusesLayoutSupported() callback to inform the plugin host or DAW about which channel sets we support.
+ * In this example we decide to only support mono-to-mono and stereo-to-stereo configurations
+ * @param layouts
+ * @return
+ */
 bool ChordicalAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
     if (layouts.getMainInputChannelSet()  == juce::AudioChannelSet::disabled()
