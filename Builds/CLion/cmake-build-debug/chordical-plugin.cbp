@@ -4808,6 +4808,12 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Builds/CLion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

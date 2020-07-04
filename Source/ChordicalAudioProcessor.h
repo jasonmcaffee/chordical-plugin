@@ -59,6 +59,7 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
     void initializeGraph();
+    void updateGraph();
     void connectAudioNodes();
     void connectMidiNodes();
 
