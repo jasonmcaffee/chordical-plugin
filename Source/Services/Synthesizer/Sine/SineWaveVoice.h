@@ -1,11 +1,15 @@
 #include <JuceHeader.h>
 #include "./SineWaveSound.h"
 
+//https://forum.juce.com/t/how-to-use-an-audioprocessorgraph-with-synthesizer-voice/38954
+
 /**
  * Responsible for filling the AudioBuffer with sound based on angle and number of samples passed to the renderNextBlock function.
  */
 struct SineWaveVoice  : public SynthesiserVoice {
-    SineWaveVoice() {}
+    SineWaveVoice() {
+        std::cout << "SineWaveVoice constructor called" << std::endl;
+    }
 
     bool canPlaySound (SynthesiserSound* sound) override{
         return dynamic_cast<SineWaveSound*> (sound) != nullptr;
