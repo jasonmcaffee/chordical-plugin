@@ -4,6 +4,13 @@
 
 //cascading plugin with AudioProcessorGraph https://docs.juce.com/master/tutorial_audio_processor_graph.html
 
+//midi in graph example: https://gist.github.com/ebenoist/263447603eb6449b14320fab381643d7
+
+/**
+ * https://forum.juce.com/t/audioprocessorgraph-buffer-mixing/10654/5
+ * For anyone wondering, one can simply connect multiple AudioProcesspr outputs to a single AudioProcessor input via AudioProcessorGraph to sum the signals.
+ */
+
 #include "ChordicalAudioProcessor.h"
 #include "Components/PluginEditor.h"
 #include "Services/Synthesizer/Sine/SineWaveVoice.h"
@@ -68,7 +75,7 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
         buffer.clear (i, 0, buffer.getNumSamples());
     }
 
-//    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 
     mainProcessor->processBlock(buffer, midiMessages);
 }
@@ -86,7 +93,7 @@ void ChordicalAudioProcessor::initializeGraph(){
     mainProcessor->clear();
 
     //create an audio graph processor
-    mainProcessor->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
+    mainProcessor->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
     mainProcessor->prepareToPlay(getSampleRate(), getBlockSize());
 
     //https://stackoverflow.com/questions/37514509/advantages-of-using-stdmake-unique-over-new-operator
@@ -101,9 +108,9 @@ void ChordicalAudioProcessor::initializeGraph(){
     auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>());
     auto filterNode = mainProcessor->addNode(std::make_unique<FilterProcessor>());
 
-    gainNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
-    oscillatorNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
-    filterNode->getProcessor()->setPlayConfigDetails(getMainBusNumInputChannels(), getMainBusNumOutputChannels(), getSampleRate(), getBlockSize());
+    gainNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
+    oscillatorNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
+    filterNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
 
     //add a connection for 2 channels per processor
     for(int channel = 0; channel < 2; ++channel){
@@ -114,6 +121,7 @@ void ChordicalAudioProcessor::initializeGraph(){
     }
 
 
+
     connectMidiNodes();
     //enable buses on all nodes
     for(auto node : mainProcessor->getNodes()){
@@ -121,6 +129,16 @@ void ChordicalAudioProcessor::initializeGraph(){
     }
 
 }
+
+std::unique_ptr<juce::AudioProcessorGraph> createAndInitializeOscGraph(int mainBusNumInputChannels, int mainBusNumOutputChannels, double sampleRate, int blockSize){
+//    auto graph = new juce::AudioProcessorGraph();
+    auto graph = std::make_unique<juce::AudioProcessorGraph>();
+
+    return graph;
+}
+
+
+
 
 void ChordicalAudioProcessor::connectAudioNodes(){
     for(int channel = 0; channel < 2; ++channel){
