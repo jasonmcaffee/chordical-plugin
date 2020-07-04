@@ -17,16 +17,10 @@ using Node = juce::AudioProcessorGraph::Node;
 
 //==============================================================================
 ChordicalAudioProcessor::ChordicalAudioProcessor()
-#ifndef JucePlugin_PreferredChannelConfigurations
         : AudioProcessor (BusesProperties()
-#if ! JucePlugin_IsMidiEffect
-#if ! JucePlugin_IsSynth
                                   .withInput  ("Input",  AudioChannelSet::stereo(), true)
-#endif
                                   .withOutput ("Output", AudioChannelSet::stereo(), true)
-#endif
 ),
-#endif
           mainProcessor  (new juce::AudioProcessorGraph())
 {
     synth.clearSounds();
@@ -113,22 +107,10 @@ void ChordicalAudioProcessor::initializeGraph(){
 
     //add a connection for 2 channels per processor
     for(int channel = 0; channel < 2; ++channel){
-
-//        mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {oscillatorNode->nodeID, channel}});
-
-        //connect the oscillator to the gain
-//        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {gainNode->nodeID, channel} });
-//
-
-//        //connect the oscillator to inpt, and gain to last
-//        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
-//
-//        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {filterNode->nodeID, channel} });
-//        mainProcessor->addConnection({ {filterNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
-
-        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {audioOutputNode->nodeID, channel}}); //works
-
-
+        mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {oscillatorNode->nodeID, channel}});
+        mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {gainNode->nodeID, channel} });
+        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {filterNode->nodeID, channel} });
+        mainProcessor->addConnection({ {filterNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
     }
 
 

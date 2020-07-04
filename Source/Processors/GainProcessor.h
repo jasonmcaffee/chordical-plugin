@@ -5,7 +5,7 @@ class GainProcessor  : public ProcessorBase
 public:
     GainProcessor()
     {
-        gain.setGainDecibels (-1.0f);
+        gain.setGainDecibels (-7.0f);
     }
 
     void prepareToPlay (double sampleRate, int samplesPerBlock) override
