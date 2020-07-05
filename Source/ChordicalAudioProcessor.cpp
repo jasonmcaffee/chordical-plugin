@@ -54,6 +54,8 @@ void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
     //create a synth as first demo
     synth.setCurrentPlaybackSampleRate (sampleRate);
 
+    synthesizer.prepareToPlay(sampleRate, samplesPerBlock);
+
     initializeGraph();
 //    updateGraph();
 }
@@ -78,6 +80,7 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 
     mainProcessor->processBlock(buffer, midiMessages);
+    synthesizer.processBlock(buffer, midiMessages);
 }
 
 

@@ -4819,6 +4819,12 @@
 			<Option target="SHARED_CODE"/>
 			<Option target="VST3"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Builds/CLion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

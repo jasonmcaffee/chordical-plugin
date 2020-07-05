@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "Synthesizer/ChordicalSynthesizer.h"
 
 using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
 using Node = juce::AudioProcessorGraph::Node;
@@ -66,6 +67,8 @@ public:
 private:
     //==============================================================================
     Synthesiser synth; //<-- original osc voice player. may go away once graph is implemented.
+
+    ChordicalSynthesizer synthesizer;
 
     //audio processor graph & nodes
     std::unique_ptr<juce::AudioProcessorGraph> mainProcessor;

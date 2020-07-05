@@ -5769,6 +5769,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudi
  /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
+ /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
  ../../../JuceLibraryCode/AppConfig.h
  ../../../JuceLibraryCode/JuceHeader.h
@@ -6307,3 +6308,4 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/Pl
  /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
  /Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp
  /Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.h
+ /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
