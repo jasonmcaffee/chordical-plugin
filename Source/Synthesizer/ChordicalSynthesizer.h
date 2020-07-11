@@ -47,7 +47,7 @@ inline std::unique_ptr<juce::AudioProcessorGraph> createGraph(double sampleRate,
 
     std::cout << "createGraph called" << std::endl;
 
-    std::unique_ptr<juce::AudioProcessorGraph> mainProcessor;
+    std::unique_ptr<juce::AudioProcessorGraph> mainProcessor = std::make_unique<juce::AudioProcessorGraph>();
     Node::Ptr audioInputNode;
     Node::Ptr audioOutputNode;
     Node::Ptr midiInputNode;
@@ -108,20 +108,45 @@ public:
 
     void processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
         auto midiData = getMidiData(midiMessages);
-        if(midiData.onNotes.size() > 0){
-            //std::cout << "onNotes size: " << midiData.onNotes.size() << std::endl;
-            //iterate over each note
-            for(const auto& onNote : midiData.onNotes){
-                std::cout << "onNote noteNumber: " << onNote.noteNumber << std::endl;
-            }
+        for(const auto& onNote : midiData.onNotes){
+            std::cout << "onNote noteNumber: " << onNote.noteNumber << std::endl;
+            startNote(onNote.noteNumber);
         }
-        if(midiData.offNotes.size() > 0){
-            std::cout << "offNotes size: " << midiData.offNotes.size() << std::endl;
+
+        for(const auto& offNote : midiData.offNotes){
+            std::cout << "offNote noteNumber: " << offNote.noteNumber << std::endl;
+            releaseNote(offNote.noteNumber);
         }
+
+        //iterate over map and call processBlock on each graph
+        for (auto const& x : midiNoteToProcessorGraphHash){
+            auto& graph = x.second;
+            graph->processBlock(buffer, midiMessages);
+        }
+
     }
 
-    void startNote(int midi){
+    void startNote(int midiNoteNumber){
+//        auto graphForMidiNote = midiNoteToProcessorGraphHash.find(midiNoteNumber);
+        auto& graphForMidiNote = midiNoteToProcessorGraphHash[midiNoteNumber];
+        if(graphForMidiNote){
+            graphForMidiNote->suspendProcessing(true);
+            graphForMidiNote->clear();
+            graphForMidiNote->releaseResources();
+        }
 
+        midiNoteToProcessorGraphHash[midiNoteNumber] = createGraph(sampleRate, samplesPerBlock, mainBusNumInputChannels, mainBusNumOutputChannels);
+    }
+
+    void releaseNote(int midiNoteNumber){
+        auto& graphForMidiNote = midiNoteToProcessorGraphHash[midiNoteNumber];
+        if(graphForMidiNote){
+            graphForMidiNote->suspendProcessing(true);
+            graphForMidiNote->clear();
+            graphForMidiNote->releaseResources();
+
+            midiNoteToProcessorGraphHash.erase(midiNoteNumber);
+        }
     }
 private:
     double sampleRate;
