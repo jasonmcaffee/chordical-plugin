@@ -51,10 +51,11 @@ ChordicalAudioProcessor::~ChordicalAudioProcessor(){}
  */
 void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    //create a synth as first demo
+    //first demo using JUCE synthesizer and SineWaveSound/SineWaveVoice
     synth.setCurrentPlaybackSampleRate (sampleRate);
 
-    synthesizer.prepareToPlay(sampleRate, samplesPerBlock);
+    //our own synthesizer that uses audio processor graphs to chain effects.
+    synthesizer.prepareToPlay(sampleRate, samplesPerBlock, getMainBusNumInputChannels(), getMainBusNumOutputChannels());
 
     initializeGraph();
 //    updateGraph();
@@ -77,9 +78,15 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
         buffer.clear (i, 0, buffer.getNumSamples());
     }
 
+    //original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 
-    mainProcessor->processBlock(buffer, midiMessages);
+    //second demo using an AudioProcessorGraph that is created and maintained in this class.
+    //We want to move this into our own synthesizer.
+    //generates a constant tone via OscillatorProcessor, which has it's frequency hard coded.
+    //mainProcessor->processBlock(buffer, midiMessages);
+
+    //moving processing to our own custom synthesizer.
     synthesizer.processBlock(buffer, midiMessages);
 }
 

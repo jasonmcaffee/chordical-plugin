@@ -1,3 +1,6 @@
+#include "./ProcessorBase.h"
+#pragma once
+
 class FilterProcessor  : public ProcessorBase {
 public:
     FilterProcessor() {}

@@ -1,5 +1,5 @@
 #include <JuceHeader.h>
-
+#pragma once
 /**
  * Base class that all processors (gain, osc, filter, etc) will derive from.
  */

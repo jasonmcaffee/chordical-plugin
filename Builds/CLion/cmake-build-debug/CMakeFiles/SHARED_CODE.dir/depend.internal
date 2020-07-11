@@ -6308,4 +6308,8 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/Pl
  /Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h
  /Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp
  /Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.h
+ /Users/jason/dev/chordical-plugin/Source/Processors/FilterProcessor.h
+ /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
+ /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
+ /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
  /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h

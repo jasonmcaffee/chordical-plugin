@@ -1,5 +1,5 @@
-//#include "ProcessorBase.h"
-
+#include "./ProcessorBase.h"
+#pragma once
 class GainProcessor  : public ProcessorBase
 {
 public:
