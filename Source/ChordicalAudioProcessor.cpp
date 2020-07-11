@@ -163,20 +163,22 @@ const String ChordicalAudioProcessor::getName() const
 
 bool ChordicalAudioProcessor::acceptsMidi() const
 {
-#if JucePlugin_WantsMidiInput
     return true;
-#else
-    return false;
-#endif
+//#if JucePlugin_WantsMidiInput
+//    return true;
+//#else
+//    return false;
+//#endif
 }
 
 bool ChordicalAudioProcessor::producesMidi() const
 {
-#if JucePlugin_ProducesMidiOutput
     return true;
-#else
-    return false;
-#endif
+//#if JucePlugin_ProducesMidiOutput
+//    return true;
+//#else
+//    return false;
+//#endif
 }
 
 bool ChordicalAudioProcessor::isMidiEffect() const

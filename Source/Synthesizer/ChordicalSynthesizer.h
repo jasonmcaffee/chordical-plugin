@@ -1,4 +1,6 @@
 
+#define JUCE_CORE_INCLUDE_NATIVE_HEADERS 1
+
 struct midiData {
     int noteNumber;
     int velocity;
@@ -13,7 +15,8 @@ struct midiDataResult {
 inline midiDataResult getMidiData(MidiBuffer& midiMessages){
     std::vector<midiData> onNotes;
     std::vector<midiData> offNotes;
-    MidiMessage message (0);
+    if(midiMessages.isEmpty()){ return {onNotes, offNotes}; }
+    MidiMessage message (0xf4, 0.0);
     MidiBuffer::Iterator i (midiMessages);
     int messageFrameRelativeToThisProcess;
     while(i.getNextEvent(message, messageFrameRelativeToThisProcess)){
@@ -32,7 +35,6 @@ inline midiDataResult getMidiData(MidiBuffer& midiMessages){
     return result;
 }
 
-
 class ChordicalSynthesizer{
 public:
     ChordicalSynthesizer(){}
@@ -44,7 +46,12 @@ public:
 
     void processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
         auto midiData = getMidiData(midiMessages);
-        std::cout << "midi data. onNotes size: " << midiData.onNotes.size() << ", offNotes size: " << midiData.offNotes.size() << std::endl;
+        if(midiData.onNotes.size() > 0){
+            std::cout << "onNotes size: " << midiData.onNotes.size() << std::endl;
+        }
+        if(midiData.offNotes.size() > 0){
+            std::cout << "offNotes size: " << midiData.offNotes.size() << std::endl;
+        }
     }
 
     void startNote(int midi){
