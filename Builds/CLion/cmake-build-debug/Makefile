@@ -162,6 +162,33 @@ VST3/fast:
 	$(MAKE) -f CMakeFiles/VST3.dir/build.make CMakeFiles/VST3.dir/build
 .PHONY : VST3/fast
 
+Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.o
+
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.o
+
+# target to build an object file
+Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.o
+
+Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.i: Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.i
+
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.i
+
+# target to preprocess a source file
+Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.i
+
+Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.s: Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.s
+
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.s
+
+# target to generate assembly for a file
+Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.s
+
 Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.o: Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o
 
 .PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.o
@@ -702,59 +729,59 @@ Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s:
 	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s
 .PHONY : Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.s
 
-Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o: Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
+Users/jason/dev/chordical-plugin/Source/PluginEditor.o: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
 
-.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o
-
-# target to build an object file
-Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
-.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.o
-
-Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i: Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
-
-.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i
-
-# target to preprocess a source file
-Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
-.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.i
-
-Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s: Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
-
-.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s
-
-# target to generate assembly for a file
-Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
-.PHONY : Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp.s
-
-Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.o: Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
-
-.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.o
 
 # target to build an object file
-Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
-.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.o
+Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o
 
-Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.i: Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i
+Users/jason/dev/chordical-plugin/Source/PluginEditor.i: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
 
-.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.i
 
 # target to preprocess a source file
-Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i
-.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.i
+Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.i
 
-Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.s: Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s
+Users/jason/dev/chordical-plugin/Source/PluginEditor.s: Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
 
-.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.s
 
 # target to generate assembly for a file
-Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s:
-	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s
-.PHONY : Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp.s
+Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.s
+
+Users/jason/dev/chordical-plugin/Source/PluginProcessor.o: Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o
+
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginProcessor.o
+
+# target to build an object file
+Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o
+
+Users/jason/dev/chordical-plugin/Source/PluginProcessor.i: Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.i
+
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginProcessor.i
+
+# target to preprocess a source file
+Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.i:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.i
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.i
+
+Users/jason/dev/chordical-plugin/Source/PluginProcessor.s: Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.s
+
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginProcessor.s
+
+# target to generate assembly for a file
+Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.s:
+	$(MAKE) -f CMakeFiles/SHARED_CODE.dir/build.make CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.s
+.PHONY : Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.s
 
 # Help Target
 help:
@@ -768,6 +795,9 @@ help:
 	@echo "... STANDALONE_PLUGIN"
 	@echo "... SHARED_CODE"
 	@echo "... VST3"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.o"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.i"
+	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.s"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.o"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.i"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.s"
@@ -828,12 +858,12 @@ help:
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.o"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.i"
 	@echo "... Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.s"
-	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.o"
-	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.i"
-	@echo "... Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.s"
-	@echo "... Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.o"
-	@echo "... Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.i"
-	@echo "... Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.s"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.o"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.i"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginEditor.s"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginProcessor.o"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginProcessor.i"
+	@echo "... Users/jason/dev/chordical-plugin/Source/PluginProcessor.s"
 .PHONY : help
 
 

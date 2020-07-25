@@ -11,8 +11,8 @@
  * For anyone wondering, one can simply connect multiple AudioProcesspr outputs to a single AudioProcessor input via AudioProcessorGraph to sum the signals.
  */
 
-#include "ChordicalAudioProcessor.h"
-#include "Components/PluginEditor.h"
+#include "PluginProcessor.h"
+#include "PluginEditor.h"
 #include "Services/Synthesizer/Sine/SineWaveVoice.h"
 #include "Processors/ProcessorBase.h"
 
@@ -20,7 +20,7 @@ using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
 using Node = juce::AudioProcessorGraph::Node;
 
 //==============================================================================
-ChordicalAudioProcessor::ChordicalAudioProcessor()
+PluginProcessor::PluginProcessor()
         : AudioProcessor (BusesProperties()
                                   .withInput  ("Input",  AudioChannelSet::stereo(), true)
                                   .withOutput ("Output", AudioChannelSet::stereo(), true)
@@ -41,7 +41,7 @@ ChordicalAudioProcessor::ChordicalAudioProcessor()
 }
 
 //destructor
-ChordicalAudioProcessor::~ChordicalAudioProcessor(){}
+PluginProcessor::~PluginProcessor(){}
 
 //==============================================================================
 /**
@@ -49,7 +49,7 @@ ChordicalAudioProcessor::~ChordicalAudioProcessor(){}
  * @param sampleRate
  * @param samplesPerBlock
  */
-void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void PluginProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     //first demo using JUCE synthesizer and SineWaveSound/SineWaveVoice
     synth.setCurrentPlaybackSampleRate (sampleRate);
@@ -66,7 +66,7 @@ void ChordicalAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBl
  * @param buffer
  * @param midiMessages
  */
-void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
+void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
     ScopedNoDenormals noDenormals; //Helper class providing an RAII-based mechanism for temporarily disabling denormals on your CPU.  https://www.ccoderun.ca/juce/api/classjuce_1_1ScopedNoDenormals.html#details
 //    auto totalNumInputChannels  = getTotalNumInputChannels();
 //    auto totalNumOutputChannels = getTotalNumOutputChannels();
@@ -87,12 +87,12 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
 
 //==============================================================================
 
-const String ChordicalAudioProcessor::getName() const
+const String PluginProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool ChordicalAudioProcessor::acceptsMidi() const
+bool PluginProcessor::acceptsMidi() const
 {
     return true;
 //#if JucePlugin_WantsMidiInput
@@ -102,7 +102,7 @@ bool ChordicalAudioProcessor::acceptsMidi() const
 //#endif
 }
 
-bool ChordicalAudioProcessor::producesMidi() const
+bool PluginProcessor::producesMidi() const
 {
     return true;
 //#if JucePlugin_ProducesMidiOutput
@@ -112,7 +112,7 @@ bool ChordicalAudioProcessor::producesMidi() const
 //#endif
 }
 
-bool ChordicalAudioProcessor::isMidiEffect() const
+bool PluginProcessor::isMidiEffect() const
 {
 #if JucePlugin_IsMidiEffect
     return true;
@@ -121,38 +121,38 @@ bool ChordicalAudioProcessor::isMidiEffect() const
 #endif
 }
 
-double ChordicalAudioProcessor::getTailLengthSeconds() const
+double PluginProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int ChordicalAudioProcessor::getNumPrograms()
+int PluginProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
     // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int ChordicalAudioProcessor::getCurrentProgram()
+int PluginProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void ChordicalAudioProcessor::setCurrentProgram (int index)
+void PluginProcessor::setCurrentProgram (int index)
 {
 }
 
-const String ChordicalAudioProcessor::getProgramName (int index)
+const String PluginProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void ChordicalAudioProcessor::changeProgramName (int index, const String& newName)
+void PluginProcessor::changeProgramName (int index, const String& newName)
 {
 }
 
 //==============================================================================
 
-void ChordicalAudioProcessor::releaseResources()
+void PluginProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
@@ -166,7 +166,7 @@ void ChordicalAudioProcessor::releaseResources()
  * @param layouts
  * @return
  */
-bool ChordicalAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool PluginProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
     if (layouts.getMainInputChannelSet()  == juce::AudioChannelSet::disabled()
         || layouts.getMainOutputChannelSet() == juce::AudioChannelSet::disabled())
@@ -181,25 +181,25 @@ bool ChordicalAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts
 #endif
 
 //==============================================================================
-bool ChordicalAudioProcessor::hasEditor() const
+bool PluginProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* ChordicalAudioProcessor::createEditor()
+AudioProcessorEditor* PluginProcessor::createEditor()
 {
     return new ChordicalAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void ChordicalAudioProcessor::getStateInformation (MemoryBlock& destData)
+void PluginProcessor::getStateInformation (MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void ChordicalAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void PluginProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -209,5 +209,5 @@ void ChordicalAudioProcessor::setStateInformation (const void* data, int sizeInB
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new ChordicalAudioProcessor();
+    return new PluginProcessor();
 }

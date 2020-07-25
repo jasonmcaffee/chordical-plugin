@@ -8,11 +8,11 @@
   ==============================================================================
 */
 
-#include "../ChordicalAudioProcessor.h"
+#include "PluginProcessor.h"
 #include "PluginEditor.h"
 
 //==============================================================================
-ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (ChordicalAudioProcessor& p): AudioProcessorEditor (&p), processor (p){
+ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p): AudioProcessorEditor (&p), processor (p){
     std::cout << "hello";
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.

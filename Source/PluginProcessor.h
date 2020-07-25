@@ -19,12 +19,12 @@ using Node = juce::AudioProcessorGraph::Node;
 //==============================================================================
 /**
 */
-class ChordicalAudioProcessor  : public AudioProcessor
+class PluginProcessor  : public AudioProcessor
 {
 public:
     //==============================================================================
-    ChordicalAudioProcessor();
-    ~ChordicalAudioProcessor();
+    PluginProcessor();
+    ~PluginProcessor();
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -77,5 +77,5 @@ private:
     Node::Ptr midiInputNode;
     Node::Ptr midiOutputNode;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

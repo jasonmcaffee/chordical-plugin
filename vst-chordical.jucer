@@ -9,6 +9,7 @@
               companyWebsite="chordical.com" companyEmail="jasonlmcaffee@gmail.com">
   <MAINGROUP id="CC5xg6" name="chordical-plugin">
     <GROUP id="{B4769F89-E00F-7CBF-CEE5-6620BB0BC9B6}" name="Source">
+      <FILE id="ypManq" name="c4.wav" compile="0" resource="1" file="Source/ResourceFiles/c4.wav"/>
       <FILE id="r6VBIf" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="KTSHNk" name="PluginProcessor.h" compile="0" resource="0"
@@ -81,7 +82,7 @@
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
-    <OSX buildEnabled="1"/>
+    <OSX buildEnabled="0"/>
   </LIVE_SETTINGS>
   <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
 </JUCERPROJECT>

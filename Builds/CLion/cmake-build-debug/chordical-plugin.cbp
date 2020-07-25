@@ -4730,6 +4730,12 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/AppConfig.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp">
+			<Option target="SHARED_CODE"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.h">
+			<Option target="SHARED_CODE"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/JuceHeader.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
@@ -4796,34 +4802,20 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.cpp">
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ChordicalAudioProcessor.h">
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginEditor.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.cpp">
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Components/PluginEditor.h">
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginProcessor.h">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Processors/FilterProcessor.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ResourceFiles/c4.wav">
 			<Option target="SHARED_CODE"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Builds/CLion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

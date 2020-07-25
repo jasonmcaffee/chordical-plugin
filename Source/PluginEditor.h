@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "../ChordicalAudioProcessor.h"
+#include "PluginProcessor.h"
 
 //==============================================================================
 /**
@@ -19,7 +19,7 @@
 class ChordicalAudioProcessorEditor  : public AudioProcessorEditor
 {
 public:
-    ChordicalAudioProcessorEditor (ChordicalAudioProcessor&);
+    ChordicalAudioProcessorEditor (PluginProcessor&);
     ~ChordicalAudioProcessorEditor();//destructor
 
     //==============================================================================
@@ -29,7 +29,7 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    ChordicalAudioProcessor& processor;
+    PluginProcessor& processor;
     Slider midiVolume; // [1]
 
     MidiKeyboardState keyboardState;
