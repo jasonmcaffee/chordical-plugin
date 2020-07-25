@@ -37,7 +37,7 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
 
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
-    webBrowserComponent.goToURL("http://127.0.0.1:3001");
+//    webBrowserComponent.goToURL("http://127.0.0.1:3001");
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
@@ -48,7 +48,7 @@ void ChordicalAudioProcessorEditor::paint (Graphics& g)
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
 
-    g.setColour (Colours::white);
+    g.setColour (Colours::black);
     g.setFont (15.0f);
     g.drawFittedText ("3.0", getLocalBounds(), Justification::centred, 1);
 }

@@ -12,6 +12,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "Components/WebBrowserWithMessaging.h"
 
 //==============================================================================
 /**
@@ -35,7 +36,7 @@ private:
     MidiKeyboardState keyboardState;
     MidiKeyboardComponent keyboardComponent  { keyboardState, MidiKeyboardComponent::horizontalKeyboard};
 
-    WebBrowserComponent webBrowserComponent;
+    WebBrowserWithMessaging webBrowserComponent;
 
     Label versionLabel    { "VersionLabel",  "Version 1" };
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessorEditor)

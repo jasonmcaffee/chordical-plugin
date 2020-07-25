@@ -5763,6 +5763,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
  /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLShaderProgram.h
  /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h
  /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
+ /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
  /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
  /Users/jason/dev/chordical-plugin/Source/PluginEditor.h
  /Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
@@ -6308,6 +6309,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcess
  /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLShaderProgram.h
  /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h
  /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
+ /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
  /Users/jason/dev/chordical-plugin/Source/PluginEditor.h
  /Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp
  /Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
