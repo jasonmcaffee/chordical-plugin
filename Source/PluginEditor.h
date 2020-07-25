@@ -35,6 +35,8 @@ private:
     MidiKeyboardState keyboardState;
     MidiKeyboardComponent keyboardComponent  { keyboardState, MidiKeyboardComponent::horizontalKeyboard};
 
+    WebBrowserComponent webBrowserComponent;
+
     Label versionLabel    { "VersionLabel",  "Version 1" };
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessorEditor)
 };

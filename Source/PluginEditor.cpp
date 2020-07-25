@@ -30,10 +30,14 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
     // editor's size to whatever you need it to be.
     setSize (700, 600);
 
-    addAndMakeVisible (keyboardComponent);
-    addAndMakeVisible (versionLabel);
+//    addAndMakeVisible (keyboardComponent);
+//    addAndMakeVisible (versionLabel);
 
     writeHtmlFileFromBinaryDataToDisk();
+
+    addAndMakeVisible(webBrowserComponent);
+    webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
+    webBrowserComponent.goToURL("http://127.0.0.1:3001");
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
