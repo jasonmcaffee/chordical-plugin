@@ -9,6 +9,7 @@
               companyWebsite="chordical.com" companyEmail="jasonlmcaffee@gmail.com">
   <MAINGROUP id="CC5xg6" name="chordical-plugin">
     <GROUP id="{B4769F89-E00F-7CBF-CEE5-6620BB0BC9B6}" name="Source">
+      <FILE id="sRABg7" name="test.html" compile="1" resource="1" file="Source/ResourceFiles/test.html"/>
       <FILE id="ypManq" name="c4.wav" compile="0" resource="1" file="Source/ResourceFiles/c4.wav"/>
       <FILE id="r6VBIf" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

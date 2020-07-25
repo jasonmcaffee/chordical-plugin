@@ -11,32 +11,32 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
+
+void writeHtmlFileFromBinaryDataToDisk(){
+    //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
+
+    MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
+    File f ("/Users/jason/dev/chordical-plugin/test.html");
+    f.deleteFile();
+    std::cout << "current working dir" << File::getCurrentWorkingDirectory().getFullPathName() << std::endl;
+    FileOutputStream stream(f);
+    stream.writeFromInputStream(memInputStream, memInputStream.getTotalLength());
+    stream.flush();
+}
+
 //==============================================================================
 ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p): AudioProcessorEditor (&p), processor (p){
-    std::cout << "hello";
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (700, 600);
 
-//    // these define the parameters of our slider object
-//    midiVolume.setSliderStyle (Slider::LinearBarVertical);
-//    midiVolume.setRange(0.0, 127.0, 1.0);
-//    midiVolume.setTextBoxStyle (Slider::NoTextBox, false, 90, 0);
-//    midiVolume.setPopupDisplayEnabled (true, false, this);
-//    midiVolume.setTextValueSuffix (" Volume");
-//    midiVolume.setValue(1.0);
-//
-//    // this function adds the slider to the editor
-//    addAndMakeVisible (&midiVolume);
-
-//    addAndMakeVisible(audioSynthesiserDemo);
     addAndMakeVisible (keyboardComponent);
     addAndMakeVisible (versionLabel);
+
+    writeHtmlFileFromBinaryDataToDisk();
 }
 
-ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor()
-{
-}
+ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
 
 //==============================================================================
 void ChordicalAudioProcessorEditor::paint (Graphics& g)

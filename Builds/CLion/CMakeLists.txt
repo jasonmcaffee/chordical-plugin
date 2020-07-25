@@ -51,6 +51,7 @@ add_executable (STANDALONE_PLUGIN
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 
 add_library (SHARED_CODE STATIC
+    "../../Source/ResourceFiles/test.html"
     "../../Source/ResourceFiles/c4.wav"
     "../../Source/PluginProcessor.cpp"
     "../../Source/PluginProcessor.h"

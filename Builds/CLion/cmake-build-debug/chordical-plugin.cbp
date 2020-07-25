@@ -4817,6 +4817,9 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ResourceFiles/c4.wav">
 			<Option target="SHARED_CODE"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ResourceFiles/test.html">
+			<Option target="SHARED_CODE"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Builds/CLion/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
