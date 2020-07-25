@@ -50,8 +50,6 @@ inline float convertMidiNoteNumberToFrequency(int midiNoteNumber){
 //    float freq =  a * pow (2.0, (midiNoteNumber - 69) / 12);
     double freq = juce::MidiMessage::getMidiNoteInHertz (midiNoteNumber);
     std::cout << " midiNoteNumber: " << midiNoteNumber << " frequency: " << freq << std::endl;
-
-
     return freq;
 }
 
