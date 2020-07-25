@@ -83,19 +83,20 @@ inline std::unique_ptr<juce::AudioProcessorGraph> createGraph(double sampleRate,
     //create some nodes/processors to add to our main processor.
     auto gainNode = mainProcessor->addNode(std::make_unique<GainProcessor>());
     auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>(frequency));
-    auto filterNode = mainProcessor->addNode(std::make_unique<FilterProcessor>());
+//    auto filterNode = mainProcessor->addNode(std::make_unique<FilterProcessor>());
 
     //set the play configuration for each node
     gainNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
     oscillatorNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
-    filterNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
+//    filterNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
 
     //connect the nodes together. add a connection for each of the 2 channels.
     for(int channel = 0; channel < 2; ++channel){
         mainProcessor->addConnection({ {audioInputNode->nodeID, channel}, {oscillatorNode->nodeID, channel}});
         mainProcessor->addConnection({ {oscillatorNode->nodeID, channel}, {gainNode->nodeID, channel} });
-        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {filterNode->nodeID, channel} });
-        mainProcessor->addConnection({ {filterNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
+//        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {filterNode->nodeID, channel} });
+//        mainProcessor->addConnection({ {filterNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
+        mainProcessor->addConnection({ {gainNode->nodeID, channel}, {audioOutputNode->nodeID, channel} });
     }
 
     //connect the midi nodes
@@ -124,12 +125,12 @@ public:
     void processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
         auto midiData = getMidiData(midiMessages);
         for(const auto& offNote : midiData.offNotes){
-            std::cout << "offNote noteNumber: " << offNote.noteNumber << std::endl;
+//            std::cout << "offNote noteNumber: " << offNote.noteNumber << std::endl;
             releaseNote(offNote.noteNumber);
         }
 
         for(const auto& onNote : midiData.onNotes){
-            std::cout << "onNote noteNumber: " << onNote.noteNumber << std::endl;
+//            std::cout << "onNote noteNumber: " << onNote.noteNumber << std::endl;
             startNote(onNote.noteNumber);
         }
 
