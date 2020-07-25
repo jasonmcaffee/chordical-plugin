@@ -24,10 +24,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-          <div className="app" onClick={() => sendMessageToHost('button-clicked') }>{window.location.href} {window.location.hash} hello {hashParam}</div>
+          <div className="app" onClick={sendJsonToHost }> hash: {hashParam}</div>
       </header>
     </div>
   );
+}
+
+function sendJsonToHost(){
+  const message = {
+    type: "test",
+    data: {prop1: "jason", z: { a: 99 }},
+  };
+  const messageString = JSON.stringify(message);
+  sendMessageToHost(messageString);
 }
 
 export default App;
