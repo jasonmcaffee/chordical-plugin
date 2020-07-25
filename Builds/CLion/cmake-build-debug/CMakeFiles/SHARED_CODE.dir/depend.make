@@ -5769,6 +5769,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
 
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: ../../../JuceLibraryCode/AppConfig.h
@@ -6313,6 +6314,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcess
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h

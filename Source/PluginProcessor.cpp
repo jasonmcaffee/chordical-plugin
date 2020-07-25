@@ -33,11 +33,13 @@ PluginProcessor::PluginProcessor()
         synth.addVoice (new SineWaveVoice());   // These voices will play our custom sine-wave sounds..
     }
     synth.addSound(new SineWaveSound());
+
 //    for (auto i = 0; i < 4; ++i){
 //        synth.addVoice (new Voice());   // These voices will play our custom sine-wave sounds..
 //    }
 //    synth.addSound(new Sound());
 
+    chordicalJuceSynth.setup();
 }
 
 //destructor
@@ -53,6 +55,8 @@ void PluginProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     //first demo using JUCE synthesizer and SineWaveSound/SineWaveVoice
     synth.setCurrentPlaybackSampleRate (sampleRate);
+
+    chordicalJuceSynth.setCurrentPlaybackSampleRate(sampleRate);
 
     //our own synthesizer that uses audio processor graphs to chain effects.
     synthesizer.prepareToPlay(sampleRate, samplesPerBlock, getMainBusNumInputChannels(), getMainBusNumOutputChannels());
@@ -77,7 +81,9 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
 //    }
 
     //original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
-    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+//    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+
+    chordicalJuceSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 
     //newest
 //    synthesizer.processBlock(buffer, midiMessages);
