@@ -2,8 +2,8 @@
 #pragma once
 class OscillatorProcessor  : public ProcessorBase {
 public:
-    OscillatorProcessor(){
-        oscillator.setFrequency (440.0f);
+    OscillatorProcessor(float frequency){
+        oscillator.setFrequency (frequency); //440.0f
         oscillator.initialise ([] (float x) { return std::sin (x); });
     }
 

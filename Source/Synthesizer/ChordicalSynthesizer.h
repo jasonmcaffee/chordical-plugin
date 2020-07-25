@@ -43,7 +43,19 @@ inline midiDataResult getMidiData(MidiBuffer& midiMessages){
     return result;
 }
 
-inline std::unique_ptr<juce::AudioProcessorGraph> createGraph(double sampleRate, int blockSize, int mainBusNumInputChannels, int mainBusNumOutputChannels){
+
+inline float convertMidiNoteNumberToFrequency(int midiNoteNumber){
+    auto a = 440.0;
+//    auto freq = (a / 32) * pow(2, ((midiNoteNumber - 9) / 12) );
+//    float freq =  a * pow (2.0, (midiNoteNumber - 69) / 12);
+    double freq = juce::MidiMessage::getMidiNoteInHertz (midiNoteNumber);
+    std::cout << " midiNoteNumber: " << midiNoteNumber << " frequency: " << freq << std::endl;
+
+
+    return freq;
+}
+
+inline std::unique_ptr<juce::AudioProcessorGraph> createGraph(double sampleRate, int blockSize, int mainBusNumInputChannels, int mainBusNumOutputChannels, int midiNoteNumber){
 
     std::cout << "createGraph called" << std::endl;
 
@@ -66,9 +78,11 @@ inline std::unique_ptr<juce::AudioProcessorGraph> createGraph(double sampleRate,
     midiInputNode   = mainProcessor->addNode (std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiInputNode));
     midiOutputNode  = mainProcessor->addNode (std::make_unique<AudioGraphIOProcessor> (AudioGraphIOProcessor::midiOutputNode));
 
+    auto frequency = convertMidiNoteNumberToFrequency(midiNoteNumber);
+    std::cout << "frequency: " << frequency << std::endl;
     //create some nodes/processors to add to our main processor.
     auto gainNode = mainProcessor->addNode(std::make_unique<GainProcessor>());
-    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>());
+    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>(frequency));
     auto filterNode = mainProcessor->addNode(std::make_unique<FilterProcessor>());
 
     //set the play configuration for each node
@@ -95,6 +109,7 @@ inline std::unique_ptr<juce::AudioProcessorGraph> createGraph(double sampleRate,
     return mainProcessor;
 }
 
+
 class ChordicalSynthesizer{
 public:
     ChordicalSynthesizer(){}
@@ -108,20 +123,22 @@ public:
 
     void processBlock(AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
         auto midiData = getMidiData(midiMessages);
-        for(const auto& onNote : midiData.onNotes){
-            std::cout << "onNote noteNumber: " << onNote.noteNumber << std::endl;
-            startNote(onNote.noteNumber);
-        }
-
         for(const auto& offNote : midiData.offNotes){
             std::cout << "offNote noteNumber: " << offNote.noteNumber << std::endl;
             releaseNote(offNote.noteNumber);
         }
 
+        for(const auto& onNote : midiData.onNotes){
+            std::cout << "onNote noteNumber: " << onNote.noteNumber << std::endl;
+            startNote(onNote.noteNumber);
+        }
+
         //iterate over map and call processBlock on each graph
         for (auto const& x : midiNoteToProcessorGraphHash){
             auto& graph = x.second;
-            graph->processBlock(buffer, midiMessages);
+            if(graph){
+                graph->processBlock(buffer, midiMessages);
+            }
         }
 
     }
@@ -133,9 +150,10 @@ public:
             graphForMidiNote->suspendProcessing(true);
             graphForMidiNote->clear();
             graphForMidiNote->releaseResources();
+            std::cout << "destroyed existing graph for note: " << midiNoteNumber << std::endl;;
         }
 
-        midiNoteToProcessorGraphHash[midiNoteNumber] = createGraph(sampleRate, samplesPerBlock, mainBusNumInputChannels, mainBusNumOutputChannels);
+        midiNoteToProcessorGraphHash[midiNoteNumber] = createGraph(sampleRate, samplesPerBlock, mainBusNumInputChannels, mainBusNumOutputChannels, midiNoteNumber);
     }
 
     void releaseNote(int midiNoteNumber){
@@ -146,6 +164,7 @@ public:
             graphForMidiNote->releaseResources();
 
             midiNoteToProcessorGraphHash.erase(midiNoteNumber);
+            std::cout << "erased graph. hash size now: " << midiNoteToProcessorGraphHash.size() << std::endl;
         }
     }
 private:

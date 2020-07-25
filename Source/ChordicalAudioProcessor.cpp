@@ -79,7 +79,7 @@ void ChordicalAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuff
     }
 
     //original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
-    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+    //synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 
     //second demo using an AudioProcessorGraph that is created and maintained in this class.
     //We want to move this into our own synthesizer.
@@ -115,7 +115,7 @@ void ChordicalAudioProcessor::initializeGraph(){
 //    connectAudioNodes();
 //    connectMidiNodes();
     auto gainNode = mainProcessor->addNode(std::make_unique<GainProcessor>());
-    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>());
+    auto oscillatorNode = mainProcessor->addNode(std::make_unique<OscillatorProcessor>(440.0f));
     auto filterNode = mainProcessor->addNode(std::make_unique<FilterProcessor>());
 
     gainNode->getProcessor()->setPlayConfigDetails(mainBusNumInputChannels, mainBusNumOutputChannels, sampleRate, blockSize);
