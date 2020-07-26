@@ -2545,12 +2545,16 @@ utils/juce_OpenGLAppComponent.h
 /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
 JuceHeader.h
 -
+../Services/EventBus/EventBus.h
+/Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 
 /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
 PluginProcessor.h
 /Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
 PluginEditor.h
 /Users/jason/dev/chordical-plugin/Source/PluginEditor.h
+Services/EventBus/EventBus.h
+/Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 
 /Users/jason/dev/chordical-plugin/Source/PluginEditor.h
 JuceHeader.h
@@ -2593,6 +2597,18 @@ Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
 JuceHeader.h
 -
+
+/Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
+functional
+-
+queue
+-
+vector
+-
+./EventMessage.h
+/Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
+
+/Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
 
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 ../JuceLibraryCode/JuceHeader.h

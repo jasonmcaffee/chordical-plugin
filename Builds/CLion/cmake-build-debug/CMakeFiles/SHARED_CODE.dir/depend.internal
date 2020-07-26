@@ -5771,6 +5771,8 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
  /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
  /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
  /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
+ /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
+ /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
  /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o
@@ -6317,6 +6319,8 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcess
  /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
  /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
  /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
+ /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
+ /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h

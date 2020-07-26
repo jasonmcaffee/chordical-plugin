@@ -20,7 +20,7 @@ add_library (VST3 MODULE
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp"
     "PkgInfo"
-        ../../Source/Components/WebBrowserWithMessaging.h)
+        ../../Source/Components/WebBrowserWithMessaging.h ../../Source/Services/EventBus/EventMessage.h ../../Source/Services/EventBus/EventBus.h)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/VST3/juce_VST3_Wrapper.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -35,7 +35,7 @@ add_library (AU MODULE
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm"
     "PkgInfo"
-        ../../Source/Components/WebBrowserWithMessaging.h)
+        ../../Source/Components/WebBrowserWithMessaging.h ../../Source/Services/EventBus/EventMessage.h ../../Source/Services/EventBus/EventBus.h)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/AU/juce_AU_Wrapper.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -46,7 +46,7 @@ set_source_files_properties ("../../../JUCE/modules/juce_audio_processors/format
 add_executable (STANDALONE_PLUGIN
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp"
-        ../../Source/Components/WebBrowserWithMessaging.h)
+        ../../Source/Components/WebBrowserWithMessaging.h ../../Source/Services/EventBus/EventMessage.h ../../Source/Services/EventBus/EventBus.h)
 
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 
@@ -1526,7 +1526,7 @@ add_library (SHARED_CODE STATIC
     "../../JuceLibraryCode/include_juce_gui_extra.mm"
     "../../JuceLibraryCode/include_juce_opengl.mm"
     "../../JuceLibraryCode/JuceHeader.h"
-        ../../Source/Components/WebBrowserWithMessaging.h)
+        ../../Source/Components/WebBrowserWithMessaging.h ../../Source/Services/EventBus/EventMessage.h ../../Source/Services/EventBus/EventBus.h)
 
 set_source_files_properties ("../../Source/ResourceFiles/c4.wav" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/PluginProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)

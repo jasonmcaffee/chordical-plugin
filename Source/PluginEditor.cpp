@@ -10,19 +10,8 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
+#include "Services/EventBus/EventBus.h"
 
-
-void writeHtmlFileFromBinaryDataToDisk(){
-    //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
-
-    MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
-    File f ("/Users/jason/dev/chordical-plugin/test.html");
-    f.deleteFile();
-    std::cout << "current working dir" << File::getCurrentWorkingDirectory().getFullPathName() << std::endl;
-    FileOutputStream stream(f);
-    stream.writeFromInputStream(memInputStream, memInputStream.getTotalLength());
-    stream.flush();
-}
 
 //==============================================================================
 ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p): AudioProcessorEditor (&p), processor (p){
@@ -33,11 +22,11 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
 //    addAndMakeVisible (keyboardComponent);
 //    addAndMakeVisible (versionLabel);
 
-    writeHtmlFileFromBinaryDataToDisk();
-
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
-//    webBrowserComponent.goToURL("http://127.0.0.1:3001");
+
+    EventBus::getInstance().emitMessage(EventMessage("work"));
+
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
