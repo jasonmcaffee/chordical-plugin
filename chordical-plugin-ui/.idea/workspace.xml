@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/models/IMidiNoteData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.app/Contents/MacOS/chordical-plugin" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.app/Contents/MacOS/chordical-plugin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/PluginEditor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/PluginEditor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Services/EventBus/EventBus.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/EventBus/EventBus.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Services/EventBus/EventMessage.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/EventBus/EventMessage.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,14 +33,14 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="scss" value="1" />
-          <entry key="ts" value="4" />
+          <entry key="ts" value="5" />
           <entry key="tsx" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="SCSS" value="1" />
-          <entry key="TypeScript" value="4" />
+          <entry key="TypeScript" value="5" />
           <entry key="TypeScript JSX" value="1" />
         </counts>
       </usages-collector>
@@ -52,26 +52,37 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="scss" value="40" />
-          <entry key="ts" value="1691" />
-          <entry key="tsx" value="1373" />
+          <entry key="ts" value="1957" />
+          <entry key="tsx" value="1420" />
+          <entry key="txt" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="PLAIN_TEXT" value="39" />
           <entry key="SCSS" value="40" />
-          <entry key="TypeScript" value="1691" />
-          <entry key="TypeScript JSX" value="1373" />
+          <entry key="TypeScript" value="1957" />
+          <entry key="TypeScript JSX" value="1420" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+            <state relative-caret-position="648">
+              <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/models/IMidiNoteData.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -79,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="520">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -88,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="547">
+              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -123,9 +134,10 @@
         <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginTypes.ts" />
         <option value="$PROJECT_DIR$/src/style/app.scss" />
         <option value="$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts" />
-        <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" />
         <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" />
+        <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/models/IMidiNoteData.ts" />
       </list>
     </option>
   </component>
@@ -168,6 +180,12 @@
               <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
               <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
@@ -244,12 +262,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595712839871</updated>
-      <workItem from="1595712842207" duration="6487000" />
+      <workItem from="1595712842207" duration="7348000" />
     </task>
+    <task id="LOCAL-00001" summary="two way json communication working. wip">
+      <created>1595786989663</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595786989663</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6487000" />
+    <option name="totallyTimeSpent" value="7348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -282,6 +308,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="two way json communication working. wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="two way json communication working. wip" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/style/app.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -297,24 +327,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="520">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="648">
+          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/IMidiNoteData.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
     </entry>

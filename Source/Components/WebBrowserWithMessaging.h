@@ -43,8 +43,19 @@ inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage mess
     return convertDynamicObjectToJsonString(messageObj);
 }
 
+inline RequestToPlayMidiNotesMessage convertJSONStringToRequestToPlayMidiNotesMessage(juce::var json){
+    std::vector<MidiNoteData> midiNoteDataVector;
 
+    if(auto dataJsonArray = json.getProperty("data", var()).getArray()){
+        for(auto& midiNoteDataJson : *dataJsonArray){
+            int midiNote = midiNoteDataJson.getProperty("midiNote", int());
+            int velocity = midiNoteDataJson.getProperty("velocity", int());
+            midiNoteDataVector.push_back(MidiNoteData {midiNote, velocity});
+        }
+    }
+    return RequestToPlayMidiNotesMessage {midiNoteDataVector};
 
+}
 
 inline void writeHtmlFileFromBinaryDataToDisk(){
     //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
@@ -75,18 +86,28 @@ public:
             this->sendMessageToWebApp(jsonString);
         });
 
+        //when plugin plays a midi note, send it to the web app
         EventBus::eventBus().subscribeToMidiNotePlayed([this](MidiNotePlayedMessage message){
-            std::cout << "midiNote played. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
-
             juce::String jsonString = convertMidiNotePlayedToJSONString(message);
-            std::cout << "converted message: " << jsonString << std::endl;
-//            this->sendMessageToWebApp(jsonString);
-//            this->sendMessageToWebApp("hi");
+            std::cout << "Browser received midi note played event and is sending midi note played to web app " << jsonString << std::endl;
+            this->sendMessageToWebApp(jsonString);
         });
-
+        //todo:
         EventBus::eventBus().subscribeToMidiNoteStopped([](MidiNoteStoppedMessage message){
             std::cout << "midiNote stopped. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
         });
+
+        EventBus::eventBus().subscribeToRequestToPlayMidiNotes([this](RequestToPlayMidiNotesMessage message){
+           std::cout << "web browser got request to play midi note" << std::endl;
+           for(auto midiNoteData : message.data){
+               std::cout << " - request to play midi note: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+           }
+        });
+
+        EventBus::eventBus().subscribeToRequestToStopMidiNotes([this](RequestToStopMidiNotesMessage message){
+           std::cout << "web browser got request to stop playing midi notes" << std::endl;
+        });
+
     }
 
 
@@ -118,8 +139,6 @@ public:
         String juceDecodedMessage= urlDecode(messageString.toStdString());
         std::cout << "decoded message " << juceDecodedMessage << std::endl;
 
-        sendMessageToWebApp(juceDecodedMessage);
-
         //parse the json
         juce::var parsedJson;
         if(juce::JSON::parse(juceDecodedMessage, parsedJson).wasOk()){
@@ -127,7 +146,11 @@ public:
             std::cout << "message type: " << type << std::endl;
             if(type == "webAppLoaded"){
                 EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
+            }else if(type == "requestToPlayMidiNotesMessage"){
+                auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);
+                EventBus::eventBus().emitRequestToPlayMidiNotes(message);
             }
+
         }else{
             std::cout << "cant parse json" << std::endl;
         }

@@ -35,6 +35,7 @@ public:
     void subscribeToWebAppLoaded(std::function<void (WebAppLoadedMessage)> callback){ webAppLoadedCallbacks.push_back(callback); }
     void emitWebAppLoaded(WebAppLoadedMessage message){ executeCallbacks(webAppLoadedCallbacks, message); }
 
+    //these are for the plugin to send midi to the browser
     std::vector<std::function<void (MidiNotePlayedMessage)>> midiNotePlayedCallbacks;
     void subscribeToMidiNotePlayed(std::function<void (MidiNotePlayedMessage)> callback){ midiNotePlayedCallbacks.push_back(callback); }
     void emitMidiNotePlayed(MidiNotePlayedMessage message){ executeCallbacks(midiNotePlayedCallbacks, message); }
@@ -42,6 +43,15 @@ public:
     std::vector<std::function<void (MidiNoteStoppedMessage)>> midiNoteStoppedCallbacks;
     void subscribeToMidiNoteStopped(std::function<void (MidiNoteStoppedMessage)> callback){ midiNoteStoppedCallbacks.push_back(callback); }
     void emitMidiNoteStopped(MidiNoteStoppedMessage message){ executeCallbacks(midiNoteStoppedCallbacks, message); }
+
+    std::vector<std::function<void (RequestToPlayMidiNotesMessage)>> requestToPlayMidiNotesCallbacks;
+    void subscribeToRequestToPlayMidiNotes(std::function<void (RequestToPlayMidiNotesMessage)> callback){ requestToPlayMidiNotesCallbacks.push_back(callback); }
+    void emitRequestToPlayMidiNotes(RequestToPlayMidiNotesMessage message){ executeCallbacks(requestToPlayMidiNotesCallbacks, message); }
+
+    std::vector<std::function<void (RequestToStopMidiNotesMessage)>> requestToStopMidiNotesCallbacks;
+    void subscribeToRequestToStopMidiNotes(std::function<void (RequestToStopMidiNotesMessage)> callback){ requestToStopMidiNotesCallbacks.push_back(callback); }
+    void emitRequestToStopMidiNotes(RequestToStopMidiNotesMessage message){ executeCallbacks(requestToStopMidiNotesCallbacks, message); }
+
 
     template <typename TMessageType>
     void executeCallbacks(std::vector< std::function<void (TMessageType)> > callbacks, TMessageType message){

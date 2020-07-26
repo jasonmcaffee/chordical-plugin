@@ -1,5 +1,6 @@
 import {HostPluginEventTypes, ToHostPluginMessageTypes, IMessageToHost} from './HostPluginEventTypes';
 import {Subject} from 'rxjs';
+import {IMidiNoteData} from "../../../models/IMidiNoteData";
 
 const subject = new Subject<HostPluginEventTypes>();
 
@@ -25,6 +26,10 @@ function sendMessageObjToHost(messageObj: ToHostPluginMessageTypes){
 
 export function webAppLoaded(data: string){
   sendMessageObjToHost({type: "webAppLoaded", data});
+}
+
+export function requestToPlayMidiNotes(data: IMidiNoteData[]){
+  sendMessageObjToHost({type: "requestToPlayMidiNotesMessage", data});
 }
 
 function messageToString(message: any){

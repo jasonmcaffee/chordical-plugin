@@ -3,7 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import './services/hostPlugin/hostPlugin';
 import './style/app.scss';
-import {sendMessageToHost, webAppLoaded} from "./services/eventBus/hostPlugin/hostPluginEventBus";
+import {
+  requestToPlayMidiNotes,
+  sendMessageToHost,
+  webAppLoaded
+} from "./services/eventBus/hostPlugin/hostPluginEventBus";
 
 function notifyUserOfError(e:Error){
   alert(e.message); //alert doesnt work in plugin
@@ -57,12 +61,7 @@ function App() {
 }
 
 function sendJsonToHost(){
-  const message = {
-    type: "test",
-    data: {prop1: "jason", z: { a: 99 }},
-  };
-  const messageString = JSON.stringify(message);
-  sendMessageToHost(messageString);
+  requestToPlayMidiNotes([{midiNote: 44, velocity: 100}, {midiNote: 66, velocity: 99}]);
 }
 
 export default App;
