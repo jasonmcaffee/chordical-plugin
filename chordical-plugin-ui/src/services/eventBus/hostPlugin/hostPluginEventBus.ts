@@ -1,4 +1,4 @@
-import {HostPluginEventTypes} from './HostPluginEventTypes';
+import {HostPluginEventTypes, ToHostPluginMessageTypes, IMessageToHost} from './HostPluginEventTypes';
 import {Subject} from 'rxjs';
 
 const subject = new Subject<HostPluginEventTypes>();
@@ -17,4 +17,16 @@ export function subscribeToHostPluginEvents(callback: (message: HostPluginEventT
 
 export function sendMessageToHost(data: string){
   subject.next({type: "messageToHost", data});
+}
+
+function sendMessageObjToHost(messageObj: ToHostPluginMessageTypes){
+  sendMessageToHost(messageToString(messageObj));
+}
+
+export function webAppLoaded(data: string){
+  sendMessageObjToHost({type: "webAppLoaded", data});
+}
+
+function messageToString(message: any){
+  return JSON.stringify(message);
 }
