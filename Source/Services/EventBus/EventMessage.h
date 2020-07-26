@@ -27,6 +27,9 @@ struct MidiNoteStoppedMessage : public EventMessage<MidiNoteData> { using EventM
 
 
 
+
+
+
 //long way of calling parent constructor.
 //struct WebAppLoadedMessage : public EventMessage<std::string>{
 //    WebAppLoadedMessage(std::string type, std::string data): EventMessage<std::string>(type, data) {}

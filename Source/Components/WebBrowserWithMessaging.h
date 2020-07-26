@@ -27,14 +27,18 @@ inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::all
 
 inline juce::String convertDynamicObjectToJsonString(DynamicObject* json){
     juce::var jsonVar(json);
-    juce::String jsonString = juce::JSON::toString(jsonVar);
+    juce::String jsonString = juce::JSON::toString(jsonVar, true);
     return jsonString;
 }
 
 inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage message){
-    juce::DynamicObject* messageObj = new DynamicObject();
+    auto* messageObj = new DynamicObject();
     messageObj->setProperty("typeId", (int)message.typeId); //-340779408
 
+    auto dataObj = new DynamicObject();
+    dataObj->setProperty("midiNote", message.data.midiNote);
+    dataObj->setProperty("velocity", message.data.velocity);
+    messageObj->setProperty("data", dataObj);
 
     return convertDynamicObjectToJsonString(messageObj);
 }
@@ -55,28 +59,37 @@ inline void writeHtmlFileFromBinaryDataToDisk(){
 
 class WebBrowserWithMessaging  : public WebBrowserComponent {
 public:
+    bool isWebAppLoaded = false;
     WebBrowserWithMessaging()
     : WebBrowserComponent()
     {
         writeHtmlFileFromBinaryDataToDisk();
         goToURL(baseUrl);
 
-        EventBus::eventBus().subscribeToWebAppLoaded([](WebAppLoadedMessage message) -> void {
-            std::cout << "web browser received event bus message: " << message.data << std::endl;
+        EventBus::eventBus().subscribeToWebAppLoaded([this](WebAppLoadedMessage message) -> void {
+            std::cout << "web browser got web app loaded " << message.data << std::endl;
+            isWebAppLoaded = true;
+
+            juce::String jsonString = convertMidiNotePlayedToJSONString(MidiNotePlayedMessage {MidiNoteData {31, 100}});
+            std::cout << "converted message: " << jsonString << std::endl;
+            this->sendMessageToWebApp(jsonString);
         });
 
-        EventBus::eventBus().subscribeToMidiNotePlayed([](MidiNotePlayedMessage message){
+        EventBus::eventBus().subscribeToMidiNotePlayed([this](MidiNotePlayedMessage message){
             std::cout << "midiNote played. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
 
             juce::String jsonString = convertMidiNotePlayedToJSONString(message);
-
             std::cout << "converted message: " << jsonString << std::endl;
+//            this->sendMessageToWebApp(jsonString);
+//            this->sendMessageToWebApp("hi");
         });
 
         EventBus::eventBus().subscribeToMidiNoteStopped([](MidiNoteStoppedMessage message){
             std::cout << "midiNote stopped. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
         });
     }
+
+
     bool pageAboutToLoad(const String &newURL) override{
         if(newURL.contains(messageFromAppIndicator)){
             auto messageString = newURL.substring(newURL.indexOf(messageFromAppIndicator) + messageFromAppIndicator.length());
@@ -92,23 +105,29 @@ public:
     }
 
     void sendMessageToWebApp(const String &message){
+        if(!isWebAppLoaded) { std::cout << "web app is not loaded so cannot send messages or it will mess up the loading of the app (blank screen due to hash change?) " << std::endl; return; }
 //        String urlWithMessageParam = baseUrl + "/#messageToWebApp=" + message;
-        String urlWithMessageParam = "javascript:location.hash=\"" + message + "\";";
+//        String urlWithMessageParam = "javascript:location.hash=\"" + message + "\";";
+        String urlWithMessageParam = "javascript:location.hash='message=" + message + "';";
+        std::cout << "sending message: " << urlWithMessageParam << std::endl;
         goToURL(urlWithMessageParam);
     }
 
     void handleMessageFromWebApp(const String &messageString){
-        sendMessageToWebApp(messageString);
-
         //https://forum.juce.com/t/parsing-nested-json/21733
         String juceDecodedMessage= urlDecode(messageString.toStdString());
         std::cout << "decoded message " << juceDecodedMessage << std::endl;
+
+        sendMessageToWebApp(juceDecodedMessage);
 
         //parse the json
         juce::var parsedJson;
         if(juce::JSON::parse(juceDecodedMessage, parsedJson).wasOk()){
             String type = parsedJson["type"];
             std::cout << "message type: " << type << std::endl;
+            if(type == "webAppLoaded"){
+                EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
+            }
         }else{
             std::cout << "cant parse json" << std::endl;
         }

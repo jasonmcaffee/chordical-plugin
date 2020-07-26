@@ -25,8 +25,8 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
 
-    EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"asdf"});
-    EventBus::eventBus().emitMidiNotePlayed(MidiNotePlayedMessage { MidiNoteData { 44, 100 }});
+//    EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"asdf"});
+//    EventBus::eventBus().emitMidiNotePlayed(MidiNotePlayedMessage { MidiNoteData { 44, 100 }});
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
