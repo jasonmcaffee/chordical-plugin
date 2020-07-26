@@ -40,8 +40,8 @@ public:
     {
         writeHtmlFileFromBinaryDataToDisk();
         goToURL(baseUrl);
-        EventBus::getInstance().subscribe([=](EventMessage message) -> void{
-            std::cout << "web browser received event bus message: " << message.getEvent() << std::endl;
+        EventBus::getInstance().subscribe([=](EventMessageBase message) -> void{
+            std::cout << "web browser received event bus message: " << message.getType() << std::endl;
         });
     }
     bool pageAboutToLoad(const String &newURL) override{
