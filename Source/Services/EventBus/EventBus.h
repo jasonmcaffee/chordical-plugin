@@ -8,13 +8,13 @@
 //https://www.codeproject.com/Articles/723656/SW-Message-Bus
 //https://seanballais.github.io/blog/implementing-a-simple-message-bus-in-cpp/
 
-using TypeId = uintptr_t;
-
-template < typename T >
-static TypeId GetTypeId(){
-    static uint32_t placeHolder;
-    return (reinterpret_cast<TypeId>(&placeHolder));
-}
+//using TypeId = uintptr_t;
+//
+//template < typename T >
+//static TypeId GetTypeId(){
+//    static uint32_t placeHolder;
+//    return (reinterpret_cast<TypeId>(&placeHolder));
+//}
 
 class EventBus{
 public:
@@ -38,6 +38,10 @@ public:
     std::vector<std::function<void (MidiNotePlayedMessage)>> midiNotePlayedCallbacks;
     void subscribeToMidiNotePlayed(std::function<void (MidiNotePlayedMessage)> callback){ midiNotePlayedCallbacks.push_back(callback); }
     void emitMidiNotePlayed(MidiNotePlayedMessage message){ executeCallbacks(midiNotePlayedCallbacks, message); }
+
+    std::vector<std::function<void (MidiNoteStoppedMessage)>> midiNoteStoppedCallbacks;
+    void subscribeToMidiNoteStopped(std::function<void (MidiNoteStoppedMessage)> callback){ midiNoteStoppedCallbacks.push_back(callback); }
+    void emitMidiNoteStopped(MidiNoteStoppedMessage message){ executeCallbacks(midiNoteStoppedCallbacks, message); }
 
     template <typename TMessageType>
     void executeCallbacks(std::vector< std::function<void (TMessageType)> > callbacks, TMessageType message){

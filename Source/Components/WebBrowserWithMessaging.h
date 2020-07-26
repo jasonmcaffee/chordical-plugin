@@ -2,6 +2,8 @@
 #include <JuceHeader.h>
 #include "../Services/EventBus/EventBus.h"
 
+//serialize to char* array (not json) https://stackoverflow.com/questions/16543519/serialization-of-struct
+
 const String baseUrl = "http://127.0.0.1:3001/#test";
 const String messageFromAppIndicator = "projucer://";
 
@@ -22,6 +24,24 @@ inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::all
     return (ret);
 }
 
+
+inline juce::String convertDynamicObjectToJsonString(DynamicObject* json){
+    juce::var jsonVar(json);
+    juce::String jsonString = juce::JSON::toString(jsonVar);
+    return jsonString;
+}
+
+inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage message){
+    juce::DynamicObject* messageObj = new DynamicObject();
+    messageObj->setProperty("typeId", (int)message.typeId); //-340779408
+
+
+    return convertDynamicObjectToJsonString(messageObj);
+}
+
+
+
+
 inline void writeHtmlFileFromBinaryDataToDisk(){
     //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
     MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
@@ -41,21 +61,21 @@ public:
         writeHtmlFileFromBinaryDataToDisk();
         goToURL(baseUrl);
 
-
-//        std::function<void(EventMessage<std::string>)> f = [](EventMessage<std::string> message){
-//            std::cout << "web browser received event bus message: " << message.getData() << std::endl;
-//        };
-//        EventBus::getInstance().subscribe2(f);
         EventBus::eventBus().subscribeToWebAppLoaded([](WebAppLoadedMessage message) -> void {
             std::cout << "web browser received event bus message: " << message.data << std::endl;
         });
 
         EventBus::eventBus().subscribeToMidiNotePlayed([](MidiNotePlayedMessage message){
-            std::cout << "midiNote played" << message.data.midiNote << std::endl;
+            std::cout << "midiNote played. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
+
+            juce::String jsonString = convertMidiNotePlayedToJSONString(message);
+
+            std::cout << "converted message: " << jsonString << std::endl;
         });
 
-
-
+        EventBus::eventBus().subscribeToMidiNoteStopped([](MidiNoteStoppedMessage message){
+            std::cout << "midiNote stopped. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
+        });
     }
     bool pageAboutToLoad(const String &newURL) override{
         if(newURL.contains(messageFromAppIndicator)){
@@ -65,6 +85,10 @@ public:
             return false;
         }
         return true;
+    }
+
+    void sendJSONMessageToWebApp(){
+
     }
 
     void sendMessageToWebApp(const String &message){

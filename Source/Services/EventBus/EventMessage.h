@@ -1,13 +1,18 @@
 #pragma once
 
-
+using TypeId = uintptr_t;
+template < typename T >
+static TypeId GetTypeId(){
+    static uint32_t placeHolder;
+    return (reinterpret_cast<TypeId>(&placeHolder));
+}
 
 template <typename TMessageData>
 struct EventMessage{
-    std::string type;
+    TypeId typeId;
     TMessageData data;
-    EventMessage(std::string typeParam, TMessageData dataParam){
-        type = typeParam;
+    EventMessage(TMessageData dataParam){
+        TypeId typeId2 = GetTypeId<TMessageData>();
         data = dataParam;
     }
 };
@@ -17,6 +22,7 @@ struct WebAppLoadedMessage : public EventMessage<std::string>{ using EventMessag
 
 struct MidiNoteData { int midiNote; int velocity; };
 struct MidiNotePlayedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
+struct MidiNoteStoppedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
 
 
 
