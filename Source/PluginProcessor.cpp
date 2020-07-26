@@ -83,11 +83,56 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     //original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
 //    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 
-    chordicalJuceSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+
 
     //newest
 //    synthesizer.processBlock(buffer, midiMessages);
 
+    MidiBuffer processedMidi;
+    int time;
+    MidiMessage m;
+    for (MidiBuffer::Iterator i (midiMessages); i.getNextEvent (m, time);)
+    {
+        m.setNoteNumber(m.getNoteNumber() - 1); // decrease all midi notes by one, just to test
+        processedMidi.addEvent (m, time);
+    }
+
+    midiMessages.swapWith(processedMidi);
+
+
+    chordicalJuceSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+}
+
+void PluginProcessor::processBlock (AudioBuffer<double>& buffer, MidiBuffer& midiMessages){
+    ScopedNoDenormals noDenormals; //Helper class providing an RAII-based mechanism for temporarily disabling denormals on your CPU.  https://www.ccoderun.ca/juce/api/classjuce_1_1ScopedNoDenormals.html#details
+//    auto totalNumInputChannels  = getTotalNumInputChannels();
+//    auto totalNumOutputChannels = getTotalNumOutputChannels();
+    // In case we have more outputs than inputs, this code clears any output channels that didn't contain input data, (because these aren't guaranteed to be empty - they may contain garbage). This is here to avoid people getting screaming feedback
+    // when they first compile a plugin, but obviously you don't need to keep this code if your algorithm always overwrites all the output channels.
+//    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i){
+//        buffer.clear (i, 0, buffer.getNumSamples());
+//    }
+
+    //original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
+//    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+
+
+
+    //newest
+//    synthesizer.processBlock(buffer, midiMessages);
+
+//    MidiBuffer processedMidi;
+//    int time;
+//    MidiMessage m;
+//    for (MidiBuffer::Iterator i (midiMessages); i.getNextEvent (m, time);)
+//    {
+//        m.setNoteNumber(m.getNoteNumber() - 1); // decrease all midi notes by one, just to test
+//        processedMidi.addEvent (m, time);
+//    }
+//    midiMessages.swapWith(processedMidi);
+
+
+    chordicalJuceSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 }
 
 

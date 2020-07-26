@@ -81,7 +81,7 @@ public:
             std::cout << "web browser got web app loaded " << message.data << std::endl;
             isWebAppLoaded = true;
 
-            juce::String jsonString = convertMidiNotePlayedToJSONString(MidiNotePlayedMessage {MidiNoteData {31, 100}});
+            juce::String jsonString = convertMidiNotePlayedToJSONString(MidiNotePlayedMessage {MidiNoteData {3, 100}});
             std::cout << "converted message: " << jsonString << std::endl;
             this->sendMessageToWebApp(jsonString);
         });
