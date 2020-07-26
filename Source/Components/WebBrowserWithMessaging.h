@@ -40,9 +40,17 @@ public:
     {
         writeHtmlFileFromBinaryDataToDisk();
         goToURL(baseUrl);
-        EventBus::getInstance().subscribe([=](EventMessageBase message) -> void{
-            std::cout << "web browser received event bus message: " << message.getType() << std::endl;
+
+
+//        std::function<void(EventMessage<std::string>)> f = [](EventMessage<std::string> message){
+//            std::cout << "web browser received event bus message: " << message.getData() << std::endl;
+//        };
+//        EventBus::getInstance().subscribe2(f);
+        EventBus::getInstance().subscribeToWebAppLoaded([](WebAppLoadedMessage message) -> void {
+            std::cout << "web browser received event bus message: " << message.data << std::endl;
         });
+
+
     }
     bool pageAboutToLoad(const String &newURL) override{
         if(newURL.contains(messageFromAppIndicator)){

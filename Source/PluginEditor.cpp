@@ -25,8 +25,10 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
 
-    EventBus::getInstance().emitMessage(EventMessageBase("work"));
 
+//    WebAppLoadedMessage m = {"web", "asdf"};
+//    EventBus::getInstance().emitWebAppLoaded(m);
+    EventBus::getInstance().emitWebAppLoaded(WebAppLoadedMessage {"web", "asdf"});
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
