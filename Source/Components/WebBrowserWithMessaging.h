@@ -46,9 +46,14 @@ public:
 //            std::cout << "web browser received event bus message: " << message.getData() << std::endl;
 //        };
 //        EventBus::getInstance().subscribe2(f);
-        EventBus::getInstance().subscribeToWebAppLoaded([](WebAppLoadedMessage message) -> void {
+        EventBus::eventBus().subscribeToWebAppLoaded([](WebAppLoadedMessage message) -> void {
             std::cout << "web browser received event bus message: " << message.data << std::endl;
         });
+
+        EventBus::eventBus().subscribeToMidiNotePlayed([](MidiNotePlayedMessage message){
+            std::cout << "midiNote played" << message.data.midiNote << std::endl;
+        });
+
 
 
     }

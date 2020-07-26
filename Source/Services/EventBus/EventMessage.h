@@ -12,9 +12,25 @@ struct EventMessage{
     }
 };
 
-struct WebAppLoadedMessage : public EventMessage<std::string>{
-    WebAppLoadedMessage(std::string type, std::string data): EventMessage<std::string>(type, data) {}
-};
+//shorthand for calling parent constructor is to use using EventMessage::EventMessage
+struct WebAppLoadedMessage : public EventMessage<std::string>{ using EventMessage::EventMessage; };
+
+struct MidiNoteData { int midiNote; int velocity; };
+struct MidiNotePlayedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
+
+
+
+
+//long way of calling parent constructor.
+//struct WebAppLoadedMessage : public EventMessage<std::string>{
+//    WebAppLoadedMessage(std::string type, std::string data): EventMessage<std::string>(type, data) {}
+//};
+
+
+
+
+
+
 
 
 

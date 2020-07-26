@@ -6,6 +6,8 @@
 
 
 //https://www.codeproject.com/Articles/723656/SW-Message-Bus
+//https://seanballais.github.io/blog/implementing-a-simple-message-bus-in-cpp/
+
 using TypeId = uintptr_t;
 
 template < typename T >
@@ -13,30 +15,6 @@ static TypeId GetTypeId(){
     static uint32_t placeHolder;
     return (reinterpret_cast<TypeId>(&placeHolder));
 }
-//
-//class MsgTypeContainerBase{
-//public:
-//    MsgTypeContainerBase() = default;
-//    virtual ~MsgTypeContainerBase() = default;
-//    MsgTypeContainerBase( MsgTypeContainerBase& ) = delete;
-//    MsgTypeContainerBase( MsgTypeContainerBase&& ) = delete;
-//    MsgTypeContainerBase& operator= ( MsgTypeContainerBase& ) = delete;
-//    MsgTypeContainerBase& operator= ( MsgTypeContainerBase&& ) = delete;
-////    virtual void Remove( SubscriberHandle handle ) = 0;
-//    virtual bool Empty() = 0;
-//};
-//
-//template <typename TMessageType>
-//class MsgTypeContainer : public MsgTypeContainerBase{
-//public:
-//    void Add(){
-//
-//    }
-//private:
-////    using MsgBusContainerMap = std::map<
-//
-//};
-
 
 class EventBus{
 public:
@@ -45,7 +23,7 @@ public:
     ~EventBus(){}
 
     //https://stackoverflow.com/questions/1008019/c-singleton-design-pattern
-    static EventBus& getInstance(){
+    static EventBus& eventBus(){
         static EventBus instance;
         return instance;
     }
@@ -57,6 +35,10 @@ public:
     void subscribeToWebAppLoaded(std::function<void (WebAppLoadedMessage)> callback){ webAppLoadedCallbacks.push_back(callback); }
     void emitWebAppLoaded(WebAppLoadedMessage message){ executeCallbacks(webAppLoadedCallbacks, message); }
 
+    std::vector<std::function<void (MidiNotePlayedMessage)>> midiNotePlayedCallbacks;
+    void subscribeToMidiNotePlayed(std::function<void (MidiNotePlayedMessage)> callback){ midiNotePlayedCallbacks.push_back(callback); }
+    void emitMidiNotePlayed(MidiNotePlayedMessage message){ executeCallbacks(midiNotePlayedCallbacks, message); }
+
     template <typename TMessageType>
     void executeCallbacks(std::vector< std::function<void (TMessageType)> > callbacks, TMessageType message){
         for(auto & callback : callbacks){
@@ -65,9 +47,6 @@ public:
     }
 
 private:
-
-
-
 };
 
 
