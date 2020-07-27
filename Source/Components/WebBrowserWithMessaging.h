@@ -1,6 +1,7 @@
 #pragma once
 #include <JuceHeader.h>
 #include "../Services/EventBus/EventBus.h"
+#include "../Factories/Message.h"
 
 //serialize to char* array (not json) https://stackoverflow.com/questions/16543519/serialization-of-struct
 
@@ -24,51 +25,6 @@ inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::all
     return (ret);
 }
 
-
-inline juce::String convertDynamicObjectToJsonString(DynamicObject* json){
-    juce::var jsonVar(json);
-    juce::String jsonString = juce::JSON::toString(jsonVar, true);
-    return jsonString;
-}
-
-inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage message){
-    auto* messageObj = new DynamicObject();
-    messageObj->setProperty("typeId", (int)message.typeId); //-340779408
-
-    auto dataObj = new DynamicObject();
-    dataObj->setProperty("midiNote", message.data.midiNote);
-    dataObj->setProperty("velocity", message.data.velocity);
-    messageObj->setProperty("data", dataObj);
-
-    return convertDynamicObjectToJsonString(messageObj);
-}
-
-inline RequestToPlayMidiNotesMessage convertJSONStringToRequestToPlayMidiNotesMessage(juce::var json){
-    std::vector<MidiNoteData> midiNoteDataVector;
-
-    if(auto dataJsonArray = json.getProperty("data", var()).getArray()){
-        for(auto& midiNoteDataJson : *dataJsonArray){
-            int midiNote = midiNoteDataJson.getProperty("midiNote", int());
-            float velocity = midiNoteDataJson.getProperty("velocity", float());
-            midiNoteDataVector.push_back(MidiNoteData {midiNote, velocity});
-        }
-    }
-    return RequestToPlayMidiNotesMessage {midiNoteDataVector};
-}
-
-inline RequestToStopMidiNotesMessage convertJSONStringToRequestToStopMidiNotesMessage(juce::var json){
-    std::vector<MidiNoteData> midiNoteDataVector;
-
-    if(auto dataJsonArray = json.getProperty("data", var()).getArray()){
-        for(auto& midiNoteDataJson : *dataJsonArray){
-            int midiNote = midiNoteDataJson.getProperty("midiNote", int());
-            float velocity = midiNoteDataJson.getProperty("velocity", float());
-            midiNoteDataVector.push_back(MidiNoteData {midiNote, velocity});
-        }
-    }
-    return RequestToStopMidiNotesMessage {midiNoteDataVector};
-}
-
 inline void writeHtmlFileFromBinaryDataToDisk(){
     //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
     MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
@@ -83,42 +39,18 @@ inline void writeHtmlFileFromBinaryDataToDisk(){
 class WebBrowserWithMessaging  : public WebBrowserComponent {
 public:
     bool isWebAppLoaded = false;
-    WebBrowserWithMessaging()
-    : WebBrowserComponent()
-    {
+    WebBrowserWithMessaging() : WebBrowserComponent(){
         writeHtmlFileFromBinaryDataToDisk();
         goToURL(baseUrl);
-
-        EventBus::eventBus().subscribeToWebAppLoaded([this](WebAppLoadedMessage message) -> void {
-            std::cout << "web browser got web app loaded " << message.data << std::endl;
-            isWebAppLoaded = true;
-
-            juce::String jsonString = convertMidiNotePlayedToJSONString(MidiNotePlayedMessage {MidiNoteData {9, 100}});
-            std::cout << "converted message: " << jsonString << std::endl;
-            this->sendMessageToWebApp(jsonString);
-        });
-
-        //when plugin plays a midi note, send it to the web app
-        EventBus::eventBus().subscribeToMidiNotePlayed([this](MidiNotePlayedMessage message){
-            juce::String jsonString = convertMidiNotePlayedToJSONString(message);
-            std::cout << "Browser received midi note played event and is sending midi note played to web app " << jsonString << std::endl;
-            this->sendMessageToWebApp(jsonString);
-        });
-        //todo:
-        EventBus::eventBus().subscribeToMidiNoteStopped([](MidiNoteStoppedMessage message){
-            std::cout << "midiNote stopped. typeId: " << message.typeId << " midiNote: " << message.data.midiNote << std::endl;
-        });
-
-        EventBus::eventBus().subscribeToRequestToPlayMidiNotes([this](RequestToPlayMidiNotesMessage message){
-           std::cout << "web browser got request to play midi note" << std::endl;
-           for(auto midiNoteData : message.data){
-               std::cout << " - request to play midi note: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
-           }
-        });
-
-        EventBus::eventBus().subscribeToRequestToStopMidiNotes([this](RequestToStopMidiNotesMessage message){
-           std::cout << "web browser got request to stop playing midi notes" << std::endl;
-        });
+        //since components are destroyed when window is minimized, don't use event bus here until you can unregister, otherwise this causes ableton to crash.
+//        EventBus::eventBus().subscribeToWebAppLoaded([this](WebAppLoadedMessage message) -> void {
+//            std::cout << "web browser got web app loaded " << message.data << std::endl;
+//            isWebAppLoaded = true;
+//
+//            juce::String jsonString = convertMidiNotePlayedToJSONString(MidiNotePlayedMessage {MidiNoteData {9, 100}});
+//            std::cout << "converted message: " << jsonString << std::endl;
+//            this->sendMessageToWebApp(jsonString);
+//        });
 
     }
 
@@ -133,9 +65,6 @@ public:
         return true;
     }
 
-    void sendJSONMessageToWebApp(){
-
-    }
 
     void sendMessageToWebApp(const String &message){
         if(!isWebAppLoaded) { std::cout << "web app is not loaded so cannot send messages or it will mess up the loading of the app (blank screen due to hash change?) " << std::endl; return; }
@@ -157,6 +86,7 @@ public:
             String type = parsedJson["type"];
             std::cout << "message type: " << type << std::endl;
             if(type == "webAppLoaded"){
+                isWebAppLoaded = true;
                 EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
             }else if(type == "requestToPlayMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);

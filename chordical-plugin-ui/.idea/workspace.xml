@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.app/Contents/MacOS/chordical-plugin" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.app/Contents/MacOS/chordical-plugin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/PluginProcessor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/PluginProcessor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/PluginProcessor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/PluginProcessor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Services/EventBus/EventMessage.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/EventBus/EventMessage.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/app.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,7 +63,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
+            <state relative-caret-position="490">
               <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
             </state>
           </provider>
@@ -264,7 +253,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595712839871</updated>
-      <workItem from="1595712842207" duration="9178000" />
+      <workItem from="1595712842207" duration="9322000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -277,7 +266,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9178000" />
+    <option name="totallyTimeSpent" value="9322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -352,7 +341,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
+        <state relative-caret-position="490">
           <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
         </state>
       </provider>

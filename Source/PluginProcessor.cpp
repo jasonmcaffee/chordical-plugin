@@ -48,6 +48,8 @@ PluginProcessor::PluginProcessor()
             requestToStopMidiNoteDataQueue.push(midiNoteData);
         }
     });
+
+
 }
 
 //destructor
