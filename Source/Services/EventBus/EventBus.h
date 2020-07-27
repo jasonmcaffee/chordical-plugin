@@ -29,8 +29,6 @@ using MessageTypeIdToEventCallbackContainerVectorPair = std::pair<const char*, E
 
 class EventBus{
 public:
-
-
     EventBus(){}
     ~EventBus(){}
 
@@ -41,37 +39,9 @@ public:
         static EventBus instance;
         return instance;
     }
-//    static std::shared_ptr<EventBus> eventBus(){
-//        static std::shared_ptr<EventBus> instance = std::make_shared<EventBus>();
-//        return instance;
-//    }
-
 
     EventBus(EventBus const&) = delete;
     void operator=(EventBus const&)  = delete;
-
-    //web app load
-    std::vector<std::function<void (WebAppLoadedMessage)>> webAppLoadedCallbacks;
-    void subscribeToWebAppLoaded(std::function<void (WebAppLoadedMessage)> callback){ webAppLoadedCallbacks.push_back(callback); }
-    void emitWebAppLoaded(WebAppLoadedMessage message){ executeCallbacks(webAppLoadedCallbacks, message); }
-
-    //these are for the plugin to send midi to the browser
-    std::vector<std::function<void (MidiNotePlayedMessage)>> midiNotePlayedCallbacks;
-    void subscribeToMidiNotePlayed(std::function<void (MidiNotePlayedMessage)> callback){ midiNotePlayedCallbacks.push_back(callback); }
-    void emitMidiNotePlayed(MidiNotePlayedMessage message){ executeCallbacks(midiNotePlayedCallbacks, message); }
-
-    std::vector<std::function<void (MidiNoteStoppedMessage)>> midiNoteStoppedCallbacks;
-    void subscribeToMidiNoteStopped(std::function<void (MidiNoteStoppedMessage)> callback){ midiNoteStoppedCallbacks.push_back(callback); }
-    void emitMidiNoteStopped(MidiNoteStoppedMessage message){ executeCallbacks(midiNoteStoppedCallbacks, message); }
-
-    std::vector<std::function<void (RequestToPlayMidiNotesMessage)>> requestToPlayMidiNotesCallbacks;
-    void subscribeToRequestToPlayMidiNotes(std::function<void (RequestToPlayMidiNotesMessage)> callback){ requestToPlayMidiNotesCallbacks.push_back(callback); }
-    void emitRequestToPlayMidiNotes(RequestToPlayMidiNotesMessage message){ executeCallbacks(requestToPlayMidiNotesCallbacks, message); }
-
-    std::vector<std::function<void (RequestToStopMidiNotesMessage)>> requestToStopMidiNotesCallbacks;
-    void subscribeToRequestToStopMidiNotes(std::function<void (RequestToStopMidiNotesMessage)> callback){ requestToStopMidiNotesCallbacks.push_back(callback); }
-    void emitRequestToStopMidiNotes(RequestToStopMidiNotesMessage message){ executeCallbacks(requestToStopMidiNotesCallbacks, message); }
-
 
     template <typename TMessageType>
     void subscribe(std::function<void(TMessageType)> callback){
@@ -91,8 +61,6 @@ public:
 
         int callbackId = 1; //TODO
         auto callbackContainer = EventCallbackContainer { callbackId, f2 };
-
-
 
         //see if message typeid already has callbacks registered.  if not, create vector and add to map
         auto callbacksContainerVectorIter = messageTypeIdToEventCallbackContainerVector.find(typeName);

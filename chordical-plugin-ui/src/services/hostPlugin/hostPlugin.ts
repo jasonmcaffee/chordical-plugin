@@ -1,4 +1,6 @@
-import {subscribeToHostPluginEvents} from "../eventBus/hostPlugin/hostPluginEventBus";
+import {subscribeToHostPluginEvents} from "../eventBus/hostPlugin/toHostPluginEventBus";
+import {testMessage} from "../eventBus/hostPlugin/fromHostPluginEventBus";
+
 import {HostPluginEventTypes} from "../eventBus/hostPlugin/HostPluginEventTypes";
 
 class HostPlugin {
@@ -16,6 +18,7 @@ class HostPlugin {
       if(hash.indexOf(hashMessageIndicator) >= 0){
         const messageString = hash.substr(hash.indexOf(hashMessageIndicator) + hashMessageIndicator.length);
         const messageObj = convertMessageStringToObject(messageString);
+        handleMessageFromPluginHost(messageObj);
       }
     }
     window.addEventListener('hashchange', handleHashChange);
@@ -26,6 +29,15 @@ class HostPlugin {
     window.location.href = `projucer://${data}`;
   }
 }
+
+function handleMessageFromPluginHost(message:any){
+  switch(message.type){
+    case "testMessage":
+      testMessage(message.data);
+      break;
+  }
+}
+
 
 function convertMessageStringToObject(messageString: string){
   let messageObj;

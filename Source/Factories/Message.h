@@ -9,15 +9,26 @@ inline juce::String convertDynamicObjectToJsonString(DynamicObject* json){
 }
 
 inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage message){
-    auto* messageObj = new DynamicObject();
 
     auto dataObj = new DynamicObject();
     dataObj->setProperty("midiNote", message.data.midiNote);
     dataObj->setProperty("velocity", message.data.velocity);
+
+    auto* messageObj = new DynamicObject();
+    messageObj->setProperty("type", "midiNotePlayed");
     messageObj->setProperty("data", dataObj);
 
     return convertDynamicObjectToJsonString(messageObj);
 }
+
+inline juce::String convertTestMessageToJSONString(TestMessage message){
+    auto* messageObj = new DynamicObject();
+    messageObj->setProperty("data", static_cast<String &&>(message.data));
+    messageObj->setProperty("type", "testMessage");
+    return convertDynamicObjectToJsonString(messageObj);
+};
+
+
 
 inline RequestToPlayMidiNotesMessage convertJSONStringToRequestToPlayMidiNotesMessage(juce::var json){
     std::vector<MidiNoteData> midiNoteDataVector;

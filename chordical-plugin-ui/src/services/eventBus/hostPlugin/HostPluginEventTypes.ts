@@ -10,10 +10,6 @@ export interface IWebAppLoaded{
   data: string;
 }
 
-export interface IMidiNotePlayed{
-  type: "midiNotePlayed";
-  data : { midiNumber: number; velocity: number; }
-}
 
 export interface IRequestToPlayMidiNotesMessage{
   type: "requestToPlayMidiNotesMessage";
@@ -25,8 +21,21 @@ export interface IRequestToStopMidiNotesMessage{
   data: IMidiNoteData[];
 }
 
-export type FromHostPluginMessageTypes = IMidiNotePlayed;
-
 export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage;
+
+
+
+export interface IMidiNotePlayed{
+  type: "midiNotePlayed";
+  data : { midiNumber: number; velocity: number; }
+}
+
+export interface ITestMessage{
+  type: "testMessage";
+  data: string;
+}
+
+export type FromHostPluginMessageTypes = IMidiNotePlayed | ITestMessage;
+
 
 export type HostPluginEventTypes = ToHostPluginMessageTypes | FromHostPluginMessageTypes;

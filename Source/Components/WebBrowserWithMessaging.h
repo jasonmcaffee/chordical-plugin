@@ -75,20 +75,17 @@ public:
         juce::var parsedJson;
         if(juce::JSON::parse(juceDecodedMessage, parsedJson).wasOk()){
             String type = parsedJson["type"];
-//            std::cout << "message type: " << type << std::endl;
             if(type == "webAppLoaded"){
                 isWebAppLoaded = true;
-//                EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
-                std::cout << "emiting web app loaded " << std::endl;
                 EventBus::eventBus().emitMessage(WebAppLoadedMessage{"tacooooo"});
-                std::cout << "done emitting web app loaded" << std::endl;
+                sendMessageToWebApp(convertTestMessageToJSONString(TestMessage{"received web app loaded"}));
             }else if(type == "requestToPlayMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);
-//                EventBus::eventBus().emitRequestToPlayMidiNotes(message);
                 EventBus::eventBus().emitMessage(message);
+
+
             }else if(type == "requestToStopMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToStopMidiNotesMessage(parsedJson);
-//                EventBus::eventBus().emitRequestToStopMidiNotes(message);
                 EventBus::eventBus().emitMessage(message);
             }
 
