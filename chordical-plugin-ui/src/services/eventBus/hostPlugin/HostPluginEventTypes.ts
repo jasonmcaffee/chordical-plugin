@@ -20,8 +20,13 @@ export interface IRequestToPlayMidiNotesMessage{
   data: IMidiNoteData[];
 }
 
+export interface IRequestToStopMidiNotesMessage{
+  type: "requestToStopMidiNotesMessage";
+  data: IMidiNoteData[];
+}
+
 export type FromHostPluginMessageTypes = IMidiNotePlayed;
 
-export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage;
+export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage;
 
 export type HostPluginEventTypes = ToHostPluginMessageTypes | FromHostPluginMessageTypes;

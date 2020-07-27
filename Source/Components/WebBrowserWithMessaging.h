@@ -49,12 +49,24 @@ inline RequestToPlayMidiNotesMessage convertJSONStringToRequestToPlayMidiNotesMe
     if(auto dataJsonArray = json.getProperty("data", var()).getArray()){
         for(auto& midiNoteDataJson : *dataJsonArray){
             int midiNote = midiNoteDataJson.getProperty("midiNote", int());
-            int velocity = midiNoteDataJson.getProperty("velocity", int());
+            float velocity = midiNoteDataJson.getProperty("velocity", float());
             midiNoteDataVector.push_back(MidiNoteData {midiNote, velocity});
         }
     }
     return RequestToPlayMidiNotesMessage {midiNoteDataVector};
+}
 
+inline RequestToStopMidiNotesMessage convertJSONStringToRequestToStopMidiNotesMessage(juce::var json){
+    std::vector<MidiNoteData> midiNoteDataVector;
+
+    if(auto dataJsonArray = json.getProperty("data", var()).getArray()){
+        for(auto& midiNoteDataJson : *dataJsonArray){
+            int midiNote = midiNoteDataJson.getProperty("midiNote", int());
+            float velocity = midiNoteDataJson.getProperty("velocity", float());
+            midiNoteDataVector.push_back(MidiNoteData {midiNote, velocity});
+        }
+    }
+    return RequestToStopMidiNotesMessage {midiNoteDataVector};
 }
 
 inline void writeHtmlFileFromBinaryDataToDisk(){
@@ -149,6 +161,9 @@ public:
             }else if(type == "requestToPlayMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);
                 EventBus::eventBus().emitRequestToPlayMidiNotes(message);
+            }else if(type == "requestToStopMidiNotesMessage"){
+                auto message = convertJSONStringToRequestToStopMidiNotesMessage(parsedJson);
+                EventBus::eventBus().emitRequestToStopMidiNotes(message);
             }
 
         }else{

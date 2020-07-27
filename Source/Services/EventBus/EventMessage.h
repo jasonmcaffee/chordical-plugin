@@ -20,7 +20,7 @@ struct EventMessage{
 //shorthand for calling parent constructor is to use using EventMessage::EventMessage
 struct WebAppLoadedMessage : public EventMessage<std::string>{ using EventMessage::EventMessage; };
 
-struct MidiNoteData { int midiNote; int velocity; };
+struct MidiNoteData { int midiNote; float velocity; };
 struct MidiNotePlayedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
 struct MidiNoteStoppedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
 

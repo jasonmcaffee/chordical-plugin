@@ -74,7 +74,8 @@ private:
 
     ChordicalJuceSynth chordicalJuceSynth;
 
-    std::queue<MidiNoteData> midiNoteDataQueue;
+    std::queue<MidiNoteData> requestToPlayMidiNoteDataQueue;
+    std::queue<MidiNoteData> requestToStopMidiNoteDataQueue;
 
     //audio processor graph & nodes
     std::unique_ptr<juce::AudioProcessorGraph> mainProcessor;

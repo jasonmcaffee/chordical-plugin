@@ -32,6 +32,11 @@ export function requestToPlayMidiNotes(data: IMidiNoteData[]){
   sendMessageObjToHost({type: "requestToPlayMidiNotesMessage", data});
 }
 
+export function requestToStopMidiNotes(data: IMidiNoteData[]){
+  sendMessageObjToHost({type: "requestToStopMidiNotesMessage", data});
+}
+
+
 function messageToString(message: any){
   return JSON.stringify(message);
 }

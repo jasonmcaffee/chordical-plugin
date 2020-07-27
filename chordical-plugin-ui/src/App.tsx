@@ -4,7 +4,7 @@ import './App.css';
 import './services/hostPlugin/hostPlugin';
 import './style/app.scss';
 import {
-  requestToPlayMidiNotes,
+  requestToPlayMidiNotes, requestToStopMidiNotes,
   sendMessageToHost,
   webAppLoaded
 } from "./services/eventBus/hostPlugin/hostPluginEventBus";
@@ -53,15 +53,21 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-          <div className="app" onClick={sendJsonToHost }> hash: {hashParam}</div>
+          <div className="app" > hash: {hashParam}</div>
+        <div className="play-notes-button" onMouseDown={handleOnMouseDown } onMouseUp={handleOnMouseUp} >Play Notes</div>
           <div>{message}</div>
       </header>
     </div>
   );
 }
 
-function sendJsonToHost(){
+
+function handleOnMouseDown(){
   requestToPlayMidiNotes([{midiNote: 44, velocity: 100}, {midiNote: 66, velocity: 99}]);
+}
+
+function handleOnMouseUp(){
+  requestToStopMidiNotes([{midiNote: 44, velocity: 0}, {midiNote: 66, velocity: 0}]);
 }
 
 export default App;

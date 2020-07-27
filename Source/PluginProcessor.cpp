@@ -39,7 +39,13 @@ PluginProcessor::PluginProcessor()
     EventBus::eventBus().subscribeToRequestToPlayMidiNotes([this](RequestToPlayMidiNotesMessage message){
         std::cout << " request to play midi notes. adding to queue" << std::endl;
         for(auto midiNoteData : message.data){
-            midiNoteDataQueue.push(midiNoteData);
+            requestToPlayMidiNoteDataQueue.push(midiNoteData);
+        }
+    });
+
+    EventBus::eventBus().subscribeToRequestToStopMidiNotes([this](RequestToStopMidiNotesMessage message){
+        for(auto midiNoteData: message.data){
+            requestToStopMidiNoteDataQueue.push(midiNoteData);
         }
     });
 }
@@ -104,13 +110,22 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
         processedMidi.addEvent (m, time);
     }
 
-    while(!midiNoteDataQueue.empty()){
-        auto midiNoteData = midiNoteDataQueue.front();
-        float velocity = static_cast<float>(midiNoteData.velocity);
-        std::cout << "from queue midiNote: " << midiNoteData.midiNote << " velocity: " << velocity << std::endl;
-        processedMidi.addEvent(MidiMessage::noteOn(1, midiNoteData.midiNote, velocity),0);
-        midiNoteDataQueue.pop();
+    //play
+    while(!requestToPlayMidiNoteDataQueue.empty()){
+        auto midiNoteData = requestToPlayMidiNoteDataQueue.front();
+        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+        processedMidi.addEvent(MidiMessage::noteOn(1, midiNoteData.midiNote, midiNoteData.velocity),0);
+        requestToPlayMidiNoteDataQueue.pop();
     }
+
+    //stop
+    while(!requestToStopMidiNoteDataQueue.empty()){
+        auto midiNoteData = requestToStopMidiNoteDataQueue.front();
+        std::cout << "from request to stop queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+        processedMidi.addEvent(MidiMessage::noteOff(1, midiNoteData.midiNote),0);
+        requestToStopMidiNoteDataQueue.pop();
+    }
+
 
 
     midiMessages.clear();
