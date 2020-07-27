@@ -7,8 +7,17 @@ static TypeId GetTypeId(){
     return (reinterpret_cast<TypeId>(&placeHolder));
 }
 
+struct EventMessageBase {
+    public:
+        EventMessageBase(){}
+        // dynamic_pointer_cast needs one virtual function; https://stackoverflow.com/questions/5831765/c-is-not-a-polymorphic-type-while-using-boostdynamic-pointer-cast
+        //you need to implement the virtual function with {} or you get missing vtable error https://stackoverflow.com/questions/15265106/c-a-missing-vtable-error
+        virtual ~EventMessageBase(){};
+    };
+
 template <typename TMessageData>
-struct EventMessage{
+struct EventMessage : public EventMessageBase{
+public:
     TypeId typeId;
     TMessageData data;
     EventMessage(TMessageData dataParam){
@@ -18,7 +27,7 @@ struct EventMessage{
 };
 
 //shorthand for calling parent constructor is to use using EventMessage::EventMessage
-struct WebAppLoadedMessage : public EventMessage<std::string>{ using EventMessage::EventMessage; };
+struct WebAppLoadedMessage : public EventMessage<std::string>{ public: using EventMessage::EventMessage; };
 
 struct MidiNoteData { int midiNote; float velocity; };
 struct MidiNotePlayedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };

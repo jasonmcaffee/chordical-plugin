@@ -16,6 +16,10 @@
 //    return (reinterpret_cast<TypeId>(&placeHolder));
 //}
 
+inline void dostuff(WebAppLoadedMessage m){
+
+}
+
 class EventBus{
 public:
 
@@ -52,6 +56,28 @@ public:
     void subscribeToRequestToStopMidiNotes(std::function<void (RequestToStopMidiNotesMessage)> callback){ requestToStopMidiNotesCallbacks.push_back(callback); }
     void emitRequestToStopMidiNotes(RequestToStopMidiNotesMessage message){ executeCallbacks(requestToStopMidiNotesCallbacks, message); }
 
+
+    void findAndRemoveCallbackInVector(std::vector<std::function<void (EventMessageBase)>> callbacks, std::function<void (EventMessageBase)> callback){
+
+    }
+
+    void test(){
+
+       std::function<void(std::shared_ptr<EventMessageBase>)> f2 = [](std::shared_ptr<EventMessageBase> message){
+            std::shared_ptr<WebAppLoadedMessage> derived = std::dynamic_pointer_cast<WebAppLoadedMessage>(message);
+            std::cout << "data -----" << derived->data << std::endl;
+       };
+//        std::shared_ptr<EventMessageBase> mmm = std::make_shared<EventMessageBase>(m);  //works
+        std::shared_ptr<WebAppLoadedMessage> mmm = std::make_shared<WebAppLoadedMessage>(WebAppLoadedMessage {"hello"}); //https://stackoverflow.com/questions/32050665/can-i-use-stdmake-shared-with-structs-that-dont-have-a-parametric-constructor
+        f2(mmm);
+
+        auto m = WebAppLoadedMessage {"tacos"};
+        std::shared_ptr<EventMessageBase> mm2 = std::make_shared<WebAppLoadedMessage>(m);
+        f2(mm2);
+
+//        f2(m);
+
+    }
 
     template <typename TMessageType>
     void executeCallbacks(std::vector< std::function<void (TMessageType)> > callbacks, TMessageType message){
