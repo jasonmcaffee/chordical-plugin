@@ -36,14 +36,18 @@ PluginProcessor::PluginProcessor()
 
     chordicalJuceSynth.setup();
 
-    EventBus::eventBus().subscribeToRequestToPlayMidiNotes([this](RequestToPlayMidiNotesMessage message){
+    EventBus::eventBus().subscribe<WebAppLoadedMessage>([this](WebAppLoadedMessage message){
+        std::cout << "Plugin processor got web app loaded" << std::endl;
+    });
+
+    EventBus::eventBus().subscribe<RequestToPlayMidiNotesMessage>([this](RequestToPlayMidiNotesMessage message){
         std::cout << " request to play midi notes. adding to queue" << std::endl;
         for(auto midiNoteData : message.data){
             requestToPlayMidiNoteDataQueue.push(midiNoteData);
         }
     });
 
-    EventBus::eventBus().subscribeToRequestToStopMidiNotes([this](RequestToStopMidiNotesMessage message){
+    EventBus::eventBus().subscribe<RequestToStopMidiNotesMessage>([this](RequestToStopMidiNotesMessage message){
         for(auto midiNoteData: message.data){
             requestToStopMidiNoteDataQueue.push(midiNoteData);
         }

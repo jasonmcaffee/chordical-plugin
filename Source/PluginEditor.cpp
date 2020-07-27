@@ -27,7 +27,7 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
 
 //    EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"asdf"});
 //    EventBus::eventBus().emitMidiNotePlayed(MidiNotePlayedMessage { MidiNoteData { 44, 100 }});
-    EventBus::eventBus().test();
+
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}

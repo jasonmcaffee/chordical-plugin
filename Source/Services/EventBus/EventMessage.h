@@ -1,12 +1,5 @@
 #pragma once
 
-using TypeId = uintptr_t;
-template < typename T >
-static TypeId GetTypeId(){
-    static uint32_t placeHolder;
-    return (reinterpret_cast<TypeId>(&placeHolder));
-}
-
 //needed so we can store functions that accept EventMessage types.
 struct EventMessageBase {
     public:
@@ -19,10 +12,8 @@ struct EventMessageBase {
 template <typename TMessageData>
 struct EventMessage : public EventMessageBase{
 public:
-    TypeId typeId;
     TMessageData data;
     EventMessage(TMessageData dataParam){
-        TypeId typeId2 = GetTypeId<TMessageData>();
         data = dataParam;
     }
 };

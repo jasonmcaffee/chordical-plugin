@@ -10,7 +10,6 @@ inline juce::String convertDynamicObjectToJsonString(DynamicObject* json){
 
 inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage message){
     auto* messageObj = new DynamicObject();
-    messageObj->setProperty("typeId", (int)message.typeId); //-340779408
 
     auto dataObj = new DynamicObject();
     dataObj->setProperty("midiNote", message.data.midiNote);

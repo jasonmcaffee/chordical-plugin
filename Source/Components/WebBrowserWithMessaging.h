@@ -43,15 +43,6 @@ public:
         writeHtmlFileFromBinaryDataToDisk();
         goToURL(baseUrl);
         //since components are destroyed when window is minimized, don't use event bus here until you can unregister, otherwise this causes ableton to crash.
-//        EventBus::eventBus().subscribeToWebAppLoaded([this](WebAppLoadedMessage message) -> void {
-//            std::cout << "web browser got web app loaded " << message.data << std::endl;
-//            isWebAppLoaded = true;
-//
-//            juce::String jsonString = convertMidiNotePlayedToJSONString(MidiNotePlayedMessage {MidiNoteData {9, 100}});
-//            std::cout << "converted message: " << jsonString << std::endl;
-//            this->sendMessageToWebApp(jsonString);
-//        });
-
     }
 
 
@@ -87,13 +78,18 @@ public:
 //            std::cout << "message type: " << type << std::endl;
             if(type == "webAppLoaded"){
                 isWebAppLoaded = true;
-                EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
+//                EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
+                std::cout << "emiting web app loaded " << std::endl;
+                EventBus::eventBus().emitMessage(WebAppLoadedMessage{"tacooooo"});
+                std::cout << "done emitting web app loaded" << std::endl;
             }else if(type == "requestToPlayMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);
-                EventBus::eventBus().emitRequestToPlayMidiNotes(message);
+//                EventBus::eventBus().emitRequestToPlayMidiNotes(message);
+                EventBus::eventBus().emitMessage(message);
             }else if(type == "requestToStopMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToStopMidiNotesMessage(parsedJson);
-                EventBus::eventBus().emitRequestToStopMidiNotes(message);
+//                EventBus::eventBus().emitRequestToStopMidiNotes(message);
+                EventBus::eventBus().emitMessage(message);
             }
 
         }else{

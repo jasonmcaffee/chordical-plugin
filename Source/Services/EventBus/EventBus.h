@@ -8,7 +8,7 @@
 //https://www.codeproject.com/Articles/723656/SW-Message-Bus
 //https://seanballais.github.io/blog/implementing-a-simple-message-bus-in-cpp/
 
-using TypeId = uintptr_t;
+//using TypeId = uintptr_t;
 
 using EventCallbackFunc = std::function<void(EventMessageBase)>;
 using EventCallbackWithMessagePointerFunc = std::function<void(std::shared_ptr<EventMessageBase>)>;
@@ -24,7 +24,8 @@ public:
 //needs to be a shared pointer so we can push_back and have everything have the same values
 using EventCallbackContainerVector = std::shared_ptr<std::vector<EventCallbackContainer>>;
 
-using MessageTypeIdToEventCallbackContainerVectorPair = std::pair<TypeId, EventCallbackContainerVector>;
+//using MessageTypeIdToEventCallbackContainerVectorPair = std::pair<TypeId, EventCallbackContainerVector>;
+using MessageTypeIdToEventCallbackContainerVectorPair = std::pair<const char*, EventCallbackContainerVector>;
 
 class EventBus{
 public:
@@ -33,11 +34,19 @@ public:
     EventBus(){}
     ~EventBus(){}
 
+    std::map<const char*, EventCallbackContainerVector> messageTypeIdToEventCallbackContainerVector;
+
     //https://stackoverflow.com/questions/1008019/c-singleton-design-pattern
     static EventBus& eventBus(){
         static EventBus instance;
         return instance;
     }
+//    static std::shared_ptr<EventBus> eventBus(){
+//        static std::shared_ptr<EventBus> instance = std::make_shared<EventBus>();
+//        return instance;
+//    }
+
+
     EventBus(EventBus const&) = delete;
     void operator=(EventBus const&)  = delete;
 
@@ -66,6 +75,7 @@ public:
 
     template <typename TMessageType>
     void subscribe(std::function<void(TMessageType)> callback){
+
         //create a function that uses shared_ptr message type, so we can downcast
         EventCallbackWithMessagePointerFunc f2 = [callback](std::shared_ptr<EventMessageBase> message){
             //cast the EventMessageBase message as shared_ptr<TMesssageType>
@@ -76,21 +86,27 @@ public:
             callback(derivedValue);
         };
 
-        auto typeId = GetTypeId<TMessageType>();
+        const char* typeName = typeid(TMessageType).name();
+        std::cout << "message type id name: " << typeName << std::endl;
+
         int callbackId = 1; //TODO
         auto callbackContainer = EventCallbackContainer { callbackId, f2 };
 
+
+
         //see if message typeid already has callbacks registered.  if not, create vector and add to map
-        auto callbacksContainerVectorIter = messageTypeIdToEventCallbackContainerVector.find(typeId);
+        auto callbacksContainerVectorIter = messageTypeIdToEventCallbackContainerVector.find(typeName);
         if(callbacksContainerVectorIter == messageTypeIdToEventCallbackContainerVector.end()){
+            std::cout << "subscribe called for type id with no existing callbacks " << typeName << std::endl;
             //message has no callbacks registered, so create new vector
             std::vector<EventCallbackContainer> callbackContainers;
             callbackContainers.push_back(callbackContainer);
             EventCallbackContainerVector callbackContainersSharedPtr = std::make_shared<std::vector<EventCallbackContainer>>(callbackContainers);
             //insert new vector into map
-            MessageTypeIdToEventCallbackContainerVectorPair typeIdCallbacksPair {typeId, callbackContainersSharedPtr};
+            MessageTypeIdToEventCallbackContainerVectorPair typeIdCallbacksPair {typeName, callbackContainersSharedPtr};
             messageTypeIdToEventCallbackContainerVector.insert(typeIdCallbacksPair);
         }else{
+            std::cout << "subscribe called for type id HAS existing callbacks " << typeName << std::endl;
             //message already has callbacks registered, so add to existing vector.
             EventCallbackContainerVector callbackContainers = callbacksContainerVectorIter->second;
             callbackContainers->push_back(callbackContainer);
@@ -100,8 +116,10 @@ public:
 
     template <typename TMessageType>
     void emitMessage(TMessageType message){
-        auto typeId = GetTypeId<TMessageType>();
-        auto callbacksIter = messageTypeIdToEventCallbackContainerVector.find(typeId);
+        const char *typeName = typeid(TMessageType).name();
+        std::cout << "emit type id name: " << typeName << std::endl;
+
+        auto callbacksIter = messageTypeIdToEventCallbackContainerVector.find(typeName);
         if(callbacksIter != messageTypeIdToEventCallbackContainerVector.end()){
             EventCallbackContainerVector callbackContainers = callbacksIter->second;
             for(auto & callbackContainer : *callbackContainers){
@@ -109,26 +127,26 @@ public:
                 callbackContainer.callback(mm2);
             }
         }else{
-            std::cout << "no listeners for type id: " << typeId << std::endl;
+            std::cout << "no callbacks for type id: " << typeName << std::endl;
         }
     }
 
     void test(){
 
-        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
-            std::cout << "WebAppLoadedMessage subscriber called with " << m.data << std::endl;
-        });
-
-        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
-            std::cout << "WebAppLoadedMessage subscriber2 called with " << m.data << std::endl;
-        });
-
-        subscribe<TestMessage>([](TestMessage m){
-            std::cout << "TestMessage subscriber called with " << m.data << std::endl;
-        });
-
-        emitMessage(WebAppLoadedMessage{"hello"});
-        emitMessage(TestMessage{"test"});
+//        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
+//            std::cout << "WebAppLoadedMessage subscriber called with " << m.data << std::endl;
+//        });
+//
+//        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
+//            std::cout << "WebAppLoadedMessage subscriber2 called with " << m.data << std::endl;
+//        });
+//
+//        subscribe<TestMessage>([](TestMessage m){
+//            std::cout << "TestMessage subscriber called with " << m.data << std::endl;
+//        });
+//
+//        emitMessage(WebAppLoadedMessage{"hello"});
+//        emitMessage(TestMessage{"test"});
     }
 
     template <typename TMessageType>
@@ -139,7 +157,7 @@ public:
     }
 
 private:
-    std::map<TypeId, EventCallbackContainerVector> messageTypeIdToEventCallbackContainerVector;
+
 };
 
 // playing with pointer funcs
