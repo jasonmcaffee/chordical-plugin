@@ -236,6 +236,9 @@ SHARED_CODE_LIB_DEPENDS:STATIC=general;-framework Accelerate;general;-framework 
 //Dependencies for the target
 VST3_LIB_DEPENDS:STATIC=general;SHARED_CODE;general;-framework Accelerate;general;-framework AudioToolbox;general;-framework Carbon;general;-framework Cocoa;general;-framework CoreAudio;general;-framework CoreAudioKit;general;-framework CoreMIDI;general;-framework DiscRecording;general;-framework IOKit;general;-framework OpenGL;general;-framework QuartzCore;general;-framework WebKit;
 
+//Dependencies for the target
+VST_LIB_DEPENDS:STATIC=general;SHARED_CODE;general;-framework Accelerate;general;-framework AudioToolbox;general;-framework Carbon;general;-framework Cocoa;general;-framework CoreAudio;general;-framework CoreAudioKit;general;-framework CoreMIDI;general;-framework DiscRecording;general;-framework IOKit;general;-framework OpenGL;general;-framework QuartzCore;general;-framework WebKit;
+
 //Value Computed by CMake
 chordical-plugin_BINARY_DIR:STATIC=/Users/jason/dev/chordical-plugin/Builds/CLion/cmake-build-debug
 

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="i5rbn3" name="chordical-plugin" projectType="audioplug" jucerVersion="5.4.7"
-              pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn"
+              pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
               pluginManufacturer="Jason McAffee" pluginManufacturerCode="McAf"
               pluginCode="V154" aaxIdentifier="Chordical" pluginAUExportPrefix="Chordical"
               binaryDataNamespace="ChordicalBinaryData" pluginName="chordical"
               pluginDesc="chordical" version="0.0.1" companyName="Chordical"
-              companyWebsite="chordical.com" companyEmail="jasonlmcaffee@gmail.com">
+              companyWebsite="chordical.com" companyEmail="jasonlmcaffee@gmail.com"
+              pluginFormats="buildAU,buildStandalone,buildVST3" pluginAUMainType="'aumu'">
   <MAINGROUP id="CC5xg6" name="chordical-plugin">
     <GROUP id="{B4769F89-E00F-7CBF-CEE5-6620BB0BC9B6}" name="Source">
       <FILE id="sRABg7" name="test.html" compile="1" resource="1" file="Source/ResourceFiles/test.html"/>
@@ -21,7 +22,7 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <CLION targetFolder="Builds/CLion">
+    <CLION targetFolder="Builds/CLion" clionXcodeEnabled="1">
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>

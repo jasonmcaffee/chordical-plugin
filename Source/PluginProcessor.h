@@ -13,6 +13,7 @@
 #include <JuceHeader.h>
 #include "Synthesizer/ChordicalSynthesizer.h"
 #include "Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h"
+#include "Services/EventBus/EventMessage.h"
 
 using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
 using Node = juce::AudioProcessorGraph::Node;
@@ -36,7 +37,6 @@ public:
 #endif
 
     void processBlock (AudioBuffer<float>&, MidiBuffer&) override;
-    void processBlock (AudioBuffer<double>&, MidiBuffer&) override;
 
     //==============================================================================
     AudioProcessorEditor* createEditor() override;
@@ -74,6 +74,7 @@ private:
 
     ChordicalJuceSynth chordicalJuceSynth;
 
+    std::queue<MidiNoteData> midiNoteDataQueue;
 
     //audio processor graph & nodes
     std::unique_ptr<juce::AudioProcessorGraph> mainProcessor;
