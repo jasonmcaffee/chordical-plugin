@@ -10,12 +10,6 @@
 
 using TypeId = uintptr_t;
 
-//
-//template < typename T >
-//static TypeId GetTypeId(){
-//    static uint32_t placeHolder;
-//    return (reinterpret_cast<TypeId>(&placeHolder));
-//}
 using EventCallbackFunc = std::function<void(EventMessageBase)>;
 using EventCallbackWithMessagePointerFunc = std::function<void(std::shared_ptr<EventMessageBase>)>;
 
@@ -26,14 +20,9 @@ public:
     EventCallbackWithMessagePointerFunc callback;
 };
 
-using EventCallbackContainerVector = std::vector<EventCallbackContainer>;
-
-//might not need this... use pair ?
-struct EventMessageTypeIdToCallbackVector{
-public:
-    TypeId typeId;
-    EventCallbackContainerVector callbacks;
-};
+//using EventCallbackContainerVector = std::vector<EventCallbackContainer>;
+//needs to be a shared pointer so we can push_back and have everything have the same values
+using EventCallbackContainerVector = std::shared_ptr<std::vector<EventCallbackContainer>>;
 
 using MessageTypeIdToEventCallbackContainerVectorPair = std::pair<TypeId, EventCallbackContainerVector>;
 
@@ -75,10 +64,6 @@ public:
     void emitRequestToStopMidiNotes(RequestToStopMidiNotesMessage message){ executeCallbacks(requestToStopMidiNotesCallbacks, message); }
 
 
-    void findAndRemoveCallbackInVector(std::vector<std::function<void (EventMessageBase)>> callbacks, std::function<void (EventMessageBase)> callback){
-
-    }
-
     template <typename TMessageType>
     void subscribe(std::function<void(TMessageType)> callback){
         //create a function that uses shared_ptr message type, so we can downcast
@@ -92,23 +77,23 @@ public:
         };
 
         auto typeId = GetTypeId<TMessageType>();
-
         int callbackId = 1; //TODO
         auto callbackContainer = EventCallbackContainer { callbackId, f2 };
 
-
+        //see if message typeid already has callbacks registered.  if not, create vector and add to map
         auto callbacksContainerVectorIter = messageTypeIdToEventCallbackContainerVector.find(typeId);
         if(callbacksContainerVectorIter == messageTypeIdToEventCallbackContainerVector.end()){
-            std::cout  << "creating new callback container vector for type id: " << typeId << std::endl;
-            EventCallbackContainerVector callbacks;
-            callbacks.push_back(callbackContainer);
-
-            MessageTypeIdToEventCallbackContainerVectorPair typeIdCallbacksPair {typeId, callbacks};
+            //message has no callbacks registered, so create new vector
+            std::vector<EventCallbackContainer> callbackContainers;
+            callbackContainers.push_back(callbackContainer);
+            EventCallbackContainerVector callbackContainersSharedPtr = std::make_shared<std::vector<EventCallbackContainer>>(callbackContainers);
+            //insert new vector into map
+            MessageTypeIdToEventCallbackContainerVectorPair typeIdCallbacksPair {typeId, callbackContainersSharedPtr};
             messageTypeIdToEventCallbackContainerVector.insert(typeIdCallbacksPair);
         }else{
-            std::cout << "adding new callback to existing callback container" << std::endl;
-            EventCallbackContainerVector callbacks = callbacksContainerVectorIter->second;
-            callbacks.push_back(callbackContainer);
+            //message already has callbacks registered, so add to existing vector.
+            EventCallbackContainerVector callbackContainers = callbacksContainerVectorIter->second;
+            callbackContainers->push_back(callbackContainer);
         }
 
     }
@@ -119,8 +104,7 @@ public:
         auto callbacksIter = messageTypeIdToEventCallbackContainerVector.find(typeId);
         if(callbacksIter != messageTypeIdToEventCallbackContainerVector.end()){
             EventCallbackContainerVector callbackContainers = callbacksIter->second;
-            for(auto & callbackContainer : callbackContainers){
-                std::cout << "sending message to callback" << std::endl;
+            for(auto & callbackContainer : *callbackContainers){
                 std::shared_ptr<EventMessageBase> mm2 = std::make_shared<TMessageType>(message);
                 callbackContainer.callback(mm2);
             }
@@ -132,14 +116,19 @@ public:
     void test(){
 
         subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
-            std::cout << "subscriber called with " << m.data << std::endl;
+            std::cout << "WebAppLoadedMessage subscriber called with " << m.data << std::endl;
         });
 
         subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
-            std::cout << "subscriber2 called with " << m.data << std::endl;
+            std::cout << "WebAppLoadedMessage subscriber2 called with " << m.data << std::endl;
         });
 
-        emitMessage(WebAppLoadedMessage{"generic subscription works!"});
+        subscribe<TestMessage>([](TestMessage m){
+            std::cout << "TestMessage subscriber called with " << m.data << std::endl;
+        });
+
+        emitMessage(WebAppLoadedMessage{"hello"});
+        emitMessage(TestMessage{"test"});
     }
 
     template <typename TMessageType>
