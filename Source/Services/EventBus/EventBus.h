@@ -8,20 +8,38 @@
 //https://www.codeproject.com/Articles/723656/SW-Message-Bus
 //https://seanballais.github.io/blog/implementing-a-simple-message-bus-in-cpp/
 
-//using TypeId = uintptr_t;
+using TypeId = uintptr_t;
+
 //
 //template < typename T >
 //static TypeId GetTypeId(){
 //    static uint32_t placeHolder;
 //    return (reinterpret_cast<TypeId>(&placeHolder));
 //}
+using EventCallbackFunc = std::function<void(EventMessageBase)>;
+using EventCallbackWithMessagePointerFunc = std::function<void(std::shared_ptr<EventMessageBase>)>;
 
-inline void dostuff(WebAppLoadedMessage m){
 
-}
+struct EventCallbackContainer{
+public:
+    int id; //so we can delete from vector later
+    EventCallbackWithMessagePointerFunc callback;
+};
+
+using EventCallbackContainerVector = std::vector<EventCallbackContainer>;
+
+//might not need this... use pair ?
+struct EventMessageTypeIdToCallbackVector{
+public:
+    TypeId typeId;
+    EventCallbackContainerVector callbacks;
+};
+
+using MessageTypeIdToEventCallbackContainerVectorPair = std::pair<TypeId, EventCallbackContainerVector>;
 
 class EventBus{
 public:
+
 
     EventBus(){}
     ~EventBus(){}
@@ -61,22 +79,67 @@ public:
 
     }
 
+    template <typename TMessageType>
+    void subscribe(std::function<void(TMessageType)> callback){
+        //create a function that uses shared_ptr message type, so we can downcast
+        EventCallbackWithMessagePointerFunc f2 = [callback](std::shared_ptr<EventMessageBase> message){
+            //cast the EventMessageBase message as shared_ptr<TMesssageType>
+            std::shared_ptr<TMessageType> derived = std::dynamic_pointer_cast<TMessageType>(message);
+            //get the value of the the object
+            TMessageType derivedValue = *derived.get();
+            //execute the callback
+            callback(derivedValue);
+        };
+
+        auto typeId = GetTypeId<TMessageType>();
+
+        int callbackId = 1; //TODO
+        auto callbackContainer = EventCallbackContainer { callbackId, f2 };
+
+
+        auto callbacksContainerVectorIter = messageTypeIdToEventCallbackContainerVector.find(typeId);
+        if(callbacksContainerVectorIter == messageTypeIdToEventCallbackContainerVector.end()){
+            std::cout  << "creating new callback container vector for type id: " << typeId << std::endl;
+            EventCallbackContainerVector callbacks;
+            callbacks.push_back(callbackContainer);
+
+            MessageTypeIdToEventCallbackContainerVectorPair typeIdCallbacksPair {typeId, callbacks};
+            messageTypeIdToEventCallbackContainerVector.insert(typeIdCallbacksPair);
+        }else{
+            std::cout << "adding new callback to existing callback container" << std::endl;
+            EventCallbackContainerVector callbacks = callbacksContainerVectorIter->second;
+            callbacks.push_back(callbackContainer);
+        }
+
+    }
+
+    template <typename TMessageType>
+    void emitMessage(TMessageType message){
+        auto typeId = GetTypeId<TMessageType>();
+        auto callbacksIter = messageTypeIdToEventCallbackContainerVector.find(typeId);
+        if(callbacksIter != messageTypeIdToEventCallbackContainerVector.end()){
+            EventCallbackContainerVector callbackContainers = callbacksIter->second;
+            for(auto & callbackContainer : callbackContainers){
+                std::cout << "sending message to callback" << std::endl;
+                std::shared_ptr<EventMessageBase> mm2 = std::make_shared<TMessageType>(message);
+                callbackContainer.callback(mm2);
+            }
+        }else{
+            std::cout << "no listeners for type id: " << typeId << std::endl;
+        }
+    }
+
     void test(){
 
-       std::function<void(std::shared_ptr<EventMessageBase>)> f2 = [](std::shared_ptr<EventMessageBase> message){
-            std::shared_ptr<WebAppLoadedMessage> derived = std::dynamic_pointer_cast<WebAppLoadedMessage>(message);
-            std::cout << "data -----" << derived->data << std::endl;
-       };
-//        std::shared_ptr<EventMessageBase> mmm = std::make_shared<EventMessageBase>(m);  //works
-        std::shared_ptr<WebAppLoadedMessage> mmm = std::make_shared<WebAppLoadedMessage>(WebAppLoadedMessage {"hello"}); //https://stackoverflow.com/questions/32050665/can-i-use-stdmake-shared-with-structs-that-dont-have-a-parametric-constructor
-        f2(mmm);
+        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
+            std::cout << "subscriber called with " << m.data << std::endl;
+        });
 
-        auto m = WebAppLoadedMessage {"tacos"};
-        std::shared_ptr<EventMessageBase> mm2 = std::make_shared<WebAppLoadedMessage>(m);
-        f2(mm2);
+        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
+            std::cout << "subscriber2 called with " << m.data << std::endl;
+        });
 
-//        f2(m);
-
+        emitMessage(WebAppLoadedMessage{"generic subscription works!"});
     }
 
     template <typename TMessageType>
@@ -87,7 +150,23 @@ public:
     }
 
 private:
+    std::map<TypeId, EventCallbackContainerVector> messageTypeIdToEventCallbackContainerVector;
 };
+
+// playing with pointer funcs
+//EventCallbackWithMessagePointerFunc f2 = [](std::shared_ptr<EventMessageBase> message){
+//    std::shared_ptr<WebAppLoadedMessage> derived = std::dynamic_pointer_cast<WebAppLoadedMessage>(message);
+//    std::cout << "data -----" << derived->data << std::endl;
+//};
+//
+//std::shared_ptr<WebAppLoadedMessage> mmm = std::make_shared<WebAppLoadedMessage>(WebAppLoadedMessage {"hello"}); //https://stackoverflow.com/questions/32050665/can-i-use-stdmake-shared-with-structs-that-dont-have-a-parametric-constructor
+//f2(mmm);
+//
+//auto m = WebAppLoadedMessage {"tacos"};
+//std::shared_ptr<EventMessageBase> mm2 = std::make_shared<WebAppLoadedMessage>(m);
+//f2(mm2);
+
+
 
 
 //https://stackoverflow.com/questions/13980157/c-class-with-template-member-variable

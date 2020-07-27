@@ -78,13 +78,13 @@ public:
     void handleMessageFromWebApp(const String &messageString){
         //https://forum.juce.com/t/parsing-nested-json/21733
         String juceDecodedMessage= urlDecode(messageString.toStdString());
-        std::cout << "decoded message " << juceDecodedMessage << std::endl;
+//        std::cout << "decoded message " << juceDecodedMessage << std::endl;
 
         //parse the json
         juce::var parsedJson;
         if(juce::JSON::parse(juceDecodedMessage, parsedJson).wasOk()){
             String type = parsedJson["type"];
-            std::cout << "message type: " << type << std::endl;
+//            std::cout << "message type: " << type << std::endl;
             if(type == "webAppLoaded"){
                 isWebAppLoaded = true;
                 EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"hi"});
