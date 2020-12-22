@@ -8,6 +8,9 @@
 
 namespace ChordicalBinaryData
 {
+    extern const char*   index_html;
+    const int            index_htmlSize = 150254;
+
     extern const char*   test_html;
     const int            test_htmlSize = 68;
 
@@ -15,7 +18,7 @@ namespace ChordicalBinaryData
     const int            c4_wavSize = 1871396;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 2;
+    const int namedResourceListSize = 3;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

@@ -77,6 +77,10 @@
 			isa = PBXBuildFile;
 			fileRef = 4A20A1FB7FAAB062FB136E40;
 		};
+		4E2B71AAD17717C656E5C714 = {
+			isa = PBXBuildFile;
+			fileRef = E1FDDFE10A9C8753C5519F72;
+		};
 		3B6FE82961A076840514A055 = {
 			isa = PBXBuildFile;
 			fileRef = 38E48A78FB15DCDD0E89A815;
@@ -576,13 +580,6 @@
 			path = System/Library/Frameworks/Carbon.framework;
 			sourceTree = SDKROOT;
 		};
-		E162A260F38D3BC084395227 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = "include_juce_audio_plugin_client_utils.cpp";
-			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp";
-			sourceTree = "SOURCE_ROOT";
-		};
 		E36B84622BC710702FF8D3F8 = {
 			isa = PBXFileReference;
 			explicitFileType = wrapper.application;
@@ -596,6 +593,20 @@
 			includeInIndex = 0;
 			path = "libchordical-plugin.a";
 			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		E162A260F38D3BC084395227 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = "include_juce_audio_plugin_client_utils.cpp";
+			path = "../../JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp";
+			sourceTree = "SOURCE_ROOT";
+		};
+		E1FDDFE10A9C8753C5519F72 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.html;
+			name = index.html;
+			path = "../../chordical-plugin-ui/build/index.html";
+			sourceTree = "SOURCE_ROOT";
 		};
 		E2263EE166A0A3292B745003 = {
 			isa = PBXFileReference;
@@ -649,6 +660,7 @@
 		DD0266ED727D8AECC463A4CC = {
 			isa = PBXGroup;
 			children = (
+				E1FDDFE10A9C8753C5519F72,
 				38E48A78FB15DCDD0E89A815,
 				93483779E1A3541D9A5F93ED,
 				22B07960A03725CFEB3E9553,
@@ -1535,6 +1547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2B71AAD17717C656E5C714,
 				3B6FE82961A076840514A055,
 				5947117DE40E54247DFE1B9C,
 				498E8E8127A9ABC805E5921C,
