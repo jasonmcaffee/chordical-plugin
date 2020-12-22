@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/fromHostPluginEventBus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.app/Contents/MacOS/chordical-plugin" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.app/Contents/MacOS/chordical-plugin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Factories/Message.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Factories/Message.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Services/EventBus/EventBus.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/EventBus/EventBus.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/autochorder/auto-chorder.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/page/page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/hostPluginEventBus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,20 +19,22 @@
     <session id="1099403057">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="scss" value="1" />
+          <entry key="scss" value="3" />
           <entry key="ts" value="6" />
           <entry key="tsx" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="SCSS" value="1" />
+          <entry key="SCSS" value="3" />
           <entry key="TypeScript" value="6" />
           <entry key="TypeScript JSX" value="1" />
         </counts>
@@ -52,7 +46,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="scss" value="213" />
+          <entry key="scss" value="271" />
           <entry key="ts" value="2393" />
           <entry key="tsx" value="1728" />
           <entry key="txt" value="39" />
@@ -61,7 +55,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="39" />
-          <entry key="SCSS" value="213" />
+          <entry key="SCSS" value="271" />
           <entry key="TypeScript" value="2393" />
           <entry key="TypeScript JSX" value="1728" />
         </counts>
@@ -69,12 +63,21 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="650">
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/style/autochorder/auto-chorder.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -83,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/models/IMidiNoteData.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -101,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
-              <caret line="18" lean-forward="true" selection-end-line="42" selection-end-column="1" />
+              <caret line="18" selection-end-line="42" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -110,16 +113,16 @@
         <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/fromHostPluginEventBus.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
-              <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+            <state relative-caret-position="910">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -127,8 +130,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state relative-caret-position="364">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/style/page/page.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -149,6 +161,8 @@
         <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/fromHostPluginEventBus.ts" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts" />
+        <option value="$PROJECT_DIR$/src/style/autochorder/auto-chorder.scss" />
+        <option value="$PROJECT_DIR$/src/style/page/page.scss" />
       </list>
     </option>
   </component>
@@ -177,9 +191,11 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,41 +218,26 @@
               <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
               <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="eventBus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="eventBus" type="462c0819:PsiDirectoryNode" />
-              <item name="hostPlugin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="hostPlugin" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
               <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="autochorder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chordical-plugin-ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chordical-plugin-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,7 +274,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595712839871</updated>
-      <workItem from="1595712842207" duration="10718000" />
+      <workItem from="1595712842207" duration="14155000" />
+      <workItem from="1599658332691" duration="154000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -286,28 +288,28 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10718000" />
+    <option name="totallyTimeSpent" value="14309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15957446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32967836" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32967836" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32967836" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.096491225" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -324,17 +326,24 @@
     <option name="LAST_COMMIT_MESSAGE" value="two way json communication working. wip" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/models/IMidiNoteData.ts">
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="650">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/app.scss">
+    <entry file="file://$PROJECT_DIR$/src/style/autochorder/auto-chorder.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="26">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/IMidiNoteData.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -348,28 +357,35 @@
     <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="18" lean-forward="true" selection-end-line="42" selection-end-column="1" />
+          <caret line="18" selection-end-line="42" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/fromHostPluginEventBus.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/hostPlugin/hostPlugin.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="910">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/page/page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,9 @@
 
 //serialize to char* array (not json) https://stackoverflow.com/questions/16543519/serialization-of-struct
 
-const String baseUrl = "http://127.0.0.1:3001/#test";
+//const String baseUrl = "http://127.0.0.1:3000/#test";
+//const String baseUrl = "file:///Users/jason/dev/chordical-plugin/test.html";
+const String baseUrl = File::getCurrentWorkingDirectory().getFullPathName() + "/test.html";
 const String messageFromAppIndicator = "projucer://";
 
 inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::allocator<char>> SRC) {
@@ -28,7 +30,8 @@ inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::all
 inline void writeHtmlFileFromBinaryDataToDisk(){
     //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
     MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
-    File f ("/Users/jason/dev/chordical-plugin/test.html");
+//    File f ("/Users/jason/dev/chordical-plugin/test.html");
+    File f ( File::getCurrentWorkingDirectory().getFullPathName() + "/test.html");
     f.deleteFile();
     std::cout << "current working dir" << File::getCurrentWorkingDirectory().getFullPathName() << std::endl;
     FileOutputStream stream(f);
