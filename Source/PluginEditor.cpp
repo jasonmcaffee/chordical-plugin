@@ -20,10 +20,12 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
     setSize (700, 600);
 
 //    addAndMakeVisible (keyboardComponent);
-//    addAndMakeVisible (versionLabel);
+
 
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
+
+//    addAndMakeVisible (versionLabel);
 
 //    EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"asdf"});
 //    EventBus::eventBus().emitMidiNotePlayed(MidiNotePlayedMessage { MidiNoteData { 44, 100 }});
@@ -38,9 +40,9 @@ void ChordicalAudioProcessorEditor::paint (Graphics& g)
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
 
-    g.setColour (Colours::black);
-    g.setFont (15.0f);
-    g.drawFittedText ("3.0", getLocalBounds(), Justification::centred, 1);
+    g.setColour (Colours::yellow);
+    g.setFont (24.0f);
+    g.drawFittedText ( File::getCurrentWorkingDirectory().getFullPathName(), getLocalBounds(), Justification::centred, 3);
 }
 
 void ChordicalAudioProcessorEditor::resized()

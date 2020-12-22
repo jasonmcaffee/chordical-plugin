@@ -6,8 +6,11 @@
 //serialize to char* array (not json) https://stackoverflow.com/questions/16543519/serialization-of-struct
 
 //const String baseUrl = "http://127.0.0.1:3000/#test";
-//const String baseUrl = "file:///Users/jason/dev/chordical-plugin/test.html";
-const String baseUrl = File::getCurrentWorkingDirectory().getFullPathName() + "/index.html";
+const String separator = File::getCurrentWorkingDirectory().getFullPathName() == "/" ? "" : "/";
+const String filePathBase = "/Users/Shared/"; //File::getCurrentWorkingDirectory().getFullPathName()
+const String baseUrl = "file://" + filePathBase + "index.html";
+
+
 const String messageFromAppIndicator = "projucer://";
 
 inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::allocator<char>> SRC) {
@@ -32,12 +35,30 @@ inline void writeHtmlFileFromBinaryDataToDisk(){
 //    MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
     MemoryInputStream memInputStream (ChordicalBinaryData::index_html, ChordicalBinaryData::index_htmlSize,false);
 //    File f ("/Users/jason/dev/chordical-plugin/test.html");
-    File f ( File::getCurrentWorkingDirectory().getFullPathName() + "/index.html");
+    const String filePath =  filePathBase + "index.html";
+    File f (filePath);
+
+    if(!f.hasWriteAccess()){
+        auto result = AlertWindow::showYesNoCancelBox (
+                AlertWindow::InfoIcon,
+                "Message",
+                "doesnt have write access to: " + filePath,
+                "Save and Continue");
+    }
+
     f.deleteFile();
+    f.create();
     std::cout << "current working dir" << File::getCurrentWorkingDirectory().getFullPathName() << std::endl;
+
     FileOutputStream stream(f);
     stream.writeFromInputStream(memInputStream, memInputStream.getTotalLength());
     stream.flush();
+//    auto result = AlertWindow::showYesNoCancelBox (
+//            AlertWindow::InfoIcon,
+//            "Message",
+//            "filePath: " + filePath,
+//            "Save and Continue");
+//
 }
 
 class WebBrowserWithMessaging  : public WebBrowserComponent {
