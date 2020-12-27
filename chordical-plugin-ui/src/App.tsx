@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
 import './services/hostPlugin/hostPlugin';
-import './style/app.scss';
+
 import {requestToPlayMidiNotes, requestToStopMidiNotes, sendMessageToHost, webAppLoaded} from "./services/eventBus/hostPlugin/toHostPluginEventBus";
 import {subscribeToFromHostPluginEvents} from "./services/eventBus/hostPlugin/fromHostPluginEventBus";
 import {FromHostPluginMessageTypes} from "./services/eventBus/hostPlugin/HostPluginEventTypes";
+import router from "./services/router";
+import './services/controllers/autochorderPage';
 
 function notifyUserOfError(e:Error){
   alert(e.message); //alert doesnt work in plugin
@@ -26,7 +27,7 @@ function App() {
   useEffect(()=>{
     //tell the host that the app has loaded
     webAppLoaded("hi");
-
+    router.renderInitial();
     const unsubscribeFromHostPluginEvents = subscribeToFromHostPluginEvents((m: FromHostPluginMessageTypes) => {
       switch(m.type){
         case "testMessage":
@@ -42,8 +43,10 @@ function App() {
 
   return (
     <div className="App">
+      <div id="page">
+        page
+      </div>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <div className="play-notes-button" onMouseDown={handleOnMouseDown } onMouseUp={handleOnMouseUp} >Play Notes</div>
         <div>{message}</div>
       </header>
