@@ -6,7 +6,7 @@ import {requestToPlayMidiNotes, requestToStopMidiNotes, sendMessageToHost, webAp
 import {subscribeToFromHostPluginEvents} from "./services/eventBus/hostPlugin/fromHostPluginEventBus";
 import {FromHostPluginMessageTypes} from "./services/eventBus/hostPlugin/HostPluginEventTypes";
 import router from "./services/router";
-import './services/controllers/autochorderPage';
+import './routes/autochorder';
 
 function notifyUserOfError(e:Error){
   alert(e.message); //alert doesnt work in plugin
