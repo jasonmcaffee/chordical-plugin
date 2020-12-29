@@ -12,24 +12,17 @@
 #include "PluginEditor.h"
 #include "Services/EventBus/EventBus.h"
 
-
 //==============================================================================
 ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p): AudioProcessorEditor (&p), processor (p){
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
+    setResizable(true, true);
     setSize (700, 600);
 
 //    addAndMakeVisible (keyboardComponent);
 
-
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
-
-//    addAndMakeVisible (versionLabel);
-
-//    EventBus::eventBus().emitWebAppLoaded(WebAppLoadedMessage {"asdf"});
-//    EventBus::eventBus().emitMidiNotePlayed(MidiNotePlayedMessage { MidiNoteData { 44, 100 }});
-
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
@@ -52,4 +45,5 @@ void ChordicalAudioProcessorEditor::resized()
     // sets the position and size of the slider with arguments (x, y, width, height)
     midiVolume.setBounds (40, 30, 20, getHeight() - 60);
     keyboardComponent.setBounds (8, 96, getWidth() - 16, 64);
+    webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
 }

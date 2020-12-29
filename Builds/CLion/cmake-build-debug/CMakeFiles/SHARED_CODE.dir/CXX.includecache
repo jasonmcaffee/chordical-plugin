@@ -2572,16 +2572,6 @@ PluginProcessor.h
 Components/WebBrowserWithMessaging.h
 /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
 
-/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp
-PluginProcessor.h
-/Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
-PluginEditor.h
-/Users/jason/dev/chordical-plugin/Source/PluginEditor.h
-Services/Synthesizer/Sine/SineWaveVoice.h
-/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
-Processors/ProcessorBase.h
-/Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
-
 /Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
 JuceHeader.h
 -
@@ -2623,16 +2613,6 @@ vector
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 ../JuceLibraryCode/JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/JuceLibraryCode/JuceHeader.h
-
-/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
-JuceHeader.h
--
-
-/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveVoice.h
-JuceHeader.h
--
-./SineWaveSound.h
-/Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/Sine/SineWaveSound.h
 
 /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
 ../Processors/GainProcessor.h

@@ -5,11 +5,11 @@
 
 //serialize to char* array (not json) https://stackoverflow.com/questions/16543519/serialization-of-struct
 
-//const String baseUrl = "http://127.0.0.1:3000/#test";
+
 const String separator = File::getCurrentWorkingDirectory().getFullPathName() == "/" ? "" : "/";
 const String filePathBase = "/Users/Shared/"; //File::getCurrentWorkingDirectory().getFullPathName()
-const String baseUrl = "file://" + filePathBase + "index.html";
-
+//const String baseUrl = "file://" + filePathBase + "index.html";
+const String baseUrl = "http://127.0.0.1:3000/#test";
 
 const String messageFromAppIndicator = "projucer://";
 
@@ -53,12 +53,6 @@ inline void writeHtmlFileFromBinaryDataToDisk(){
     FileOutputStream stream(f);
     stream.writeFromInputStream(memInputStream, memInputStream.getTotalLength());
     stream.flush();
-//    auto result = AlertWindow::showYesNoCancelBox (
-//            AlertWindow::InfoIcon,
-//            "Message",
-//            "filePath: " + filePath,
-//            "Save and Continue");
-//
 }
 
 class WebBrowserWithMessaging  : public WebBrowserComponent {
