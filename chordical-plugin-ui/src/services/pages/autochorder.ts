@@ -13,6 +13,8 @@ import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "../music/predefinedNotes";
 import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave} from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
+import {requestToPlayMidiNotes, requestToStopMidiNotes} from "../eventBus/hostPlugin/toHostPluginEventBus";
+import {IMidiNoteData} from "../../models/IMidiNoteData";
 const initialViewModel: IAutochorderPageViewModel = { test: false, autoChorderPreset: new AutoChorderPreset() };
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
@@ -36,6 +38,17 @@ class Autochorder{
     const options = getChordOptions({rootNote, scale, chordRootNote});
     console.debug(`options for chords in key: `, options, scale, rootNote);
     return options;
+  }
+
+  //######################################################### play ###################################################
+  playChord({chord}: {chord: IChord}){
+    const notes = convertChordToHostMidiNotes({chord});
+    requestToPlayMidiNotes(notes);
+  }
+
+  stopChord({chord}: {chord: IChord}){
+    const notes = convertChordToHostMidiNotes({chord});
+    requestToStopMidiNotes(notes);
   }
 
   //######################################################### chord manipulation #####################################
@@ -328,4 +341,10 @@ function getRandomInt(min=1, max=999999999) {
   min = Math.ceil(min);
   max = Math.floor(max) + 1;
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive <- not any longer. max is now inclusive
+}
+
+function convertChordToHostMidiNotes({chord}: {chord: IChord}) : IMidiNoteData[]{
+  return chord.notes.map(n => {
+    return { midiNote: n.midiNoteNumber, velocity: 100};
+  });
 }

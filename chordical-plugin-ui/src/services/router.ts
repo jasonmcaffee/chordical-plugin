@@ -1,5 +1,7 @@
 import React from 'react';
 import * as ReactDOM from "react-dom";
+
+const defaultPage = 'autochorder';
 class Router{
   configs:  IRouteConfig[] = [];
   constructor() {
@@ -7,7 +9,7 @@ class Router{
     window.addEventListener('hashchange', ()=> this.handleHashChange());
   }
   handleHashChange(){
-    const hash = window.location.hash.replace('#', '');
+    const hash = window.location.hash.replace('#', '') || defaultPage;
     console.error(`hash changed: ${hash}`);
     const config = this.configs.find((c) => c.path === hash);
     if(config){
