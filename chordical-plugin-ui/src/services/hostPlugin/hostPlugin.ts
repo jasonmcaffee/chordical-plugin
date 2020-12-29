@@ -12,10 +12,13 @@ class HostPlugin {
       }
     });
 
-    function handleHashChange(){
-      const hash = window.location.hash;
+    function handleHashChange(event: HashChangeEvent){
+      // const hash = window.location.hash; <-- this will be outdated causing duplicate messages. eg when 2 midi note played messages are sent at the same time.
+      const hash = event.newURL;
       const hashMessageIndicator = "message=";
       if(hash.indexOf(hashMessageIndicator) >= 0){
+        //@ts-ignore
+        // document.getElementById("page").innerHTML += `<br/> hash new Url ${event.newURL}`;
         const messageString = hash.substr(hash.indexOf(hashMessageIndicator) + hashMessageIndicator.length);
         const messageObj = convertMessageStringToObject(messageString);
         handleMessageFromPluginHost(messageObj);
@@ -36,7 +39,8 @@ function handleMessageFromPluginHost(message:any){
       testMessage(message.data);
       break;
     case "midiNotePlayed":
-      alert(JSON.stringify(message.data));
+      //@ts-ignore
+      // document.getElementById("page").innerHTML += "<br/> ------ " + JSON.stringify(message);
       midiNotePlayed(message.data);
       break;
     case "midiNoteStopped":

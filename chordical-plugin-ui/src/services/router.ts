@@ -9,6 +9,10 @@ class Router{
     window.addEventListener('hashchange', ()=> this.handleHashChange());
   }
   handleHashChange(){
+    const hashMessageIndicator = "message=";
+    if(window.location.hash.indexOf(hashMessageIndicator) >= 0){
+      return;
+    }
     const hash = window.location.hash.replace('#', '') || defaultPage;
     console.error(`hash changed: ${hash}`);
     const config = this.configs.find((c) => c.path === hash);

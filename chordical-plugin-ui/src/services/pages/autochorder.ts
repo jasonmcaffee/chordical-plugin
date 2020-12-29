@@ -34,9 +34,9 @@ class Autochorder{
           //@ts-ignore
           document.getElementById("page").innerHTML += `<br/> midi note played. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
           break;
-        case "testMessage":
+        case "midiNoteStopped":
           //@ts-ignore
-          document.getElementById("page").innerHTML += "<br/> got message from host2222";
+          document.getElementById("page").innerHTML += `<br/> midi note stopped. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
           break;
       }
     })

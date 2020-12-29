@@ -56,16 +56,25 @@ PluginProcessor::PluginProcessor()
     startTimer(1);
 }
 
+//processBlock must not be blocked by anything!  Can't call ui component and wait for it to do it's thing, so use a queue and a timer to emit messages to send to the web app.
 void PluginProcessor::timerCallback() {
 //    std::cout << "timer called" << std::endl;
     while(!sendPlayMidiNoteDataQueue.empty()){
         auto midiNoteData = sendPlayMidiNoteDataQueue.front();
-        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
         auto t = MidiNotePlayedMessage { midiNoteData };
         auto json = convertMidiNotePlayedToJSONString(t);
         auto s = ToWebAppMessage {json};
         EventBus::eventBus().emitMessage(s);
         sendPlayMidiNoteDataQueue.pop();
+    }
+
+    while(!sendStopMidiNoteDataQueue.empty()){
+        auto midiNoteData = sendStopMidiNoteDataQueue.front();
+        auto t = MidiNoteStoppedMessage { midiNoteData };
+        auto json = convertMidiNoteStoppedToJSONString(t);
+        auto s = ToWebAppMessage {json};
+        EventBus::eventBus().emitMessage(s);
+        sendStopMidiNoteDataQueue.pop();
     }
 }
 
@@ -99,41 +108,23 @@ void PluginProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
  */
 void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages){
     ScopedNoDenormals noDenormals; //Helper class providing an RAII-based mechanism for temporarily disabling denormals on your CPU.  https://www.ccoderun.ca/juce/api/classjuce_1_1ScopedNoDenormals.html#details
-//    auto totalNumInputChannels  = getTotalNumInputChannels();
-//    auto totalNumOutputChannels = getTotalNumOutputChannels();
-    // In case we have more outputs than inputs, this code clears any output channels that didn't contain input data, (because these aren't guaranteed to be empty - they may contain garbage). This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep this code if your algorithm always overwrites all the output channels.
-//    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i){
-//        buffer.clear (i, 0, buffer.getNumSamples());
-//    }
-
-    //original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
-//    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
-
-
-
-    //newest
-//    synthesizer.processBlock(buffer, midiMessages);
-
-
-
-
-//    chordicalJuceSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
-
 
     MidiBuffer processedMidi;
     int time;
     MidiMessage m;
     for (MidiBuffer::Iterator i (midiMessages); i.getNextEvent (m, time);){
-        m.setNoteNumber(m.getNoteNumber()); // decrease all midi notes by one, just to test
-        processedMidi.addEvent (m, time);
+        //        m.setNoteNumber(m.getNoteNumber()); // decrease all midi notes by one, just to test
+        //        processedMidi.addEvent (m, time);  // <-- ONLY if you want to pass through the midi message, which I don't think we want.
         if(m.isNoteOn()){
             sendPlayMidiNoteDataQueue.push(MidiNoteData {m.getNoteNumber(), m.getFloatVelocity() * 100});
+        }else if(m.isNoteOff()){
+            sendStopMidiNoteDataQueue.push(MidiNoteData {m.getNoteNumber(), m.getFloatVelocity() * 100});
         }
 
-//        EventBus::eventBus().emitMessage(s);  //DON"T CALL UI COMPONENTS WITH UPDATES https://docs.juce.com/master/classChangeBroadcaster.html
+        //EventBus::eventBus().emitMessage(s);  //DON"T CALL UI COMPONENTS WITH UPDATES https://docs.juce.com/master/classChangeBroadcaster.html
     }
 
+    //read off the queue to determine which midi notes to play.  e.g. web app will tell us to play 3 notes, and we'll do that by adding the notes to processedMidi
     //play
     while(!requestToPlayMidiNoteDataQueue.empty()){
         auto midiNoteData = requestToPlayMidiNoteDataQueue.front();
@@ -280,3 +271,19 @@ AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new PluginProcessor();
 }
+
+
+//    auto totalNumInputChannels  = getTotalNumInputChannels();
+//    auto totalNumOutputChannels = getTotalNumOutputChannels();
+// In case we have more outputs than inputs, this code clears any output channels that didn't contain input data, (because these aren't guaranteed to be empty - they may contain garbage). This is here to avoid people getting screaming feedback
+// when they first compile a plugin, but obviously you don't need to keep this code if your algorithm always overwrites all the output channels.
+//    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i){
+//        buffer.clear (i, 0, buffer.getNumSamples());
+//    }
+
+//original demo using the juce synthesizer to play SineWaveVoice/SineWaveSound.
+//    synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
+
+//newest
+//    synthesizer.processBlock(buffer, midiMessages);
+//    chordicalJuceSynth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
