@@ -53,7 +53,20 @@ PluginProcessor::PluginProcessor()
         }
     });
 
+    startTimer(1);
+}
 
+void PluginProcessor::timerCallback() {
+//    std::cout << "timer called" << std::endl;
+    while(!sendPlayMidiNoteDataQueue.empty()){
+        auto midiNoteData = sendPlayMidiNoteDataQueue.front();
+        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+        auto t = MidiNotePlayedMessage { midiNoteData };
+        auto json = convertMidiNotePlayedToJSONString(t);
+        auto s = ToWebAppMessage {json};
+        EventBus::eventBus().emitMessage(s);
+        sendPlayMidiNoteDataQueue.pop();
+    }
 }
 
 //destructor
@@ -112,8 +125,13 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     int time;
     MidiMessage m;
     for (MidiBuffer::Iterator i (midiMessages); i.getNextEvent (m, time);){
-        m.setNoteNumber(m.getNoteNumber() - 1); // decrease all midi notes by one, just to test
+        m.setNoteNumber(m.getNoteNumber()); // decrease all midi notes by one, just to test
         processedMidi.addEvent (m, time);
+        if(m.isNoteOn()){
+            sendPlayMidiNoteDataQueue.push(MidiNoteData {m.getNoteNumber(), m.getFloatVelocity() * 100});
+        }
+
+//        EventBus::eventBus().emitMessage(s);  //DON"T CALL UI COMPONENTS WITH UPDATES https://docs.juce.com/master/classChangeBroadcaster.html
     }
 
     //play
@@ -131,8 +149,6 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
         processedMidi.addEvent(MidiMessage::noteOff(1, midiNoteData.midiNote),0);
         requestToStopMidiNoteDataQueue.pop();
     }
-
-
 
     midiMessages.clear();
     midiMessages.swapWith(processedMidi);

@@ -21,7 +21,7 @@ using Node = juce::AudioProcessorGraph::Node;
 //==============================================================================
 /**
 */
-class PluginProcessor  : public AudioProcessor
+class PluginProcessor  : public AudioProcessor, private Timer
 {
 public:
     //==============================================================================
@@ -31,6 +31,7 @@ public:
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
     void releaseResources() override;
+    void timerCallback() override;
 
 #ifndef JucePlugin_PreferredChannelConfigurations
     bool isBusesLayoutSupported (const BusesLayout& layouts) const override;
@@ -76,6 +77,9 @@ private:
 
     std::queue<MidiNoteData> requestToPlayMidiNoteDataQueue;
     std::queue<MidiNoteData> requestToStopMidiNoteDataQueue;
+
+    std::queue<MidiNoteData> sendPlayMidiNoteDataQueue;
+    std::queue<MidiNoteData> sendStopMidiNoteDataQueue;
 
     //audio processor graph & nodes
     std::unique_ptr<juce::AudioProcessorGraph> mainProcessor;

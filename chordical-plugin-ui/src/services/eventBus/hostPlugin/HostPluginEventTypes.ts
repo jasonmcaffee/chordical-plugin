@@ -23,19 +23,21 @@ export interface IRequestToStopMidiNotesMessage{
 
 export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage;
 
-
-
 export interface IMidiNotePlayed{
   type: "midiNotePlayed";
-  data : { midiNumber: number; velocity: number; }
+  data : IMidiNoteData;
 }
 
+export interface IMidiNoteStopped{
+  type: "midiNoteStopped";
+  data : IMidiNoteData;
+}
 export interface ITestMessage{
   type: "testMessage";
   data: string;
 }
 
-export type FromHostPluginMessageTypes = IMidiNotePlayed | ITestMessage;
+export type FromHostPluginMessageTypes = IMidiNotePlayed | ITestMessage | IMidiNoteStopped;
 
 
 export type HostPluginEventTypes = ToHostPluginMessageTypes | FromHostPluginMessageTypes;

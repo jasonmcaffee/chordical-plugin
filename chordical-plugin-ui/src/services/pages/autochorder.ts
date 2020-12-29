@@ -13,8 +13,13 @@ import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "../music/predefinedNotes";
 import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave} from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
-import {requestToPlayMidiNotes, requestToStopMidiNotes} from "../eventBus/hostPlugin/toHostPluginEventBus";
+import {
+  requestToPlayMidiNotes,
+  requestToStopMidiNotes,
+  subscribeToHostPluginEvents
+} from "../eventBus/hostPlugin/toHostPluginEventBus";
 import {IMidiNoteData} from "../../models/IMidiNoteData";
+import {subscribeToFromHostPluginEvents} from "../eventBus/hostPlugin/fromHostPluginEventBus";
 const initialViewModel: IAutochorderPageViewModel = { test: false, autoChorderPreset: new AutoChorderPreset() };
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
@@ -22,6 +27,19 @@ export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChang
 class Autochorder{
   viewModel = initialViewModel;
   constructor(){
+    subscribeToFromHostPluginEvents((e) => {
+      switch(e.type){
+        case "midiNotePlayed":
+          console.error(`midi note played: `, e.data);
+          //@ts-ignore
+          document.getElementById("page").innerHTML += `<br/> midi note played. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
+          break;
+        case "testMessage":
+          //@ts-ignore
+          document.getElementById("page").innerHTML += "<br/> got message from host2222";
+          break;
+      }
+    })
   }
   loadViewModel(){
     setTimeout(()=> {

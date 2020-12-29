@@ -23,6 +23,15 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
 
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
+
+    std::cout << "Plugin Editor listening to ToWebAppMessage events" << std::endl;
+    EventBus::eventBus().subscribe<ToWebAppMessage>([this](ToWebAppMessage message){
+        std::cout << "start send message to web app" << std::endl;
+        webBrowserComponent.sendMessageToWebApp(message.data);
+//        webBrowserComponent.sendMessageToWebApp(convertTestMessageToJSONString(TestMessage{"hi there"}));
+//        std::cout << "done send message to web app" << std::endl;
+    });
+
 }
 
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}

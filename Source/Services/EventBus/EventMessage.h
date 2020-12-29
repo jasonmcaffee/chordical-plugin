@@ -26,6 +26,11 @@ struct MidiNoteData { int midiNote; float velocity; };
 struct MidiNotePlayedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
 struct MidiNoteStoppedMessage : public EventMessage<MidiNoteData> { using EventMessage::EventMessage; };
 
+//struct ToWebAppMessage { juce::String message; };
+struct ToWebAppMessage: public EventMessage<juce::String> { using EventMessage::EventMessage; };
+
+
+
 struct RequestToPlayMidiNotesMessage : public EventMessage<std::vector<MidiNoteData>> { using EventMessage::EventMessage; };
 struct RequestToStopMidiNotesMessage : public EventMessage<std::vector<MidiNoteData>> { using EventMessage::EventMessage; };
 

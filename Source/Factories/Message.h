@@ -21,6 +21,19 @@ inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage mess
     return convertDynamicObjectToJsonString(messageObj);
 }
 
+inline juce::String convertMidiNoteStoppedToJSONString(MidiNoteStoppedMessage message){
+
+    auto dataObj = new DynamicObject();
+    dataObj->setProperty("midiNote", message.data.midiNote);
+    dataObj->setProperty("velocity", message.data.velocity);
+
+    auto* messageObj = new DynamicObject();
+    messageObj->setProperty("type", "midiNoteStopped");
+    messageObj->setProperty("data", dataObj);
+
+    return convertDynamicObjectToJsonString(messageObj);
+}
+
 inline juce::String convertTestMessageToJSONString(TestMessage message){
     auto* messageObj = new DynamicObject();
     messageObj->setProperty("data", static_cast<String &&>(message.data));

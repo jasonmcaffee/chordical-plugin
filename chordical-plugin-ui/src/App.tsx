@@ -24,6 +24,7 @@ function convertMessageStringToObject(messageString: string){
 
 function App() {
   const [message, setMessage] = useState("");
+  const [count, setCount] = useState(0);
   useEffect(()=>{
     //tell the host that the app has loaded
     webAppLoaded("hi");
@@ -31,7 +32,12 @@ function App() {
     const unsubscribeFromHostPluginEvents = subscribeToFromHostPluginEvents((m: FromHostPluginMessageTypes) => {
       switch(m.type){
         case "testMessage":
-          setMessage(m.data);
+          setMessage(m.data + count.toString());
+          setCount(count + 1);
+          break;
+        case "midiNotePlayed":
+          setMessage("midi: " + m.data.midiNote.toString() + count.toString());
+          setCount(count + 1);
           break;
       }
     });

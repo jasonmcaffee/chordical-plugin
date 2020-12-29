@@ -1,5 +1,6 @@
 import {FromHostPluginMessageTypes} from './HostPluginEventTypes';
 import {Subject} from 'rxjs';
+import {IMidiNoteData} from "../../../models/IMidiNoteData";
 
 const fromHostSubject = new Subject<FromHostPluginMessageTypes>();
 
@@ -17,4 +18,12 @@ export function subscribeToFromHostPluginEvents(callback: (message: FromHostPlug
 
 export function testMessage(data: string){
   fromHostSubject.next({type: "testMessage", data});
+}
+
+export function midiNotePlayed(midiNote: IMidiNoteData){
+  fromHostSubject.next({type: "midiNotePlayed", data: midiNote });
+}
+
+export function midiNoteStopped(midiNote:IMidiNoteData){
+  fromHostSubject.next({type: "midiNoteStopped", data: midiNote });
 }

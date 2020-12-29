@@ -3,6 +3,8 @@
 #include "../Services/EventBus/EventBus.h"
 #include "../Factories/Message.h"
 
+#include <random>
+#include <sstream>
 //serialize to char* array (not json) https://stackoverflow.com/questions/16543519/serialization-of-struct
 
 
@@ -55,6 +57,24 @@ inline void writeHtmlFileFromBinaryDataToDisk(){
     stream.flush();
 }
 
+inline std::string get_uuid() {
+    static std::random_device dev;
+    static std::mt19937 rng(dev());
+
+    std::uniform_int_distribution<int> dist(0, 15);
+
+    const char *v = "0123456789abcdef";
+    const bool dash[] = { 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0 };
+
+    std::string res;
+    for (int i = 0; i < 16; i++) {
+        if (dash[i]) res += "-";
+        res += v[dist(rng)];
+        res += v[dist(rng)];
+    }
+    return res;
+}
+
 class WebBrowserWithMessaging  : public WebBrowserComponent {
 public:
     bool isWebAppLoaded = false;
@@ -80,7 +100,9 @@ public:
         if(!isWebAppLoaded) { std::cout << "web app is not loaded so cannot send messages or it will mess up the loading of the app (blank screen due to hash change?) " << std::endl; return; }
 //        String urlWithMessageParam = baseUrl + "/#messageToWebApp=" + message;
 //        String urlWithMessageParam = "javascript:location.hash=\"" + message + "\";";
-        String urlWithMessageParam = "javascript:location.hash='message=" + message + "';";
+        auto requestId = get_uuid();
+//        String urlWithMessageParam = "javascript:location.hash='message=" + message + "';";
+        String urlWithMessageParam = "javascript:location.hash='requestId=" + requestId + "&message=" + message.toStdString() + "';";
         std::cout << "sending message: " << urlWithMessageParam << std::endl;
         goToURL(urlWithMessageParam);
     }
@@ -114,3 +136,5 @@ public:
     }
 
 };
+
+

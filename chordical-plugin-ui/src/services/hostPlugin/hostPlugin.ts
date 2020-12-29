@@ -1,5 +1,5 @@
 import {subscribeToHostPluginEvents} from "../eventBus/hostPlugin/toHostPluginEventBus";
-import {testMessage} from "../eventBus/hostPlugin/fromHostPluginEventBus";
+import {midiNotePlayed, midiNoteStopped, testMessage} from "../eventBus/hostPlugin/fromHostPluginEventBus";
 
 import {HostPluginEventTypes} from "../eventBus/hostPlugin/HostPluginEventTypes";
 
@@ -34,6 +34,13 @@ function handleMessageFromPluginHost(message:any){
   switch(message.type){
     case "testMessage":
       testMessage(message.data);
+      break;
+    case "midiNotePlayed":
+      alert(JSON.stringify(message.data));
+      midiNotePlayed(message.data);
+      break;
+    case "midiNoteStopped":
+      midiNoteStopped(message.data);
       break;
   }
 }
