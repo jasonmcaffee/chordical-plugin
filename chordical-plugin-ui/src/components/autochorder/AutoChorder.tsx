@@ -13,7 +13,10 @@ export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageVie
   return <div className="autochorder">
     Test: {viewModel.test ? 'true' : 'false'}
     <div onClick={()=> doSomething()}>Do Something</div>
-    {chordCardEls}
+    <div className="chord-cards">
+      {chordCardEls}
+    </div>
+
    </div>;
 }
 

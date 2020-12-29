@@ -1,3 +1,8 @@
 .autochorder{
   background-color: rebeccapurple;
 }
+
+.chord-cards{
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+}
