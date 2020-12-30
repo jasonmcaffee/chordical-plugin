@@ -25,6 +25,7 @@ function convertMessageStringToObject(messageString: string){
 function App() {
   const [message, setMessage] = useState("");
   const [count, setCount] = useState(0);
+  window.location.hash = 'autochorder';
   useEffect(()=>{
     //tell the host that the app has loaded
     webAppLoaded("hi");

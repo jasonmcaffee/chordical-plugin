@@ -20,7 +20,8 @@ import {
 } from "../eventBus/hostPlugin/toHostPluginEventBus";
 import {IMidiNoteData} from "../../models/IMidiNoteData";
 import {subscribeToFromHostPluginEvents} from "../eventBus/hostPlugin/fromHostPluginEventBus";
-const initialViewModel: IAutochorderPageViewModel = { test: false, autoChorderPreset: new AutoChorderPreset() };
+import ISlot from "../../models/view/autochorder/ISlot";
+const initialViewModel: IAutochorderPageViewModel = { test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), };
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 
@@ -29,15 +30,32 @@ class Autochorder{
   constructor(){
     subscribeToFromHostPluginEvents((e) => {
       switch(e.type){
-        case "midiNotePlayed":
+        case "midiNotePlayed":{
           console.error(`midi note played: `, e.data);
+          const {midiNote} = e.data;
+          const slots = findSlotsWithMatchingMidiNoteTrigger({midiNote, slots: this.viewModel.autoChorderPreset.slots});
+          slots.forEach((s)=>{
+            if(s.content){
+              this.playChord({chord: s.content});
+            }
+          });
           //@ts-ignore
-          document.getElementById("page").innerHTML += `<br/> midi note played. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
+          // document.getElementById("page").innerHTML += `<br/> midi note played. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
           break;
-        case "midiNoteStopped":
+        }
+        case "midiNoteStopped":{
           //@ts-ignore
-          document.getElementById("page").innerHTML += `<br/> midi note stopped. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
+          // document.getElementById("page").innerHTML += `<br/> midi note stopped. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
+          const {midiNote} = e.data;
+          const slots = findSlotsWithMatchingMidiNoteTrigger({midiNote, slots: this.viewModel.autoChorderPreset.slots});
+          slots.forEach((s)=>{
+            if(s.content){
+              this.stopChord({chord: s.content});
+            }
+          });
           break;
+        }
+
       }
     })
   }
@@ -311,14 +329,27 @@ class Autochorder{
     console.log(`generateChordProgression rootNote: ${rootNote} scale: ${scale} octave: ${octave}`);
     const chordProgression = buildChordProgression({rootNote, scale, octave});
     this.viewModel.autoChorderPreset.chords = chordProgression;
-    //update the ui
-    // trigger(presetChanged, {autoChorderPreset: this});
+    this.placeChordsInSlots();
     this.emitChange();
   }
   clearAllChords(){
     this.viewModel.autoChorderPreset.chords = [];
-    // trigger(presetChanged, {autoChorderPreset: this});
     this.emitChange();
+  }
+  placeChordsInSlots({autoChorderPreset=this.viewModel.autoChorderPreset}: {autoChorderPreset?: AutoChorderPreset} = {}){
+    const {chords, slots} = autoChorderPreset;
+    slots.forEach(slot => slot.content = undefined);
+    for(let i = 0; i < chords.length; ++i){
+      const chord = chords[i];
+      if(i >= slots.length){
+        const previousSlotFirstMidiNoteTrigger = slots[i - 1].midiNoteTriggers[0];
+        const midiNoteTriggers = previousSlotFirstMidiNoteTrigger ? [previousSlotFirstMidiNoteTrigger + 1] : [];
+        const slot = { midiNoteTriggers, content: chord};
+        slots.push(slot);
+        continue;
+      }
+      slots[i].content = chord;
+    }
   }
 }
 
@@ -365,4 +396,18 @@ function convertChordToHostMidiNotes({chord}: {chord: IChord}) : IMidiNoteData[]
   return chord.notes.map(n => {
     return { midiNote: n.midiNoteNumber, velocity: 100};
   });
+}
+
+function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNumber?: number, numberOfSlots?: number} = {}): ISlot[]{
+  const result: ISlot[] = [];
+  for(let i = 0; i < numberOfSlots; ++i){
+    const midiNoteTrigger = startMidiNumber + i;
+    const slot: ISlot = {midiNoteTriggers: [midiNoteTrigger]};
+    result.push(slot);
+  }
+  return result;
+}
+
+function findSlotsWithMatchingMidiNoteTrigger({midiNote, slots}: {midiNote: number, slots: ISlot[]}){
+  return slots.filter((s) => s.midiNoteTriggers.includes(midiNote));
 }

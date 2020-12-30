@@ -91,12 +91,9 @@ void PluginProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     //first demo using JUCE synthesizer and SineWaveSound/SineWaveVoice
     synth.setCurrentPlaybackSampleRate (sampleRate);
-
     chordicalJuceSynth.setCurrentPlaybackSampleRate(sampleRate);
-
     //our own synthesizer that uses audio processor graphs to chain effects.
     synthesizer.prepareToPlay(sampleRate, samplesPerBlock, getMainBusNumInputChannels(), getMainBusNumOutputChannels());
-
 }
 
 

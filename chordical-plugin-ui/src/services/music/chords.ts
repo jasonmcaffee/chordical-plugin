@@ -372,7 +372,7 @@ function findFirstChordWithNotesInScale({notesForScale, rootNote='c', octave=5}:
  * @param keyRootNote - the 'c' in C Major
  * @returns {chord}
  */
-export function buildChordOfRandomType({rootNote, octave, scale, keyRootNote}: {rootNote: NoteSymbolTypes, octave: number, scale?: ScaleTypesEnum, keyRootNote: NoteSymbolTypes}){
+export function buildChordOfRandomType({rootNote, octave, scale, keyRootNote}: {rootNote: NoteSymbolTypes, octave: number, scale?: ScaleTypesEnum, keyRootNote: NoteSymbolTypes}): IChord{
   console.log(`building chord of random type.`);
   if(scale === undefined){
     //generate all chords for the root and octave by iterating over every chord function in chords

@@ -1,6 +1,7 @@
 import {NoteSymbolTypes} from "../../music/INote";
 import {ScaleTypesEnum} from "../../music/scales";
 import {IChord} from "../../music/IChord";
+import ISlot from "./ISlot";
 
 export interface IKey{
   rootNote: NoteSymbolTypes,
@@ -16,18 +17,16 @@ export interface IKey{
 export default class AutoChorderPreset {
   id = '';
   chords:IChord[] = []; //chord model array of all the chords in this preset.
+  slots: ISlot[] = [];
   selectedKey: IKey = { rootNote: "c", scale: ScaleTypesEnum.majorIonian}; // we use key (rootnote + octave) when generating chord progressions (e.g. c major chord progression)
   randomizationMinOctave: number = 0;
   randomizationMaxOctave: number = 0;
   name: string = ''; // displayed to user on preset selector.
-  constructor({id=generateRandomId({name:'AutoChorderPreset'}), selectedKey={rootNote:'c', scale: 'majorIonian'},
-                chords=[], randomizationMinOctave=3, randomizationMaxOctave=6, onlyGenerateChordsInKey=true,
-                name=`${new Date().toLocaleString()}`,}={}) {
-    Object.assign(this, {id, chords, selectedKey, randomizationMinOctave, randomizationMaxOctave, name});
+  constructor({id=generateRandomId({name:'AutoChorderPreset'}), selectedKey={rootNote:'c', scale: ScaleTypesEnum.majorIonian},
+                chords=[], randomizationMinOctave=3, randomizationMaxOctave=6,
+                name=`${new Date().toLocaleString()}`, slots=[]} :Partial<AutoChorderPreset>) {
+    Object.assign(this, {id, chords, selectedKey, randomizationMinOctave, randomizationMaxOctave, name, slots});
   }
-  destroy(){
-  }
-
 }
 
 function generateRandomId({name=''}={}){
