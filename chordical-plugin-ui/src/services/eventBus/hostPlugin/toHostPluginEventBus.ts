@@ -20,6 +20,7 @@ const messageQueue: IMessageToHost[] = [];
 export function sendMessageToHost(data: string){
   const message: IMessageToHost = {type: "messageToHost", data};
   messageQueue.push(message);
+  // toHostSubject.next(message);
 }
 //temp fix is to send 1 message per ms
 setInterval(()=>{
@@ -27,7 +28,7 @@ setInterval(()=>{
   if(message){
     toHostSubject.next(message);
   }
-}, 0.1);
+}, .1);
 
 function sendMessageObjToHost(messageObj: ToHostPluginMessageTypes){
   sendMessageToHost(messageToString(messageObj));
@@ -38,11 +39,11 @@ export function webAppLoaded(data: string){
 }
 
 export function requestToPlayMidiNotes(data: IMidiNoteData[]){
-  const page = document.getElementById('page');
-  //@ts-ignore
-  if(page){
-    page.innerHTML += "<br/> sending midis: " + data.map(d => d.midiNote).join(', ');
-  }
+  // let page = document.getElementById('page');
+  // //@ts-ignore
+  // if(page){
+  //   page.innerHTML += "<br/> sending midis: " + data.map(d => d.midiNote).join(', ');
+  // }
 
   sendMessageObjToHost({type: "requestToPlayMidiNotesMessage", data});
 }
