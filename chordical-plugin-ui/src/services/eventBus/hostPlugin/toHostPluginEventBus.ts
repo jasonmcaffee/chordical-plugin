@@ -16,10 +16,18 @@ export function subscribeToHostPluginEvents(callback: (message: ToHostPluginMess
   return subscription.unsubscribe.bind(subscription);
 }
 
-
+const messageQueue: IMessageToHost[] = [];
 export function sendMessageToHost(data: string){
-  toHostSubject.next({type: "messageToHost", data});
+  const message: IMessageToHost = {type: "messageToHost", data};
+  messageQueue.push(message);
 }
+//temp fix is to send 1 message per ms
+setInterval(()=>{
+  const message = messageQueue.shift();
+  if(message){
+    toHostSubject.next(message);
+  }
+}, 0.1);
 
 function sendMessageObjToHost(messageObj: ToHostPluginMessageTypes){
   sendMessageToHost(messageToString(messageObj));
@@ -30,6 +38,12 @@ export function webAppLoaded(data: string){
 }
 
 export function requestToPlayMidiNotes(data: IMidiNoteData[]){
+  const page = document.getElementById('page');
+  //@ts-ignore
+  if(page){
+    page.innerHTML += "<br/> sending midis: " + data.map(d => d.midiNote).join(', ');
+  }
+
   sendMessageObjToHost({type: "requestToPlayMidiNotesMessage", data});
 }
 

@@ -411,3 +411,26 @@ function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNu
 function findSlotsWithMatchingMidiNoteTrigger({midiNote, slots}: {midiNote: number, slots: ISlot[]}){
   return slots.filter((s) => s.midiNoteTriggers.includes(midiNote));
 }
+
+// function test(){
+//   const chord1: IChord = { notes: [ {midiNoteNumber: 40, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
+//   const chord2: IChord = { notes: [ {midiNoteNumber: 65, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
+//   const chord3: IChord = { notes: [ {midiNoteNumber: 70, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
+//   const chord4: IChord = { notes: [ {midiNoteNumber: 75, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
+//
+//   function send(){
+//     autochorder.playChord({chord: chord1});
+//     autochorder.playChord({chord: chord2});
+//     autochorder.playChord({chord: chord3});
+//     autochorder.playChord({chord: chord4});
+//     // setTimeout(()=>{
+//     //
+//     // }, 1);
+//   }
+//   send();
+//   setInterval(() => {
+//     send();
+//   }, 5000);
+// }
+
+// test();
