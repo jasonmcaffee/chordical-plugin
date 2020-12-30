@@ -10,7 +10,7 @@ import {
   getChordOptions
 } from "../music/chords";
 import {IChord} from "../../models/music/IChord";
-import {IPredefinedNote} from "../music/predefinedNotes";
+import {IPredefinedNote, predefinedNotes} from "../music/predefinedNotes";
 import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave} from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 import {
@@ -21,13 +21,19 @@ import {
 import {IMidiNoteData} from "../../models/IMidiNoteData";
 import {subscribeToFromHostPluginEvents} from "../eventBus/hostPlugin/fromHostPluginEventBus";
 import ISlot from "../../models/view/autochorder/ISlot";
-const initialViewModel: IAutochorderPageViewModel = { test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), };
+import {ISelectOption} from "../../models/view/common/ISelectOption";
+
+const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
+const initialViewModel: IAutochorderPageViewModel = { noteSelectOptions, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), };
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
+
 
 class Autochorder{
   viewModel = initialViewModel;
   constructor(){
+    this.generateChordProgression({rootNote: 'c', octave: 4, scale: ScaleTypesEnum.majorIonian});
+
     subscribeToFromHostPluginEvents((e) => {
       switch(e.type){
         case "midiNotePlayed":{
@@ -66,7 +72,7 @@ class Autochorder{
   }
 
   emitChange(){
-    this.viewModel = {...this.viewModel};
+    this.viewModel = {...this.viewModel,};
     viewModelChanged(this.viewModel);
   }
 
@@ -178,7 +184,7 @@ class Autochorder{
   changeNoteSymbol({chord, note, newNoteSymbol, chords=this.viewModel.autoChorderPreset.chords}: {chord: IChord, note: IPredefinedNote, newNoteSymbol: NoteSymbolTypes, chords?: IChord[]}){
     //find the chord and note to be modified in our array of chords
     const noteAndChord =  getNoteAndChordFromChords({chordId: chord.id, noteId: note.id, chords});
-    if(!noteAndChord){ return console.log(`AutoChordPreset chord id: ${chord.id} doesn't have note id: ${note.id} chords:`, chords, chord); }
+    if(!noteAndChord){ return console.log(`AutoChordPreset chord id: ${chord.id} doesn't have note id: ${note.id} chords:`, chord, chords); }
     const {chord: chordBeingModified, note: noteBeingModified, noteIndex: noteBeingModifiedIndex} = noteAndChord;
     //find the new note
     const {octave} = noteBeingModified;
@@ -190,6 +196,7 @@ class Autochorder{
     //replace the chord in chords array
     const indexOfChordBeingModified = chords.indexOf(chordBeingModified);
     chords[indexOfChordBeingModified] = clone;
+    updateSlotContentByChordId(this.viewModel.autoChorderPreset.slots, clone);
     //tell the ChordCell ui to use the new chord and refresh
     // trigger(chordChanged, {chord: clone});
     this.emitChange();
@@ -300,8 +307,6 @@ class Autochorder{
     //swap existing chord
     const chordIndex = chords.indexOf(chordBeingModified);
     chords[chordIndex] = clone;
-    //update the ui
-    // trigger(chordChanged, {chord: clone});
     this.emitChange();
   }
 
@@ -358,8 +363,10 @@ function getNoteAndChordFromChords({chordId, noteId, chords}: {chordId: string, 
   // let result = {};
   const chordBeingModified = chords.find(c=>c.id === chordId);
   if(!chordBeingModified){ return; }
+  console.log(`found chord being modified: `, chordBeingModified);
 
   const noteBeingModifiedIndex = chordBeingModified.notes.findIndex(n=>n.id === noteId);
+  console.log(`note being modified index: `, noteBeingModifiedIndex, noteId);
   const noteBeingModified = chordBeingModified.notes[noteBeingModifiedIndex];
   if(!noteBeingModified){ return; }
 
@@ -411,6 +418,22 @@ function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNu
 function findSlotsWithMatchingMidiNoteTrigger({midiNote, slots}: {midiNote: number, slots: ISlot[]}){
   return slots.filter((s) => s.midiNoteTriggers.includes(midiNote));
 }
+
+function updateSlotContentByChordId(slots: ISlot[], chord: IChord){
+  const slot = slots.find(s => s.content?.id === chord.id);
+  if(slot){
+    slot.content = chord;
+  }
+}
+
+function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<NoteSymbolTypes>[]{
+  return notes.map(n => {
+    const option: ISelectOption<NoteSymbolTypes> = { value: n.noteSymbol, label: n.noteSymbol};
+    return option;
+  });
+}
+
+
 
 // function test(){
 //   const chord1: IChord = { notes: [ {midiNoteNumber: 40, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};

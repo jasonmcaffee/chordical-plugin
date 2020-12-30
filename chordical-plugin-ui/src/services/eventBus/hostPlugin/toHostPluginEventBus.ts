@@ -20,8 +20,8 @@ const messageQueue: IMessageToHost[] = [];
 export function sendMessageToHost(data: string){
   const message: IMessageToHost = {type: "messageToHost", data};
   messageQueue.push(message);
-  // toHostSubject.next(message);
 }
+
 //temp fix is to send 1 message per ms
 setInterval(()=>{
   const message = messageQueue.shift();
@@ -39,12 +39,6 @@ export function webAppLoaded(data: string){
 }
 
 export function requestToPlayMidiNotes(data: IMidiNoteData[]){
-  // let page = document.getElementById('page');
-  // //@ts-ignore
-  // if(page){
-  //   page.innerHTML += "<br/> sending midis: " + data.map(d => d.midiNote).join(', ');
-  // }
-
   sendMessageObjToHost({type: "requestToPlayMidiNotesMessage", data});
 }
 

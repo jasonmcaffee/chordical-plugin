@@ -10,33 +10,26 @@ import ISlot from "../../models/view/autochorder/ISlot";
 import SlotCard from "./SlotCard";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
-  const autoChorderPreset = viewModel.autoChorderPreset;
-  // const chordCardEls = createChordCardEls({autoChorderPreset});
-  const slotCardEls = createSlotEls({autoChorderPreset});
+  const slotCardEls = createSlotEls({viewModel});
   return <div className="autochorder">
     Test: {viewModel.test ? 'true' : 'false'}
     <div onClick={()=> doSomething()}>Do Something</div>
-    <div className="chord-cards">
+    <div className="slot-cards">
       {slotCardEls}
     </div>
-
    </div>;
 }
 
-function createChordCardEls({autoChorderPreset}: {autoChorderPreset: AutoChorderPreset}){
-  return autoChorderPreset.chords.map((chord) => createChordCardEl({chord}));
+function createChordCardEl({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
+  return <ChordCard key={chord.id} chord={chord} viewModel={viewModel}/>;
 }
 
-function createChordCardEl({chord}: {chord: IChord}){
-  return <ChordCard key={chord.id} chord={chord}/>;
+function createSlotEls({viewModel}: {viewModel: IAutochorderPageViewModel}){
+  return viewModel.autoChorderPreset.slots.map(slot => createSlotEl({slot, viewModel}));
 }
 
-function createSlotEls({autoChorderPreset}: {autoChorderPreset: AutoChorderPreset}){
-  return autoChorderPreset.slots.map(slot => createSlotEl({slot}));
-}
-
-function createSlotEl({slot, }: {slot: ISlot}){
-  const chordEl = slot.content ? createChordCardEl({chord: slot.content}) : null;
+function createSlotEl({slot, viewModel}: {slot: ISlot, viewModel: IAutochorderPageViewModel}){
+  const chordEl = slot.content ? createChordCardEl({chord: slot.content, viewModel}) : null;
   return <SlotCard slot={slot}> {chordEl}</SlotCard>;
 }
 
