@@ -38,6 +38,10 @@ PluginProcessor::PluginProcessor()
 
     EventBus::eventBus().subscribe<WebAppLoadedMessage>([this](WebAppLoadedMessage message){
         std::cout << "Plugin processor got web app loaded" << std::endl;
+        AppState appStateMessage = AppState { appState };
+        auto json = convertAppStateLoadedToJSONString(appStateMessage);
+        auto m = ToWebAppMessage {json};
+        EventBus::eventBus().emitMessage(m);
     });
 
     EventBus::eventBus().subscribe<RequestToPlayMidiNotesMessage>([this](RequestToPlayMidiNotesMessage message){
@@ -51,6 +55,19 @@ PluginProcessor::PluginProcessor()
         for(auto midiNoteData: message.data){
             requestToStopMidiNoteDataQueue.push(midiNoteData);
         }
+    });
+
+    EventBus::eventBus().subscribe<RequestToSaveAppStateMessage>([this](RequestToSaveAppStateMessage message){
+        std::cout << "request to save app state: " + message.data.state << std::endl;
+        appState = message.data.state;
+    });
+
+    EventBus::eventBus().subscribe<RequestToGetAppStateMessage>([this](RequestToGetAppStateMessage message){
+       std::cout << "request to get app state" << std::endl;
+        AppState appStateMessage = AppState { appState };
+        auto json = convertAppStateLoadedToJSONString(appStateMessage);
+        auto m = ToWebAppMessage {json};
+        EventBus::eventBus().emitMessage(m);
     });
 
     startTimer(1);
@@ -125,7 +142,7 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     //play
     while(!requestToPlayMidiNoteDataQueue.empty()){
         auto midiNoteData = requestToPlayMidiNoteDataQueue.front();
-        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+//        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
         processedMidi.addEvent(MidiMessage::noteOn(1, midiNoteData.midiNote, midiNoteData.velocity),0);
         requestToPlayMidiNoteDataQueue.pop();
     }
@@ -133,7 +150,7 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     //stop
     while(!requestToStopMidiNoteDataQueue.empty()){
         auto midiNoteData = requestToStopMidiNoteDataQueue.front();
-        std::cout << "from request to stop queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+//        std::cout << "from request to stop queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
         processedMidi.addEvent(MidiMessage::noteOff(1, midiNoteData.midiNote),0);
         requestToStopMidiNoteDataQueue.pop();
     }
@@ -249,17 +266,26 @@ AudioProcessorEditor* PluginProcessor::createEditor()
 }
 
 //==============================================================================
+//called when closing the app
 void PluginProcessor::getStateInformation (MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+    String myString = appState;
+    MemoryOutputStream stream(destData, false);
+    stream.writeText (myString, true, true, nullptr);
+    std::cout << "getStateInformation: " + myString << std::endl;
 }
-
+//called when opening the app
 void PluginProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+    String myString = String::createStringFromData (data, sizeInBytes);
+    std::cout << "setStateInformation: " + myString << std::endl;
+
+    appState = myString.toStdString();
 }
 
 //==============================================================================

@@ -88,5 +88,7 @@ private:
     Node::Ptr midiInputNode;
     Node::Ptr midiOutputNode;
 
+    std::string appState;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

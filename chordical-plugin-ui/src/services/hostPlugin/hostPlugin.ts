@@ -1,5 +1,10 @@
 import {subscribeToHostPluginEvents} from "../eventBus/hostPlugin/toHostPluginEventBus";
-import {midiNotePlayed, midiNoteStopped, testMessage} from "../eventBus/hostPlugin/fromHostPluginEventBus";
+import {
+  appStateLoaded,
+  midiNotePlayed,
+  midiNoteStopped,
+  testMessage
+} from "../eventBus/hostPlugin/fromHostPluginEventBus";
 
 import {HostPluginEventTypes} from "../eventBus/hostPlugin/HostPluginEventTypes";
 
@@ -30,6 +35,7 @@ class HostPlugin {
   sendMessageToHost(data: string){
     console.log(`send message to host`, data);
     window.location.href = `projucer://${data}`;
+    // window.location.href = `https://toNativeHost/${data}`;
   }
 }
 
@@ -46,16 +52,27 @@ function handleMessageFromPluginHost(message:any){
     case "midiNoteStopped":
       midiNoteStopped(message.data);
       break;
+    case "appStateLoaded":
+      //@ts-ignore
+      // document.getElementById('page').innerHTML += "decoded message: " + message.data.state + "<br/>";
+      appStateLoaded(message.data.state);
+      break;
+    case "unknown":
+      break;
   }
 }
 
 
 function convertMessageStringToObject(messageString: string){
+  const decodedMessageString = decodeURIComponent(messageString);
   let messageObj;
   try{
-    messageObj = JSON.parse(messageString);
+    messageObj = JSON.parse(decodedMessageString);
   }catch(e){
     console.error(`cant parse hash message sent from plugin host`);
+    messageObj = {type: "unknown", data: decodedMessageString};
+    //@ts-ignore
+    // document.getElementById('page').innerHTML += "unknown message: " + messageString;
   }
   return messageObj;
 }

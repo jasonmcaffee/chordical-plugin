@@ -34,4 +34,7 @@ struct ToWebAppMessage: public EventMessage<juce::String> { using EventMessage::
 struct RequestToPlayMidiNotesMessage : public EventMessage<std::vector<MidiNoteData>> { using EventMessage::EventMessage; };
 struct RequestToStopMidiNotesMessage : public EventMessage<std::vector<MidiNoteData>> { using EventMessage::EventMessage; };
 
+struct AppState { std:: string state; };
+struct RequestToSaveAppStateMessage : public EventMessage<AppState> { using EventMessage::EventMessage; };
 
+struct RequestToGetAppStateMessage : public EventMessage<nullptr_t> { using EventMessage::EventMessage; };

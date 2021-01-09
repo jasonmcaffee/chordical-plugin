@@ -14,7 +14,8 @@ import {IPredefinedNote, predefinedNotes} from "../music/predefinedNotes";
 import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave} from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 import {
-  requestToPlayMidiNotes,
+  requestToGetAppState,
+  requestToPlayMidiNotes, requestToSaveAppState,
   requestToStopMidiNotes,
   subscribeToHostPluginEvents
 } from "../eventBus/hostPlugin/toHostPluginEventBus";
@@ -36,6 +37,19 @@ class Autochorder{
 
     subscribeToFromHostPluginEvents((e) => {
       switch(e.type){
+        case "appStateLoaded":
+          try{
+            const newViewModel = JSON.parse(e.state);
+            this.viewModel = newViewModel;
+            this.emitChange();
+          }catch(e){
+            //@ts-ignore
+            document.getElementById('page').innerHTML += "failed to parse " + e.message;
+          }
+
+
+
+          break;
         case "midiNotePlayed":{
           console.error(`midi note played: `, e.data);
           const {midiNote} = e.data;
@@ -67,10 +81,22 @@ class Autochorder{
   }
   loadViewModel(){
     setTimeout(()=> {
-      viewModelChanged({...initialViewModel, test: true});
+      // this.viewModel.test = true;
+      // this.emitChange();
+
     }, 1000);
   }
 
+  saveAppState(){
+    const data = JSON.stringify(this.viewModel); //.replace(/"/g, "'");
+    // const data = encodeURIComponent(JSON.stringify(this.viewModel));
+    requestToSaveAppState(data);
+    // requestToSaveAppState(`hello`);
+  }
+
+  getAppState(){
+    requestToGetAppState();
+  }
   emitChange(){
     this.viewModel = {...this.viewModel,};
     viewModelChanged(this.viewModel);
@@ -439,7 +465,7 @@ function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<N
 //   const chord1: IChord = { notes: [ {midiNoteNumber: 40, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
 //   const chord2: IChord = { notes: [ {midiNoteNumber: 65, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
 //   const chord3: IChord = { notes: [ {midiNoteNumber: 70, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
-//   const chord4: IChord = { notes: [ {midiNoteNumber: 75, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
+//   const chord4: IChord = { notes: [ {midiNoteNumber: 85, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
 //
 //   function send(){
 //     autochorder.playChord({chord: chord1});
@@ -455,5 +481,5 @@ function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<N
 //     send();
 //   }, 5000);
 // }
-
+//
 // test();

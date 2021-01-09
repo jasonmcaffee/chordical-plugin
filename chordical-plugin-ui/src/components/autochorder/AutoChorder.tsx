@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import IAutochorderPageViewModel from "../../models/view/autochorder/IAutochorderPageViewModel";
 import AutoChorderPreset from "../../models/view/autochorder/AutoChorderPreset";
 import {IChord} from "../../models/music/IChord";
@@ -8,15 +8,28 @@ import {ScaleTypesEnum} from "../../models/music/scales";
 import '../../style/components/autochorder/autochorder.scss';
 import ISlot from "../../models/view/autochorder/ISlot";
 import SlotCard from "./SlotCard";
+import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
+  const l: string[] = [];
+  // const [messages, setMessages] = useState(l);
+  // useEffect(()=>{
+  //   return subscribeToFromHostPluginEvents((message)=>{
+  //     const m = "<div>" + JSON.stringify(message) + "</div>";
+  //     setMessages([m, ...messages]);
+  //   });
+  // });
   return <div className="autochorder">
-    Test: {viewModel.test ? 'true' : 'false'}
+    <div onClick={() => autochorder.saveAppState() }>Save {viewModel.test ? 'true' : 'false'}</div>
+    <div onClick={() => autochorder.getAppState() }>Get App State</div>
     <div onClick={()=> doSomething()}>Do Something</div>
     <div className="slot-cards">
       {slotCardEls}
     </div>
+    {/*<div>*/}
+      {/*{messages}*/}
+    {/*</div>*/}
    </div>;
 }
 

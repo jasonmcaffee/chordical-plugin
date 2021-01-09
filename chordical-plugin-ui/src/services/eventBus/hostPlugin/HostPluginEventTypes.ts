@@ -21,7 +21,16 @@ export interface IRequestToStopMidiNotesMessage{
   data: IMidiNoteData[];
 }
 
-export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage;
+export interface IRequestToSaveAppStateMessage{
+  type: "requestToSaveAppStateMessage";
+  data: string;
+}
+
+export interface IRequestToGetAppStateMessage {
+  type: "requestToGetAppStateMessage";
+}
+
+export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage | IRequestToSaveAppStateMessage | IRequestToGetAppStateMessage;
 
 export interface IMidiNotePlayed{
   type: "midiNotePlayed";
@@ -37,7 +46,12 @@ export interface ITestMessage{
   data: string;
 }
 
-export type FromHostPluginMessageTypes = IMidiNotePlayed | ITestMessage | IMidiNoteStopped;
+export interface IAppStateLoaded {
+  type: "appStateLoaded";
+  state: string;
+}
+
+export type FromHostPluginMessageTypes = IMidiNotePlayed | ITestMessage | IMidiNoteStopped | IAppStateLoaded;
 
 
 export type HostPluginEventTypes = ToHostPluginMessageTypes | FromHostPluginMessageTypes;

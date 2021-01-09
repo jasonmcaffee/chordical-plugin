@@ -14,6 +14,7 @@ const String filePathBase = "/Users/Shared/"; //File::getCurrentWorkingDirectory
 const String baseUrl = "http://127.0.0.1:3000/#test";
 
 const String messageFromAppIndicator = "projucer://";
+//const String messageFromAppIndicator = "https://toNativeHost/";
 
 inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::allocator<char>> SRC) {
     std::string ret;
@@ -30,6 +31,28 @@ inline String urlDecode(std::basic_string<char, std::char_traits<char>, std::all
         }
     }
     return (ret);
+}
+
+inline std::string urlEncode(const std::string &value) {
+    std::ostringstream escaped;
+    escaped.fill('0');
+    escaped << std::hex;
+
+    for (std::string::const_iterator i = value.begin(), n = value.end(); i != n; ++i) {
+        std::string::value_type c = (*i);
+
+        // Keep alphanumeric and other accepted characters intact
+        if (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~') {
+            escaped << c;
+            continue;
+        }
+
+        // Any other characters are percent-encoded
+        escaped << std::uppercase;
+        escaped << '%' << std::setw(2) << int((unsigned char) c);
+        escaped << std::nouppercase;
+    }
+    return escaped.str();
 }
 
 inline void writeHtmlFileFromBinaryDataToDisk(){
@@ -86,6 +109,7 @@ public:
 
 
     bool pageAboutToLoad(const String &newURL) override{
+        std::cout << "==============new url" << std::endl;
         if(newURL.contains(messageFromAppIndicator)){
             auto messageString = newURL.substring(newURL.indexOf(messageFromAppIndicator) + messageFromAppIndicator.length());
             std::cout << "message from app: " << messageString << std::endl;
@@ -102,7 +126,8 @@ public:
 //        String urlWithMessageParam = "javascript:location.hash=\"" + message + "\";";
         auto requestId = get_uuid();
 //        String urlWithMessageParam = "javascript:location.hash='message=" + message + "';";
-        String urlWithMessageParam = "javascript:location.hash='requestId=" + requestId + "&message=" + message.toStdString() + "';";
+        auto encodedMessage = urlEncode(message.toStdString());
+        String urlWithMessageParam = "javascript:location.hash='requestId=" + requestId + "&message=" + encodedMessage + "';";
         std::cout << "sending message: " << urlWithMessageParam << std::endl;
         goToURL(urlWithMessageParam);
     }
@@ -123,10 +148,14 @@ public:
             }else if(type == "requestToPlayMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);
                 EventBus::eventBus().emitMessage(message);
-
-
             }else if(type == "requestToStopMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToStopMidiNotesMessage(parsedJson);
+                EventBus::eventBus().emitMessage(message);
+            }else if(type == "requestToSaveAppStateMessage"){
+                auto message = convertJSONStringToRequestToSaveAppStateMessage(parsedJson);
+                EventBus::eventBus().emitMessage(message);
+            }else if(type == "requestToGetAppStateMessage"){
+                auto message = RequestToGetAppStateMessage{nullptr};
                 EventBus::eventBus().emitMessage(message);
             }
 

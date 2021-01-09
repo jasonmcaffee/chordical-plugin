@@ -8,6 +8,19 @@ inline juce::String convertDynamicObjectToJsonString(DynamicObject* json){
     return jsonString;
 }
 
+inline juce::String convertAppStateLoadedToJSONString(AppState appState){
+
+    auto dataObj = new DynamicObject();
+    juce::String s = appState.state;
+    dataObj->setProperty("state", s);
+
+    auto* messageObj = new DynamicObject();
+    messageObj->setProperty("type", "appStateLoaded");
+    messageObj->setProperty("data", dataObj);
+
+    return convertDynamicObjectToJsonString(messageObj);
+}
+
 inline juce::String convertMidiNotePlayedToJSONString(MidiNotePlayedMessage message){
 
     auto dataObj = new DynamicObject();
@@ -67,4 +80,11 @@ inline RequestToStopMidiNotesMessage convertJSONStringToRequestToStopMidiNotesMe
         }
     }
     return RequestToStopMidiNotesMessage {midiNoteDataVector};
+}
+
+inline RequestToSaveAppStateMessage convertJSONStringToRequestToSaveAppStateMessage(juce::var json){
+    juce::String dataAsJuceString = json.getProperty("data", juce::String());
+    auto data = dataAsJuceString.toStdString();
+    auto appState = AppState { data };
+    return RequestToSaveAppStateMessage { appState };
 }

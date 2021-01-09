@@ -46,6 +46,13 @@ export function requestToStopMidiNotes(data: IMidiNoteData[]){
   sendMessageObjToHost({type: "requestToStopMidiNotesMessage", data});
 }
 
+export function requestToSaveAppState(data: string){
+  sendMessageObjToHost({type: "requestToSaveAppStateMessage", data});
+}
+
+export function requestToGetAppState(){
+  sendMessageObjToHost({type: "requestToGetAppStateMessage"});
+}
 
 function messageToString(message: any){
   return JSON.stringify(message);

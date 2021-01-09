@@ -27,3 +27,7 @@ export function midiNotePlayed(midiNote: IMidiNoteData){
 export function midiNoteStopped(midiNote:IMidiNoteData){
   fromHostSubject.next({type: "midiNoteStopped", data: midiNote });
 }
+
+export function appStateLoaded(state: string){
+  fromHostSubject.next({type: "appStateLoaded", state});
+}
