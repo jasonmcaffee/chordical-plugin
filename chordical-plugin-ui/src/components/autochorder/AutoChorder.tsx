@@ -9,27 +9,22 @@ import '../../style/components/autochorder/autochorder.scss';
 import ISlot from "../../models/view/autochorder/ISlot";
 import SlotCard from "./SlotCard";
 import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
+import Select from "../common/Select";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
-  const l: string[] = [];
-  // const [messages, setMessages] = useState(l);
-  // useEffect(()=>{
-  //   return subscribeToFromHostPluginEvents((message)=>{
-  //     const m = "<div>" + JSON.stringify(message) + "</div>";
-  //     setMessages([m, ...messages]);
-  //   });
-  // });
+  const {autoChorderPreset, noteSelectOptions, scaleSelectOptions} = viewModel;
+  const [text, setText] = useState("asdf");
   return <div className="autochorder">
-    <div onClick={() => autochorder.saveAppState() }>Save {viewModel.test ? 'true' : 'false'}</div>
-    <div onClick={() => autochorder.getAppState() }>Get App State</div>
-    <div onClick={()=> doSomething()}>Do Something</div>
+    {/*<input type="text" onChange={(e)=>setText(e.target.value)} value={text}/>*/}
+    <input type="text" value={"focus qwerty"}/>
+    <div className={"key"}>
+      <Select label="Root" currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
+      <Select label="Scale" currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
+    </div>
     <div className="slot-cards">
       {slotCardEls}
     </div>
-    {/*<div>*/}
-      {/*{messages}*/}
-    {/*</div>*/}
    </div>;
 }
 
@@ -47,3 +42,12 @@ function createSlotEl({slot, viewModel}: {slot: ISlot, viewModel: IAutochorderPa
 }
 
 const doSomething = () => autochorder.generateChordProgression({rootNote: 'c', scale: ScaleTypesEnum.majorIonian, octave: 4});
+
+// const l: string[] = [];
+// const [messages, setMessages] = useState(l);
+// useEffect(()=>{
+//   return subscribeToFromHostPluginEvents((message)=>{
+//     const m = "<div>" + JSON.stringify(message) + "</div>";
+//     setMessages([m, ...messages]);
+//   });
+// });

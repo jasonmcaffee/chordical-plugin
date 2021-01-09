@@ -30,22 +30,22 @@ function App() {
     //tell the host that the app has loaded
     webAppLoaded("hi");
     router.renderInitial();
-    const unsubscribeFromHostPluginEvents = subscribeToFromHostPluginEvents((m: FromHostPluginMessageTypes) => {
-      switch(m.type){
-        case "testMessage":
-          setMessage(m.data + count.toString());
-          setCount(count + 1);
-          break;
-        case "midiNotePlayed":
-          setMessage("midi: " + m.data.midiNote.toString() + count.toString());
-          setCount(count + 1);
-          break;
-      }
-    });
-
-    return () => {
-      unsubscribeFromHostPluginEvents();
-    };
+    // const unsubscribeFromHostPluginEvents = subscribeToFromHostPluginEvents((m: FromHostPluginMessageTypes) => {
+    //   switch(m.type){
+    //     case "testMessage":
+    //       setMessage(m.data + count.toString());
+    //       setCount(count + 1);
+    //       break;
+    //     case "midiNotePlayed":
+    //       setMessage("midi: " + m.data.midiNote.toString() + count.toString());
+    //       setCount(count + 1);
+    //       break;
+    //   }
+    // });
+    //
+    // return () => {
+    //   unsubscribeFromHostPluginEvents();
+    // };
   }, []);
 
   return (
@@ -53,10 +53,10 @@ function App() {
       <div id="page">
         page
       </div>
-      <header className="App-header">
-        <div className="play-notes-button" onMouseDown={handleOnMouseDown } onMouseUp={handleOnMouseUp} >Play Notes</div>
-        <div>{message}</div>
-      </header>
+      {/*<header className="App-header">*/}
+        {/*<div className="play-notes-button" onMouseDown={handleOnMouseDown } onMouseUp={handleOnMouseUp} >Play Notes</div>*/}
+        {/*<div>{message}</div>*/}
+      {/*</header>*/}
     </div>
   );
 }

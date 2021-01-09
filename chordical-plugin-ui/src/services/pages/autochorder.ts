@@ -23,68 +23,81 @@ import {IMidiNoteData} from "../../models/IMidiNoteData";
 import {subscribeToFromHostPluginEvents} from "../eventBus/hostPlugin/fromHostPluginEventBus";
 import ISlot from "../../models/view/autochorder/ISlot";
 import {ISelectOption} from "../../models/view/common/ISelectOption";
+import {subscribeToQwertyKeyDown, subscribeToQwertyKeyUp} from '../eventBus/qwerty';
+import {qwertyKeyCodes} from "../qwerty/qwerty";
 
 const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
-const initialViewModel: IAutochorderPageViewModel = { noteSelectOptions, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), };
+const scaleSelectOptions = createSelectOptionsForScales();
+const initialViewModel: IAutochorderPageViewModel = { noteSelectOptions, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 
 
 class Autochorder{
   viewModel = initialViewModel;
+  unsubscribeFuncs: (() => void)[] = [];
   constructor(){
     this.generateChordProgression({rootNote: 'c', octave: 4, scale: ScaleTypesEnum.majorIonian});
-
-    subscribeToFromHostPluginEvents((e) => {
-      switch(e.type){
-        case "appStateLoaded":
-          try{
-            const newViewModel = JSON.parse(e.state);
-            this.viewModel = newViewModel;
-            this.emitChange();
-          }catch(e){
-            //@ts-ignore
-            document.getElementById('page').innerHTML += "failed to parse " + e.message;
+    this.unsubscribeFuncs = [
+      subscribeToQwertyKeyDown(e => {
+        const slots = findSlotsWithMatchingQwertyKeyTrigger({qwertyKeyCode: e.keyCode, slots: this.viewModel.autoChorderPreset.slots});
+        this.playSlots({slots});
+      }),
+      subscribeToQwertyKeyUp(e =>  {
+        const slots = findSlotsWithMatchingQwertyKeyTrigger({qwertyKeyCode: e.keyCode, slots: this.viewModel.autoChorderPreset.slots});
+        this.stopSlots({slots});
+      }),
+      subscribeToFromHostPluginEvents((e) => {
+        switch(e.type){
+          case "appStateLoaded":
+            try{
+              const newViewModel = JSON.parse(e.state);
+              this.viewModel = newViewModel;
+              this.emitChange({saveState: false});
+            }catch(e){
+              //@ts-ignore
+              document.getElementById('page').innerHTML += "failed to parse " + e.message;
+            }
+            break;
+          case "midiNotePlayed":{
+            console.error(`midi note played: `, e.data);
+            const {midiNote} = e.data;
+            const slots = findSlotsWithMatchingMidiNoteTrigger({midiNote, slots: this.viewModel.autoChorderPreset.slots});
+            this.playSlots({slots});
+            break;
           }
-
-
-
-          break;
-        case "midiNotePlayed":{
-          console.error(`midi note played: `, e.data);
-          const {midiNote} = e.data;
-          const slots = findSlotsWithMatchingMidiNoteTrigger({midiNote, slots: this.viewModel.autoChorderPreset.slots});
-          slots.forEach((s)=>{
-            if(s.content){
-              this.playChord({chord: s.content});
-            }
-          });
-          //@ts-ignore
-          // document.getElementById("page").innerHTML += `<br/> midi note played. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
-          break;
+          case "midiNoteStopped":{
+            const {midiNote} = e.data;
+            const slots = findSlotsWithMatchingMidiNoteTrigger({midiNote, slots: this.viewModel.autoChorderPreset.slots});
+            this.stopSlots({slots});
+            break;
+          }
         }
-        case "midiNoteStopped":{
-          //@ts-ignore
-          // document.getElementById("page").innerHTML += `<br/> midi note stopped. number: ${e.data.midiNote} velocity: ${e.data.velocity}`;
-          const {midiNote} = e.data;
-          const slots = findSlotsWithMatchingMidiNoteTrigger({midiNote, slots: this.viewModel.autoChorderPreset.slots});
-          slots.forEach((s)=>{
-            if(s.content){
-              this.stopChord({chord: s.content});
-            }
-          });
-          break;
-        }
-
-      }
-    })
+      })
+    ];
   }
+
   loadViewModel(){
     setTimeout(()=> {
       // this.viewModel.test = true;
       // this.emitChange();
 
     }, 1000);
+  }
+
+  playSlots({slots}: {slots: ISlot[]}){
+    slots.forEach((s)=>{
+      if(s.content){
+        this.playChord({chord: s.content});
+      }
+    });
+  }
+  stopSlots({slots}: {slots: ISlot[]}){
+    slots.forEach((s)=>{
+      if(s.content){
+        this.stopChord({chord: s.content});
+      }
+    });
   }
 
   saveAppState(){
@@ -97,9 +110,13 @@ class Autochorder{
   getAppState(){
     requestToGetAppState();
   }
-  emitChange(){
+  emitChange({saveState=true}: {saveState?: boolean} = {}){
     this.viewModel = {...this.viewModel,};
+    // this.viewModel = JSON.parse(JSON.stringify(this.viewModel));
     viewModelChanged(this.viewModel);
+    if(saveState){
+      this.saveAppState();
+    }
   }
 
   getChordOptionsForChordTypesInKey({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, chordRootNote='c'}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, chordRootNote?: NoteSymbolTypes}){
@@ -152,15 +169,14 @@ class Autochorder{
     console.log(`AutoChorderPreset received keyReleased for key: ${key} index: ${index}`);
     const chord = this.viewModel.autoChorderPreset.chords[index];
     if(!chord){ return console.log('no chord to release for index: ', index); }
-    // trigger(ec.autoChorder.chordReleased, {chord});
     this.emitChange();
   }
 
   changeKey({key}: {key: IKey}){
     const {rootNote, scale} = key;
     this.viewModel.autoChorderPreset.selectedKey = {rootNote, scale};
-    // trigger(keyChanged, {key: this.viewModel.selectedKey});
-    this.emitChange();
+    // this.emitChange();
+    this.generateChordProgression({rootNote, scale});
   }
   /**
    * Change the type of chord. e.g. 'Major 7th'.  Triggered by ui Select in ChordCell component.
@@ -375,7 +391,8 @@ class Autochorder{
       if(i >= slots.length){
         const previousSlotFirstMidiNoteTrigger = slots[i - 1].midiNoteTriggers[0];
         const midiNoteTriggers = previousSlotFirstMidiNoteTrigger ? [previousSlotFirstMidiNoteTrigger + 1] : [];
-        const slot = { midiNoteTriggers, content: chord};
+        const qwertyKeyCode = qwertyKeyCodes[i];
+        const slot: ISlot = { midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
         slots.push(slot);
         continue;
       }
@@ -435,7 +452,8 @@ function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNu
   const result: ISlot[] = [];
   for(let i = 0; i < numberOfSlots; ++i){
     const midiNoteTrigger = startMidiNumber + i;
-    const slot: ISlot = {midiNoteTriggers: [midiNoteTrigger]};
+    const qwertyKeyCode = qwertyKeyCodes[i];
+    const slot: ISlot = {midiNoteTriggers: [midiNoteTrigger], qwertyKeyCodeTrigger: qwertyKeyCode.code};
     result.push(slot);
   }
   return result;
@@ -443,6 +461,10 @@ function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNu
 
 function findSlotsWithMatchingMidiNoteTrigger({midiNote, slots}: {midiNote: number, slots: ISlot[]}){
   return slots.filter((s) => s.midiNoteTriggers.includes(midiNote));
+}
+
+function findSlotsWithMatchingQwertyKeyTrigger({qwertyKeyCode, slots}: {qwertyKeyCode: number, slots: ISlot[]}){
+  return slots.filter(s => s.qwertyKeyCodeTrigger === qwertyKeyCode);
 }
 
 function updateSlotContentByChordId(slots: ISlot[], chord: IChord){
@@ -457,6 +479,13 @@ function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<N
     const option: ISelectOption<NoteSymbolTypes> = { value: n.noteSymbol, label: n.noteSymbol};
     return option;
   });
+}
+
+function createSelectOptionsForScales(): ISelectOption<ScaleTypesEnum>[]{
+  return Object.values(ScaleTypesEnum).map(s => {
+    const option: ISelectOption<ScaleTypesEnum> = { value: s, label: s};
+    return option;
+  })
 }
 
 
