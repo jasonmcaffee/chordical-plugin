@@ -9,7 +9,7 @@
 namespace ChordicalBinaryData
 {
     extern const char*   index_html;
-    const int            index_htmlSize = 201214;
+    const int            index_htmlSize = 201150;
 
     extern const char*   test_html;
     const int            test_htmlSize = 68;

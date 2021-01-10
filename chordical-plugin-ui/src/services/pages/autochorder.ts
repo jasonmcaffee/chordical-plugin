@@ -37,7 +37,7 @@ class Autochorder{
   viewModel = initialViewModel;
   unsubscribeFuncs: (() => void)[] = [];
   constructor(){
-    this.generateChordProgression({rootNote: 'c', octave: 4, scale: ScaleTypesEnum.majorIonian});
+    this.generateChordProgression({rootNote: 'c', octave: 4, scale: ScaleTypesEnum.majorIonian, saveState: false}); //saveState false as we wait for appStateLoaded
     this.unsubscribeFuncs = [
       subscribeToQwertyKeyDown(e => {
         const slots = findSlotsWithMatchingQwertyKeyTrigger({qwertyKeyCode: e.keyCode, slots: this.viewModel.autoChorderPreset.slots});
@@ -372,12 +372,12 @@ class Autochorder{
     this.emitChange();
   }
 
-  generateChordProgression({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, octave=this.viewModel.autoChorderPreset.randomizationMinOctave }){
+  generateChordProgression({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, octave=this.viewModel.autoChorderPreset.randomizationMinOctave, saveState=true}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, octave?: number, saveState?: boolean}){
     console.log(`generateChordProgression rootNote: ${rootNote} scale: ${scale} octave: ${octave}`);
     const chordProgression = buildChordProgression({rootNote, scale, octave});
     this.viewModel.autoChorderPreset.chords = chordProgression;
     this.placeChordsInSlots();
-    this.emitChange();
+    this.emitChange({saveState});
   }
   clearAllChords(){
     this.viewModel.autoChorderPreset.chords = [];
