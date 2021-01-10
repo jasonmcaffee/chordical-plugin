@@ -27,14 +27,17 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
 
 
     //web browser component cant listen to event due to lack of unregister callback on event bus.
-    EventBus::eventBus().subscribe<ToWebAppMessage>([this](ToWebAppMessage message){
+    toWebAppEventBusCallbackId = EventBus::eventBus().subscribe<ToWebAppMessage>([this](ToWebAppMessage message){
         std::cout << "start send message to web app" << std::endl;
         webBrowserComponent.sendMessageToWebApp(message.data);
     });
 
 }
 
-ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){}
+//destroy is called when the window is minimized in Ableton
+ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){
+    EventBus::eventBus().unsubscribe(toWebAppEventBusCallbackId);  //if we don't unsubscribe, the DAW will crash
+}
 
 //==============================================================================
 void ChordicalAudioProcessorEditor::paint (Graphics& g)

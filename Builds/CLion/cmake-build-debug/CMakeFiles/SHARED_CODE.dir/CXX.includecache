@@ -2560,6 +2560,14 @@ JuceHeader.h
 ../Services/EventBus/EventBus.h
 /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 
+/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
+PluginProcessor.h
+/Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
+PluginEditor.h
+/Users/jason/dev/chordical-plugin/Source/PluginEditor.h
+Services/EventBus/EventBus.h
+/Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
+
 /Users/jason/dev/chordical-plugin/Source/PluginEditor.h
 JuceHeader.h
 -

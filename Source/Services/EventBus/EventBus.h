@@ -44,7 +44,7 @@ public:
     void operator=(EventBus const&)  = delete;
 
     template <typename TMessageType>
-    void subscribe(std::function<void(TMessageType)> callback){
+    int subscribe(std::function<void(TMessageType)> callback){
 
         //create a function that uses shared_ptr message type, so we can downcast
         EventCallbackWithMessagePointerFunc f2 = [callback](std::shared_ptr<EventMessageBase> message){
@@ -59,7 +59,8 @@ public:
         const char* typeName = typeid(TMessageType).name();
         std::cout << "message type id name: " << typeName << std::endl;
 
-        int callbackId = 1; //TODO
+//        int callbackId = 1; //TODO
+        callbackId++;
         auto callbackContainer = EventCallbackContainer { callbackId, f2 };
 
         //see if message typeid already has callbacks registered.  if not, create vector and add to map
@@ -80,6 +81,29 @@ public:
             callbackContainers->push_back(callbackContainer);
         }
 
+        return callbackId;
+    }
+
+    void unsubscribe(int callbackId){
+        //key is the type name, val is the callback vector
+        for (auto const& [key, val] : messageTypeIdToEventCallbackContainerVector){
+            EventCallbackContainerVector callbackContainers = val;
+            int i = 0;
+            int indexToDelete = -1;
+            for(auto & callbackContainer: *callbackContainers){
+                if(callbackContainer.id == callbackId){
+                    indexToDelete = i;
+                    break;
+                }
+                i++;
+            }
+
+            if(indexToDelete > -1){
+                callbackContainers->erase(callbackContainers->begin() + indexToDelete);
+                break;
+            }
+
+        }
     }
 
     template <typename TMessageType>
@@ -125,7 +149,7 @@ public:
     }
 
 private:
-
+    int callbackId = 0;
 };
 
 // playing with pointer funcs

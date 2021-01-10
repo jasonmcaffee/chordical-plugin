@@ -14,10 +14,7 @@ import Select from "../common/Select";
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
   const {autoChorderPreset, noteSelectOptions, scaleSelectOptions} = viewModel;
-  const [text, setText] = useState("asdf");
   return <div className="autochorder">
-    {/*<input type="text" onChange={(e)=>setText(e.target.value)} value={text}/>*/}
-    <input type="text" value={"focus qwerty"}/>
     <div className={"key"}>
       <Select label="Root" currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
       <Select label="Scale" currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
