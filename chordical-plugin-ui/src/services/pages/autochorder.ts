@@ -11,7 +11,7 @@ import {
 } from "../music/chords";
 import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote, predefinedNotes} from "../music/predefinedNotes";
-import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave} from "../music/notes";
+import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave, octaveOptions} from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 import {
   requestToGetAppState,
@@ -28,7 +28,8 @@ import {qwertyKeyCodes} from "../qwerty/qwerty";
 
 const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
 const scaleSelectOptions = createSelectOptionsForScales();
-const initialViewModel: IAutochorderPageViewModel = { noteSelectOptions, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), scaleSelectOptions};
+
+const initialViewModel: IAutochorderPageViewModel = {octaveOptions, noteSelectOptions, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 
@@ -51,9 +52,9 @@ class Autochorder{
         switch(e.type){
           case "appStateLoaded":
             try{
-              const newViewModel = JSON.parse(e.state);
-              this.viewModel = newViewModel;
-              this.emitChange({saveState: false});
+              // const newViewModel = JSON.parse(e.state);
+              // this.viewModel = newViewModel;
+              // this.emitChange({saveState: false});
             }catch(e){
               //@ts-ignore
               document.getElementById('page').innerHTML += "failed to parse " + e.message;
@@ -111,8 +112,8 @@ class Autochorder{
     requestToGetAppState();
   }
   emitChange({saveState=true}: {saveState?: boolean} = {}){
-    this.viewModel = {...this.viewModel,};
-    // this.viewModel = JSON.parse(JSON.stringify(this.viewModel));
+    // this.viewModel = {...this.viewModel,};
+    this.viewModel = JSON.parse(JSON.stringify(this.viewModel));
     viewModelChanged(this.viewModel);
     if(saveState){
       this.saveAppState();
@@ -238,13 +239,16 @@ class Autochorder{
     //replace the chord in chords array
     const indexOfChordBeingModified = chords.indexOf(chordBeingModified);
     chords[indexOfChordBeingModified] = clone;
-    updateSlotContentByChordId(this.viewModel.autoChorderPreset.slots, clone);
-    //tell the ChordCell ui to use the new chord and refresh
-    // trigger(chordChanged, {chord: clone});
+    this.updateSlotAndEmitChange({chord: clone});
+  }
+
+  updateSlotAndEmitChange({slots=this.viewModel.autoChorderPreset.slots, chord}: {slots?: ISlot[], chord: IChord}){
+    updateSlotContentByChordId(this.viewModel.autoChorderPreset.slots, chord);
     this.emitChange();
   }
 
   changeNoteOctave({chord, note, newNoteOctave, chords=this.viewModel.autoChorderPreset.chords}: {chord: IChord, note: IPredefinedNote, newNoteOctave: number, chords?: IChord[]}){
+    // console.error(`new note octave: ${newNoteOctave}`);
     const noteAndChord = getNoteAndChordFromChords({chordId: chord.id, noteId: note.id, chords});
     if(!noteAndChord){ return console.log(`AutoChordPreset chord id: ${chord.id} doesn't have note id: ${note.id} chords:`, chords, chord); }
     //find the chord and note to be modified in our array of chords
@@ -260,9 +264,7 @@ class Autochorder{
     //replace the chord in chords array
     const indexOfChordBeingModified = chords.indexOf(chordBeingModified);
     chords[indexOfChordBeingModified] = clone;
-    //tell the ChordCell ui to use the new chord and refresh
-    // trigger(chordChanged, {chord: clone});
-    this.emitChange();
+    this.updateSlotAndEmitChange({chord: clone});
   }
 
   deleteNote({chord, note, chords=this.viewModel.autoChorderPreset.chords}:  {chord: IChord, note: IPredefinedNote, chords?: IChord[]}){

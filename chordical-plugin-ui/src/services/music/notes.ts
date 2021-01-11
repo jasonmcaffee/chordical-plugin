@@ -1,6 +1,7 @@
 import {IPredefinedNote, predefinedNotes} from './predefinedNotes';
 import {NoteSymbolTypes} from "../../models/music/INote";
 import {scaleNoteIndexes, ScaleTypesEnum} from "../../models/music/scales";
+import {ISelectOption} from "../../models/view/common/ISelectOption";
 export const noteSymbols: NoteSymbolTypes[] = ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'b'];
 export interface INoteOption {
   value: NoteSymbolTypes,
@@ -11,7 +12,7 @@ export interface IOctaveOption {
   value: number,
   name: string,
 }
-export const octaveOptions: IOctaveOption[] = [{"value":0,"name":"0"},{"value":1,"name":"1"},{"value":2,"name":"2"},{"value":3,"name":"3"},{"value":4,"name":"4"},{"value":5,"name":"5"},{"value":6,"name":"6"},{"value":7,"name":"7"},{"value":8,"name":"8"},{"value":9,"name":"9"},{"value":10,"name":"10"},{"value":11,"name":"11"}];
+export const octaveOptions: ISelectOption<number>[] = [{"value":0,"label":"0"},{"value":1,"label":"1"},{"value":2,"label":"2"},{"value":3,"label":"3"},{"value":4,"label":"4"},{"value":5,"label":"5"},{"value":6,"label":"6"},{"value":7,"label":"7"},{"value":8,"label":"8"},{"value":9,"label":"9"},{"value":10,"label":"10"},{"value":11,"label":"11"}];
 
 export function findNoteByMidiNoteNumber(midiNoteNumber: number){
   const note = predefinedNotes.find(n=>n.midiNoteNumber===midiNoteNumber);

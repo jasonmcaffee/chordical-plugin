@@ -1,3 +1,4 @@
+@import "../../page/page";
 .autochorder-page{
-  background-color: yellow;
+  @extend %page;
 }

@@ -9,9 +9,11 @@ export default function Select<TValueType>({options, onChange, currentlySelected
   const optionsEl = isOptionsVisible ? <div className="options">{optionEls}</div> : null;
   const key = `${currentlySelectedOption?.value}`;
   const labelEl = label ? <div className="label">{label}</div> : null;
+  const backgroundClickEl = isOptionsVisible ? <div className={`background-click`} onClick={() => setIsOptionsVisible(false)}></div> : null;
   return <div key={key} className="select">
+    {backgroundClickEl}
     {labelEl}
-    <div key={key} className="selected" onClick={ () => setIsOptionsVisible(!isOptionsVisible)}>{currentlySelectedOption?.label}</div>
+    <div key={key} className="selected" onClick={ () => setIsOptionsVisible(!isOptionsVisible)}> {currentlySelectedOption?.label}</div>
     {optionsEl}
   </div>;
 }

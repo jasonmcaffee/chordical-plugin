@@ -1,3 +1,32 @@
 .chord-card{
   background-color: darkseagreen;
+  padding: 5px;
+  border-radius: 3px;
+
+  .details{
+
+    .label{
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 25px;
+      //word-wrap: break-word;
+      //overflow-wrap: break-word;
+      //white-space: pre-line;
+    }
+  }
+
+  .notes{
+    @extend %notes;
+  }
+}
+
+%notes{
+  .note-and-octave{
+    background-color: pink;
+    .select{
+      width: 50%;
+      display: inline-block;
+    }
+  }
 }

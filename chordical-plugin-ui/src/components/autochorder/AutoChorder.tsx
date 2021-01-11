@@ -15,10 +15,13 @@ export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageVie
   const slotCardEls = createSlotEls({viewModel});
   const {autoChorderPreset, noteSelectOptions, scaleSelectOptions} = viewModel;
   return <div className="autochorder">
-    <div className={"key"}>
-      <Select label="Root" currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
-      <Select label="Scale" currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
+    <div className="options">
+      <div className={"key"}>
+        <Select label="Root" currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
+        <Select label="Scale" currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
+      </div>
     </div>
+
     <div className="slot-cards">
       {slotCardEls}
     </div>

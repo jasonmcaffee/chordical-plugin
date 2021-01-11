@@ -1,5 +1,16 @@
 .autochorder{
   background-color: rebeccapurple;
+  .options{
+    @extend %options;
+  }
+}
+%options{
+  .key{
+    @extend %key;
+  }
+}
+%key{
+  background-color: gray;
 }
 
 .slot-cards{

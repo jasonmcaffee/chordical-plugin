@@ -10,8 +10,8 @@
 
 const String separator = File::getCurrentWorkingDirectory().getFullPathName() == "/" ? "" : "/";
 const String filePathBase = "/Users/Shared/"; //File::getCurrentWorkingDirectory().getFullPathName()
-const String baseUrl = "file://" + filePathBase + "index.html";
-//const String baseUrl = "http://127.0.0.1:3000/#test";
+//const String baseUrl = "file://" + filePathBase + "index.html";
+const String baseUrl = "http://127.0.0.1:3000/#test";
 
 const String messageFromAppIndicator = "projucer://";
 //const String messageFromAppIndicator = "https://toNativeHost/";
