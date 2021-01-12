@@ -6,6 +6,7 @@ import IAutochorderPageViewModel from "../../models/view/autochorder/IAutochorde
 import Select from "../common/Select";
 import {IPredefinedNote} from "../../services/music/predefinedNotes";
 import {ISelectOption} from "../../models/view/common/ISelectOption";
+import Button from "../common/Button";
 
 export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
 
@@ -15,6 +16,7 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
       <div className="label" onMouseDown={() => autochorder.playChord({chord})} onMouseUp={() => autochorder.stopChord({chord})}>{chord.label}</div>
     </div>
     <div className="notes">
+      <Button label={"randomize"} onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }/>
       {createSelectForEachNoteInChord({chord, viewModel})}
     </div>
    </div>;

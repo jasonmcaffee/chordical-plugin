@@ -332,9 +332,14 @@ class Autochorder{
     //swap existing chord
     const chordIndex = chords.indexOf(chordBeingModified);
     chords[chordIndex] = clone;
-    //update the ui
-    // trigger(chordChanged, {chord: clone});
-    this.emitChange();
+    this.updateSlotAndEmitChange({chord: clone});
+  }
+
+  randomizeNoteVoicingForChordAndSample({chord, chords=this.viewModel.autoChorderPreset.chords, minOctave=this.viewModel.autoChorderPreset.randomizationMinOctave, maxOctave=this.viewModel.autoChorderPreset.randomizationMaxOctave}: {chord: IChord, chords?: IChord[], minOctave?: number, maxOctave?: number}) {
+    this.stopChord({chord});
+    const newChord = this.randomizeNoteVoicingForChord({chord, chords, maxOctave, minOctave});
+    if(!newChord) {return;}
+    this.playChord({chord: newChord});
   }
 
   randomizeNoteVoicingForChord({chord, chords=this.viewModel.autoChorderPreset.chords, minOctave=this.viewModel.autoChorderPreset.randomizationMinOctave, maxOctave=this.viewModel.autoChorderPreset.randomizationMaxOctave}: {chord: IChord, chords?: IChord[], minOctave?: number, maxOctave?: number}){
@@ -351,7 +356,8 @@ class Autochorder{
     //swap existing chord
     const chordIndex = chords.indexOf(chordBeingModified);
     chords[chordIndex] = clone;
-    this.emitChange();
+    this.updateSlotAndEmitChange({chord: clone});
+    return clone;
   }
 
   randomizeChordType({chord, onlyGenerateChordsInKey=true, chords=this.viewModel.autoChorderPreset.chords, octave=this.viewModel.autoChorderPreset.randomizationMinOctave}: {chord: IChord, onlyGenerateChordsInKey?: boolean, chords?: IChord[], octave?: number}){
