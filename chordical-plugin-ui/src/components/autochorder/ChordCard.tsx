@@ -11,11 +11,8 @@ import Button from "../common/Button";
 export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
   const chordTypeOptions2 = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
   const chordTypeOptions = chordTypeOptions2.map(c => ({...c, className: c.isInScale ? "in-scale" : "not-in-scale"}) );
-  console.error(`chord rootNote: ${chord.rootNote} type options`, chordTypeOptions);
-  console.error(`chord type string: `, chord.type.toString());
   const currentlySelectChordTypeOption = chordTypeOptions.find(c => c.label === chord.type.toString());
   const currentlySelectedChordRootNote = viewModel.noteSelectOptions.find(o => o.value === chord.rootNote);
-  console.error(`chord type option: `, currentlySelectChordTypeOption, currentlySelectedChordRootNote);
   const key = chord.id;
   return <div key={key} className="chord-card">
     <div className="details">
@@ -35,11 +32,13 @@ function createSelectForEachNoteInChord({chord, viewModel}: {chord: IChord, view
 }
 
 function createSelectForNote({note, chord, viewModel}: {note: IPredefinedNote, chord: IChord, viewModel: IAutochorderPageViewModel}){
-  const selectOptionForNote = viewModel.noteSelectOptions.find(s => s.value === note.noteSymbol);
+  // const selectOptionForNote = viewModel.noteSelectOptions.find(s => s.value === note.noteSymbol);
   const selectedOptionForOctave = viewModel.octaveOptions.find(o => o.value === note.octave);
+  const noteSelectOptions = viewModel.noteSelectOptions.map(o => ({...o, className: o.isInKey ? "in-key": "not-in-key"}));
+  const selectOptionForNote = noteSelectOptions.find(s => s.value === note.noteSymbol);
   // console.error(`chord is:`, chord, selectedOptionForOctave);
   return <div className="note-and-octave">
-    <Select options={viewModel.noteSelectOptions} onChange={(option)=> autochorder.changeNoteSymbol({note, chord, newNoteSymbol: option.value})} currentlySelectedOption={selectOptionForNote}/>
+    <Select options={noteSelectOptions} onChange={(option)=> autochorder.changeNoteSymbol({note, chord, newNoteSymbol: option.value})} currentlySelectedOption={selectOptionForNote}/>
     <Select options={viewModel.octaveOptions} onChange={(option)=> autochorder.changeNoteOctave({note, chord, newNoteOctave: option.value})} currentlySelectedOption={selectedOptionForOctave}/>
   </div>
 }

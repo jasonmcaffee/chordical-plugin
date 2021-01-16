@@ -1,13 +1,12 @@
 import AutoChorderPreset from "./AutoChorderPreset";
 import {ISelectOption} from "../common/ISelectOption";
-import {NoteSymbolTypes} from "../../music/INote";
 import {ScaleTypesEnum} from "../../music/scales";
-import {IOctaveOption} from "../../../services/music/notes";
+import {INoteSelectOption} from "../../../services/music/notes";
 
 export default interface IAutochorderPageViewModel{
   test: boolean;
   autoChorderPreset: AutoChorderPreset;
-  noteSelectOptions: ISelectOption<NoteSymbolTypes>[];
+  noteSelectOptions: INoteSelectOption[]; //options sorted by whether they are in the key.
   scaleSelectOptions: ISelectOption<ScaleTypesEnum>[];
   octaveOptions: ISelectOption<number>[];
 }

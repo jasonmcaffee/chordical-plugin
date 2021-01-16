@@ -3,21 +3,31 @@ import IAutochorderPageViewModel from "../../models/view/autochorder/IAutochorde
 import {NoteSymbolTypes} from "../../models/music/INote";
 import {ScaleTypesEnum} from "../../models/music/scales";
 import {
-  buildChordOfRandomRootNoteAndType, buildChordOfRandomType, buildChordProgression,
+  buildChordOfRandomRootNoteAndType,
+  buildChordOfRandomType,
+  buildChordProgression,
   buildScaleProgression,
   chordFuncs as chordServiceChords,
   chordOptions,
-  getChordOptions, IChordSelectOption
+  getChordOptions,
+  IChordSelectOption
 } from "../music/chords";
 import {IChord} from "../../models/music/IChord";
-import {IPredefinedNote, predefinedNotes} from "../music/predefinedNotes";
-import {createNoteWithRandomOctave, findNoteByNoteSymbolAndOctave, octaveOptions} from "../music/notes";
+import {IPredefinedNote} from "../music/predefinedNotes";
+import {
+  createNoteWithRandomOctave,
+  findNoteByNoteSymbolAndOctave,
+  getNotesForScale,
+  INoteSelectOption,
+  noteSelectOptions,
+  octaveOptions
+} from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 import {
   requestToGetAppState,
-  requestToPlayMidiNotes, requestToSaveAppState,
-  requestToStopMidiNotes,
-  subscribeToHostPluginEvents
+  requestToPlayMidiNotes,
+  requestToSaveAppState,
+  requestToStopMidiNotes
 } from "../eventBus/hostPlugin/toHostPluginEventBus";
 import {IMidiNoteData} from "../../models/IMidiNoteData";
 import {subscribeToFromHostPluginEvents} from "../eventBus/hostPlugin/fromHostPluginEventBus";
@@ -26,13 +36,12 @@ import {ISelectOption} from "../../models/view/common/ISelectOption";
 import {subscribeToQwertyKeyDown, subscribeToQwertyKeyUp} from '../eventBus/qwerty';
 import {qwertyKeyCodes} from "../qwerty/qwerty";
 
-const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
+// const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
 const scaleSelectOptions = createSelectOptionsForScales();
-
-const initialViewModel: IAutochorderPageViewModel = {octaveOptions, noteSelectOptions, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), scaleSelectOptions};
+const noteSelectOptionsSortedForScale = createNoteSelectOptions({rootNote: "c", scale: ScaleTypesEnum.majorIonian});
+const initialViewModel: IAutochorderPageViewModel = {octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
-
 
 class Autochorder{
   viewModel = initialViewModel;
@@ -120,9 +129,9 @@ class Autochorder{
     }
   }
 
+  //get all chord options, but place the ones that are applicable to the current key on top.
   getChordTypeSelectOptions({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, chordRootNote='c'}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, chordRootNote?: NoteSymbolTypes}){
     const options: IChordSelectOption[] = getChordOptions({rootNote, scale, chordRootNote});
-    console.debug(`options for chords in key: `, options, scale, rootNote);
     return options;
   }
 
@@ -176,6 +185,7 @@ class Autochorder{
   changeKey({key}: {key: IKey}){
     const {rootNote, scale} = key;
     this.viewModel.autoChorderPreset.selectedKey = {rootNote, scale};
+    this.viewModel.noteSelectOptions = createNoteSelectOptions({rootNote, scale});
     // this.emitChange();
     this.generateChordProgression({rootNote, scale});
   }
@@ -480,6 +490,7 @@ function updateSlotContentByChordId(slots: ISlot[], chord: IChord){
 }
 
 function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<NoteSymbolTypes>[]{
+
   return notes.map(n => {
     const option: ISelectOption<NoteSymbolTypes> = { value: n.noteSymbol, label: n.noteSymbol};
     return option;
@@ -493,27 +504,17 @@ function createSelectOptionsForScales(): ISelectOption<ScaleTypesEnum>[]{
   })
 }
 
-
-
-// function test(){
-//   const chord1: IChord = { notes: [ {midiNoteNumber: 40, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
-//   const chord2: IChord = { notes: [ {midiNoteNumber: 65, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
-//   const chord3: IChord = { notes: [ {midiNoteNumber: 70, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
-//   const chord4: IChord = { notes: [ {midiNoteNumber: 85, noteSymbol: "c", octave: 4, frequency: 222, id:"no"}], id: "chord1", label: "", type: "6", rootNote: "c", octave: 4};
-//
-//   function send(){
-//     autochorder.playChord({chord: chord1});
-//     autochorder.playChord({chord: chord2});
-//     autochorder.playChord({chord: chord3});
-//     autochorder.playChord({chord: chord4});
-//     // setTimeout(()=>{
-//     //
-//     // }, 1);
-//   }
-//   send();
-//   setInterval(() => {
-//     send();
-//   }, 5000);
-// }
-//
-// test();
+function //get all note options, but place the ones that are applicable to the current key on top.
+createNoteSelectOptions({rootNote, scale}: {rootNote: NoteSymbolTypes, scale: ScaleTypesEnum}){
+  const notesForScale = getNotesForScale({rootNote, scale});
+  const noteSelectOptionsInScale: INoteSelectOption[] = [];
+  const noteSelectOptionsNotInScale: INoteSelectOption[] = [];
+  for(let noteSelectOption of noteSelectOptions){
+    if(notesForScale.find(n => n.noteSymbol === noteSelectOption.value)){
+      noteSelectOptionsInScale.push({...noteSelectOption, isInKey: true});
+    }else{
+      noteSelectOptionsNotInScale.push({...noteSelectOption, isInKey: false});
+    }
+  }
+  return [...noteSelectOptionsInScale, ...noteSelectOptionsNotInScale];
+}

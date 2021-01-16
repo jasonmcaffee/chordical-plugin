@@ -32,6 +32,11 @@
     .select{
       width: 50%;
       display: inline-block;
+      .option{
+        &.in-key{
+          background-color: green;
+        }
+      }
     }
   }
 }

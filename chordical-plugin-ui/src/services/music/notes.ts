@@ -3,11 +3,12 @@ import {NoteSymbolTypes} from "../../models/music/INote";
 import {scaleNoteIndexes, ScaleTypesEnum} from "../../models/music/scales";
 import {ISelectOption} from "../../models/view/common/ISelectOption";
 export const noteSymbols: NoteSymbolTypes[] = ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'b'];
-export interface INoteOption {
-  value: NoteSymbolTypes,
-  name: NoteSymbolTypes,
+export interface INoteSelectOption extends ISelectOption<NoteSymbolTypes> {
+  isInKey?: boolean;
 }
-export const noteOptions: INoteOption[] = [{"value":"c","name":"c"},{"value":"c#","name":"c#"},{"value":"d","name":"d"},{"value":"d#","name":"d#"},{"value":"e","name":"e"},{"value":"f","name":"f"},{"value":"f#","name":"f#"},{"value":"g","name":"g"},{"value":"g#","name":"g#"},{"value":"a","name":"a"},{"value":"a#","name":"a#"},{"value":"b","name":"b"}];
+
+export const noteSelectOptions: INoteSelectOption[] = [{"value":"c","label":"c"},{"value":"c#","label":"c#"},{"value":"d","label":"d"},{"value":"d#","label":"d#"},{"value":"e","label":"e"},{"value":"f","label":"f"},{"value":"f#","label":"f#"},{"value":"g","label":"g"},{"value":"g#","label":"g#"},{"value":"a","label":"a"},{"value":"a#","label":"a#"},{"value":"b","label":"b"}];
+
 export interface IOctaveOption {
   value: number,
   name: string,

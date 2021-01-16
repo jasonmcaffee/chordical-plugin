@@ -10,10 +10,11 @@ import ISlot from "../../models/view/autochorder/ISlot";
 import SlotCard from "./SlotCard";
 import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
 import Select from "../common/Select";
+import {noteSelectOptions} from "../../services/music/notes";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
-  const {autoChorderPreset, noteSelectOptions, scaleSelectOptions} = viewModel;
+  const {autoChorderPreset, scaleSelectOptions} = viewModel;
   return <div className="autochorder">
     <div className="options">
       <div className={"key"}>
