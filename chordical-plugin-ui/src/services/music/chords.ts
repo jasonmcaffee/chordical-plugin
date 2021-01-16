@@ -3,6 +3,7 @@ import {ScaleTypesEnum} from "../../models/music/scales";
 import {NoteSymbolTypes} from "../../models/music/INote";
 import {ChordTypes, IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "./predefinedNotes";
+import {ISelectOption} from "../../models/view/common/ISelectOption";
 
 //patterns can be strings, so we can indicate when to sharpen 's' or flatten 'b' a note
 const _3b = '3b';
@@ -79,11 +80,11 @@ export interface IBuildChordParam extends IBuildChordTypeParam{
 }
 
 function buildChord({type='Major', rootNote='c', octave=3, pattern=[], id=generateRandomId(), label=`${rootNote} ${type}`}: Partial<IBuildChordParam>){
-  console.log('buildChord called for ', type, rootNote, octave, pattern);
+  // console.log('buildChord called for ', type, rootNote, octave, pattern);
   const majorScaleNotes = getMajorScaleNotes({rootNote, octave});
-  console.log('majorScaleNotes', majorScaleNotes);
+  // console.log('majorScaleNotes', majorScaleNotes);
   const notes = getNotesFromPattern({pattern, notes: majorScaleNotes});
-  console.log('notes', notes);
+  // console.log('notes', notes);
   const chord: IChord = {
     id,
     label,
@@ -177,59 +178,60 @@ export interface IChordOption{
   name: ChordTypes,
 }
 
-export const chordOptions: IChordOption[] = [
-  {value:"major",name:"Major"} ,
-  {value:"minor",name:"Minor"},
-  {value:"major7th",name:"Major 7th"},
-  {value:"minor7th",name:"Minor 7th"},
-  {value:"minorMajor7th",name:"Minor Major 7th"},
-  {value:"sustained4",name:"Sustained 4"},
-  {value:"sustained2",name:"Sustained 2"},
-  {value:"_6",name:"6"},
-  {value:"minor6",name:"Minor 6"},
-  {value:"_9",name:"9"},
-  {value:"minor9",name:"Minor 9"},
-  {value:"major9",name:"Major 9"},
-  {value:"minorMajor9",name:"Minor Major 9"},
-  {value:"_11",name:"11"},
-  {value:"minor11",name:"Minor 11"},
-  {value:"major11",name:"Major 11"},
-  {value:"minorMajor11",name:"Minor Major 11"},
-  {value:"_13",name:"13"},
-  {value:"minor13",name:"Minor 13"},
-  {value:"major13",name:"Major 13"},
-  {value:"minorMajor13",name:"Minor Major 13"},
-  {value:"add9",name:"Add 9"},
-  {value:"minorAdd9",name:"Minor Add 9"},
-  {value:"_6add9",name:"6 Add 9"},
-  {value:"minor6add9",name:"Minor 6 Add 9"},
-  {value:"dominant7thAdd11",name:"Dominant 7th Add 11"},
-  {value:"major7thAdd11",name:"Major 7th Add 11"},
-  {value:"minor7thAdd11",name:"Minor 7th Add 11"},
-  {value:"minorMajor7thAdd11",name:"Minor Major 7th Add 11"},
-  {value:"dominant7thAdd13",name:"Dominant 7th Add 13"},
-  {value:"major7thAdd13",name:"Major 7th Add 13"},
-  {value:"minor7thAdd13",name:"Minor 7th Add 13"},
-  {value:"minorMajor7thAdd13",name:"Minor Major 7th Add 13"},
-  {value:"minorflat5",name:"Diminished / Minor flat 5"},
-  {value:"_7flat5",name:"7 flat 5"},
-  {value:"_7sharp5",name:"7 sharp 5"},
-  {value:"_7flat9",name:"7 flat 9"},
-  {value:"_7sharp9",name:"7 sharp 9"},
-  {value:"_7sharp5flat9",name:"7 sharp 5 flat 9"},
-  {value:"minor7flat5",name:"Minor 7 flat 5"},
-  {value:"minor7sharp5",name:"Minor 7 sharp 5"},
-  {value:"minor7flat9",name:"Minor 7 flat 9"},
-  {value:"_9sharp11",name:"9 sharp 11"},
-  {value:"_9flat13",name:"9 flat 13"},
-  {value:"_6sustained4",name:"6 sustained 4"},
-  {value:"_7sustained4",name:"7 sustained 4"},
-  {value:"major7thsustained4",name:"Major 7th sustained 4"},
-  {value:"_9sustained4",name:"9 sustained 4"},
-  {value:"major9thsustained4",name:"Major 9th sustained 4"},
-  {value:"root",name:"Root"},
-  {value:"dyad1and5",name:"Dyad: 1 & 5"},
-  {value:"dyad1and3",name:"Dyad: 1 & 3"},
+
+export const chordOptions: ISelectOption<string>[] = [
+  {value:"major",label:"Major"} ,
+  {value:"minor",label:"Minor"},
+  {value:"major7th",label:"Major 7th"},
+  {value:"minor7th",label:"Minor 7th"},
+  {value:"minorMajor7th",label:"Minor Major 7th"},
+  {value:"sustained4",label:"Sustained 4"},
+  {value:"sustained2",label:"Sustained 2"},
+  {value:"_6",label:"6"},
+  {value:"minor6",label:"Minor 6"},
+  {value:"_9",label:"9"},
+  {value:"minor9",label:"Minor 9"},
+  {value:"major9",label:"Major 9"},
+  {value:"minorMajor9",label:"Minor Major 9"},
+  {value:"_11",label:"11"},
+  {value:"minor11",label:"Minor 11"},
+  {value:"major11",label:"Major 11"},
+  {value:"minorMajor11",label:"Minor Major 11"},
+  {value:"_13",label:"13"},
+  {value:"minor13",label:"Minor 13"},
+  {value:"major13",label:"Major 13"},
+  {value:"minorMajor13",label:"Minor Major 13"},
+  {value:"add9",label:"Add 9"},
+  {value:"minorAdd9",label:"Minor Add 9"},
+  {value:"_6add9",label:"6 Add 9"},
+  {value:"minor6add9",label:"Minor 6 Add 9"},
+  {value:"dominant7thAdd11",label:"Dominant 7th Add 11"},
+  {value:"major7thAdd11",label:"Major 7th Add 11"},
+  {value:"minor7thAdd11",label:"Minor 7th Add 11"},
+  {value:"minorMajor7thAdd11",label:"Minor Major 7th Add 11"},
+  {value:"dominant7thAdd13",label:"Dominant 7th Add 13"},
+  {value:"major7thAdd13",label:"Major 7th Add 13"},
+  {value:"minor7thAdd13",label:"Minor 7th Add 13"},
+  {value:"minorMajor7thAdd13",label:"Minor Major 7th Add 13"},
+  {value:"minorflat5",label:"Diminished / Minor flat 5"},
+  {value:"_7flat5",label:"7 flat 5"},
+  {value:"_7sharp5",label:"7 sharp 5"},
+  {value:"_7flat9",label:"7 flat 9"},
+  {value:"_7sharp9",label:"7 sharp 9"},
+  {value:"_7sharp5flat9",label:"7 sharp 5 flat 9"},
+  {value:"minor7flat5",label:"Minor 7 flat 5"},
+  {value:"minor7sharp5",label:"Minor 7 sharp 5"},
+  {value:"minor7flat9",label:"Minor 7 flat 9"},
+  {value:"_9sharp11",label:"9 sharp 11"},
+  {value:"_9flat13",label:"9 flat 13"},
+  {value:"_6sustained4",label:"6 sustained 4"},
+  {value:"_7sustained4",label:"7 sustained 4"},
+  {value:"major7thsustained4",label:"Major 7th sustained 4"},
+  {value:"_9sustained4",label:"9 sustained 4"},
+  {value:"major9thsustained4",label:"Major 9th sustained 4"},
+  {value:"root",label:"Root"},
+  {value:"dyad1and5",label:"Dyad: 1 & 5"},
+  {value:"dyad1and3",label:"Dyad: 1 & 3"},
 ];
 
 
@@ -244,7 +246,7 @@ export const chordOptions: IChordOption[] = [
 export function getChordOptions({rootNote, scale, chordRootNote,}: {scale: ScaleTypesEnum, rootNote: NoteSymbolTypes, chordRootNote: NoteSymbolTypes}){
   console.log(`getting chord options for rootNote: ${rootNote} scale: ${scale} chordRootNote: ${chordRootNote}`);
   if(rootNote === undefined || scale === undefined){ return chordOptions; }
-  const options = [];
+  const options: ISelectOption<string>[] = [];
   //iterate over each option, generate the chord, then see if all notes of chord are in scale.
   //@ts-ignore
   const allChordsForChordRootNote = Object.keys(chordFuncs).map(funcName=>chordFuncs[funcName]({rootNote: chordRootNote, octave: 3}));
@@ -256,8 +258,8 @@ export function getChordOptions({rootNote, scale, chordRootNote,}: {scale: Scale
     if(doAllNotesForChordExistInScale){ //the generated chord only has notes that belong to the key.
       //find the option and add it to our result.
       // console.error(`chord options: `, chordOptions);
-      const optionThatMatchesChordType = chordOptions.find(co => co.name === chordForChordRootNote.type);
-      console.error(`matching optionThatMatchesChordType: `, optionThatMatchesChordType);
+      const optionThatMatchesChordType = chordOptions.find(co => co.label === chordForChordRootNote.type);
+      // console.error(`matching optionThatMatchesChordType: `, optionThatMatchesChordType);
       if(optionThatMatchesChordType !== undefined){
         options.push(optionThatMatchesChordType);
       }else{

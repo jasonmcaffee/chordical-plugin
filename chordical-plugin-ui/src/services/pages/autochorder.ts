@@ -120,8 +120,8 @@ class Autochorder{
     }
   }
 
-  getChordOptionsForChordTypesInKey({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, chordRootNote='c'}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, chordRootNote?: NoteSymbolTypes}){
-    const options = getChordOptions({rootNote, scale, chordRootNote});
+  getChordTypeSelectOptions({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, chordRootNote='c'}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, chordRootNote?: NoteSymbolTypes}){
+    const options: ISelectOption<string>[] = getChordOptions({rootNote, scale, chordRootNote});
     console.debug(`options for chords in key: `, options, scale, rootNote);
     return options;
   }
@@ -199,9 +199,7 @@ class Autochorder{
     newChord.id = id; //keep the same id so ui component knows when it's chord has been updated.
     //replace in chords
     chords[chordBeingModifiedIndex] = newChord;
-    //tell the ChordCell ui to use the new chord and refresh
-    // trigger(chordChanged, {chord: newChord});
-    this.emitChange();
+    this.updateSlotAndEmitChange({chord: newChord});
   }
 
   changeChordRootNote({chord, newRootNote, chords=this.viewModel.autoChorderPreset.chords, }: {chord: IChord, newRootNote: NoteSymbolTypes, chords?: IChord[]}){
@@ -211,7 +209,7 @@ class Autochorder{
     const chordBeingModified = chords[chordBeingModifiedIndex];
     //create a new chord.
     const {id, octave, type} = chordBeingModified;
-    const option = chordOptions.find(c=>c.name === type); //this leads you to be able to create a chord type for chord root that doesnt exist in scale.
+    const option = chordOptions.find(c=>c.label === type); //this leads you to be able to create a chord type for chord root that doesnt exist in scale.
     if(!option){ return console.error('chord option not found for type', type); }
     const functionName = option.value;
     //@ts-ignore
