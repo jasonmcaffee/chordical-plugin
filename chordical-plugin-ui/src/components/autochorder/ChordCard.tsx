@@ -9,13 +9,18 @@ import {ISelectOption} from "../../models/view/common/ISelectOption";
 import Button from "../common/Button";
 
 export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
-  const chordTypeOptions = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
+  const chordTypeOptions2 = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
+  const chordTypeOptions = chordTypeOptions2.map(c => ({...c, className: c.isInScale ? "in-scale" : "not-in-scale"}) );
+  console.error(`chord rootNote: ${chord.rootNote} type options`, chordTypeOptions);
+  console.error(`chord type string: `, chord.type.toString());
   const currentlySelectChordTypeOption = chordTypeOptions.find(c => c.label === chord.type.toString());
-
+  const currentlySelectedChordRootNote = viewModel.noteSelectOptions.find(o => o.value === chord.rootNote);
+  console.error(`chord type option: `, currentlySelectChordTypeOption, currentlySelectedChordRootNote);
   const key = chord.id;
   return <div key={key} className="chord-card">
     <div className="details">
       <div className="label" onMouseDown={() => autochorder.playChord({chord})} onMouseUp={() => autochorder.stopChord({chord})}>{chord.label}</div>
+      <Select currentlySelectedOption={currentlySelectedChordRootNote} options={viewModel.noteSelectOptions} onChange={(o)=> autochorder.changeChordRootNote({chord, newRootNote: o.value})}/>
       <Select currentlySelectedOption={currentlySelectChordTypeOption} options={chordTypeOptions} onChange={(o) => autochorder.changeChordType({chord, newChordType: o.value})}/>
     </div>
     <div className="notes">

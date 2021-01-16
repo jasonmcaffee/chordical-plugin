@@ -99,8 +99,11 @@
       <change beforePath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/view/common/ISelectOption.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/view/common/ISelectOption.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/music/chords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/music/chords.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +164,7 @@
       <workItem from="1608676964598" duration="32220000" />
       <workItem from="1609196679780" duration="7174000" />
       <workItem from="1609299266574" duration="36339000" />
-      <workItem from="1610743161707" duration="4070000" />
+      <workItem from="1610743161707" duration="6731000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -247,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610416291637</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="chord type options select working.">
+      <created>1610810747955</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610810747955</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,9 +275,14 @@
     <MESSAGE value="select note for chord select box working." />
     <MESSAGE value="qwerty play" />
     <MESSAGE value="randomize notes working." />
-    <option name="LAST_COMMIT_MESSAGE" value="randomize notes working." />
+    <MESSAGE value="chord type options select working." />
+    <option name="LAST_COMMIT_MESSAGE" value="chord type options select working." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="405" y="13" key="CommitChangelistDialog2" timestamp="1610810745822">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="405" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610810745822" />
     <state x="577" y="151" key="RollbackChangesDialog" timestamp="1610808005394">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -276,9 +291,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="541" y="266" width="598" height="518" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610809034118" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1610807415614">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1610813250427">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610807415614" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610813250427" />
   </component>
 </project>

@@ -7,7 +7,7 @@ import {
   buildScaleProgression,
   chordFuncs as chordServiceChords,
   chordOptions,
-  getChordOptions
+  getChordOptions, IChordSelectOption
 } from "../music/chords";
 import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote, predefinedNotes} from "../music/predefinedNotes";
@@ -121,7 +121,7 @@ class Autochorder{
   }
 
   getChordTypeSelectOptions({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, chordRootNote='c'}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, chordRootNote?: NoteSymbolTypes}){
-    const options: ISelectOption<string>[] = getChordOptions({rootNote, scale, chordRootNote});
+    const options: IChordSelectOption[] = getChordOptions({rootNote, scale, chordRootNote});
     console.debug(`options for chords in key: `, options, scale, rootNote);
     return options;
   }
@@ -214,12 +214,11 @@ class Autochorder{
     const functionName = option.value;
     //@ts-ignore
     const newChord = chordServiceChords[functionName]({rootNote: newRootNote, octave});
+    console.error(`change chord root note new chord: `, newChord);
     newChord.id = id; //keep the same id so ui component knows when it's chord has been updated.
     //replace in chords
     chords[chordBeingModifiedIndex] = newChord;
-    //tell the ChordCell ui to use the new chord and refresh
-    // trigger(chordChanged, {chord: newChord});
-    this.emitChange();
+    this.updateSlotAndEmitChange({chord: newChord});
   }
 
   changeNoteSymbol({chord, note, newNoteSymbol, chords=this.viewModel.autoChorderPreset.chords}: {chord: IChord, note: IPredefinedNote, newNoteSymbol: NoteSymbolTypes, chords?: IChord[]}){

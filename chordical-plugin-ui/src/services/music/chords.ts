@@ -173,9 +173,8 @@ function getRandomInt(min=1, max=999999999) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive <- not any longer. max is now inclusive
 }
 
-export interface IChordOption{
-  value: string,
-  name: ChordTypes,
+export interface IChordSelectOption extends ISelectOption<string>{
+  isInScale: boolean;
 }
 
 
@@ -236,17 +235,18 @@ export const chordOptions: ISelectOption<string>[] = [
 
 
 /**
- *
+ * Return a complete list of all options.  Options that are in scale will be placed first.
  * @param rootNote? - provide if the chord options should be in the given key e.g. 'c'
  * @param scale? - e.g. = 'majorIonian'
  * @param chordRootNote
  * @param chordOptions
  * @returns {*[]}
  */
-export function getChordOptions({rootNote, scale, chordRootNote,}: {scale: ScaleTypesEnum, rootNote: NoteSymbolTypes, chordRootNote: NoteSymbolTypes}){
+export function getChordOptions({rootNote, scale, chordRootNote,}: {scale: ScaleTypesEnum, rootNote: NoteSymbolTypes, chordRootNote: NoteSymbolTypes}): IChordSelectOption[]{
   console.log(`getting chord options for rootNote: ${rootNote} scale: ${scale} chordRootNote: ${chordRootNote}`);
-  if(rootNote === undefined || scale === undefined){ return chordOptions; }
-  const options: ISelectOption<string>[] = [];
+
+  const optionsThatExistInScale: IChordSelectOption[] = [];
+  const optionsThatDontExistInScale: IChordSelectOption[] = [];
   //iterate over each option, generate the chord, then see if all notes of chord are in scale.
   //@ts-ignore
   const allChordsForChordRootNote = Object.keys(chordFuncs).map(funcName=>chordFuncs[funcName]({rootNote: chordRootNote, octave: 3}));
@@ -261,12 +261,18 @@ export function getChordOptions({rootNote, scale, chordRootNote,}: {scale: Scale
       const optionThatMatchesChordType = chordOptions.find(co => co.label === chordForChordRootNote.type);
       // console.error(`matching optionThatMatchesChordType: `, optionThatMatchesChordType);
       if(optionThatMatchesChordType !== undefined){
-        options.push(optionThatMatchesChordType);
+        optionsThatExistInScale.push({...optionThatMatchesChordType, isInScale: true});
       }else{
         console.error(`no option found for ${scale}  rootNote:${rootNote} chord:`, chordForChordRootNote, ` allNotesForScale: `, allNotesForScale);
       }
+    }else{
+      const optionThatMatchesChordType = chordOptions.find(co => co.label === chordForChordRootNote.type);
+      if(optionThatMatchesChordType){
+        optionsThatDontExistInScale.push({...optionThatMatchesChordType, isInScale: false});
+      }
     }
   }
+  const options: IChordSelectOption[] = [...optionsThatExistInScale, ...optionsThatDontExistInScale];
   return options;
 }
 /**

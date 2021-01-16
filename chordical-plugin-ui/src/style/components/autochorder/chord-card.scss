@@ -4,6 +4,11 @@
   border-radius: 3px;
 
   .details{
+    .select .option{
+      &.in-scale{
+        background-color: green;
+      }
+    }
 
     .label{
       display: flex;
