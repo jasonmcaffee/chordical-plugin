@@ -10,7 +10,7 @@ import {
   chordFuncs as chordServiceChords,
   chordOptions,
   getChordOptions,
-  IChordSelectOption
+  IChordSelectOption, reverseChordLookup
 } from "../music/chords";
 import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "../music/predefinedNotes";
@@ -246,6 +246,11 @@ class Autochorder{
     //replace the chord in chords array
     const indexOfChordBeingModified = chords.indexOf(chordBeingModified);
     chords[indexOfChordBeingModified] = clone;
+
+    //change the chord type and label
+    const reverseChord = reverseChordLookup({notes: clone.notes});
+    clone.type = reverseChord ? reverseChord.type : "Custom";
+    clone.label = reverseChord ? reverseChord.label : "Custom";
     this.updateSlotAndEmitChange({chord: clone});
   }
 

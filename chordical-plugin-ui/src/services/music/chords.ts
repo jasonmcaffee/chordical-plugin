@@ -1,4 +1,11 @@
-import {flattenNote, getNotesForScale, getNotesWithinOctaveRange, getScaleStepsForScale, sharpenNote} from "./notes";
+import {
+  flattenNote,
+  getNotesForScale,
+  getNotesWithinOctaveRange,
+  getScaleStepsForScale,
+  INoteSelectOption, noteSymbols,
+  sharpenNote
+} from "./notes";
 import {ScaleTypesEnum} from "../../models/music/scales";
 import {NoteSymbolTypes} from "../../models/music/INote";
 import {ChordTypes, IChord} from "../../models/music/IChord";
@@ -422,4 +429,38 @@ export function getRandomNoteFromScale({scale=ScaleTypesEnum.majorIonian, keyRoo
   const randomIndex = getRandomInt(0, notesForScale.length - 1);
   const note = notesForScale[randomIndex];
   return note;
+}
+
+function buildAllChords({notes=noteSymbols}: {notes?: NoteSymbolTypes[]} = {}){
+  const chords: IChord[] = [];
+  for(let note of notes){
+    for(let chordFuncPropName in chordFuncs){
+      //@ts-ignore
+      const chordFunc = chordFuncs[chordFuncPropName];
+      const chord = chordFunc({rootNote: note, octave: 1});
+      chords.push(chord);
+    }
+  }
+  return chords;
+}
+
+const allChords = buildAllChords();
+
+export function reverseChordLookup({notes}: {notes: IPredefinedNote[]}){
+  for(let chord of allChords){
+    if(doesChordContainOnlyTheseNoteSymbols({notes, chord})){
+      return chord;
+    }
+  }
+}
+
+function doesChordContainOnlyTheseNoteSymbols({notes, chord}: {notes: IPredefinedNote[], chord: IChord}){
+  const chordNotes = chord.notes;
+  if(chordNotes.length !== notes.length){ return false; }
+  for(let note of notes){
+    if(!chordNotes.find(cn => cn.noteSymbol === note.noteSymbol)){
+      return false;
+    }
+  }
+  return true;
 }
