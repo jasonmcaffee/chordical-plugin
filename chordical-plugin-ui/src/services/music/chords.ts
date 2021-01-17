@@ -450,17 +450,22 @@ const allChords = buildAllChords();
 
 export function reverseChordLookup({notes}: {notes: IPredefinedNote[]}){
   for(let chord of allChords){
-    if(doesChordContainOnlyTheseNoteSymbols({notes, chord})){
+    if(doesChordContainAllOfTheseNoteSymbols({notes, chord})){
       return chord;
     }
   }
 }
 
-function doesChordContainOnlyTheseNoteSymbols({notes, chord}: {notes: IPredefinedNote[], chord: IChord}){
+function doesChordContainAllOfTheseNoteSymbols({notes, chord}: {notes: IPredefinedNote[], chord: IChord}){
   const chordNotes = chord.notes;
-  if(chordNotes.length !== notes.length){ return false; }
+  // if(chordNotes.length !== notes.length){ return false; }  <-- doesn't take into consideration having 2 Cs at different octaves.
   for(let note of notes){
     if(!chordNotes.find(cn => cn.noteSymbol === note.noteSymbol)){
+      return false;
+    }
+  }
+  for(let chordNote of chordNotes){
+    if(!notes.find(n => n.noteSymbol === chordNote.noteSymbol)){
       return false;
     }
   }

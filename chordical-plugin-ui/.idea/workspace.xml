@@ -98,10 +98,7 @@
       <change beforePath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Select.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/music/chords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/music/chords.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +159,7 @@
       <workItem from="1608676964598" duration="32220000" />
       <workItem from="1609196679780" duration="7174000" />
       <workItem from="1609299266574" duration="36339000" />
-      <workItem from="1610743161707" duration="16587000" />
+      <workItem from="1610743161707" duration="17152000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -283,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610825100357</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add sensible note works pretty well.">
+      <created>1610889393469</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610889393469</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,13 +309,14 @@
     <MESSAGE value="change chord root note working. chord type options now sorted based on whether they are in the scale.  Options in scale are styled differently." />
     <MESSAGE value="note select options are now sorted by whether they are in the key. when in key, they have a different background color." />
     <MESSAGE value="reverse chord lookup.  Chord type changes when note symbol is changed." />
-    <option name="LAST_COMMIT_MESSAGE" value="reverse chord lookup.  Chord type changes when note symbol is changed." />
+    <MESSAGE value="add sensible note works pretty well." />
+    <option name="LAST_COMMIT_MESSAGE" value="add sensible note works pretty well." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1610825100203">
+    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1610889393231">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610825100203" />
+    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610889393231" />
     <state x="577" y="151" key="RollbackChangesDialog" timestamp="1610808005394">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
