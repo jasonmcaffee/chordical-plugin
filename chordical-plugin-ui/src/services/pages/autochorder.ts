@@ -8,7 +8,7 @@ import {
   buildChordProgression,
   buildScaleProgression,
   chordFuncs as chordServiceChords,
-  chordOptions,
+  chordOptions, findSensibleNoteToAddToChordGivenKey,
   getChordOptions,
   IChordSelectOption, reverseChordLookup
 } from "../music/chords";
@@ -150,20 +150,17 @@ class Autochorder{
   addEachNoteOfKeyAsChordCell({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, startOctave=this.viewModel.autoChorderPreset.randomizationMinOctave, endOctave=this.viewModel.autoChorderPreset.randomizationMaxOctave, }={}){
     const newChords = buildScaleProgression({rootNote, scale, startOctave, endOctave});
     this.viewModel.autoChorderPreset.chords = this.viewModel.autoChorderPreset.chords.concat(newChords);
-    // trigger(presetChanged, {autoChorderPreset: this});
     this.emitChange();
   }
 
   changeRandomizationMinOctave({newOctave}:{newOctave: number}){
     this.viewModel.autoChorderPreset.randomizationMinOctave = newOctave;
     console.log('changeRandomizationMinOctave ', newOctave);
-    // trigger(randomizationMinOctaveChanged, {octave: this.viewModel.randomizationMinOctave});
     this.emitChange();
   }
 
   changeRandomizationMaxOctave({newOctave}: {newOctave: number}){
     this.viewModel.autoChorderPreset.randomizationMaxOctave = newOctave;
-    // trigger(randomizationMaxOctaveChanged, {octave: this.viewModel.randomizationMaxOctave});
     this.emitChange();
   }
 
@@ -171,7 +168,6 @@ class Autochorder{
     console.log(`AutoChorderPreset received keyPressed for key: ${key} index: ${index}`);
     const chord = this.viewModel.autoChorderPreset.chords[index];
     if(!chord){ return console.log('no chord to play for index: ', index); }
-    // trigger(ec.autoChorder.chordPressed, {chord});
     this.emitChange();
   }
 
@@ -251,6 +247,7 @@ class Autochorder{
     const reverseChord = reverseChordLookup({notes: clone.notes});
     clone.type = reverseChord ? reverseChord.type : "Custom";
     clone.label = reverseChord ? reverseChord.label : "Custom";
+    clone.rootNote = reverseChord ? reverseChord.rootNote : clone.rootNote;
     this.updateSlotAndEmitChange({chord: clone});
   }
 
@@ -287,22 +284,23 @@ class Autochorder{
     if(!noteBeingModified){ return console.log(`AutoChordPreset chord id: ${chord.id} doesn't have note id: ${note.id}`); }
     //remove the note
     chordBeingModified.notes.splice(noteBeingModifiedIndex, 1);
-    //tell the ChordCell ui to use the new chord and refresh
-    // trigger(chordChanged, {chord: chordBeingModified});
     this.emitChange();
   }
 
+  /**
+   * add a note that still maintains a functioning chord.  finds a "sensible" note.
+   * e.g. C Major (C, E, G) will find B, making it C Major 7th (C, E, G, B).
+   * If no new chord type is possible, first note in chord will be duplicated.
+   */
   addNote({chord, chords=this.viewModel.autoChorderPreset.chords}: {chord: IChord, chords?: IChord[]}){
     //find the chord to be modified in our array of chords
     const chordBeingModified = chords.find(c=>c.id === chord.id);
     if(!chordBeingModified){ return console.log(`AutoChorderPreset doesn't have chord id: ${chord.id}`); }
-    //create a new note and add it to the chord
-    const newNote = findNoteByNoteSymbolAndOctave({noteSymbol:'c', octave: 3});
-    if(!newNote){ return console.log(`no new note found`); }
-    chordBeingModified.notes.push(newNote);
-    //tell the ChordCell ui to use the new chord and refresh
-    // trigger(chordChanged, {chord: chordBeingModified});
-    this.emitChange();
+    const {chordWithSensibleNote, sensibleNote} = findSensibleNoteToAddToChordGivenKey({key: this.viewModel.autoChorderPreset.selectedKey, chord: chordBeingModified});
+    chordBeingModified.notes.push(sensibleNote);
+    chordBeingModified.type = chordWithSensibleNote.type;
+    chordBeingModified.label = chordWithSensibleNote.label;
+    this.updateSlotAndEmitChange({chord: chordBeingModified});
   }
 
   addChord({onlyGenerateChordsInKey=true, selectedKey=this.viewModel.autoChorderPreset.selectedKey, octave=this.viewModel.autoChorderPreset.randomizationMinOctave}={}){
@@ -310,7 +308,6 @@ class Autochorder{
     const keyRootNote = selectedKey.rootNote;
     const newChord = buildChordOfRandomRootNoteAndType({keyRootNote, scale, octave});
     this.viewModel.autoChorderPreset.chords.push(newChord);
-    // trigger(presetChanged, {autoChorderPreset: this});
     this.emitChange();
   }
 
@@ -318,7 +315,6 @@ class Autochorder{
     const newChord = {...chord, id: generateRandomId()};
     this.viewModel.autoChorderPreset.chords.push(newChord);
     console.log(`new chord is `, newChord, chord);
-    // trigger(presetChanged, {autoChorderPreset: this});
     this.emitChange();
   }
 
@@ -329,7 +325,6 @@ class Autochorder{
     //remove the chord
     this.viewModel.autoChorderPreset.chords.splice(chordBeingModifiedIndex, 1);
     //update the ui
-    // trigger(presetChanged, {autoChorderPreset: this});
     this.emitChange();
   }
 

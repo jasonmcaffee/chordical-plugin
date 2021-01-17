@@ -25,6 +25,7 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
     <div className="notes">
       <Button label={"randomize"} onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }/>
       {createSelectForEachNoteInChord({chord, viewModel, noteSelectOptions})}
+      <Button label={"add"} onClick={() => autochorder.addNote({chord})}/>
     </div>
    </div>;
 }

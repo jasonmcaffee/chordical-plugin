@@ -1,4 +1,5 @@
 import {
+  findNoteByNoteSymbolAndOctave,
   flattenNote,
   getNotesForScale,
   getNotesWithinOctaveRange,
@@ -11,6 +12,7 @@ import {NoteSymbolTypes} from "../../models/music/INote";
 import {ChordTypes, IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "./predefinedNotes";
 import {ISelectOption} from "../../models/view/common/ISelectOption";
+import {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 
 //patterns can be strings, so we can indicate when to sharpen 's' or flatten 'b' a note
 const _3b = '3b';
@@ -464,3 +466,35 @@ function doesChordContainOnlyTheseNoteSymbols({notes, chord}: {notes: IPredefine
   }
   return true;
 }
+
+export function findSensibleNoteToAddToChordGivenKey({key, chord}: {key: IKey, chord: IChord}){
+  const chordOptionsInKey = getChordOptions({rootNote: key.rootNote, scale: key.scale, chordRootNote: chord.rootNote}).filter(o => o.isInScale);
+  let sensibleNote = findNoteByNoteSymbolAndOctave({noteSymbol: chord.notes[0].noteSymbol, octave: chord.notes[0].octave + 1}) || chord.notes[0];
+  let chordWithSensibleNote = chord;
+  //@ts-ignore
+  for(let chordOption of chordOptionsInKey){
+    //@ts-ignore
+    const possibleChord: IChord = chordFuncs[chordOption.value]({rootNote: chord.rootNote, octave: chord.octave});
+    if(possibleChord.notes.length > chord.notes.length){
+      //get the note from possible chord not in chord.
+      const notesFromPossibleChordNotInChord = findNotesFromAnotFoundInB({notesA: possibleChord.notes, notesB: chord.notes});
+      if(notesFromPossibleChordNotInChord.length > 0){
+        sensibleNote = notesFromPossibleChordNotInChord[0];
+        chordWithSensibleNote = possibleChord;
+        break;
+      }
+    }
+  }
+  return {sensibleNote, chordWithSensibleNote};
+}
+
+function findNotesFromAnotFoundInB({notesA, notesB}: {notesA:IPredefinedNote[], notesB: IPredefinedNote[]}){
+  const notInB: IPredefinedNote[] = [];
+  for(let noteA of notesA){
+    if(!notesB.find(nb => nb.noteSymbol === noteA.noteSymbol)){
+      notInB.push(noteA);
+    }
+  }
+  return notInB;
+}
+
