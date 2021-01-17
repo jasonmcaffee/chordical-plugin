@@ -11,6 +11,7 @@ import SlotCard from "./SlotCard";
 import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
 import Select from "../common/Select";
 import {noteSelectOptions} from "../../services/music/notes";
+import Button from "../common/Button";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
@@ -38,17 +39,14 @@ function createSlotEls({viewModel}: {viewModel: IAutochorderPageViewModel}){
 }
 
 function createSlotEl({slot, viewModel}: {slot: ISlot, viewModel: IAutochorderPageViewModel}){
-  const chordEl = slot.content ? createChordCardEl({chord: slot.content, viewModel}) : null;
+  const chordEl = slot.content ? createChordCardEl({chord: slot.content, viewModel}) : createAddChordEl();
   return <SlotCard slot={slot}> {chordEl}</SlotCard>;
 }
 
-const doSomething = () => autochorder.generateChordProgression({rootNote: 'c', scale: ScaleTypesEnum.majorIonian, octave: 4});
+function createAddChordEl(){
+  return <div className={"add-chord"}>
+    <Button label={"+"} onClick={() => autochorder.addChord()}/>
+  </div>
+}
 
-// const l: string[] = [];
-// const [messages, setMessages] = useState(l);
-// useEffect(()=>{
-//   return subscribeToFromHostPluginEvents((message)=>{
-//     const m = "<div>" + JSON.stringify(message) + "</div>";
-//     setMessages([m, ...messages]);
-//   });
-// });
+const doSomething = () => autochorder.generateChordProgression({rootNote: 'c', scale: ScaleTypesEnum.majorIonian, octave: 4});

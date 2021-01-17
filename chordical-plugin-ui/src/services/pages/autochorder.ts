@@ -308,13 +308,15 @@ class Autochorder{
     const keyRootNote = selectedKey.rootNote;
     const newChord = buildChordOfRandomRootNoteAndType({keyRootNote, scale, octave});
     this.viewModel.autoChorderPreset.chords.push(newChord);
+    addChordToFirstSlotWithoutContentOrCreateNewSlot(this.viewModel.autoChorderPreset.slots, newChord);
+    const addChordSlot = createSlotWithNextMidiAndQwertyTriggers(this.viewModel.autoChorderPreset.slots);
+    this.viewModel.autoChorderPreset.slots.push(addChordSlot);
     this.emitChange();
   }
 
   duplicateChord({chord}: {chord: IChord}){
     const newChord = {...chord, id: generateRandomId()};
     this.viewModel.autoChorderPreset.chords.push(newChord);
-    console.log(`new chord is `, newChord, chord);
     this.emitChange();
   }
 
@@ -391,31 +393,37 @@ class Autochorder{
     console.log(`generateChordProgression rootNote: ${rootNote} scale: ${scale} octave: ${octave}`);
     const chordProgression = buildChordProgression({rootNote, scale, octave});
     this.viewModel.autoChorderPreset.chords = chordProgression;
-    this.placeChordsInSlots();
+    // this.placeChordsInSlots();
+    this.viewModel.autoChorderPreset.slots = [];
+    this.viewModel.autoChorderPreset.chords.forEach(c => addChordToFirstSlotWithoutContentOrCreateNewSlot(this.viewModel.autoChorderPreset.slots, c) );
+    const addChordSlot = createSlotWithNextMidiAndQwertyTriggers(this.viewModel.autoChorderPreset.slots);
+    this.viewModel.autoChorderPreset.slots.push(addChordSlot);
     this.emitChange({saveState});
   }
   clearAllChords(){
     this.viewModel.autoChorderPreset.chords = [];
+    this.viewModel.autoChorderPreset.slots = [];
+    const addChordSlot = createSlotWithNextMidiAndQwertyTriggers(this.viewModel.autoChorderPreset.slots);
+    this.viewModel.autoChorderPreset.slots.push(addChordSlot);
     this.emitChange();
   }
-  placeChordsInSlots({autoChorderPreset=this.viewModel.autoChorderPreset}: {autoChorderPreset?: AutoChorderPreset} = {}){
-    const {chords, slots} = autoChorderPreset;
-    slots.forEach(slot => slot.content = undefined);
-    for(let i = 0; i < chords.length; ++i){
-      const chord = chords[i];
-      if(i >= slots.length){
-        const previousSlotFirstMidiNoteTrigger = slots[i - 1].midiNoteTriggers[0];
-        const midiNoteTriggers = previousSlotFirstMidiNoteTrigger ? [previousSlotFirstMidiNoteTrigger + 1] : [];
-        const qwertyKeyCode = qwertyKeyCodes[i];
-        const slot: ISlot = { midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
-        slots.push(slot);
-        continue;
-      }
-      slots[i].content = chord;
-    }
-  }
+  // placeChordsInSlots({autoChorderPreset=this.viewModel.autoChorderPreset}: {autoChorderPreset?: AutoChorderPreset} = {}){
+  //   const {chords, slots} = autoChorderPreset;
+  //   slots.forEach(slot => slot.content = undefined);
+  //   for(let i = 0; i < chords.length; ++i){
+  //     const chord = chords[i];
+  //     if(i >= slots.length){
+  //       const previousSlotFirstMidiNoteTrigger = slots[i - 1].midiNoteTriggers[0];
+  //       const midiNoteTriggers = previousSlotFirstMidiNoteTrigger ? [previousSlotFirstMidiNoteTrigger + 1] : [];
+  //       const qwertyKeyCode = qwertyKeyCodes[i];
+  //       const slot: ISlot = { midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
+  //       slots.push(slot);
+  //       continue;
+  //     }
+  //     slots[i].content = chord;
+  //   }
+  // }
 }
-
 
 function getNoteAndChordFromChords({chordId, noteId, chords}: {chordId: string, noteId: string, chords: IChord[]}) : undefined | { note: IPredefinedNote, chord: IChord, noteIndex: number}{
   // let result = {};
@@ -465,12 +473,12 @@ function convertChordToHostMidiNotes({chord}: {chord: IChord}) : IMidiNoteData[]
 
 function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNumber?: number, numberOfSlots?: number} = {}): ISlot[]{
   const result: ISlot[] = [];
-  for(let i = 0; i < numberOfSlots; ++i){
-    const midiNoteTrigger = startMidiNumber + i;
-    const qwertyKeyCode = qwertyKeyCodes[i];
-    const slot: ISlot = {midiNoteTriggers: [midiNoteTrigger], qwertyKeyCodeTrigger: qwertyKeyCode.code};
-    result.push(slot);
-  }
+  // for(let i = 0; i < numberOfSlots; ++i){
+  //   const midiNoteTrigger = startMidiNumber + i;
+  //   const qwertyKeyCode = qwertyKeyCodes[i];
+  //   const slot: ISlot = {midiNoteTriggers: [midiNoteTrigger], qwertyKeyCodeTrigger: qwertyKeyCode.code};
+  //   result.push(slot);
+  // }
   return result;
 }
 
@@ -489,8 +497,30 @@ function updateSlotContentByChordId(slots: ISlot[], chord: IChord){
   }
 }
 
-function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<NoteSymbolTypes>[]{
+function addChordToFirstSlotWithoutContentOrCreateNewSlot(slots: ISlot[], chord: IChord){
+  const slotWithoutContent = slots.find(s => !s.content);
+  if(!slotWithoutContent){
+    const slot = createSlotWithNextMidiAndQwertyTriggers(slots, chord);
+    slots.push(slot);
+  }else{
+    slotWithoutContent.content = chord;
+  }
+}
 
+function createSlotWithNextMidiAndQwertyTriggers(slots: ISlot[], chord?: IChord){
+  const lastSlot = slots[slots.length - 1];
+  let midiMoteTrigger = 60;
+  let qwertyKeyCode = qwertyKeyCodes[0];
+  if(lastSlot){
+    midiMoteTrigger = lastSlot.midiNoteTriggers[0];
+    qwertyKeyCode = qwertyKeyCodes[slots.length];
+  }
+  const midiNoteTriggers = [midiMoteTrigger + 1];
+  const slot: ISlot = { midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
+  return slot;
+}
+
+function createSelectOptionsForNotes(notes: IPredefinedNote[]) : ISelectOption<NoteSymbolTypes>[]{
   return notes.map(n => {
     const option: ISelectOption<NoteSymbolTypes> = { value: n.noteSymbol, label: n.noteSymbol};
     return option;

@@ -98,7 +98,9 @@
       <change beforePath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/music/chords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/music/chords.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +161,7 @@
       <workItem from="1608676964598" duration="32220000" />
       <workItem from="1609196679780" duration="7174000" />
       <workItem from="1609299266574" duration="36339000" />
-      <workItem from="1610743161707" duration="17152000" />
+      <workItem from="1610743161707" duration="20783000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -287,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610889393469</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="better reverse chord lookup when note is changed.">
+      <created>1610892022065</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1610892022065</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,13 +319,14 @@
     <MESSAGE value="note select options are now sorted by whether they are in the key. when in key, they have a different background color." />
     <MESSAGE value="reverse chord lookup.  Chord type changes when note symbol is changed." />
     <MESSAGE value="add sensible note works pretty well." />
-    <option name="LAST_COMMIT_MESSAGE" value="add sensible note works pretty well." />
+    <MESSAGE value="better reverse chord lookup when note is changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="better reverse chord lookup when note is changed." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1610889393231">
+    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1610892021909">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610889393231" />
+    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1610892021909" />
     <state x="577" y="151" key="RollbackChangesDialog" timestamp="1610808005394">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -329,9 +339,27 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="541" y="266" width="598" height="518" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610883682512" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1610826101488">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1610892251711">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610826101488" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610892251711" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
+          <line>306</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
+          <line>499</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
