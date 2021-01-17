@@ -284,7 +284,11 @@ class Autochorder{
     if(!noteBeingModified){ return console.log(`AutoChordPreset chord id: ${chord.id} doesn't have note id: ${note.id}`); }
     //remove the note
     chordBeingModified.notes.splice(noteBeingModifiedIndex, 1);
-    this.emitChange();
+    const reverseChord = reverseChordLookup({notes: chordBeingModified.notes});
+    chordBeingModified.label = reverseChord?.label ?? "Custom";
+    chordBeingModified.type = reverseChord?.type ?? "Custom";
+    chordBeingModified.rootNote = reverseChord?.rootNote ?? chordBeingModified.rootNote;
+    this.updateSlotAndEmitChange({chord: chordBeingModified});
   }
 
   /**

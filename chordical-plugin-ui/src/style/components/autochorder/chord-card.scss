@@ -29,9 +29,19 @@
 %notes{
   .note-and-octave{
     background-color: pink;
+    display: grid;
+    grid-template-areas: "note-symbol note-octave delete-button";
+    .select:nth-child(1){
+      grid-area: note-symbol;
+    }
+    .select:nth-child(2){
+      grid-area: note-octave;
+    }
+    .button{
+      grid-area: delete-button;
+    }
+
     .select{
-      width: 50%;
-      display: inline-block;
       .option{
         &.in-key{
           background-color: green;

@@ -43,5 +43,6 @@ function createSelectForNote({note, chord, viewModel, noteSelectOptions}: {note:
   return <div className="note-and-octave">
     <Select options={noteSelectOptions} onChange={(option)=> autochorder.changeNoteSymbol({note, chord, newNoteSymbol: option.value})} currentlySelectedOption={selectOptionForNote}/>
     <Select options={viewModel.octaveOptions} onChange={(option)=> autochorder.changeNoteOctave({note, chord, newNoteOctave: option.value})} currentlySelectedOption={selectedOptionForOctave}/>
+    <Button label={"X"} onClick={() => autochorder.deleteNote({chord, note}) }/>
   </div>
 }
