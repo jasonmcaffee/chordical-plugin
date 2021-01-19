@@ -1,13 +1,14 @@
 .chord-card{
-  background-color: darkseagreen;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 15px;
+  //https://neumorphism.io/#eeefee
+  border-radius: 12px;
+  background: #eeefee;
+  box-shadow:  7px 7px 10px #c3c4c3,
+  -7px -7px 10px #ffffff;
 
   .details{
     .select .option{
-      &.in-key{
-        background-color: green;
-      }
+      @extend %in-key-select-option;
     }
 
     .label{
@@ -15,9 +16,6 @@
       justify-content: center;
       cursor: pointer;
       font-size: 25px;
-      //word-wrap: break-word;
-      //overflow-wrap: break-word;
-      //white-space: pre-line;
     }
   }
 
@@ -27,10 +25,20 @@
 }
 
 %notes{
+  //border: 1px solid grey;
+  padding: 15px;
+
+  border-radius: 6px;
+  background: #eeefee;
+  box-shadow: inset 5px 5px 6px #cacbca,
+  inset -5px -5px 6px #ffffff;
+
   .note-and-octave{
-    background-color: pink;
     display: grid;
     grid-template-areas: "note-symbol note-octave delete-button";
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    //grid-template-columns: 3fr 3fr 1fr;
+    column-gap: 15px;
     .select:nth-child(1){
       grid-area: note-symbol;
     }
@@ -41,12 +49,17 @@
       grid-area: delete-button;
     }
 
-    .select{
-      .option{
-        &.in-key{
-          background-color: green;
-        }
-      }
+    .select .option{
+      @extend %in-key-select-option;
+    }
+  }
+}
+
+%in-key-select-option{
+  &.in-key{
+    background-color: rgba(131,219,118,0.5);
+    &:nth-child(even){
+      background-color: rgba(131,219,118,.8);
     }
   }
 }

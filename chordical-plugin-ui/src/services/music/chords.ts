@@ -10,7 +10,7 @@ import {
 import {ScaleTypesEnum} from "../../models/music/scales";
 import {NoteSymbolTypes} from "../../models/music/INote";
 import {ChordTypes, IChord} from "../../models/music/IChord";
-import {IPredefinedNote} from "./predefinedNotes";
+import {IPredefinedNote, predefinedNotes} from "./predefinedNotes";
 import {ISelectOption} from "../../models/view/common/ISelectOption";
 import {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 
@@ -473,6 +473,9 @@ function doesChordContainAllOfTheseNoteSymbols({notes, chord}: {notes: IPredefin
 }
 
 export function findSensibleNoteToAddToChordGivenKey({key, chord}: {key: IKey, chord: IChord}){
+  if(chord.notes.length <= 0){
+    return {sensibleNote: findNoteByNoteSymbolAndOctave({noteSymbol: "c", octave: 4}) || predefinedNotes[0], chordWithSensibleNote: chord }
+  }
   const chordOptionsInKey = getChordOptions({rootNote: key.rootNote, scale: key.scale, chordRootNote: chord.rootNote}).filter(o => o.isInScale);
   let sensibleNote = findNoteByNoteSymbolAndOctave({noteSymbol: chord.notes[0].noteSymbol, octave: chord.notes[0].octave + 1}) || chord.notes[0];
   let chordWithSensibleNote = chord;

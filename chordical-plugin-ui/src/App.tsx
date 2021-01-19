@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 // import logo from './logo.svg';
 import './services/hostPlugin/hostPlugin';
-
 import {requestToPlayMidiNotes, requestToStopMidiNotes, sendMessageToHost, webAppLoaded} from "./services/eventBus/hostPlugin/toHostPluginEventBus";
 import {subscribeToFromHostPluginEvents} from "./services/eventBus/hostPlugin/fromHostPluginEventBus";
 import {FromHostPluginMessageTypes} from "./services/eventBus/hostPlugin/HostPluginEventTypes";

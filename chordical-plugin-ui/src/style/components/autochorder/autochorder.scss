@@ -1,5 +1,8 @@
+@import "../../page/page";
+
 .autochorder{
-  background-color: rebeccapurple;
+  @extend %page;
+  background-color: #eeefee;
   .options{
     @extend %options;
   }

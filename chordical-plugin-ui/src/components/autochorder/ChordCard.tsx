@@ -8,6 +8,8 @@ import {IPredefinedNote} from "../../services/music/predefinedNotes";
 import {ISelectOption} from "../../models/view/common/ISelectOption";
 import Button from "../common/Button";
 import {INoteSelectOption} from "../../services/music/notes";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faDice, faPlus, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 
 export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
   const chordTypeOptions2 = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
@@ -23,9 +25,13 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
       <Select currentlySelectedOption={currentlySelectChordTypeOption} options={chordTypeOptions} onChange={(o) => autochorder.changeChordType({chord, newChordType: o.value})}/>
     </div>
     <div className="notes">
-      <Button label={"randomize"} onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }/>
+      <Button onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }>
+        <FontAwesomeIcon icon={faDice}/>
+      </Button>
       {createSelectForEachNoteInChord({chord, viewModel, noteSelectOptions})}
-      <Button label={"add"} onClick={() => autochorder.addNote({chord})}/>
+      <Button  onClick={() => autochorder.addNote({chord})}>
+        <FontAwesomeIcon icon={faPlus}/>
+      </Button>
     </div>
    </div>;
 }
@@ -43,6 +49,8 @@ function createSelectForNote({note, chord, viewModel, noteSelectOptions}: {note:
   return <div className="note-and-octave">
     <Select options={noteSelectOptions} onChange={(option)=> autochorder.changeNoteSymbol({note, chord, newNoteSymbol: option.value})} currentlySelectedOption={selectOptionForNote}/>
     <Select options={viewModel.octaveOptions} onChange={(option)=> autochorder.changeNoteOctave({note, chord, newNoteOctave: option.value})} currentlySelectedOption={selectedOptionForOctave}/>
-    <Button label={"X"} onClick={() => autochorder.deleteNote({chord, note}) }/>
+    <Button onClick={() => autochorder.deleteNote({chord, note}) }>
+      <FontAwesomeIcon icon={faTrashAlt}/>
+    </Button>
   </div>
 }

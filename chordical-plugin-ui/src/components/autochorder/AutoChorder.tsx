@@ -12,6 +12,8 @@ import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugi
 import Select from "../common/Select";
 import {noteSelectOptions} from "../../services/music/notes";
 import Button from "../common/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
@@ -45,7 +47,9 @@ function createSlotEl({slot, viewModel}: {slot: ISlot, viewModel: IAutochorderPa
 
 function createAddChordEl(){
   return <div className={"add-chord"}>
-    <Button label={"+"} onClick={() => autochorder.addChord()}/>
+    <Button onClick={() => autochorder.addChord()}>
+      <FontAwesomeIcon icon={faPlus}/>
+    </Button>
   </div>
 }
 

@@ -1,7 +1,22 @@
 .button{
+  box-sizing: border-box;
   font-size: 15px;
-  padding: 3px;
-  border: 1px solid black;
+  padding: 3px 7px 3px 7px;
   cursor: pointer;
-  border-radius: 3px;
+  width: min-content;
+
+  border-radius: 5px;
+  background: #eeefee;
+  box-shadow:  4px 4px 7px #b0b1b0,
+  -4px -4px 7px #ffffff;
+
+  margin-top: 7px;
+  margin-bottom: 7px;
+
+  &.pressed{
+    border-radius: 5px;
+    background: #eeefee;
+    box-shadow: inset 4px 4px 7px #b0b1b0,
+    inset -4px -4px 7px #ffffff;
+  }
 }
