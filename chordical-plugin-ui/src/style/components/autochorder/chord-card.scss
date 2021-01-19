@@ -17,6 +17,20 @@
       cursor: pointer;
       font-size: 25px;
     }
+
+    .chord-root-note-and-type{
+      display: grid;
+      grid-template-areas: "root-note type";
+      grid-template-columns: 70px auto;
+      column-gap: 12px;
+      margin-bottom: 10px;
+      .select:nth-child(1){
+        grid-area: root-note;
+      }
+      .select:nth-child(2){
+        grid-area: type;
+      }
+    }
   }
 
   .notes{

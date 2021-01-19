@@ -8,7 +8,6 @@ import {ScaleTypesEnum} from "../../models/music/scales";
 import '../../style/components/autochorder/autochorder.scss';
 import ISlot from "../../models/view/autochorder/ISlot";
 import SlotCard from "./SlotCard";
-import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
 import Select from "../common/Select";
 import {noteSelectOptions} from "../../services/music/notes";
 import Button from "../common/Button";
@@ -20,9 +19,9 @@ export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageVie
   const {autoChorderPreset, scaleSelectOptions} = viewModel;
   return <div className="autochorder">
     <div className="options">
-      <div className={"key"}>
-        <Select label="Root" currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
-        <Select label="Scale" currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
+      <div className="key">
+        <Select currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
+        <Select currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
       </div>
     </div>
 

@@ -6,6 +6,7 @@
   box-shadow:  4px 4px 7px #b0b1b0,
   -4px -4px 7px #ffffff;
 
+  min-width: 70px;
   margin-bottom: 7px;
   margin-top: 7px;
 
@@ -37,7 +38,7 @@
     box-shadow:  4px 4px 7px #b0b1b0,
     -4px -4px 7px #ffffff;
 
-    padding: 7px;
+    //padding: 7px;
 
     .options{
       overflow-y: scroll;

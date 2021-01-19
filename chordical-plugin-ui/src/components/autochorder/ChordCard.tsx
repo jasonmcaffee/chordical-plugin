@@ -21,9 +21,12 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
   return <div key={key} className="chord-card">
     <div className="details">
       <div className="label" onMouseDown={() => autochorder.playChord({chord})} onMouseUp={() => autochorder.stopChord({chord})}>{chord.label}</div>
-      <Select currentlySelectedOption={currentlySelectedChordRootNote} options={noteSelectOptions} onChange={(o)=> autochorder.changeChordRootNote({chord, newRootNote: o.value})}/>
-      <Select currentlySelectedOption={currentlySelectChordTypeOption} options={chordTypeOptions} onChange={(o) => autochorder.changeChordType({chord, newChordType: o.value})}/>
+      <div className="chord-root-note-and-type">
+        <Select currentlySelectedOption={currentlySelectedChordRootNote} options={noteSelectOptions} onChange={(o)=> autochorder.changeChordRootNote({chord, newRootNote: o.value})}/>
+        <Select currentlySelectedOption={currentlySelectChordTypeOption} options={chordTypeOptions} onChange={(o) => autochorder.changeChordType({chord, newChordType: o.value})}/>
+      </div>
     </div>
+
     <div className="notes">
       <Button onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }>
         <FontAwesomeIcon icon={faDice}/>

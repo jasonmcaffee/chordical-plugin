@@ -8,12 +8,31 @@
   }
 }
 %options{
+  padding: 15px;
   .key{
     @extend %key;
   }
 }
+
 %key{
-  background-color: gray;
+  border-radius: 12px;
+  background: #eeefee;
+  box-shadow:  7px 7px 10px #c3c4c3,
+  -7px -7px 10px #ffffff;
+  padding: 10px;
+
+  display: grid;
+  grid-template-areas: "root-note scale";
+  grid-template-columns: 70px 200px;
+  column-gap: 10px;
+  .select{
+    &:nth-child(1){
+      grid-area: root-note
+    }
+    &:nth-child(2){
+      grid-area: scale;
+    }
+  }
 }
 
 .slot-cards{
