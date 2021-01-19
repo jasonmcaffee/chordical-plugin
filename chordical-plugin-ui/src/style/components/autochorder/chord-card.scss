@@ -1,5 +1,6 @@
 .chord-card{
   padding: 15px;
+
   //https://neumorphism.io/#eeefee
   border-radius: 12px;
   background: #eeefee;
@@ -47,6 +48,12 @@
   box-shadow: inset 5px 5px 6px #cacbca,
   inset -5px -5px 6px #ffffff;
 
+  .randomize-buttons{
+    .button{
+      display: inline-block;
+      margin-right: 33%;
+    }
+  }
   .note-and-octave{
     display: grid;
     grid-template-areas: "note-symbol note-octave delete-button";

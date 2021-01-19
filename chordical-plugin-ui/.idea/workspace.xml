@@ -98,11 +98,12 @@
       <change beforePath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/components/common/select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/page/page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/page/page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,7 @@
       <workItem from="1608676964598" duration="32220000" />
       <workItem from="1609196679780" duration="7174000" />
       <workItem from="1609299266574" duration="36339000" />
-      <workItem from="1610743161707" duration="32532000" />
+      <workItem from="1610743161707" duration="33972000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -319,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611020616157</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="styling">
+      <created>1611068727019</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1611068727020</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,13 +354,14 @@
     <MESSAGE value="add chord working." />
     <MESSAGE value="delete note working." />
     <MESSAGE value="icons and styling." />
-    <option name="LAST_COMMIT_MESSAGE" value="icons and styling." />
+    <MESSAGE value="styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1611020615767">
+    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1611068726777">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1611020615767" />
+    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1611068726777" />
     <state x="577" y="151" key="RollbackChangesDialog" timestamp="1610808005394">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -361,10 +370,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="VCS.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1610883803104" />
-    <state x="440" y="261" key="Vcs.Push.Dialog.v2" timestamp="1611020618281">
+    <state x="440" y="261" key="Vcs.Push.Dialog.v2" timestamp="1611068729429">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1611020618281" />
+    <state x="440" y="261" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1611068729429" />
     <state x="541" y="266" width="598" height="518" key="find.popup" timestamp="1611022193450">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -373,10 +382,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610981523805" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1610982389143">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1611070519009">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610982389143" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1611070519009" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,7 +398,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
-          <line>503</line>
+          <line>507</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>

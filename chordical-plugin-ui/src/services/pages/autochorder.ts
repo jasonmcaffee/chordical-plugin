@@ -355,6 +355,12 @@ class Autochorder{
     this.playChord({chord: newChord});
   }
 
+  randomizeChordTypeAndSample({chord}: {chord: IChord}){
+    this.stopChord({chord});
+    const newChord = this.randomizeChordType({chord});
+    if(!newChord) { return; }
+    this.playChord({chord});
+  }
   randomizeNoteVoicingForChord({chord, chords=this.viewModel.autoChorderPreset.chords, minOctave=this.viewModel.autoChorderPreset.randomizationMinOctave, maxOctave=this.viewModel.autoChorderPreset.randomizationMaxOctave}: {chord: IChord, chords?: IChord[], minOctave?: number, maxOctave?: number}){
     //find the chord to be modified in our array of chords
     const chordBeingModified = chords.find(c=>c.id === chord.id);
@@ -387,10 +393,8 @@ class Autochorder{
     //replace existing chord in our chords array, so it can be found later with chords.find()
     const chordIndex = chords.indexOf(chordBeingModified);
     chords[chordIndex] = randomChord;
-
-    //update the ui
-    // trigger(chordChanged, {chord: randomChord});
-    this.emitChange();
+    this.updateSlotAndEmitChange({chord: randomChord});
+    return randomChord;
   }
 
   generateChordProgression({rootNote=this.viewModel.autoChorderPreset.selectedKey.rootNote, scale=this.viewModel.autoChorderPreset.selectedKey.scale, octave=this.viewModel.autoChorderPreset.randomizationMinOctave, saveState=true}: {rootNote?: NoteSymbolTypes, scale?: ScaleTypesEnum, octave?: number, saveState?: boolean}){

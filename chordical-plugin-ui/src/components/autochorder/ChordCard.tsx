@@ -28,9 +28,10 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
     </div>
 
     <div className="notes">
-      <Button onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }>
-        <FontAwesomeIcon icon={faDice}/>
-      </Button>
+      <div className="randomize-buttons">
+        <Button onClick={() => { autochorder.randomizeChordTypeAndSample({chord}); } }><FontAwesomeIcon icon={faDice}/></Button>
+        <Button onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }><FontAwesomeIcon icon={faDice}/></Button>
+      </div>
       {createSelectForEachNoteInChord({chord, viewModel, noteSelectOptions})}
       <Button  onClick={() => autochorder.addNote({chord})}>
         <FontAwesomeIcon icon={faPlus}/>
