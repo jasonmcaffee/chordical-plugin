@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fonts/Adequate-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/jasonmcaffee.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/components/common/modal.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/Debug-Info-VST.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/Debug-Info-VST.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/Release-Info-VST.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/Release-Info-VST.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeCache.txt" afterDir="false" />
@@ -99,13 +101,11 @@
       <change beforePath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/AudioLiveScrollingDisplay.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Utils/DemoUtilities.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/components/common/select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/select.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/page/page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/page/page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,6 +118,7 @@
       <list>
         <option value="React  Component" />
         <option value="TS React Function" />
+        <option value="tsx" />
       </list>
     </option>
   </component>
@@ -135,6 +136,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -168,7 +170,7 @@
       <workItem from="1608676964598" duration="32220000" />
       <workItem from="1609196679780" duration="7174000" />
       <workItem from="1609299266574" duration="36339000" />
-      <workItem from="1610743161707" duration="37894000" />
+      <workItem from="1610743161707" duration="44970000" />
     </task>
     <task id="LOCAL-00001" summary="two way json communication working. wip">
       <created>1595786989663</created>
@@ -338,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611070855509</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="styling">
+      <created>1611151896700</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1611151896700</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,10 +378,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="styling" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1611070855251">
+    <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1611151896469">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1611070855251" />
+    <state x="112" y="13" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1611151896469" />
     <state x="577" y="151" key="RollbackChangesDialog" timestamp="1610808005394">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -393,10 +402,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610981523805" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1611151022638">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1611172370525">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1611151022638" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1611172370525" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,7 +418,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
-          <line>507</line>
+          <line>502</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>

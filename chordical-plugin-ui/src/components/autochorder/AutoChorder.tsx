@@ -31,8 +31,8 @@ export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageVie
    </div>;
 }
 
-function createChordCardEl({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
-  return <ChordCard key={chord.id} chord={chord} viewModel={viewModel}/>;
+function createChordCardEl({slot, chord, viewModel}: {slot: ISlot, chord: IChord, viewModel: IAutochorderPageViewModel}){
+  return <ChordCard key={chord.id} slot={slot} chord={chord} viewModel={viewModel}/>;
 }
 
 function createSlotEls({viewModel}: {viewModel: IAutochorderPageViewModel}){
@@ -40,7 +40,7 @@ function createSlotEls({viewModel}: {viewModel: IAutochorderPageViewModel}){
 }
 
 function createSlotEl({slot, viewModel}: {slot: ISlot, viewModel: IAutochorderPageViewModel}){
-  const chordEl = slot.content ? createChordCardEl({chord: slot.content, viewModel}) : createAddChordEl();
+  const chordEl = slot.content ? createChordCardEl({slot, chord: slot.content, viewModel}) : createAddChordEl();
   return <SlotCard slot={slot}> {chordEl}</SlotCard>;
 }
 

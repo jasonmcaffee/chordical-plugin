@@ -39,7 +39,7 @@ import {qwertyKeyCodes} from "../qwerty/qwerty";
 // const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
 const scaleSelectOptions = createSelectOptionsForScales();
 const noteSelectOptionsSortedForScale = createNoteSelectOptions({rootNote: "c", scale: ScaleTypesEnum.majorIonian});
-const initialViewModel: IAutochorderPageViewModel = {octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: createDefaultSlots()}), scaleSelectOptions};
+const initialViewModel: IAutochorderPageViewModel = {octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 
@@ -330,7 +330,17 @@ class Autochorder{
     if(chordBeingModifiedIndex < 0){ return console.log(`AutoChorderPreset doesn't have chord id: ${chord.id} chords: `, chords, chords[0] && chords[0].id); }
     //remove the chord
     this.viewModel.autoChorderPreset.chords.splice(chordBeingModifiedIndex, 1);
-    //update the ui
+    const slot = this.viewModel.autoChorderPreset.slots.find(s => s.content?.id === chord.id);
+    if(slot){
+      slot.content = undefined;
+    }
+    this.emitChange();
+  }
+
+  deleteSlot({slot, slots=this.viewModel.autoChorderPreset.slots}: {slot: ISlot, slots?:ISlot[]}){
+    const slotBeingDeletedIndex = slots?.findIndex(s => s.id === slot.id);
+    if(slotBeingDeletedIndex < 0){ return console.log(`no slot with id to delete: ${slot.id}`); }
+    this.viewModel.autoChorderPreset.slots.splice(slotBeingDeletedIndex, 1);
     this.emitChange();
   }
 
@@ -415,22 +425,17 @@ class Autochorder{
     this.viewModel.autoChorderPreset.slots.push(addChordSlot);
     this.emitChange();
   }
-  // placeChordsInSlots({autoChorderPreset=this.viewModel.autoChorderPreset}: {autoChorderPreset?: AutoChorderPreset} = {}){
-  //   const {chords, slots} = autoChorderPreset;
-  //   slots.forEach(slot => slot.content = undefined);
-  //   for(let i = 0; i < chords.length; ++i){
-  //     const chord = chords[i];
-  //     if(i >= slots.length){
-  //       const previousSlotFirstMidiNoteTrigger = slots[i - 1].midiNoteTriggers[0];
-  //       const midiNoteTriggers = previousSlotFirstMidiNoteTrigger ? [previousSlotFirstMidiNoteTrigger + 1] : [];
-  //       const qwertyKeyCode = qwertyKeyCodes[i];
-  //       const slot: ISlot = { midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
-  //       slots.push(slot);
-  //       continue;
-  //     }
-  //     slots[i].content = chord;
-  //   }
-  // }
+
+  changeSlotMidiTrigger({slot, midiTrigger}: {slot: ISlot, midiTrigger: number}){
+    slot.midiNoteTriggers = [midiTrigger];
+    this.emitChange();
+  }
+
+  changeSlotQwertyTrigger({slot, qwertyKeyCode}: {slot: ISlot, qwertyKeyCode: number}){
+    slot.qwertyKeyCodeTrigger = qwertyKeyCode;
+    this.emitChange();
+  }
+
 }
 
 function getNoteAndChordFromChords({chordId, noteId, chords}: {chordId: string, noteId: string, chords: IChord[]}) : undefined | { note: IPredefinedNote, chord: IChord, noteIndex: number}{
@@ -479,16 +484,6 @@ function convertChordToHostMidiNotes({chord}: {chord: IChord}) : IMidiNoteData[]
   });
 }
 
-function createDefaultSlots({startMidiNumber=60, numberOfSlots=20}: {startMidiNumber?: number, numberOfSlots?: number} = {}): ISlot[]{
-  const result: ISlot[] = [];
-  // for(let i = 0; i < numberOfSlots; ++i){
-  //   const midiNoteTrigger = startMidiNumber + i;
-  //   const qwertyKeyCode = qwertyKeyCodes[i];
-  //   const slot: ISlot = {midiNoteTriggers: [midiNoteTrigger], qwertyKeyCodeTrigger: qwertyKeyCode.code};
-  //   result.push(slot);
-  // }
-  return result;
-}
 
 function findSlotsWithMatchingMidiNoteTrigger({midiNote, slots}: {midiNote: number, slots: ISlot[]}){
   return slots.filter((s) => s.midiNoteTriggers.includes(midiNote));
@@ -524,7 +519,7 @@ function createSlotWithNextMidiAndQwertyTriggers(slots: ISlot[], chord?: IChord)
     qwertyKeyCode = qwertyKeyCodes[slots.length];
   }
   const midiNoteTriggers = [midiMoteTrigger + 1];
-  const slot: ISlot = { midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
+  const slot: ISlot = {id: generateRandomId(), midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
   return slot;
 }
 

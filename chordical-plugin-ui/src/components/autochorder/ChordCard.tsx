@@ -5,20 +5,41 @@ import autochorder from '../../services/pages/autochorder';
 import IAutochorderPageViewModel from "../../models/view/autochorder/IAutochorderPageViewModel";
 import Select from "../common/Select";
 import {IPredefinedNote} from "../../services/music/predefinedNotes";
-import {ISelectOption} from "../../models/view/common/ISelectOption";
 import Button from "../common/Button";
 import {INoteSelectOption} from "../../services/music/notes";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDice, faPlus, faTrashAlt, faCog} from "@fortawesome/free-solid-svg-icons";
-
-export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
+import Modal from "../common/Modal";
+import ISlot from "../../models/view/autochorder/ISlot";
+import {subscribeToQwertyKeyDown} from "../../services/eventBus/qwerty";
+import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
+export default function ChordCard({slot, chord, viewModel}: {slot: ISlot, chord: IChord, viewModel: IAutochorderPageViewModel}){
   const chordTypeOptions2 = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
   const chordTypeOptions = chordTypeOptions2.map(c => ({...c, className: c.isInScale ? "in-key" : "not-in-key"}) );
   const currentlySelectChordTypeOption = chordTypeOptions.find(c => c.label === chord.type.toString());
   const noteSelectOptions = viewModel.noteSelectOptions.map(o => ({...o, className: o.isInKey ? "in-key": "not-in-key"}));
   const currentlySelectedChordRootNote = noteSelectOptions.find(o => o.value === chord.rootNote);
   const key = chord.id;
+
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+  const [isMidiLearn, setIsMidiLearn] = useState(false);
+  const [isQwertyLearn, setIsQwertyLearn] = useState(false);
+  const modalEl = isSettingsModalOpen ? createModalEl({chord, slot, onClose: ()=> { setIsSettingsModalOpen(false); setIsMidiLearn(false); setIsQwertyLearn(false); }, onQwertyLearn: () => setIsQwertyLearn(true), onMidiLearn: ()=>setIsMidiLearn(true)}) : null;
+
+  useEffect(()=> subscribeToQwertyKeyDown((e) => {
+    if(!isQwertyLearn){ return; }
+    autochorder.changeSlotQwertyTrigger({slot, qwertyKeyCode: e.keyCode});
+    setIsQwertyLearn(false);
+  }));
+
+  useEffect(()=> subscribeToFromHostPluginEvents(e => {
+    if(!isMidiLearn || e.type !== "midiNotePlayed"){ return console.warn(`midi learn is false`); }
+    autochorder.changeSlotMidiTrigger({slot, midiTrigger: e.data.midiNote});
+    setIsMidiLearn(false);
+  }));
+
   return <div key={key} className="chord-card">
+    {modalEl}
     <div className="details">
       <div className="label" onMouseDown={() => autochorder.playChord({chord})} onMouseUp={() => autochorder.stopChord({chord})}>{chord.label}</div>
       <div className="chord-root-note-and-type">
@@ -39,9 +60,29 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
     </div>
 
     <div className="settings">
-      <Button onClick={() => {}}><FontAwesomeIcon icon={faCog}/></Button>
+      <Button onClick={() => {setIsSettingsModalOpen(true)}}><FontAwesomeIcon icon={faCog}/></Button>
     </div>
    </div>;
+}
+
+function createModalEl({slot, onClose, onMidiLearn, chord, onQwertyLearn}:{slot: ISlot, chord: IChord, onClose: ()=>void, onMidiLearn: ()=>void, onQwertyLearn: ()=>void}){
+  return <Modal onClose={onClose}>
+    <div className="settings-modal">
+      <div className="midi">
+        <div className="label">Midi Trigger</div>
+        <div className="midi-number">{slot.midiNoteTriggers[0]}</div>
+        <Button label="Learn" onClick={onMidiLearn}/>
+      </div>
+      <div className="qwerty">
+        <div className="label">Qwerty Trigger</div>
+        <div className="qwerty-keycode">{slot.qwertyKeyCodeTrigger}</div>
+        <Button label="Learn" onClick={onQwertyLearn}/>
+      </div>
+      <div>
+        <Button label={"Delete Chord"} onClick={()=> autochorder.deleteSlot({slot})}/>
+      </div>
+    </div>
+  </Modal>
 }
 
 function createSelectForEachNoteInChord({chord, viewModel, noteSelectOptions}: {chord: IChord, viewModel: IAutochorderPageViewModel, noteSelectOptions: INoteSelectOption[]}){

@@ -95,3 +95,32 @@
     }
   }
 }
+
+.settings-modal{
+  > .midi {
+    .label{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .midi-number{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .button{
+      display: inline-block;
+    }
+  }
+  > .qwerty{
+    .label{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .qwerty-keycode{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .button{
+      display: inline-block;
+    }
+  }
+}
