@@ -24,7 +24,7 @@ export default function ChordCard({slot, chord, viewModel}: {slot: ISlot, chord:
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [isMidiLearn, setIsMidiLearn] = useState(false);
   const [isQwertyLearn, setIsQwertyLearn] = useState(false);
-  const modalEl = isSettingsModalOpen ? createModalEl({chord, slot, onClose: ()=> { setIsSettingsModalOpen(false); setIsMidiLearn(false); setIsQwertyLearn(false); }, onQwertyLearn: () => setIsQwertyLearn(true), onMidiLearn: ()=>setIsMidiLearn(true)}) : null;
+  const modalEl = isSettingsModalOpen ? createModalEl({chord, slot, onClose: ()=> { setIsSettingsModalOpen(false); setIsMidiLearn(false); setIsQwertyLearn(false); }, onQwertyLearn: () => setIsQwertyLearn(!isQwertyLearn), onMidiLearn: ()=>setIsMidiLearn(!isMidiLearn), isMidiLearn, isQwertyLearn}) : null;
 
   useEffect(()=> subscribeToQwertyKeyDown((e) => {
     if(!isQwertyLearn){ return; }
@@ -65,18 +65,18 @@ export default function ChordCard({slot, chord, viewModel}: {slot: ISlot, chord:
    </div>;
 }
 
-function createModalEl({slot, onClose, onMidiLearn, chord, onQwertyLearn}:{slot: ISlot, chord: IChord, onClose: ()=>void, onMidiLearn: ()=>void, onQwertyLearn: ()=>void}){
+function createModalEl({slot, onClose, onMidiLearn, chord, onQwertyLearn, isMidiLearn, isQwertyLearn}:{slot: ISlot, chord: IChord, onClose: ()=>void, onMidiLearn: ()=>void, onQwertyLearn: ()=>void, isMidiLearn: boolean, isQwertyLearn: boolean}){
   return <Modal onClose={onClose}>
     <div className="settings-modal">
       <div className="midi">
         <div className="label">Midi Trigger</div>
         <div className="midi-number">{slot.midiNoteTriggers[0]}</div>
-        <Button label="Learn" onClick={onMidiLearn}/>
+        <Button className={isMidiLearn ? `learn` : ``}  label="Learn" onClick={onMidiLearn}/>
       </div>
       <div className="qwerty">
         <div className="label">Qwerty Trigger</div>
         <div className="qwerty-keycode">{slot.qwertyKeyCodeTrigger}</div>
-        <Button label="Learn" onClick={onQwertyLearn}/>
+        <Button className={isQwertyLearn ? `learn` : ``} label="Learn" onClick={onQwertyLearn}/>
       </div>
       <div>
         <Button label={"Delete Chord"} onClick={()=> autochorder.deleteSlot({slot})}/>

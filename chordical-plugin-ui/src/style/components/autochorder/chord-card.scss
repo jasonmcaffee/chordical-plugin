@@ -108,6 +108,9 @@
     }
     .button{
       display: inline-block;
+      &.learn{
+        color: blue;
+      }
     }
   }
   > .qwerty{
@@ -121,6 +124,9 @@
     }
     .button{
       display: inline-block;
+      &.learn{
+        color: blue;
+      }
     }
   }
 }
