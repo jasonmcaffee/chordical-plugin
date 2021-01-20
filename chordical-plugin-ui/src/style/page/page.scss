@@ -4,5 +4,21 @@
   overflow-y: scroll;
   *{
     user-select: none;
+    font-family: cabin-regular;
   }
+}
+
+
+@font-face {
+  font-family: 'adequate';
+  src: url('../../fonts/Adequate-ExtraLight.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cabin-regular';
+  src: url('../../fonts/cabin/Cabin-Regular-TTF.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }

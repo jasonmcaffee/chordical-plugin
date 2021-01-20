@@ -1,5 +1,6 @@
 .chord-card{
-  padding: 15px;
+  position: relative;
+  padding: 15px 15px 1px 15px;
 
   //https://neumorphism.io/#eeefee
   border-radius: 12px;
@@ -36,6 +37,16 @@
 
   .notes{
     @extend %notes;
+  }
+
+  .settings{
+    display: flex;
+    justify-content: flex-end;
+    .button{
+      font-size: 10px;
+      padding: 1px 3px 1px 3px;
+      border-radius: 2px;
+    }
   }
 }
 

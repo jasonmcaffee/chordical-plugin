@@ -37,7 +37,7 @@
 
 .slot-cards{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   //grid-template-columns: repeat(5, 20%);
   //grid-auto-columns: min-content;
 

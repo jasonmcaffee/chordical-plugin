@@ -9,7 +9,7 @@ import {ISelectOption} from "../../models/view/common/ISelectOption";
 import Button from "../common/Button";
 import {INoteSelectOption} from "../../services/music/notes";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faDice, faPlus, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
+import {faDice, faPlus, faTrashAlt, faCog} from "@fortawesome/free-solid-svg-icons";
 
 export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel: IAutochorderPageViewModel}){
   const chordTypeOptions2 = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
@@ -36,6 +36,10 @@ export default function ChordCard({chord, viewModel}: {chord: IChord, viewModel:
       <Button  onClick={() => autochorder.addNote({chord})}>
         <FontAwesomeIcon icon={faPlus}/>
       </Button>
+    </div>
+
+    <div className="settings">
+      <Button onClick={() => {}}><FontAwesomeIcon icon={faCog}/></Button>
     </div>
    </div>;
 }
