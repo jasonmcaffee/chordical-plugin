@@ -140,7 +140,7 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     while(!requestToPlayMidiNoteDataQueue.empty()){
         auto midiNoteData = requestToPlayMidiNoteDataQueue.front();
         std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
-        processedMidi.addEvent(MidiMessage::noteOn(1, midiNoteData.midiNote, midiNoteData.velocity),0);
+        processedMidi.addEvent(MidiMessage::noteOn(1, midiNoteData.midiNote, (juce::uint8) midiNoteData.velocity),0); //midi velocity as float has value 0 to 1.0f, so we must convert 127 to that format
         requestToPlayMidiNoteDataQueue.pop();
     }
 
