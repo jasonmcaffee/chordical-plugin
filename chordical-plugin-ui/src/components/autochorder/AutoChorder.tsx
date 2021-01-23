@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import IAutochorderPageViewModel from "../../models/view/autochorder/IAutochorderPageViewModel";
-import AutoChorderPreset from "../../models/view/autochorder/AutoChorderPreset";
 import {IChord} from "../../models/music/IChord";
 import ChordCard from "./ChordCard";
 import autochorder from "../../services/pages/autochorder";
@@ -16,12 +15,17 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
-  const {autoChorderPreset, scaleSelectOptions} = viewModel;
+  const {autoChorderPreset, scaleSelectOptions, octaveOptions} = viewModel;
   return <div className="autochorder">
     <div className="options">
       <div className="key">
         <Select currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
         <Select currentlySelectedOption={scaleSelectOptions.find(s => s.value === autoChorderPreset.selectedKey.scale)} options={scaleSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: autoChorderPreset.selectedKey.rootNote, scale: option.value}})}/>
+      </div>
+      <div className="min-max-octave">
+        <div className="label">Random Min & Max Octave</div>
+        <Select options={octaveOptions} onChange={o => autochorder.changeRandomizationMinOctave({newOctave: o.value})} currentlySelectedOption={octaveOptions.find(o => o.value === autoChorderPreset.randomizationMinOctave)}/>
+        <Select options={octaveOptions} onChange={o => autochorder.changeRandomizationMaxOctave({newOctave: o.value})} currentlySelectedOption={octaveOptions.find(o => o.value === autoChorderPreset.randomizationMaxOctave)}/>
       </div>
     </div>
 

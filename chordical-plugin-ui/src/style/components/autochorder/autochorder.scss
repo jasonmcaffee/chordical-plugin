@@ -8,19 +8,47 @@
   }
 }
 %options{
-  padding: 15px;
-  .key{
-    @extend %key;
-  }
-}
-
-%key{
   border-radius: 12px;
   background: #eeefee;
   box-shadow:  7px 7px 10px #c3c4c3,
   -7px -7px 10px #ffffff;
   padding: 10px;
+  margin: 15px;
 
+  display: grid;
+  grid-template-areas: "key min-max-octave";
+
+  .key{
+    @extend %key;
+    grid-area: key;
+  }
+  .min-max-octave{
+    @extend %min-max-octave;
+    grid-area: min-max-octave;
+    justify-self: flex-end;
+  }
+}
+
+%min-max-octave{
+  display: grid;
+  grid-template-areas: "label min max";
+  grid-template-columns: 200px 70px 70px;
+  column-gap: 10px;
+  .label{
+    grid-area: label;
+    display: flex;
+    align-self: center;
+  }
+  .select{
+    &:nth-child(0){
+      grid-area: min;
+    }
+    &:nth-child(1){
+      grid-area: max;
+    }
+  }
+}
+%key{
   display: grid;
   grid-template-areas: "root-note scale";
   grid-template-columns: 70px 200px;
