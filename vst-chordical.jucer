@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="i5rbn3" name="chordical-plugin" projectType="audioplug" jucerVersion="5.4.7"
-              pluginCharacteristicsValue="pluginIsMidiEffectPlugin,pluginProducesMidiOut,pluginWantsMidiIn"
+              pluginCharacteristicsValue="pluginEditorRequiresKeys,pluginIsMidiEffectPlugin,pluginProducesMidiOut,pluginWantsMidiIn"
               pluginManufacturer="Jason McAffee" pluginManufacturerCode="McAf"
               pluginCode="V154" aaxIdentifier="Chordical" pluginAUExportPrefix="Chordical"
               binaryDataNamespace="ChordicalBinaryData" pluginName="chordical"

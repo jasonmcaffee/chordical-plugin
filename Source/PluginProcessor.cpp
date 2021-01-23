@@ -127,14 +127,11 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     int time;
     MidiMessage m;
     for (MidiBuffer::Iterator i (midiMessages); i.getNextEvent (m, time);){
-        //        m.setNoteNumber(m.getNoteNumber()); // decrease all midi notes by one, just to test
-        //        processedMidi.addEvent (m, time);  // <-- ONLY if you want to pass through the midi message, which I don't think we want.
         if(m.isNoteOn()){
             sendPlayMidiNoteDataQueue.push(MidiNoteData {m.getNoteNumber(), m.getFloatVelocity() * 100});
         }else if(m.isNoteOff()){
             sendStopMidiNoteDataQueue.push(MidiNoteData {m.getNoteNumber(), m.getFloatVelocity() * 100});
         }
-
         //EventBus::eventBus().emitMessage(s);  //DON"T CALL UI COMPONENTS WITH UPDATES https://docs.juce.com/master/classChangeBroadcaster.html
     }
 
@@ -142,7 +139,7 @@ void PluginProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midi
     //play
     while(!requestToPlayMidiNoteDataQueue.empty()){
         auto midiNoteData = requestToPlayMidiNoteDataQueue.front();
-//        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
+        std::cout << "from request to play queue midiNote: " << midiNoteData.midiNote << " velocity: " << midiNoteData.velocity << std::endl;
         processedMidi.addEvent(MidiMessage::noteOn(1, midiNoteData.midiNote, midiNoteData.velocity),0);
         requestToPlayMidiNoteDataQueue.pop();
     }

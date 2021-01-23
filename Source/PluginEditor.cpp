@@ -19,12 +19,8 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
     setResizable(true, true);
     setSize (700, 600);
 
-//    addAndMakeVisible (keyboardComponent);
-
     addAndMakeVisible(webBrowserComponent);
     webBrowserComponent.setBounds(0, 0, getWidth(), getHeight());
-
-
 
     //web browser component cant listen to event due to lack of unregister callback on event bus.
     toWebAppEventBusCallbackId = EventBus::eventBus().subscribe<ToWebAppMessage>([this](ToWebAppMessage message){

@@ -124,21 +124,6 @@ public:
     }
 
     void test(){
-
-//        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
-//            std::cout << "WebAppLoadedMessage subscriber called with " << m.data << std::endl;
-//        });
-//
-//        subscribe<WebAppLoadedMessage>([](WebAppLoadedMessage m){
-//            std::cout << "WebAppLoadedMessage subscriber2 called with " << m.data << std::endl;
-//        });
-//
-//        subscribe<TestMessage>([](TestMessage m){
-//            std::cout << "TestMessage subscriber called with " << m.data << std::endl;
-//        });
-//
-//        emitMessage(WebAppLoadedMessage{"hello"});
-//        emitMessage(TestMessage{"test"});
     }
 
     template <typename TMessageType>
@@ -151,69 +136,3 @@ public:
 private:
     int callbackId = 0;
 };
-
-// playing with pointer funcs
-//EventCallbackWithMessagePointerFunc f2 = [](std::shared_ptr<EventMessageBase> message){
-//    std::shared_ptr<WebAppLoadedMessage> derived = std::dynamic_pointer_cast<WebAppLoadedMessage>(message);
-//    std::cout << "data -----" << derived->data << std::endl;
-//};
-//
-//std::shared_ptr<WebAppLoadedMessage> mmm = std::make_shared<WebAppLoadedMessage>(WebAppLoadedMessage {"hello"}); //https://stackoverflow.com/questions/32050665/can-i-use-stdmake-shared-with-structs-that-dont-have-a-parametric-constructor
-//f2(mmm);
-//
-//auto m = WebAppLoadedMessage {"tacos"};
-//std::shared_ptr<EventMessageBase> mm2 = std::make_shared<WebAppLoadedMessage>(m);
-//f2(mm2);
-
-
-
-
-//https://stackoverflow.com/questions/13980157/c-class-with-template-member-variable
-//    std::map<TypeId, EventCallbackFuncVector> eventMessageTypeIdToCallbacksMap;
-
-
-////global singleton https://stackoverflow.com/questions/1463707/c-singleton-vs-global-static-object
-//EventBus & eventBus() {
-//    static EventBus theEventBus;
-//    return theEventBus;
-//}
-
-//
-//template <typename TMessageType>
-//void subscribe2(const std::function<void (EventMessage<TMessageType>)> callback){
-//    TypeId typeId = GetTypeId<TMessageType>();
-//    auto callbacksIter = eventMessageTypeIdToCallbacksMap.find(typeId);
-//    if(callbacksIter == eventMessageTypeIdToCallbacksMap.end()){
-//        std::cout  << "no callbacks for type id: " << typeId << std::endl;
-//
-//        EventCallbackFuncVector callbacks;
-////            EventCallbackFunc* castedCallback = static_cast<EventCallbackFunc*>(callback);
-////            callbacks.push_back(static_cast<const std::function<void(EventMessageBase)>>(callback));
-//        callbacks.push_back(callback);
-//
-//        EventMessageTypeIdCallbacksPair typeIdCallbacksPair {typeId, callbacks};
-//        eventMessageTypeIdToCallbacksMap.insert(typeIdCallbacksPair);
-//    }else{
-//        std::cout << "callbacks exist" << std::endl;
-//        EventCallbackFuncVector callbacks = callbacksIter->second;
-//        callbacks.push_back(callback);
-//    }
-//}
-//template <typename TMessageType>
-//void emitMessage2(EventMessage<TMessageType> message){
-//    TypeId typeId = GetTypeId<TMessageType>();
-//    auto callbacksIter = eventMessageTypeIdToCallbacksMap.find(typeId);
-//    if(callbacksIter != eventMessageTypeIdToCallbacksMap.end()){
-//        EventCallbackFuncVector callbacks = callbacksIter->second;
-//        for(auto & callback : callbacks){
-//            std::cout << "callback executing!" << std::endl;
-//            callback(message);
-//        }
-//    }else{
-//        std::cout << "no listeners for type id: " << typeId << std::endl;
-//    }
-//}
-//
-//using EventCallbackFunc = std::function<void (EventMessageBase)>;
-//using EventCallbackFuncVector = std::vector<EventCallbackFunc>;
-//using EventMessageTypeIdCallbacksPair = std::pair<TypeId, EventCallbackFuncVector>;

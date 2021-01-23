@@ -61,9 +61,9 @@ class Autochorder{
         switch(e.type){
           case "appStateLoaded":
             try{
-              // const newViewModel = JSON.parse(e.state);
-              // this.viewModel = newViewModel;
-              // this.emitChange({saveState: false});
+              const newViewModel = JSON.parse(e.state);
+              this.viewModel = newViewModel;
+              this.emitChange({saveState: false});
             }catch(e){
               //@ts-ignore
               document.getElementById('page').innerHTML += "failed to parse " + e.message;

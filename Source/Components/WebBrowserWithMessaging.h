@@ -10,8 +10,6 @@
 
 const String separator = File::getCurrentWorkingDirectory().getFullPathName() == "/" ? "" : "/";
 const String filePathBase = "/Users/Shared/"; //File::getCurrentWorkingDirectory().getFullPathName()
-//const String baseUrl = "file://" + filePathBase + "index.html";
-const String baseUrl = "http://127.0.0.1:3000/#test";
 
 const String messageFromAppIndicator = "projucer://";
 //const String messageFromAppIndicator = "https://toNativeHost/";
@@ -59,7 +57,6 @@ inline void writeHtmlFileFromBinaryDataToDisk(){
     //https://forum.juce.com/t/example-for-creating-a-file-and-doing-something-with-it/31998/2
 //    MemoryInputStream memInputStream (ChordicalBinaryData::test_html, ChordicalBinaryData::test_htmlSize,false);
     MemoryInputStream memInputStream (ChordicalBinaryData::index_html, ChordicalBinaryData::index_htmlSize,false);
-//    File f ("/Users/jason/dev/chordical-plugin/test.html");
     const String filePath =  filePathBase + "index.html";
     File f (filePath);
 
@@ -103,7 +100,14 @@ public:
     bool isWebAppLoaded = false;
     WebBrowserWithMessaging() : WebBrowserComponent(){
         writeHtmlFileFromBinaryDataToDisk();
-        goToURL(baseUrl);
+        const String fileBaseUrl = "file://" + filePathBase + "index.html";
+        const String localBaseUrl = "http://127.0.0.1:3000/#test";
+        if(const char* run_env = std::getenv("run_env")){
+            goToURL(localBaseUrl);
+        }else{
+            goToURL(fileBaseUrl);
+        }
+
         //since components are destroyed when window is minimized, don't use event bus here until you can unregister, otherwise this causes ableton to crash.
     }
 
