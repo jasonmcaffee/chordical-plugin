@@ -6,7 +6,19 @@
   .options{
     @extend %options;
   }
+
+  .slot-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  &.chord-rows{
+    .slot-cards{
+      grid-template-columns: 1fr;
+    }
+  }
 }
+
 %options{
   border-radius: 12px;
   background: #eeefee;
@@ -63,10 +75,3 @@
   }
 }
 
-.slot-cards{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  //grid-template-columns: repeat(5, 20%);
-  //grid-auto-columns: min-content;
-
-}

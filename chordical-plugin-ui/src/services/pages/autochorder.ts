@@ -39,7 +39,7 @@ import {qwertyKeyCodes} from "../qwerty/qwerty";
 // const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
 const scaleSelectOptions = createSelectOptionsForScales();
 const noteSelectOptionsSortedForScale = createNoteSelectOptions({rootNote: "c", scale: ScaleTypesEnum.majorIonian});
-const initialViewModel: IAutochorderPageViewModel = {octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
+const initialViewModel: IAutochorderPageViewModel = {chordView: "rows", octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 

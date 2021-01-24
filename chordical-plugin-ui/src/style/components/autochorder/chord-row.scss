@@ -1,0 +1,110 @@
+.chord-row{
+  position: relative;
+  padding: 15px 15px 1px 15px;
+
+  //https://neumorphism.io/#eeefee
+  border-radius: 12px;
+  background: #eeefee;
+  box-shadow:  7px 7px 10px #c3c4c3,
+  -7px -7px 10px #ffffff;
+
+  display: grid;
+  grid-template-areas: "details keyboard-section";
+  grid-template-columns: 300px 1fr;
+  column-gap: 10px;
+
+  .details{
+    grid-area: details;
+    .select .option{
+      @extend %in-key-select-option;
+    }
+
+    .label{
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    .chord-root-note-and-type{
+      display: grid;
+      grid-template-areas: "root-note type";
+      grid-template-columns: 70px auto;
+      column-gap: 12px;
+      margin-bottom: 10px;
+      .select:nth-child(1){
+        grid-area: root-note;
+      }
+      .select:nth-child(2){
+        grid-area: type;
+      }
+    }
+
+    .settings{
+      display: flex;
+      justify-content: flex-end;
+      .button{
+        font-size: 10px;
+        padding: 1px 3px 1px 3px;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .keyboard-section{
+    grid-area: keyboard-section;
+    margin-bottom: 10px;
+    .keyboard{
+      border-radius: 5px;
+      canvas{
+        border-radius: 5px;
+        height: 200px;
+      }
+    }
+  }
+
+}
+
+%in-key-select-option{
+  &.in-key{
+    background-color: rgba(131,219,118,0.5);
+    &:nth-child(even){
+      background-color: rgba(131,219,118,.8);
+    }
+  }
+}
+
+.settings-modal{
+  > .midi {
+    .label{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .midi-number{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .button{
+      display: inline-block;
+      &.learn{
+        color: blue;
+      }
+    }
+  }
+  > .qwerty{
+    .label{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .qwerty-keycode{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .button{
+      display: inline-block;
+      &.learn{
+        color: blue;
+      }
+    }
+  }
+}

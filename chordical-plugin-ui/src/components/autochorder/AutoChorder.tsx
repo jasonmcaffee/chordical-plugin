@@ -12,11 +12,13 @@ import {noteSelectOptions} from "../../services/music/notes";
 import Button from "../common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import ChordRow from "./ChordRow";
 
 export default function AutoChorder({viewModel}: {viewModel: IAutochorderPageViewModel}){
   const slotCardEls = createSlotEls({viewModel});
   const {autoChorderPreset, scaleSelectOptions, octaveOptions} = viewModel;
-  return <div className="autochorder">
+  const autoChorderClassName = viewModel.chordView === "rows" ? "chord-rows" : "";
+  return <div className={`autochorder ${autoChorderClassName}`}>
     <div className="options">
       <div className="key">
         <Select currentlySelectedOption={noteSelectOptions.find(n => n.value === autoChorderPreset.selectedKey.rootNote)} options={noteSelectOptions} onChange={(option) => autochorder.changeKey({key: {rootNote: option.value, scale: viewModel.autoChorderPreset.selectedKey.scale}}) }/>
@@ -39,12 +41,21 @@ function createChordCardEl({slot, chord, viewModel}: {slot: ISlot, chord: IChord
   return <ChordCard key={chord.id} slot={slot} chord={chord} viewModel={viewModel}/>;
 }
 
+function createChordRowEl({slot, chord, viewModel}: {slot: ISlot, chord: IChord, viewModel: IAutochorderPageViewModel}){
+  return <ChordRow key={chord.id} slot={slot} chord={chord} viewModel={viewModel}/>;
+}
+
 function createSlotEls({viewModel}: {viewModel: IAutochorderPageViewModel}){
   return viewModel.autoChorderPreset.slots.map(slot => createSlotEl({slot, viewModel}));
 }
 
 function createSlotEl({slot, viewModel}: {slot: ISlot, viewModel: IAutochorderPageViewModel}){
-  const chordEl = slot.content ? createChordCardEl({slot, chord: slot.content, viewModel}) : createAddChordEl();
+  let chordEl = createAddChordEl();
+  if(viewModel.chordView === "rows" && slot.content){
+    chordEl = createChordRowEl({slot, chord: slot.content, viewModel})
+  }else if(viewModel.chordView === "cards" && slot.content){
+    chordEl =  createChordCardEl({slot, chord: slot.content, viewModel});
+  }
   return <SlotCard slot={slot}> {chordEl}</SlotCard>;
 }
 

@@ -9,4 +9,5 @@ export default interface IAutochorderPageViewModel{
   noteSelectOptions: INoteSelectOption[]; //options sorted by whether they are in the key.
   scaleSelectOptions: ISelectOption<ScaleTypesEnum>[];
   octaveOptions: ISelectOption<number>[];
+  chordView: "cards" | "rows";
 }
