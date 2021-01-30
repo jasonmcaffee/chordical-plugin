@@ -15,8 +15,9 @@ export interface IOctaveOption {
 }
 export const octaveOptions: ISelectOption<number>[] = [{"value":0,"label":"0"},{"value":1,"label":"1"},{"value":2,"label":"2"},{"value":3,"label":"3"},{"value":4,"label":"4"},{"value":5,"label":"5"},{"value":6,"label":"6"},{"value":7,"label":"7"},{"value":8,"label":"8"},{"value":9,"label":"9"},{"value":10,"label":"10"},{"value":11,"label":"11"}];
 
-export function findNoteByMidiNoteNumber(midiNoteNumber: number){
+export function findNoteByMidiNoteNumber(midiNoteNumber: number): IPredefinedNote| undefined{
   const note = predefinedNotes.find(n=>n.midiNoteNumber===midiNoteNumber);
+  if(!note){ return; }
   const result = {...note}; //fix for weird issue where midi note play would result in qwerty note play to stop working.
   return result;
 }

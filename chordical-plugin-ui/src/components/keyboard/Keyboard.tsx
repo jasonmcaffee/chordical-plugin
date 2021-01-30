@@ -7,6 +7,7 @@ import {IPianoKey} from "../../models/view/keyboard/IPianoKey";
 import {drawNoteNameLabels, drawKeys, drawKeysHighlights} from "./keys";
 import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "../../services/music/predefinedNotes";
+import autochorder from "../../services/pages/autochorder";
 
 interface IKeyboardProps {
   chordToHighlight?: IChord;
@@ -77,8 +78,8 @@ export default function Keyboard({chordToHighlight}: IKeyboardProps) {
   const isTouchDevice = ('ontouchstart' in window);
 
   const activeMouseDownMidiNotes = new Set<number>();
-  const onMouseDown = !isTouchDevice ? (e: React.MouseEvent<HTMLDivElement>) => handleMouseDown(e, pianoKeys, playerNotesWhiteKeysHighlightsCanvasRef.current, activeMouseDownMidiNotes) : undefined;
-  const onMouseUp = !isTouchDevice ? () => handleMouseUp(playerNotesWhiteKeysHighlightsCanvasRef.current, pianoKeys, activeMouseDownMidiNotes) : undefined;
+  const onMouseDown = !isTouchDevice ? (e: React.MouseEvent<HTMLDivElement>) => handleMouseDown(e, pianoKeys, playerNotesWhiteKeysHighlightsCanvasRef.current, chordToHighlight) : undefined;
+  const onMouseUp = !isTouchDevice ? () => handleMouseUp(playerNotesWhiteKeysHighlightsCanvasRef.current, pianoKeys, chordToHighlight) : undefined;
 
 
   return (
@@ -92,6 +93,16 @@ export default function Keyboard({chordToHighlight}: IKeyboardProps) {
       <canvas ref={playerNotesBlackKeysHighlightsCanvasRef}/>
     </div>
   );
+}
+
+function handleMouseDown(e: React.MouseEvent<HTMLDivElement>, pianoKeys: IPianoKey[], playerNotesWhiteKeysHighlightsCanvas: HTMLCanvasElement, chord?: IChord){
+  const hitKey: IPianoKey | undefined = determineKeyThatWasPressedByClientXandY(e.clientX, e.clientY, playerNotesWhiteKeysHighlightsCanvas, pianoKeys);
+  if(hitKey && chord){
+    autochorder.toggleNote({chord, noteMidiNumberToToggle: hitKey.midiNumber});
+  }
+}
+
+function handleMouseUp(playerNotesWhiteKeysHighlightsCanvas: HTMLCanvasElement, pianoKeys: IPianoKey[], chord?: IChord){
 }
 
 function getCanvasesFromRefs({whiteKeysLabelsAndImagesCanvasRef, whiteKeysHighlightsCanvasRef, playerNotesWhiteKeysHighlightsCanvasRef, blackKeysLabelsAndImagesCanvasRef, blackKeysHighlightsCanvasRef, playerNotesBlackKeysHighlightsCanvasRef, } :{whiteKeysLabelsAndImagesCanvasRef: CanvasRef, whiteKeysHighlightsCanvasRef: CanvasRef, playerNotesWhiteKeysHighlightsCanvasRef: CanvasRef, blackKeysLabelsAndImagesCanvasRef: CanvasRef, blackKeysHighlightsCanvasRef: CanvasRef, playerNotesBlackKeysHighlightsCanvasRef: CanvasRef, }){
@@ -277,19 +288,7 @@ function findPianoKeysCurrentlyBeingPlayedByMidiNumber(midiNumbersCurrentlyBeing
   return result;
 }
 
-function handleMouseDown(e: React.MouseEvent<HTMLDivElement>, pianoKeys: IPianoKey[], playerNotesWhiteKeysHighlightsCanvas: HTMLCanvasElement, activeMouseDownMidiNumbers: Set<number>){
-  const hitKey = determineKeyThatWasPressedByClientXandY(e.clientX, e.clientY, playerNotesWhiteKeysHighlightsCanvas, pianoKeys);
-  if(hitKey){
-    activeMouseDownMidiNumbers.add(hitKey.midiNumber);
-    // uiKeyboardNotePressed(hitKey.midiNumber);
-  }
-}
 
-function handleMouseUp(playerNotesWhiteKeysHighlightsCanvas: HTMLCanvasElement, pianoKeys: IPianoKey[], activeMouseDownMidiNumbers: Set<number>){
-  const midiNotesBeingPlayed = Array.from(activeMouseDownMidiNumbers);
-  activeMouseDownMidiNumbers.clear();
-  // midiNotesBeingPlayed.forEach(midiNumber => uiKeyboardNoteReleased(midiNumber));
-}
 
 // function getNotesCurrentlyPlayedByUserFromActiveTouch(activeTouches: ITouchIdToMidiNoteHash){
 //   const midiNumbers = new Set<number>();

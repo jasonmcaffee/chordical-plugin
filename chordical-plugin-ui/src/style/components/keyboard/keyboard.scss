@@ -4,6 +4,7 @@
   display: grid;
   background-color: black;
   canvas{
+    cursor: pointer;
     //We stack the canvases on top of each other by placing all of them at grid position (1, 1).
     //This provides the same functionality as position: absolute, but with less problems/quirks.
     grid-row: 1;

@@ -15,7 +15,7 @@ import {
 import {IChord} from "../../models/music/IChord";
 import {IPredefinedNote} from "../music/predefinedNotes";
 import {
-  createNoteWithRandomOctave,
+  createNoteWithRandomOctave, findNoteByMidiNoteNumber,
   findNoteByNoteSymbolAndOctave,
   getNotesForScale,
   INoteSelectOption,
@@ -296,15 +296,35 @@ class Autochorder{
    * e.g. C Major (C, E, G) will find B, making it C Major 7th (C, E, G, B).
    * If no new chord type is possible, first note in chord will be duplicated.
    */
-  addNote({chord, chords=this.viewModel.autoChorderPreset.chords}: {chord: IChord, chords?: IChord[]}){
+  addNote({chord, chords=this.viewModel.autoChorderPreset.chords, note}: {chord: IChord, chords?: IChord[], note?: IPredefinedNote}){
     //find the chord to be modified in our array of chords
     const chordBeingModified = chords.find(c=>c.id === chord.id);
     if(!chordBeingModified){ return console.log(`AutoChorderPreset doesn't have chord id: ${chord.id}`); }
-    const {chordWithSensibleNote, sensibleNote} = findSensibleNoteToAddToChordGivenKey({key: this.viewModel.autoChorderPreset.selectedKey, chord: chordBeingModified});
-    chordBeingModified.notes.push(sensibleNote);
-    chordBeingModified.type = chordWithSensibleNote.type;
-    chordBeingModified.label = chordWithSensibleNote.label;
+    if(!note){
+      const {chordWithSensibleNote, sensibleNote} = findSensibleNoteToAddToChordGivenKey({key: this.viewModel.autoChorderPreset.selectedKey, chord: chordBeingModified});
+      chordBeingModified.notes.push(sensibleNote);
+      chordBeingModified.type = chordWithSensibleNote.type;
+      chordBeingModified.label = chordWithSensibleNote.label;
+    }else{
+      chordBeingModified.notes.push(note);
+      const reverseChord = reverseChordLookup({notes: chordBeingModified.notes});
+      chordBeingModified.label = reverseChord?.label ?? "Custom";
+      chordBeingModified.type = reverseChord?.type ?? "Custom";
+    }
+
     this.updateSlotAndEmitChange({chord: chordBeingModified});
+  }
+
+  toggleNote({chord, chords=this.viewModel.autoChorderPreset.chords, noteMidiNumberToToggle}: {chord: IChord, chords?: IChord[], noteMidiNumberToToggle: number}){
+    const note = findNoteByMidiNoteNumber(noteMidiNumberToToggle);
+    if(!note){ return console.error(`note is not in chord: `, note, chord); }
+    const noteIsInChord = chord.notes.find(n => n.midiNoteNumber === noteMidiNumberToToggle);
+    if(noteIsInChord){
+      this.deleteNote({chord, note});
+    }else{
+      this.addNote({chord, note});
+    }
+    this.playChord({chord});
   }
 
   addChord({onlyGenerateChordsInKey=true, selectedKey=this.viewModel.autoChorderPreset.selectedKey, octave=this.viewModel.autoChorderPreset.randomizationMinOctave}={}){
