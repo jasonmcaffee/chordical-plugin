@@ -4,8 +4,8 @@ const style = {
   sheetMusicNoteHighlights:{
     leftHandGradientStartColor: 'rgba(113,202,237,0.5)',
     leftHandGradientEndColor: 'rgba(42,176,237,0.5)',
-    rightHandGradientStartColor: 'rgba(223,229,110,0.5)',
-    rightHandGradientEndColor: 'rgba(242,242,43,0.5)',
+    rightHandGradientStartColor: 'rgba(34,159,255,0.5)',
+    rightHandGradientEndColor: 'rgba(11,147,221,0.5)',
   },
   playerNoteHighlights: {
     startColor: 'rgba(64,150,238,0.6)',

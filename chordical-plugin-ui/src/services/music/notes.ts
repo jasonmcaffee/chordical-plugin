@@ -28,9 +28,42 @@ export function findNoteByNoteSymbolAndOctave({noteSymbol, octave}: {noteSymbol:
 }
 
 export function createNoteWithRandomOctave({noteSymbol, minOctave=2, maxOctave=8}: {noteSymbol: NoteSymbolTypes, minOctave: number, maxOctave: number}){
-  const octave = getRandomInt(minOctave, maxOctave);
-  const note = findNoteByNoteSymbolAndOctave({noteSymbol, octave});
+  let octave = getRandomInt(minOctave, maxOctave);
+  // console.error(`octave is : ${octave}`);
+  let note = findNoteByNoteSymbolAndOctave({noteSymbol, octave});
+  //if the random octave isn't on the keyboard, try min then max
+  if(note && !isNoteOn88KeyKeyboard(note)){
+    // console.error(`note not found on keyboard: `, note);
+    let lowestNoteOnKeyboard;
+    for(let i = minOctave; i <= maxOctave; ++i){
+      const n = findNoteByNoteSymbolAndOctave({noteSymbol, octave: i});
+      if(n && isNoteOn88KeyKeyboard(n)){
+        lowestNoteOnKeyboard = n;
+        // console.error(`lowest note on keyboard: `, lowestNoteOnKeyboard);
+        break;
+      }
+    }
+    let highestNoteOnKeyboard;
+    for(let i = maxOctave; i >= minOctave; --i){
+      const n = findNoteByNoteSymbolAndOctave({noteSymbol, octave: i});
+      if(n && isNoteOn88KeyKeyboard(n)){
+        highestNoteOnKeyboard = n;
+        // console.error(`highest note on keyboard`, highestNoteOnKeyboard);
+        break;
+      }
+    }
+    if(lowestNoteOnKeyboard && highestNoteOnKeyboard){
+      octave = getRandomInt(lowestNoteOnKeyboard.octave, highestNoteOnKeyboard.octave);
+      note = findNoteByNoteSymbolAndOctave({noteSymbol, octave});
+      // console.error(`new note octave ${octave}: `, note);
+    }
+
+  }
   return note;
+}
+
+export function isNoteOn88KeyKeyboard(note: IPredefinedNote){
+  return note.midiNoteNumber >= 21 && note.midiNoteNumber <= 108;
 }
 
 /**

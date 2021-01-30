@@ -5,8 +5,11 @@ import {createKeyboardLayoutModel,} from "../../factories/keyboardFactory";
 import INote from "../../models/music/INote";
 import {IPianoKey} from "../../models/view/keyboard/IPianoKey";
 import {drawNoteNameLabels, drawKeys, drawKeysHighlights} from "./keys";
+import {IChord} from "../../models/music/IChord";
+import {IPredefinedNote} from "../../services/music/predefinedNotes";
 
 interface IKeyboardProps {
+  chordToHighlight?: IChord;
 }
 
 interface ICanvases {
@@ -32,7 +35,7 @@ type CanvasRef = React.MutableRefObject<HTMLCanvasElement>;
  * 3. player white key highlights for player notes. we don't want player note highlights to get erased when sheet music notes change.
  * 4-6. same as 1-3, but for black keys.
  */
-export default function Keyboard({}: IKeyboardProps) {
+export default function Keyboard({chordToHighlight}: IKeyboardProps) {
   const userKeyboardHighestMidiNumber = 21;
   const userKeyboardLowestMidiNumber = 108;
   //create refs. use new canvas to avoid having to constantly check for nulls.
@@ -47,12 +50,11 @@ export default function Keyboard({}: IKeyboardProps) {
   //on first render, size and draw the canvases.  listen for sheetMusicNotesCurrentlyBeingPlayedChanged rxjs events and repaint the finger markers.
   useEffect(()=>{
     //keep a reference to the notes currently being played, as we will need to repaint them when screen resize occurs.
-    let sheetMusicNotesCurrentlyBeingPlayed: INote[] = [];
-    let notesCurrentlySelected: INote[] = [];
+    let notesCurrentlySelected: IPredefinedNote[] = chordToHighlight?.notes || [];
     //function for initial render and rerender
     function calculateSizesAndRender(){
       const canvases = getCanvasesFromRefs({whiteKeysLabelsAndImagesCanvasRef, whiteKeysHighlightsCanvasRef, playerNotesWhiteKeysHighlightsCanvasRef, blackKeysLabelsAndImagesCanvasRef, blackKeysHighlightsCanvasRef, playerNotesBlackKeysHighlightsCanvasRef});
-      pianoKeys = setCanvasSizeCreatePianoKeysAndRender(canvases, sheetMusicNotesCurrentlyBeingPlayed, notesCurrentlySelected, userKeyboardHighestMidiNumber, userKeyboardLowestMidiNumber);
+      pianoKeys = setCanvasSizeCreatePianoKeysAndRender(canvases, notesCurrentlySelected, userKeyboardHighestMidiNumber, userKeyboardLowestMidiNumber);
     }
     //initial render
     calculateSizesAndRender();
@@ -70,7 +72,7 @@ export default function Keyboard({}: IKeyboardProps) {
       unsubscribeFromResizeAndOrientationChangeEvents();
       // unsubscribeFromNotesEvents();
     };
-  }, []);
+  }, [chordToHighlight]);
 
   const isTouchDevice = ('ontouchstart' in window);
 
@@ -103,11 +105,11 @@ function getCanvasesFromRefs({whiteKeysLabelsAndImagesCanvasRef, whiteKeysHighli
   };
 }
 
-function setCanvasSizeCreatePianoKeysAndRender(canvases: ICanvases, sheetMusicNotesCurrentlyBeingPlayed: INote[], notesCurrentlySelected: INote[], userKeyboardHighestMidiNumber: number, userKeyboardLowestMidiNumber: number){
+function setCanvasSizeCreatePianoKeysAndRender(canvases: ICanvases, notesCurrentlySelected: IPredefinedNote[], userKeyboardHighestMidiNumber: number, userKeyboardLowestMidiNumber: number){
   const {whiteKeysLabelsAndImagesCanvas, whiteKeysHighlightsCanvas, blackKeysLabelsAndImagesCanvas, blackKeysHighlightsCanvas, playerNotesWhiteKeysHighlightsCanvas, playerNotesBlackKeysHighlightsCanvas,} = canvases;
   setCanvasSizesToMatchCSS([whiteKeysLabelsAndImagesCanvas, whiteKeysHighlightsCanvas, blackKeysLabelsAndImagesCanvas, blackKeysHighlightsCanvas, playerNotesWhiteKeysHighlightsCanvas, playerNotesBlackKeysHighlightsCanvas, ]);
   const pianoKeys = createKeyboardLayoutModel({width: whiteKeysLabelsAndImagesCanvas.width, height: whiteKeysLabelsAndImagesCanvas.height, userKeyboardHighestMidiNumber, userKeyboardLowestMidiNumber});
-  drawKeyAndLabelAndHighlightCanvases(whiteKeysHighlightsCanvas, whiteKeysLabelsAndImagesCanvas, blackKeysHighlightsCanvas, blackKeysLabelsAndImagesCanvas, sheetMusicNotesCurrentlyBeingPlayed, notesCurrentlySelected, pianoKeys);
+  drawKeyAndLabelAndHighlightCanvases(whiteKeysHighlightsCanvas, whiteKeysLabelsAndImagesCanvas, blackKeysHighlightsCanvas, blackKeysLabelsAndImagesCanvas, notesCurrentlySelected, pianoKeys);
   return pianoKeys;
 }
 
@@ -157,7 +159,7 @@ function drawPlayerNoteHighlights(notesCurrentlyBeingPlayedByUser: Set<number>, 
 }
 
 
-function drawKeyAndLabelAndHighlightCanvases(whiteKeysHighlightsCanvas: HTMLCanvasElement, whiteKeysImagesCanvas: HTMLCanvasElement, blackKeysHighlightsCanvas: HTMLCanvasElement, blackKeysImagesCanvas: HTMLCanvasElement, sheetMusicNotesCurrentlyBeingPlayed: INote[], notesCurrentlySelected: INote[], pianoKeys: IPianoKey[]){
+function drawKeyAndLabelAndHighlightCanvases(whiteKeysHighlightsCanvas: HTMLCanvasElement, whiteKeysImagesCanvas: HTMLCanvasElement, blackKeysHighlightsCanvas: HTMLCanvasElement, blackKeysImagesCanvas: HTMLCanvasElement, notesCurrentlySelected: IPredefinedNote[], pianoKeys: IPianoKey[]){
   const {whiteKeys, blackKeys} = separateWhiteAndBlackKeys(pianoKeys);
 
   //draw temp white and black keys while image loads:
@@ -169,7 +171,7 @@ function drawKeyAndLabelAndHighlightCanvases(whiteKeysHighlightsCanvas: HTMLCanv
   //   createContextAndDrawKeysAndLabels(blackKeysImagesCanvas, blackKeys);
   // });
 
-  drawWhiteAndBlackKeysHightlightsCanvas(whiteKeysHighlightsCanvas, blackKeysHighlightsCanvas, sheetMusicNotesCurrentlyBeingPlayed, pianoKeys);
+  drawWhiteAndBlackKeysHightlightsCanvas(whiteKeysHighlightsCanvas, blackKeysHighlightsCanvas, notesCurrentlySelected, pianoKeys);
 }
 
 
@@ -216,7 +218,7 @@ function createContextAndDrawKeysAndLabels(backgroundCanvas: HTMLCanvasElement, 
   drawNoteNameLabels(pianoKeys, ctx);
 }
 
-function drawWhiteAndBlackKeysHightlightsCanvas(whiteKeysHighlightsCanvas: HTMLCanvasElement, blackKeysHighlightsCanvas: HTMLCanvasElement, sheetMusicNotesCurrentlyBeingPlayed: INote[], pianoKeys: IPianoKey[]){
+function drawWhiteAndBlackKeysHightlightsCanvas(whiteKeysHighlightsCanvas: HTMLCanvasElement, blackKeysHighlightsCanvas: HTMLCanvasElement, notesCurrentlySelected: IPredefinedNote[], pianoKeys: IPianoKey[]){
   const whiteKeysCtx = whiteKeysHighlightsCanvas.getContext('2d');
   const blackKeysCtx = blackKeysHighlightsCanvas.getContext('2d');
   if(!whiteKeysCtx){return;}
@@ -226,7 +228,7 @@ function drawWhiteAndBlackKeysHightlightsCanvas(whiteKeysHighlightsCanvas: HTMLC
   blackKeysCtx.clearRect(0, 0, blackKeysHighlightsCanvas.width, blackKeysHighlightsCanvas.height);
 
   //paint the canvas.
-  const pianoKeysForSheetMusicNotesCurrentlyBeingPlayed = findPianoKeysCurrentlyBeingPlayed(sheetMusicNotesCurrentlyBeingPlayed, pianoKeys);
+  const pianoKeysForSheetMusicNotesCurrentlyBeingPlayed = findPianoKeysCurrentlyBeingPlayed(notesCurrentlySelected, pianoKeys);
   const {whiteKeys, blackKeys} = separateWhiteAndBlackKeys(pianoKeysForSheetMusicNotesCurrentlyBeingPlayed);
 
   drawKeysHighlights(whiteKeys, whiteKeysCtx, false);
@@ -247,11 +249,14 @@ function separateWhiteAndBlackKeys(pianoKeys: IPianoKey[]){
   return {whiteKeys, blackKeys};
 }
 
-function findPianoKeysCurrentlyBeingPlayed(notesCurrentlyBeingPlayed: INote[], pianoKeys: IPianoKey[]){
+function findPianoKeysCurrentlyBeingPlayed(notesCurrentlyBeingPlayed: IPredefinedNote[], pianoKeys: IPianoKey[]){
   const result: IPianoKey[] = [];
   for(let i = 0; i < notesCurrentlyBeingPlayed.length; ++i){
     const note = notesCurrentlyBeingPlayed[i];
-    const pianoKey = pianoKeys.find(p => p.midiNumber === note.midi);
+    if(!note){
+      console.error(`note is null`, note, notesCurrentlyBeingPlayed);
+    }
+    const pianoKey = pianoKeys.find(p => p.midiNumber === note.midiNoteNumber);
     if(pianoKey){
       result.push(pianoKey);
     }

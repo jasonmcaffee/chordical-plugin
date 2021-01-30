@@ -480,7 +480,10 @@ function getRandomInt(min=1, max=999999999) {
 
 function convertChordToHostMidiNotes({chord}: {chord: IChord}) : IMidiNoteData[]{
   return chord.notes.map(n => {
-    return { midiNote: n.midiNoteNumber, velocity: 100};
+    if(n === undefined){
+      console.error(`note is null: `, n, chord.notes);
+    }
+    return { midiNote: n.midiNoteNumber, velocity: 100 };
   });
 }
 

@@ -40,9 +40,17 @@
       }
     }
 
+    .randomize-buttons{
+      .button{
+        display: inline-block;
+        margin-right: 33%;
+      }
+    }
+
     .settings{
+      margin-top: 55px;
       display: flex;
-      justify-content: flex-end;
+      //justify-content: flex-end;
       .button{
         font-size: 10px;
         padding: 1px 3px 1px 3px;

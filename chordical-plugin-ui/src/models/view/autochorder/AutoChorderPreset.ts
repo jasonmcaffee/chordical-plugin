@@ -23,7 +23,7 @@ export default class AutoChorderPreset {
   randomizationMaxOctave: number = 0;
   name: string = ''; // displayed to user on preset selector.
   constructor({id=generateRandomId({name:'AutoChorderPreset'}), selectedKey={rootNote:'c', scale: ScaleTypesEnum.majorIonian},
-                chords=[], randomizationMinOctave=2, randomizationMaxOctave=5,
+                chords=[], randomizationMinOctave=3, randomizationMaxOctave=5,
                 name=`${new Date().toLocaleString()}`, slots=[]} :Partial<AutoChorderPreset>) {
     Object.assign(this, {id, chords, selectedKey, randomizationMinOctave, randomizationMaxOctave, name, slots});
   }

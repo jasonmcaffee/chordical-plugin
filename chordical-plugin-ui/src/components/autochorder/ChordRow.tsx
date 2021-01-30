@@ -48,13 +48,17 @@ export default function ChordRow({slot, chord, viewModel}: {slot: ISlot, chord: 
         <Select currentlySelectedOption={currentlySelectedChordRootNote} options={noteSelectOptions} onChange={(o)=> autochorder.changeChordRootNote({chord, newRootNote: o.value})}/>
         <Select currentlySelectedOption={currentlySelectChordTypeOption} options={chordTypeOptions} onChange={(o) => autochorder.changeChordType({chord, newChordType: o.value})}/>
       </div>
+      <div className="randomize-buttons">
+        <Button onClick={() => { autochorder.randomizeChordTypeAndSample({chord}); } }><FontAwesomeIcon icon={faDice}/></Button>
+        <Button onClick={() => { autochorder.randomizeNoteVoicingForChordAndSample({chord}); } }><FontAwesomeIcon icon={faDice}/></Button>
+      </div>
       <div className="settings">
         <Button onClick={() => {setIsSettingsModalOpen(true)}}><FontAwesomeIcon icon={faCog}/></Button>
       </div>
     </div>
 
     <div className="keyboard-section">
-      <Keyboard/>
+      <Keyboard chordToHighlight={chord}/>
     </div>
 
   </div>;
