@@ -1,6 +1,8 @@
 # To Do
+- highlight chord played with chord changed event
+- smaller keyboard
 - keyboard highlight notes in key.
-- highlight cell when chord played (midi, qwerty, mousedown)
+- error modal.
 - voicing names? inversions
 - clean up settings modal (icon, styling)
 - include font cabin into index.html webpack loader

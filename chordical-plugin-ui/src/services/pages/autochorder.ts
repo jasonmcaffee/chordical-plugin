@@ -39,7 +39,7 @@ import {qwertyKeyCodes} from "../qwerty/qwerty";
 // const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
 const scaleSelectOptions = createSelectOptionsForScales();
 const noteSelectOptionsSortedForScale = createNoteSelectOptions({rootNote: "c", scale: ScaleTypesEnum.majorIonian});
-const initialViewModel: IAutochorderPageViewModel = {chordView: "rows", octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
+const initialViewModel: IAutochorderPageViewModel = {version: "1", chordView: "rows", octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 
@@ -62,11 +62,13 @@ class Autochorder{
           case "appStateLoaded":
             try{
               const newViewModel = JSON.parse(e.state);
-              this.viewModel = newViewModel;
-              this.emitChange({saveState: false});
+              if(newViewModel && newViewModel.version === this.viewModel.version){
+                this.viewModel = newViewModel;
+                this.emitChange({saveState: false});
+              }
             }catch(e){
               //@ts-ignore
-              document.getElementById('page').innerHTML += "failed to parse " + e.message;
+              // document.getElementById('page').innerHTML += "failed to parse " + e.message;
             }
             break;
           case "midiNotePlayed":{
@@ -102,7 +104,7 @@ class Autochorder{
         s.isBeingPlayed = true;
       }
     });
-    this.emitChange();
+    // this.emitChange();
   }
   stopSlots({slots}: {slots: ISlot[]}){
     slots.forEach((s)=>{
@@ -111,7 +113,7 @@ class Autochorder{
         s.isBeingPlayed = false;
       }
     });
-    this.emitChange();
+    // this.emitChange();
   }
 
   saveAppState(){
@@ -280,7 +282,7 @@ class Autochorder{
     this.updateSlotAndEmitChange({chord: clone});
   }
 
-  deleteNote({chord, note, chords=this.viewModel.autoChorderPreset.chords}:  {chord: IChord, note: IPredefinedNote, chords?: IChord[]}){
+  deleteNote({chord, note, chords=this.viewModel.autoChorderPreset.chords, playSample=false}:  {chord: IChord, note: IPredefinedNote, chords?: IChord[], playSample?: boolean}){
     const noteAndChord = getNoteAndChordFromChords({chordId: chord.id, noteId: note.id, chords});
     if(!noteAndChord){ return console.log(`AutoChordPreset chord id: ${chord.id} doesn't have note id: ${note.id} chords:`, chords, chord); }
     //find the chord to be modified in our array of chords
@@ -293,6 +295,9 @@ class Autochorder{
     chordBeingModified.type = reverseChord?.type ?? "Custom";
     chordBeingModified.rootNote = reverseChord?.rootNote ?? chordBeingModified.rootNote;
     this.updateSlotAndEmitChange({chord: chordBeingModified});
+    if(playSample){
+      this.playChord({chord: chordBeingModified});
+    }
   }
 
   /**
@@ -300,7 +305,7 @@ class Autochorder{
    * e.g. C Major (C, E, G) will find B, making it C Major 7th (C, E, G, B).
    * If no new chord type is possible, first note in chord will be duplicated.
    */
-  addNote({chord, chords=this.viewModel.autoChorderPreset.chords, note}: {chord: IChord, chords?: IChord[], note?: IPredefinedNote}){
+  addNote({chord, chords=this.viewModel.autoChorderPreset.chords, note, playSample=false}: {chord: IChord, chords?: IChord[], note?: IPredefinedNote, playSample?: boolean}){
     //find the chord to be modified in our array of chords
     const chordBeingModified = chords.find(c=>c.id === chord.id);
     if(!chordBeingModified){ return console.log(`AutoChorderPreset doesn't have chord id: ${chord.id}`); }
@@ -317,6 +322,9 @@ class Autochorder{
     }
 
     this.updateSlotAndEmitChange({chord: chordBeingModified});
+    if(playSample){
+      this.playChord({chord: chordBeingModified});
+    }
   }
 
   toggleNote({chord, chords=this.viewModel.autoChorderPreset.chords, noteMidiNumberToToggle}: {chord: IChord, chords?: IChord[], noteMidiNumberToToggle: number}){
@@ -324,11 +332,10 @@ class Autochorder{
     if(!note){ return console.error(`note is not in chord: `, note, chord); }
     const noteIsInChord = chord.notes.find(n => n.midiNoteNumber === noteMidiNumberToToggle);
     if(noteIsInChord){
-      this.deleteNote({chord, note});
+      this.deleteNote({chord, note, playSample: true});
     }else{
-      this.addNote({chord, note});
+      this.addNote({chord, note, playSample: true});
     }
-    this.playChord({chord});
   }
 
   addChord({onlyGenerateChordsInKey=true, selectedKey=this.viewModel.autoChorderPreset.selectedKey, octave=this.viewModel.autoChorderPreset.randomizationMinOctave}={}){
