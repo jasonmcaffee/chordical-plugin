@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Select.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/components/common/select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/common/select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +23,9 @@
           <entry key="js" value="1" />
           <entry key="json" value="1" />
           <entry key="md" value="2" />
-          <entry key="scss" value="10" />
-          <entry key="ts" value="20" />
-          <entry key="tsx" value="9" />
+          <entry key="scss" value="13" />
+          <entry key="ts" value="23" />
+          <entry key="tsx" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -31,27 +34,27 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
-          <entry key="SCSS" value="10" />
-          <entry key="TypeScript" value="20" />
-          <entry key="TypeScript JSX" value="9" />
+          <entry key="SCSS" value="13" />
+          <entry key="TypeScript" value="23" />
+          <entry key="TypeScript JSX" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="428" />
-          <entry key="scss" value="1058" />
-          <entry key="ts" value="1281" />
-          <entry key="tsx" value="1019" />
-          <entry key="txt" value="119" />
+          <entry key="md" value="501" />
+          <entry key="scss" value="1153" />
+          <entry key="ts" value="1865" />
+          <entry key="tsx" value="1454" />
+          <entry key="txt" value="218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="428" />
-          <entry key="PLAIN_TEXT" value="119" />
-          <entry key="SCSS" value="1058" />
-          <entry key="TypeScript" value="1281" />
-          <entry key="TypeScript JSX" value="1019" />
+          <entry key="Markdown" value="501" />
+          <entry key="PLAIN_TEXT" value="218" />
+          <entry key="SCSS" value="1153" />
+          <entry key="TypeScript" value="1865" />
+          <entry key="TypeScript JSX" value="1454" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -66,58 +69,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="376" column="67" lean-forward="true" selection-start-line="376" selection-start-column="67" selection-end-line="376" selection-end-column="67" />
+            <state relative-caret-position="195">
+              <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
+        <entry file="file://$PROJECT_DIR$/src/components/keyboard/Keyboard.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+            <state relative-caret-position="123">
+              <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="104">
-                <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
+        <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/autochorder/SlotCard.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="43" column="69" lean-forward="true" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/style/components/common/select.scss">
+        <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-87">
-              <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/common/Select.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="390">
+              <caret line="15" column="122" selection-start-line="15" selection-start-column="122" selection-end-line="15" selection-end-column="122" />
             </state>
           </provider>
         </entry>
@@ -125,8 +123,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="52" column="73" selection-start-line="52" selection-start-column="73" selection-end-line="52" selection-end-column="73" />
+            <state relative-caret-position="626">
+              <caret line="41" column="66" lean-forward="true" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="618">
+              <caret line="441" column="59" lean-forward="true" selection-start-line="441" selection-start-column="59" selection-end-line="441" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -134,26 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/music/predefinedNotes.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="24" column="126" lean-forward="true" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+            <state relative-caret-position="386">
+              <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -175,6 +173,9 @@
       <find>playCho</find>
       <find>findPianoKeysCurrentlyBeingPlayed</find>
       <find>handleMouse</find>
+      <find>playSlot</find>
+      <find>playSl</find>
+      <find>createSlot</find>
     </findStrings>
     <replaceStrings>
       <replace>label</replace>
@@ -187,25 +188,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/components/autochorder/Keyboard.tsx" />
         <option value="$PROJECT_DIR$/src/models/view/keyboard/allPianoKeys.ts" />
         <option value="$PROJECT_DIR$/src/factories/keyboardFactory.ts" />
         <option value="$PROJECT_DIR$/src/models/view/keyboard/IPianoKey.ts" />
         <option value="$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts" />
         <option value="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" />
-        <option value="$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss" />
         <option value="$PROJECT_DIR$/src/components/keyboard/keys.ts" />
-        <option value="$PROJECT_DIR$/src/services/pages/autochorder.ts" />
-        <option value="$PROJECT_DIR$/src/components/keyboard/Keyboard.tsx" />
-        <option value="$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx" />
-        <option value="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" />
         <option value="$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts" />
         <option value="$PROJECT_DIR$/src/services/music/predefinedNotes.ts" />
-        <option value="$PROJECT_DIR$/src/services/music/notes.ts" />
         <option value="$PROJECT_DIR$/src/components/common/Select.tsx" />
         <option value="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" />
         <option value="$PROJECT_DIR$/src/style/components/common/select.scss" />
+        <option value="$PROJECT_DIR$/src/services/music/notes.ts" />
+        <option value="$PROJECT_DIR$/src/components/keyboard/Keyboard.tsx" />
+        <option value="$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts" />
+        <option value="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" />
+        <option value="$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx" />
+        <option value="$PROJECT_DIR$/src/services/pages/autochorder.ts" />
+        <option value="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" />
+        <option value="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" />
       </list>
     </option>
   </component>
@@ -788,11 +792,25 @@
       <option name="project" value="LOCAL" />
       <updated>1612033467179</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix for select options being side by side.">
+      <created>1612036804650</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1612036804650</updated>
+    </task>
+    <task id="LOCAL-00032" summary="reverse chord lookup when you touch the keyboard.">
+      <created>1612038231040</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1612038231040</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21973000" />
+    <option name="totallyTimeSpent" value="24567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
@@ -824,8 +842,6 @@
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial router working." />
-    <MESSAGE value="autochorder route working." />
     <MESSAGE value="autochorder preset wip." />
     <MESSAGE value="creating chords via generateChordProgression is working." />
     <MESSAGE value="chords press sends midi to host" />
@@ -849,7 +865,9 @@
     <MESSAGE value="randomization min max octave" />
     <MESSAGE value="drawing keyboard works" />
     <MESSAGE value="random octave for note now considers whether it's on the keyboard." />
-    <option name="LAST_COMMIT_MESSAGE" value="random octave for note now considers whether it's on the keyboard." />
+    <MESSAGE value="fix for select options being side by side." />
+    <MESSAGE value="reverse chord lookup when you touch the keyboard." />
+    <option name="LAST_COMMIT_MESSAGE" value="reverse chord lookup when you touch the keyboard." />
   </component>
   <component name="WindowStateProjectService">
     <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1611173762624">
@@ -887,31 +905,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
-          <line>310</line>
+          <line>334</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
-          <line>505</line>
+          <line>529</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/music/notes.ts</url>
-          <line>64</line>
+          <line>65</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
+          <line>321</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -956,20 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/view/keyboard/IPianoKey.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -991,24 +994,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/keyboard/Keyboard.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="246" column="5" lean-forward="true" selection-start-line="246" selection-start-column="5" selection-end-line="246" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/keyboard/keys.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="94" column="71" lean-forward="true" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -1019,27 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="66" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -1047,43 +1015,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="52" column="73" selection-start-line="52" selection-start-column="73" selection-end-line="52" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="376" column="67" lean-forward="true" selection-start-line="376" selection-start-column="67" selection-end-line="376" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/music/predefinedNotes.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="104">
-            <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
         </state>
       </provider>
     </entry>
@@ -1097,13 +1032,6 @@
     <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/autochorder-page.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-87">
@@ -1113,8 +1041,111 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/components/common/select.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        <state relative-caret-position="246">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/view/keyboard/IPianoKey.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="104">
+            <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/keyboard/Keyboard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="441" column="59" lean-forward="true" selection-start-line="441" selection-start-column="59" selection-end-line="441" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/autochorder/SlotCard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="43" column="69" lean-forward="true" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="41" column="66" lean-forward="true" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="122" selection-start-line="15" selection-start-column="122" selection-end-line="15" selection-end-column="122" />
         </state>
       </provider>
     </entry>

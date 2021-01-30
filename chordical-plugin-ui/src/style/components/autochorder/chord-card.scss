@@ -8,6 +8,10 @@
   box-shadow:  7px 7px 10px #c3c4c3,
   -7px -7px 10px #ffffff;
 
+  &.is-playing{
+    background: linear-gradient(90deg, rgba(34,159,255,0.2763480392156863) 0%, rgba(11,147,221,0.18391106442577032) 35%);
+  }
+
   .details{
     .select .option{
       @extend %in-key-select-option;

@@ -99,15 +99,19 @@ class Autochorder{
     slots.forEach((s)=>{
       if(s.content){
         this.playChord({chord: s.content});
+        s.isBeingPlayed = true;
       }
     });
+    this.emitChange();
   }
   stopSlots({slots}: {slots: ISlot[]}){
     slots.forEach((s)=>{
       if(s.content){
         this.stopChord({chord: s.content});
+        s.isBeingPlayed = false;
       }
     });
+    this.emitChange();
   }
 
   saveAppState(){
@@ -542,7 +546,7 @@ function createSlotWithNextMidiAndQwertyTriggers(slots: ISlot[], chord?: IChord)
     qwertyKeyCode = qwertyKeyCodes[slots.length];
   }
   const midiNoteTriggers = [midiMoteTrigger + 1];
-  const slot: ISlot = {id: generateRandomId(), midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code};
+  const slot: ISlot = {id: generateRandomId(), midiNoteTriggers, content: chord, qwertyKeyCodeTrigger: qwertyKeyCode.code, isBeingPlayed: false};
   return slot;
 }
 

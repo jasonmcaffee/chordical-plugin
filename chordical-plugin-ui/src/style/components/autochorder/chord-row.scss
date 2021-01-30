@@ -12,7 +12,9 @@
   grid-template-areas: "details keyboard-section";
   grid-template-columns: 300px 1fr;
   column-gap: 10px;
-
+  &.is-playing{
+    background: linear-gradient(90deg, rgba(34,159,255,0.18671218487394958) 0%, rgba(11,147,221,0.16710434173669464) 35%);
+  }
   .details{
     grid-area: details;
     .select .option{

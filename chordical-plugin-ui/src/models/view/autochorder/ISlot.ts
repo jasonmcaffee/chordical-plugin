@@ -5,4 +5,5 @@ export default interface ISlot{
   content?: IChord;
   midiNoteTriggers: number[];
   qwertyKeyCodeTrigger: number;
+  isBeingPlayed: boolean; //ui indicator
 }

@@ -39,8 +39,8 @@ export default function ChordRow({slot, chord, viewModel}: {slot: ISlot, chord: 
     autochorder.changeSlotMidiTrigger({slot, midiTrigger: e.data.midiNote});
     setIsMidiLearn(false);
   }));
-
-  return <div key={key} className="chord-row">
+  const playingClassName = slot.isBeingPlayed ? 'is-playing' : '';
+  return <div key={key} className={`chord-row ${playingClassName}`}>
     {modalEl}
     <div className="details">
       <div className="label" onMouseDown={() => autochorder.playChord({chord})} onMouseUp={() => autochorder.stopChord({chord})}>{chord.label}</div>

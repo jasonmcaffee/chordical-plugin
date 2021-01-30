@@ -13,6 +13,7 @@ import Modal from "../common/Modal";
 import ISlot from "../../models/view/autochorder/ISlot";
 import {subscribeToQwertyKeyDown} from "../../services/eventBus/qwerty";
 import {subscribeToFromHostPluginEvents} from "../../services/eventBus/hostPlugin/fromHostPluginEventBus";
+
 export default function ChordCard({slot, chord, viewModel}: {slot: ISlot, chord: IChord, viewModel: IAutochorderPageViewModel}){
   const chordTypeOptions2 = autochorder.getChordTypeSelectOptions({chordRootNote: chord.rootNote});
   const chordTypeOptions = chordTypeOptions2.map(c => ({...c, className: c.isInScale ? "in-key" : "not-in-key"}) );
@@ -38,7 +39,9 @@ export default function ChordCard({slot, chord, viewModel}: {slot: ISlot, chord:
     setIsMidiLearn(false);
   }));
 
-  return <div key={key} className="chord-card">
+  const playingClassName = slot.isBeingPlayed ? 'is-playing' : '';
+  console.error(`is playing: `, playingClassName);
+  return <div key={key} className={`chord-card ${playingClassName}`}>
     {modalEl}
     <div className="details">
       <div className="label" onMouseDown={() => autochorder.playChord({chord})} onMouseUp={() => autochorder.stopChord({chord})}>{chord.label}</div>
