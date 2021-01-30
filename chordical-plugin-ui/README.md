@@ -8,3 +8,4 @@
 - include font cabin into index.html webpack loader
 - remember window size in state and call setSize
 - randomize midi velocity to make it sound more human.
+- map model/state version to new version. e.g. adding props causes old saved state to break new code.

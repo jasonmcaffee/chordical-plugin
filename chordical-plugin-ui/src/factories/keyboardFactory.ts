@@ -3,7 +3,8 @@ import {IPianoKey} from "../models/view/keyboard/IPianoKey";
 // import {keyboardImages, allPianoKeys} from "../config/config";
 import {allPianoKeys} from "../models/view/keyboard/allPianoKeys";
 
-const minWidthPxToDrawAll88Keys = 813 * window.devicePixelRatio; //iphone x landscape width is 812
+// const minWidthPxToDrawAll88Keys = 813 * window.devicePixelRatio; //iphone x landscape width is 812
+const minWidthPxToDrawAll88Keys = 1; //iphone x landscape width is 812
 
 export function createKeyboardLayoutModel({width=0, height=0, userKeyboardHighestMidiNumber=21, userKeyboardLowestMidiNumber=108}: {width: number, height: number, userKeyboardHighestMidiNumber: number, userKeyboardLowestMidiNumber: number,}){
   const pianoKeys = createPianoKeys({userKeyboardHighestMidiNumber, userKeyboardLowestMidiNumber, width, minWidthPxToDrawAll88Keys});

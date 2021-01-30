@@ -1,7 +1,9 @@
+$keyboard-height: 140px;
+
 .chord-row{
   position: relative;
-  padding: 15px 15px 1px 15px;
-
+  //padding: 15px 15px 1px 15px;
+  padding: 5px;
   //https://neumorphism.io/#eeefee
   border-radius: 12px;
   background: #eeefee;
@@ -33,7 +35,7 @@
       grid-template-areas: "root-note type";
       grid-template-columns: 70px auto;
       column-gap: 12px;
-      margin-bottom: 10px;
+      //margin-bottom: 7px;
       .select:nth-child(1){
         grid-area: root-note;
       }
@@ -45,12 +47,12 @@
     .randomize-buttons{
       .button{
         display: inline-block;
-        margin-right: 33%;
+        margin-right: 10px;
       }
     }
 
     .settings{
-      margin-top: 55px;
+      //margin-top: 55px;
       display: flex;
       //justify-content: flex-end;
       .button{
@@ -63,12 +65,12 @@
 
   .keyboard-section{
     grid-area: keyboard-section;
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
     .keyboard{
       border-radius: 5px;
       canvas{
         border-radius: 5px;
-        height: 200px;
+        height: $keyboard-height;
       }
     }
   }
