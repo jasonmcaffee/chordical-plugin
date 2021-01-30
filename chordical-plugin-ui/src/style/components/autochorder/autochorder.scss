@@ -3,7 +3,7 @@
 .autochorder{
   @extend %page;
   background-color: #eeefee;
-  .options{
+  > .options{
     @extend %options;
   }
 

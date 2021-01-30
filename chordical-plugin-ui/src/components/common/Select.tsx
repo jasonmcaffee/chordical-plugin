@@ -30,7 +30,7 @@ function createOptionEls<TValueType>(options: ISelectOption<TValueType>[], onCha
 }
 
 function createOptionEl<TValueType>(option: ISelectOption<TValueType>, onChange: (option: ISelectOption<TValueType>) => void, currentlySelectedOption?: ISelectOption<TValueType>){
-  return <div className={`option ${option.className}`} onClick={() => onChange(option)} >
+  return <div className={`option ${option.className ? option.className : ''}`} onClick={() => onChange(option)} >
     {option.label}
   </div>;
 }
