@@ -54,6 +54,10 @@ export function requestToGetAppState(){
   sendMessageObjToHost({type: "requestToGetAppStateMessage"});
 }
 
+export function requestToChangeWindowSize(data: {windowHeight: number, windowWidth: number}){
+  sendMessageObjToHost({type: "requestToChangeWindowSizeMessage", data});
+}
+
 function messageToString(message: any){
   return JSON.stringify(message);
 }

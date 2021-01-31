@@ -69,6 +69,16 @@ inline RequestToPlayMidiNotesMessage convertJSONStringToRequestToPlayMidiNotesMe
     return RequestToPlayMidiNotesMessage {midiNoteDataVector};
 }
 
+inline RequestToChangeWindowSizeMessage convertJSONStringToRequestToChangeWindowSizeMessage(juce::var json){
+//    auto json2 = json.getDynamicObject();
+//    auto data = json2->getProperty("data");
+    auto data = json["data"];
+    int windowHeight = data.getProperty("windowHeight", 900);
+    int windowWidth = data.getProperty("windowWidth", 900);
+    WindowSize windowSize = {windowWidth, windowHeight};
+    return RequestToChangeWindowSizeMessage {windowSize};
+}
+
 inline RequestToStopMidiNotesMessage convertJSONStringToRequestToStopMidiNotesMessage(juce::var json){
     std::vector<MidiNoteData> midiNoteDataVector;
 

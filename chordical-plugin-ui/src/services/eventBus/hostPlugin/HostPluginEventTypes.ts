@@ -21,6 +21,14 @@ export interface IRequestToStopMidiNotesMessage{
   data: IMidiNoteData[];
 }
 
+export interface IRequestToChangeWindowSizeMessage {
+  type: "requestToChangeWindowSizeMessage";
+  data: {
+    windowHeight: number;
+    windowWidth: number;
+  }
+}
+
 export interface IRequestToSaveAppStateMessage{
   type: "requestToSaveAppStateMessage";
   data: string;
@@ -30,7 +38,7 @@ export interface IRequestToGetAppStateMessage {
   type: "requestToGetAppStateMessage";
 }
 
-export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage | IRequestToSaveAppStateMessage | IRequestToGetAppStateMessage;
+export type ToHostPluginMessageTypes = IMessageToHost | IWebAppLoaded | IRequestToPlayMidiNotesMessage | IRequestToStopMidiNotesMessage | IRequestToSaveAppStateMessage | IRequestToGetAppStateMessage | IRequestToChangeWindowSizeMessage;
 
 export interface IMidiNotePlayed{
   type: "midiNotePlayed";

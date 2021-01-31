@@ -1,4 +1,5 @@
 # To Do
+- is qwerty firing more than once? why does qwerty glitch but click doesn't?
 - highlight chord played with chord changed event
 - smaller keyboard
 - keyboard highlight notes in key.

@@ -147,7 +147,8 @@ public:
             String type = parsedJson["type"];
             if(type == "webAppLoaded"){
                 isWebAppLoaded = true;
-                EventBus::eventBus().emitMessage(WebAppLoadedMessage{"tacooooo"});
+                WebAppLoadedMessage webAppLoadedMessage = {""};
+                EventBus::eventBus().emitMessage(webAppLoadedMessage);
                 sendMessageToWebApp(convertTestMessageToJSONString(TestMessage{"received web app loaded"}));
             }else if(type == "requestToPlayMidiNotesMessage"){
                 auto message = convertJSONStringToRequestToPlayMidiNotesMessage(parsedJson);
@@ -160,6 +161,9 @@ public:
                 EventBus::eventBus().emitMessage(message);
             }else if(type == "requestToGetAppStateMessage"){
                 auto message = RequestToGetAppStateMessage{nullptr};
+                EventBus::eventBus().emitMessage(message);
+            }else if(type =="requestToChangeWindowSizeMessage"){
+                RequestToChangeWindowSizeMessage message = convertJSONStringToRequestToChangeWindowSizeMessage(parsedJson);
                 EventBus::eventBus().emitMessage(message);
             }
 

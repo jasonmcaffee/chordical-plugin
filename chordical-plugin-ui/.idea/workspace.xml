@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/BinaryData.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.h" beforeDir="false" afterPath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Components/WebBrowserWithMessaging.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Factories/Message.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Factories/Message.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/PluginEditor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/PluginEditor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/PluginEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/PluginEditor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Services/EventBus/EventMessage.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/EventBus/EventMessage.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factories/keyboardFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/keyboardFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/pages/autochorder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/pages/autochorder.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +35,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="3" />
           <entry key="scss" value="16" />
-          <entry key="ts" value="25" />
+          <entry key="ts" value="27" />
           <entry key="tsx" value="14" />
         </counts>
       </usages-collector>
@@ -41,25 +46,25 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="SCSS" value="16" />
-          <entry key="TypeScript" value="25" />
+          <entry key="TypeScript" value="27" />
           <entry key="TypeScript JSX" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="750" />
+          <entry key="md" value="829" />
           <entry key="scss" value="1233" />
-          <entry key="ts" value="2100" />
+          <entry key="ts" value="2860" />
           <entry key="tsx" value="1454" />
-          <entry key="txt" value="341" />
+          <entry key="txt" value="358" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="750" />
-          <entry key="PLAIN_TEXT" value="341" />
+          <entry key="Markdown" value="829" />
+          <entry key="PLAIN_TEXT" value="358" />
           <entry key="SCSS" value="1233" />
-          <entry key="TypeScript" value="2100" />
+          <entry key="TypeScript" value="2860" />
           <entry key="TypeScript JSX" value="1454" />
         </counts>
       </usages-collector>
@@ -75,18 +80,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="319" column="65" lean-forward="true" selection-start-line="319" selection-start-column="65" selection-end-line="319" selection-end-column="65" />
+            <state relative-caret-position="500">
+              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="182">
-                <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+              <first_editor relative-caret-position="26">
+                <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -99,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/src/factories/keyboardFactory.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="6" column="70" lean-forward="true" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+              <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
               <folding>
                 <marker date="1612050030887" expanded="true" signature="1578:2144" ph="..." />
               </folding>
@@ -111,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
-              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -119,17 +133,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" column="50" lean-forward="true" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+            <state relative-caret-position="208">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="20" selection-end-column="20" />
+            <state relative-caret-position="208">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -138,7 +161,7 @@
         <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -147,25 +170,7 @@
         <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="26">
-              <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="121" />
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -191,9 +196,10 @@
       <find>playSl</find>
       <find>createSlot</find>
       <find>playS</find>
-      <find>toggleN</find>
       <find>812</find>
+      <find>WebAppLo</find>
       <find>keyboard-</find>
+      <find>toggleN</find>
     </findStrings>
     <replaceStrings>
       <replace>label</replace>
@@ -223,12 +229,14 @@
         <option value="$PROJECT_DIR$/src/components/autochorder/ChordCard.tsx" />
         <option value="$PROJECT_DIR$/src/components/autochorder/ChordRow.tsx" />
         <option value="$PROJECT_DIR$/src/style/components/autochorder/chord-card.scss" />
-        <option value="$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts" />
-        <option value="$PROJECT_DIR$/src/services/pages/autochorder.ts" />
         <option value="$PROJECT_DIR$/src/factories/keyboardFactory.ts" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss" />
         <option value="$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss" />
+        <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts" />
+        <option value="$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts" />
+        <option value="$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts" />
+        <option value="$PROJECT_DIR$/src/services/pages/autochorder.ts" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -839,17 +847,24 @@
       <option name="project" value="LOCAL" />
       <updated>1612049870585</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="style adjustments">
+      <created>1612050940262</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1612050940262</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26940000" />
+    <option name="totallyTimeSpent" value="28767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12568952" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12568952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -865,7 +880,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34502923" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34502923" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -875,7 +890,6 @@
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chords press sends midi to host" />
     <MESSAGE value="fix for messages not reaching host due to too many being sent at the same time.  now use queue fifo to send 1 message per N ms." />
     <MESSAGE value="fix crashing issue. doesn't like document.getElbyId.innerHTML all the time." />
     <MESSAGE value="select note for chord select box working." />
@@ -900,7 +914,8 @@
     <MESSAGE value="reverse chord lookup when you touch the keyboard." />
     <MESSAGE value="highlight chord when it's playing." />
     <MESSAGE value="undo emit change for playSlot due to perf issue.  version model so it can be invalidated." />
-    <option name="LAST_COMMIT_MESSAGE" value="undo emit change for playSlot due to perf issue.  version model so it can be invalidated." />
+    <MESSAGE value="style adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="style adjustments" />
   </component>
   <component name="WindowStateProjectService">
     <state x="112" y="13" key="CommitChangelistDialog2" timestamp="1611173762624">
@@ -938,7 +953,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/pages/autochorder.ts</url>
-          <line>536</line>
+          <line>554</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -971,13 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1117,67 +1125,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="319" column="65" lean-forward="true" selection-start-line="319" selection-start-column="65" selection-end-line="319" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="50" lean-forward="true" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/factories/keyboardFactory.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="6" column="70" lean-forward="true" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
           <folding>
             <marker date="1612050030887" expanded="true" signature="1578:2144" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="182">
-            <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
-          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        <state relative-caret-position="208">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/HostPluginEventTypes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/eventBus/hostPlugin/toHostPluginEventBus.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="26">
+            <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>

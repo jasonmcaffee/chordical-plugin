@@ -24,6 +24,7 @@ import {
 } from "../music/notes";
 import AutoChorderPreset, {IKey} from "../../models/view/autochorder/AutoChorderPreset";
 import {
+  requestToChangeWindowSize,
   requestToGetAppState,
   requestToPlayMidiNotes,
   requestToSaveAppState,
@@ -39,7 +40,9 @@ import {qwertyKeyCodes} from "../qwerty/qwerty";
 // const noteSelectOptions = createSelectOptionsForNotes(predefinedNotes);
 const scaleSelectOptions = createSelectOptionsForScales();
 const noteSelectOptionsSortedForScale = createNoteSelectOptions({rootNote: "c", scale: ScaleTypesEnum.majorIonian});
-const initialViewModel: IAutochorderPageViewModel = {version: "1", chordView: "rows", octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
+const windowHeight = window.innerHeight;
+const windowWidth = window.innerWidth;
+const initialViewModel: IAutochorderPageViewModel = {version: "2", windowHeight, windowWidth, chordView: "rows", octaveOptions, noteSelectOptions: noteSelectOptionsSortedForScale, test: false, autoChorderPreset: new AutoChorderPreset({slots: []}), scaleSelectOptions};
 
 export const {subscribe: subscribeToViewModelChange, emitMessage: viewModelChanged, hook: useAutochorderPageViewModel} = createEventBusAndHook<IAutochorderPageViewModel>(initialViewModel);
 
@@ -48,7 +51,21 @@ class Autochorder{
   unsubscribeFuncs: (() => void)[] = [];
   constructor(){
     this.generateChordProgression({rootNote: 'c', octave: 4, scale: ScaleTypesEnum.majorIonian, saveState: false}); //saveState false as we wait for appStateLoaded
+
+    let tick = false;
+    const handleWindowResize = () => {
+      this.viewModel.windowWidth = window.innerWidth;
+      this.viewModel.windowHeight = window.innerHeight;
+      if(tick){return;}
+      tick = true;
+      setTimeout(()=>{
+        this.saveAppState();
+        tick = false;
+      }, 100);
+    };
+    window.addEventListener('resize', handleWindowResize);
     this.unsubscribeFuncs = [
+      () => window.removeEventListener("resize", handleWindowResize),
       subscribeToQwertyKeyDown(e => {
         const slots = findSlotsWithMatchingQwertyKeyTrigger({qwertyKeyCode: e.keyCode, slots: this.viewModel.autoChorderPreset.slots});
         this.playSlots({slots});
@@ -65,6 +82,7 @@ class Autochorder{
               if(newViewModel && newViewModel.version === this.viewModel.version){
                 this.viewModel = newViewModel;
                 this.emitChange({saveState: false});
+                requestToChangeWindowSize({windowHeight: this.viewModel.windowHeight, windowWidth: this.viewModel.windowWidth});
               }
             }catch(e){
               //@ts-ignore

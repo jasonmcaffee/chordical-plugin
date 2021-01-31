@@ -19,6 +19,7 @@ public:
 };
 
 //shorthand for calling parent constructor is to use using EventMessage::EventMessage
+
 struct WebAppLoadedMessage : public EventMessage<std::string>{ public: using EventMessage::EventMessage; };
 struct TestMessage : public EventMessage<std::string>{ public: using EventMessage::EventMessage; };
 
@@ -30,7 +31,6 @@ struct MidiNoteStoppedMessage : public EventMessage<MidiNoteData> { using EventM
 struct ToWebAppMessage: public EventMessage<juce::String> { using EventMessage::EventMessage; };
 
 
-
 struct RequestToPlayMidiNotesMessage : public EventMessage<std::vector<MidiNoteData>> { using EventMessage::EventMessage; };
 struct RequestToStopMidiNotesMessage : public EventMessage<std::vector<MidiNoteData>> { using EventMessage::EventMessage; };
 
@@ -38,3 +38,6 @@ struct AppState { std:: string state; };
 struct RequestToSaveAppStateMessage : public EventMessage<AppState> { using EventMessage::EventMessage; };
 
 struct RequestToGetAppStateMessage : public EventMessage<nullptr_t> { using EventMessage::EventMessage; };
+
+struct WindowSize { int windowWidth; int windowHeight; };
+struct RequestToChangeWindowSizeMessage : public EventMessage<WindowSize> { using EventMessage::EventMessage; };

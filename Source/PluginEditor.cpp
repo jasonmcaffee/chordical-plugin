@@ -16,6 +16,7 @@
 ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p): AudioProcessorEditor (&p), processor (p){
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
+
     setResizable(true, true);
     setSize (700, 600);
 
@@ -28,11 +29,17 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
         webBrowserComponent.sendMessageToWebApp(message.data);
     });
 
+    requestToChangeWindowSizeEventBusCallbackId = EventBus::eventBus().subscribe<RequestToChangeWindowSizeMessage>([this](RequestToChangeWindowSizeMessage message){
+       std::cout << "web app loaded height" << message.data.windowHeight << " width: " << message.data.windowWidth << std::endl;
+        setSize (message.data.windowWidth , message.data.windowHeight);
+    });
+
 }
 
 //destroy is called when the window is minimized in Ableton
 ChordicalAudioProcessorEditor::~ChordicalAudioProcessorEditor(){
     EventBus::eventBus().unsubscribe(toWebAppEventBusCallbackId);  //if we don't unsubscribe, the DAW will crash
+    EventBus::eventBus().unsubscribe(requestToChangeWindowSizeEventBusCallbackId);  //if we don't unsubscribe, the DAW will crash
 }
 
 //==============================================================================

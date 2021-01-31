@@ -38,7 +38,7 @@ private:
 
     WebBrowserWithMessaging webBrowserComponent;
     int toWebAppEventBusCallbackId; //so we can unsubscribe when Editor is destroyed, which is every time it is minimized.
-
+    int requestToChangeWindowSizeEventBusCallbackId;
     Label versionLabel    { "VersionLabel",  "Version 1" };
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ChordicalAudioProcessorEditor)
 };
