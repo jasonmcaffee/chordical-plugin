@@ -11,6 +11,7 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 #include "Services/EventBus/EventBus.h"
+#include "./Tests/TestPredefinedNotes.h"
 
 //==============================================================================
 ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p): AudioProcessorEditor (&p), processor (p){
@@ -33,6 +34,8 @@ ChordicalAudioProcessorEditor::ChordicalAudioProcessorEditor (PluginProcessor& p
        std::cout << "web app loaded height" << message.data.windowHeight << " width: " << message.data.windowWidth << std::endl;
         setSize (message.data.windowWidth , message.data.windowHeight);
     });
+
+    UnitTestRunner().runAllTests(0);
 
 }
 

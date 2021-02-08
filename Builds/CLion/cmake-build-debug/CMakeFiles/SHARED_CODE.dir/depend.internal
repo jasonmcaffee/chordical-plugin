@@ -5765,6 +5765,8 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
  /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
  /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
  /Users/jason/dev/chordical-plugin/Source/Factories/Message.h
+ /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
+ /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
  /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
  /Users/jason/dev/chordical-plugin/Source/PluginEditor.h
  /Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
@@ -5774,8 +5776,10 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
  /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
  /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
  /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
+ /Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h
  /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
  /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
+ /Users/jason/dev/chordical-plugin/Source/Tests/TestPredefinedNotes.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o
  ../../../JuceLibraryCode/AppConfig.h
  ../../../JuceLibraryCode/BinaryData.h
