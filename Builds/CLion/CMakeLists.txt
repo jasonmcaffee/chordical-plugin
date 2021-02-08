@@ -20,7 +20,7 @@ add_library (VST3 MODULE
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp"
     "PkgInfo"
-        ../../Source/Services/AutoChorder/AutoChorder.h ../../Source/Models/Note/PredefinedNote.h ../../Source/Models/Note/NoteSymbol.h ../../Source/Services/Music/PredefinedNotes.h ../../Source/Tests/TestPredefinedNotes.h)
+)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/VST3/juce_VST3_Wrapper.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -35,7 +35,7 @@ add_library (AU MODULE
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm"
     "PkgInfo"
-        ../../Source/Services/AutoChorder/AutoChorder.h ../../Source/Models/Note/PredefinedNote.h ../../Source/Models/Note/NoteSymbol.h ../../Source/Services/Music/PredefinedNotes.h ../../Source/Tests/TestPredefinedNotes.h)
+)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/AU/juce_AU_Wrapper.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -46,7 +46,7 @@ set_source_files_properties ("../../../JUCE/modules/juce_audio_processors/format
 add_executable (STANDALONE_PLUGIN
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp"
-        ../../Source/Services/AutoChorder/AutoChorder.h ../../Source/Models/Note/PredefinedNote.h ../../Source/Models/Note/NoteSymbol.h ../../Source/Services/Music/PredefinedNotes.h ../../Source/Tests/TestPredefinedNotes.h)
+)
 
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 
@@ -1527,7 +1527,7 @@ add_library (SHARED_CODE STATIC
     "../../JuceLibraryCode/include_juce_gui_extra.mm"
     "../../JuceLibraryCode/include_juce_opengl.mm"
     "../../JuceLibraryCode/JuceHeader.h"
-        ../../Source/Services/AutoChorder/AutoChorder.h ../../Source/Models/Note/PredefinedNote.h ../../Source/Models/Note/NoteSymbol.h ../../Source/Services/Music/PredefinedNotes.h ../../Source/Tests/TestPredefinedNotes.h)
+)
 
 set_source_files_properties ("../../Source/ResourceFiles/c4.wav" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/PluginProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3031,7 +3031,7 @@ target_compile_options (VST3 PRIVATE
 
 set_target_properties (VST3 PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3137,7 +3137,7 @@ endif (RC_COMPILER)
 
 set_target_properties (AU PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3218,7 +3218,7 @@ target_compile_options (STANDALONE_PLUGIN PRIVATE
 
 set_target_properties (STANDALONE_PLUGIN PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3285,7 +3285,7 @@ target_compile_options (SHARED_CODE PRIVATE
 
 set_target_properties (SHARED_CODE PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3361,7 +3361,7 @@ target_compile_options (VST3 PRIVATE
 
 set_target_properties (VST3 PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3469,7 +3469,7 @@ endif (RC_COMPILER)
 
 set_target_properties (AU PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3552,7 +3552,7 @@ target_compile_options (STANDALONE_PLUGIN PRIVATE
 
 set_target_properties (STANDALONE_PLUGIN PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""
@@ -3621,7 +3621,7 @@ target_compile_options (SHARED_CODE PRIVATE
 
 set_target_properties (SHARED_CODE PROPERTIES
     OUTPUT_NAME "chordical-plugin"
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_EXTENSIONS OFF
     XCODE_ATTRIBUTE_CLANG_LINK_OBJC_RUNTIME NO
     XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY ""

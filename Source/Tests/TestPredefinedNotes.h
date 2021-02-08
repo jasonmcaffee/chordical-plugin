@@ -9,12 +9,19 @@ public:
 
     void runTest() override
     {
-        std::cout << "RUNNING TESTS" << std::endl;
-
         beginTest ("Part 1");
-        auto predefinedNotes = PredefinedNotes::getNotes();
-        expectEquals((int)predefinedNotes.size(), 144);
 
+        auto predefinedNote = PredefinedNotes::findNoteByNoteSymbolAndOctave(NoteSymbol::c, 0);
+        expectEquals(predefinedNote->octave, 0);
+        expectEquals(predefinedNote->noteSymbol, NoteSymbol::c);
+
+        auto note = PredefinedNotes::createNoteWithRandomOctave(NoteSymbol::dSharp, 0, 1);
+        expectEquals(note.noteSymbol, NoteSymbol::dSharp);
+        expect((note.octave == 0) || (note.octave == 1));
+
+        note = PredefinedNotes::createNoteWithRandomOctave(NoteSymbol::g, 0, 1);
+        expectEquals(note.noteSymbol, NoteSymbol::g);
+        expect((note.octave == 1));//should always be 1 since a0 is not on 88 key keyboard
 
         beginTest ("Part 2");
 

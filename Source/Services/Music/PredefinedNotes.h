@@ -3,6 +3,7 @@
 #include "../../Models/Note/PredefinedNote.h"
 #include "../../Models/Note/NoteSymbol.h"
 #include<vector>
+#include<optional>
 using namespace std;
 
 vector<PredefinedNote> predefinedNotesVector = {
@@ -160,12 +161,79 @@ public:
         return predefinedNotesVector;
     }
 
-//    static PredefinedNote getNoteById(string id){
-//        for(auto & note : predefinedNotesVector){
-//            if(note.id == id){
-//                return note;
-//            }
+    static PredefinedNote *findNoteByNoteSymbolAndOctave(NoteSymbol noteSymbol, int octave){
+        for(auto & note : predefinedNotesVector){
+            if(note.noteSymbol == noteSymbol && note.octave == octave){
+                return &note;
+            }
+        }
+        return nullptr;
+    }
+
+    static bool isNoteOn88KeyKeyboard(PredefinedNote note){
+        return note.midiNoteNumber >= 21 && note.midiNoteNumber <= 108;
+    }
+
+    static PredefinedNote createNoteWithRandomOctave(NoteSymbol noteSymbol, int minOctave, int maxOctave){
+        int octave = generateRandomNumber(minOctave, maxOctave);
+        cout << "random octave: " << octave << endl;
+        // console.error(`octave is : ${octave}`);
+        auto note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
+        cout << "note found: " << note->midiNoteNumber << endl;
+        //if the random octave isn't on the keyboard, try min then max
+        if(note && !isNoteOn88KeyKeyboard(*note)){
+            cout << "note is not on 88 keyboard" << endl;
+            PredefinedNote* lowestNoteOnKeyboard;
+            for(int i = minOctave; i <= maxOctave; ++i){
+                auto n = findNoteByNoteSymbolAndOctave(noteSymbol, i);
+                if(n && isNoteOn88KeyKeyboard(*n)){
+                    lowestNoteOnKeyboard = n;
+                    break;
+                }
+            }
+            cout << "lowest found: " << lowestNoteOnKeyboard->midiNoteNumber << endl;
+            PredefinedNote* highestNoteOnKeyboard;
+            for(int i = maxOctave; i >= minOctave; --i){
+                auto n = findNoteByNoteSymbolAndOctave(noteSymbol, i);
+                if(n && isNoteOn88KeyKeyboard(*n)){
+                    highestNoteOnKeyboard = n;
+                    break;
+                }
+            }
+            cout << "highest found: " << highestNoteOnKeyboard->midiNoteNumber << endl;
+            if(lowestNoteOnKeyboard && highestNoteOnKeyboard){
+                octave = generateRandomNumber(lowestNoteOnKeyboard->octave, highestNoteOnKeyboard->octave);
+                cout << " new octave " << octave << endl;
+                note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
+                cout << " new note found: " << note-> midiNoteNumber << endl;
+            }
+        }
+        return *note;
+    }
+
+    static int generateRandomNumber(int min, int max){
+        if(min == max) { return min; }
+        int randomNumber = rand() % (max - min) + min;
+        return randomNumber;
+    }
+};
+
+//
+//static optional<PredefinedNote> findNoteByNoteSymbolAndOctave(NoteSymbol noteSymbol, int octave){
+//    for(auto & note : predefinedNotesVector){
+//        if(note.noteSymbol == noteSymbol && note.octave == octave){
+//            return note;
 //        }
 //    }
+//    return nullopt;
+//}
 
-};
+//
+//static optional<PredefinedNote> getNoteById(string id){
+//    for(auto & note : predefinedNotesVector){
+//        if(note.id == id){
+//            return note;
+//        }
+//    }
+//    return nullopt;
+//}

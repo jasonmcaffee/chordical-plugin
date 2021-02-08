@@ -2631,6 +2631,8 @@ vector
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 vector
 -
+optional
+-
 
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 ../JuceLibraryCode/JuceHeader.h

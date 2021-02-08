@@ -4802,18 +4802,6 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp">
 			<Option target="SHARED_CODE"/>
 		</Unit>
@@ -4831,24 +4819,6 @@
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ResourceFiles/test.html">
 			<Option target="SHARED_CODE"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/AutoChorder/AutoChorder.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Tests/TestPredefinedNotes.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/chordical-plugin-ui/build/index.html">
 			<Option target="SHARED_CODE"/>

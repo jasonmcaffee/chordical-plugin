@@ -49,16 +49,13 @@ export function createNoteWithRandomOctave({noteSymbol, minOctave=2, maxOctave=8
       const n = findNoteByNoteSymbolAndOctave({noteSymbol, octave: i});
       if(n && isNoteOn88KeyKeyboard(n)){
         highestNoteOnKeyboard = n;
-        // console.error(`highest note on keyboard`, highestNoteOnKeyboard);
         break;
       }
     }
     if(lowestNoteOnKeyboard && highestNoteOnKeyboard){
       octave = getRandomInt(lowestNoteOnKeyboard.octave, highestNoteOnKeyboard.octave);
       note = findNoteByNoteSymbolAndOctave({noteSymbol, octave});
-      // console.error(`new note octave ${octave}: `, note);
     }
-
   }
   return note;
 }
