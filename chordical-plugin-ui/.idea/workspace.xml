@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Scale/ScaleType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Services/Music/Scales.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Models/Chord/Chord.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Models/Chord/ChordType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Models/Scale/ScaleDegree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Services/Util/Util.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" afterDir="false" />
@@ -11,8 +14,9 @@
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Models/Note/PredefinedNote.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Models/Note/PredefinedNote.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Models/Note/NoteSymbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Models/Note/NoteSymbol.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Services/Music/PredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/PredefinedNotes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Services/Music/Scales.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/Scales.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -30,7 +34,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="3" />
           <entry key="scss" value="16" />
-          <entry key="ts" value="31" />
+          <entry key="ts" value="32" />
           <entry key="tsx" value="14" />
         </counts>
       </usages-collector>
@@ -41,7 +45,7 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="SCSS" value="16" />
-          <entry key="TypeScript" value="31" />
+          <entry key="TypeScript" value="32" />
           <entry key="TypeScript JSX" value="14" />
         </counts>
       </usages-collector>
@@ -49,7 +53,7 @@
         <counts>
           <entry key="md" value="1182" />
           <entry key="scss" value="1233" />
-          <entry key="ts" value="2860" />
+          <entry key="ts" value="2861" />
           <entry key="tsx" value="1454" />
           <entry key="txt" value="358" />
         </counts>
@@ -59,7 +63,7 @@
           <entry key="Markdown" value="1182" />
           <entry key="PLAIN_TEXT" value="358" />
           <entry key="SCSS" value="1233" />
-          <entry key="TypeScript" value="2860" />
+          <entry key="TypeScript" value="2861" />
           <entry key="TypeScript JSX" value="1454" />
         </counts>
       </usages-collector>
@@ -75,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state relative-caret-position="518">
+              <caret line="245" column="87" lean-forward="true" selection-start-line="245" selection-start-column="87" selection-end-line="245" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -105,6 +109,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/music/IChord.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/music/predefinedNotes.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
@@ -113,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1325">
-              <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+            <state relative-caret-position="-736">
+              <caret line="121" column="52" lean-forward="true" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -131,26 +144,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+            <state relative-caret-position="327">
+              <caret line="37" column="100" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="79" selection-end-column="114" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/IAutochorderPageViewModel.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/chord-row.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
               <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
@@ -192,6 +196,7 @@
       <find>WebAppLo</find>
       <find>keyboard-</find>
       <find>toggleN</find>
+      <find>chordServiceChords</find>
     </findStrings>
     <replaceStrings>
       <replace>label</replace>
@@ -229,6 +234,7 @@
         <option value="$PROJECT_DIR$/src/services/pages/autochorder.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/services/music/notes.ts" />
+        <option value="$PROJECT_DIR$/src/services/music/chords.ts" />
       </list>
     </option>
   </component>
@@ -850,7 +856,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32503000" />
+    <option name="totallyTimeSpent" value="34668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -979,13 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/music/IChord.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1149,13 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -1175,13 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/music/scales.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1352">
@@ -1189,10 +1174,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/music/IChord.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1325">
-          <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+        <state relative-caret-position="-736">
+          <caret line="121" column="52" lean-forward="true" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="245" column="87" lean-forward="true" selection-start-line="245" selection-start-column="87" selection-end-line="245" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="37" column="100" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="79" selection-end-column="114" />
         </state>
       </provider>
     </entry>

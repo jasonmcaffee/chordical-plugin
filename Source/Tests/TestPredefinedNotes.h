@@ -2,6 +2,7 @@
 #include <JuceHeader.h>
 #include "../Services/Music/PredefinedNotes.h"
 #include "../Services/Music/Scales.h"
+#include "../Services/Music/Chords.h"
 
 class TestPredefinedNotes  : public UnitTest
 {
@@ -12,6 +13,54 @@ public:
     {
         testPredefinedNotes();
         testScales();
+        testChords();
+    }
+
+    void testChords(){
+        beginTest("Chords");
+        auto notes = Chords::getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(NoteSymbol::c, 1);
+        expectEquals(notes[0].noteSymbol, NoteSymbol::c);
+        expectEquals(notes[0].octave, 1);
+        expectEquals(notes[1].noteSymbol, NoteSymbol::d);
+        expectEquals(notes[7].noteSymbol, NoteSymbol::c);
+        expectEquals(notes[7].octave, 2);
+
+        auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        expectEquals(chord.rootNote, NoteSymbol::c);
+        expectEquals(chord.octave, 0);
+        expectEquals((int)chord.notes.size(), 3);
+        expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
+        expectEquals(chord.notes[1].noteSymbol, NoteSymbol::e);
+        expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+
+        chord = Chords::ChordFuncs::minor(NoteSymbol::c, 0);
+        expectEquals(chord.rootNote, NoteSymbol::c);
+        expectEquals(chord.octave, 0);
+        expectEquals((int)chord.notes.size(), 3);
+        expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
+        expectEquals(chord.notes[1].noteSymbol, NoteSymbol::dSharp);
+        expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+
+        chord = Chords::ChordFuncs::major13(NoteSymbol::c, 0);
+        expectEquals(chord.rootNote, NoteSymbol::c);
+        expectEquals(chord.octave, 0);
+        expectEquals((int)chord.notes.size(), 6);
+        expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
+        expectEquals(chord.notes[1].noteSymbol, NoteSymbol::e);
+        expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+        expectEquals(chord.notes[3].noteSymbol, NoteSymbol::b);
+        expectEquals(chord.notes[4].noteSymbol, NoteSymbol::d);
+        expectEquals(chord.notes[4].octave, 1);
+        expectEquals(chord.notes[5].noteSymbol, NoteSymbol::a);
+        expectEquals(chord.notes[5].octave, 1);
+
+        chord = Chords::ChordFuncs::major(NoteSymbol::d, 0);
+        expectEquals(chord.rootNote, NoteSymbol::d);
+        expectEquals(chord.octave, 0);
+        expectEquals((int)chord.notes.size(), 3);
+        expectEquals(chord.notes[0].noteSymbol, NoteSymbol::d);
+        expectEquals(chord.notes[1].noteSymbol, NoteSymbol::fSharp);
+        expectEquals(chord.notes[2].noteSymbol, NoteSymbol::a);
 
     }
 

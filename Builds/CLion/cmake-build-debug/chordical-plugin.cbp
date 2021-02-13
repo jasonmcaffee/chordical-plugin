@@ -4802,6 +4802,24 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm">
 			<Option target="SHARED_CODE"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h">
 			<Option target="AU"/>
 			<Option target="STANDALONE_PLUGIN"/>
@@ -4826,7 +4844,19 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ResourceFiles/test.html">
 			<Option target="SHARED_CODE"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h">
 			<Option target="AU"/>
 			<Option target="STANDALONE_PLUGIN"/>
 			<Option target="SHARED_CODE"/>

@@ -2560,6 +2560,16 @@ JuceHeader.h
 ../Services/EventBus/EventBus.h
 /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 
+/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
+../Note/NoteSymbol.h
+/Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
+../Note/PredefinedNote.h
+/Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
+string
+-
+vector
+-
+
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 
 /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
@@ -2567,6 +2577,8 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 string
 -
+
+/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h
 
 /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h
 
@@ -2626,11 +2638,27 @@ vector
 
 /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
 
+/Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h
+./PredefinedNotes.h
+/Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h
+./Scales.h
+/Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h
+../../Models/Chord/Chord.h
+/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
+../../Models/Scale/ScaleDegree.h
+/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h
+../Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+vector
+-
+
 /Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h
 ../../Models/Note/PredefinedNote.h
 /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
 ../../Models/Note/NoteSymbol.h
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
+../Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
 vector
 -
 optional
@@ -2648,6 +2676,12 @@ vector
 ../JuceLibraryCode/JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/JuceLibraryCode/JuceHeader.h
 
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+cstdlib
+-
+string
+-
+
 /Users/jason/dev/chordical-plugin/Source/Synthesizer/ChordicalSynthesizer.h
 ../Processors/GainProcessor.h
 /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
@@ -2663,4 +2697,6 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h
 ../Services/Music/Scales.h
 /Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h
+../Services/Music/Chords.h
+/Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h
 

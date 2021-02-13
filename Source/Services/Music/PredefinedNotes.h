@@ -2,6 +2,7 @@
 
 #include "../../Models/Note/PredefinedNote.h"
 #include "../../Models/Note/NoteSymbol.h"
+#include "../Util/Util.h"
 #include<vector>
 #include<optional>
 using namespace std;
@@ -183,7 +184,7 @@ public:
      * @return
      */
     static PredefinedNote createNoteWithRandomOctave(NoteSymbol noteSymbol, int minOctave, int maxOctave){
-        int octave = generateRandomNumber(minOctave, maxOctave);
+        int octave = Util::generateRandomNumber(minOctave, maxOctave);
         // console.error(`octave is : ${octave}`);
         auto note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
         //if the random octave isn't on the keyboard, try min then max
@@ -207,7 +208,7 @@ public:
                 }
             }
             if(lowestNoteOnKeyboard && highestNoteOnKeyboard){
-                octave = generateRandomNumber(lowestNoteOnKeyboard->octave, highestNoteOnKeyboard->octave);
+                octave = Util::generateRandomNumber(lowestNoteOnKeyboard->octave, highestNoteOnKeyboard->octave);
                 note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
             }
         }
@@ -223,18 +224,18 @@ public:
         return nullptr;
     }
 
-    static vector<PredefinedNote> getNotesStartingAtRootNote(NoteSymbol rootNoteSymbol){
+    static vector<PredefinedNote> getNotesStartingAtRootNote(NoteSymbol rootNoteSymbol, vector<PredefinedNote> predefinedNotesParam = predefinedNotesVector){
         int beginIndex = 0;
-        int endIndex = predefinedNotesVector.size();
-        for(int i = 0; i < predefinedNotesVector.size(); ++i){
-            auto note = predefinedNotesVector[i];
+        int endIndex = predefinedNotesParam.size();
+        for(int i = 0; i < predefinedNotesParam.size(); ++i){
+            auto note = predefinedNotesParam[i];
             if(note.noteSymbol == rootNoteSymbol){
                 beginIndex = i;
                 break;
             }
         }
-        auto first = predefinedNotesVector.begin() + beginIndex;
-        auto last = predefinedNotesVector.begin() + endIndex;
+        auto first = predefinedNotesParam.begin() + beginIndex;
+        auto last = predefinedNotesParam.begin() + endIndex;
         return vector<PredefinedNote>(first, last);
     }
 
@@ -269,12 +270,6 @@ public:
             return sharpenedNote;
         }
         return note;
-    }
-
-    static int generateRandomNumber(int min, int max){
-        if(min == max) { return min; }
-        int randomNumber = rand() % (max - min) + min;
-        return randomNumber;
     }
 };
 

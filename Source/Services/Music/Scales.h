@@ -58,8 +58,8 @@ public:
         return noteIndexes;
     }
 
-    static vector<PredefinedNote> getNotesForKey(ScaleType scaleType, NoteSymbol rootNote){
-        auto notes = PredefinedNotes::getNotesStartingAtRootNote(rootNote);
+    static vector<PredefinedNote> getNotesForKey(ScaleType scaleType, NoteSymbol rootNote, vector<PredefinedNote> predefinedNotesParam = PredefinedNotes::getNotes()){
+        auto notes = PredefinedNotes::getNotesStartingAtRootNote(rootNote, predefinedNotesParam);
         auto noteIndexes = getScaleNoteIndexes(scaleType);
         vector<PredefinedNote> result = {};
         int currentIndex = 0;
@@ -73,4 +73,6 @@ public:
         }
         return result;
     }
+
+
 };
