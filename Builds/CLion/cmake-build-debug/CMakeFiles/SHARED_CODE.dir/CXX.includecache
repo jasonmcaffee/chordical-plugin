@@ -2651,6 +2651,12 @@ vector
 /Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
 vector
 -
+string
+-
+map
+-
+unordered_map
+-
 
 /Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h
 ../../Models/Note/PredefinedNote.h

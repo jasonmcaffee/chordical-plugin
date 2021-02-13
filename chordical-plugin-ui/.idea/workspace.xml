@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Chord/Chord.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Chord/ChordType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Scale/ScaleDegree.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Services/Util/Util.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Models/Note/NoteSymbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Models/Note/NoteSymbol.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Services/Music/PredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/PredefinedNotes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Services/Music/Scales.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/Scales.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="37" column="100" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="79" selection-end-column="114" />
+            <state relative-caret-position="41">
+              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -856,7 +840,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34668000" />
+    <option name="totallyTimeSpent" value="34922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -1197,8 +1181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="37" column="100" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="79" selection-end-column="114" />
+        <state relative-caret-position="41">
+          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
         </state>
       </provider>
     </entry>

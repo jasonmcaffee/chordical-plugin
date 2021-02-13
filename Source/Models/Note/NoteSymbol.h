@@ -1,5 +1,5 @@
 #pragma once
-
+using<vector>;
 using namespace std;
 enum NoteSymbol{
     c,
@@ -15,6 +15,8 @@ enum NoteSymbol{
     aSharp,
     b,
 };
+
+vector<string> notes = { "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b" };
 
 inline string noteSymbolToString(NoteSymbol noteSymbol){
     switch(noteSymbol){
@@ -32,4 +34,20 @@ inline string noteSymbolToString(NoteSymbol noteSymbol){
         case NoteSymbol::b: { return "b"; }
     }
     return "unknown";
+}
+
+inline NoteSymbol stringToNoteSymbol(string note){
+    if(note == "c"){ return NoteSymbol::c; }
+    if(note == "c#"){ return NoteSymbol::cSharp; }
+    if(note == "d"){ return NoteSymbol::d; }
+    if(note == "d#"){ return NoteSymbol::dSharp; }
+    if(note == "e"){ return NoteSymbol::e; }
+    if(note == "f"){ return NoteSymbol::f; }
+    if(note == "f#"){ return NoteSymbol::fSharp; }
+    if(note == "g"){ return NoteSymbol::g; }
+    if(note == "g#"){ return NoteSymbol::gSharp; }
+    if(note == "a"){ return NoteSymbol::a; }
+    if(note == "a#"){ return NoteSymbol::aSharp; }
+    if(note == "b"){ return NoteSymbol::b; }
+    return NoteSymbol::c;
 }

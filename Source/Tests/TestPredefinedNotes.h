@@ -62,6 +62,22 @@ public:
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::fSharp);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::a);
 
+        chord = Chords::createChord("major", "c", 0);
+        expectEquals(chord.rootNote, NoteSymbol::c);
+        expectEquals(chord.octave, 0);
+        expectEquals((int)chord.notes.size(), 3);
+        expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
+        expectEquals(chord.notes[1].noteSymbol, NoteSymbol::e);
+        expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+
+        chord = Chords::createChord("minor", "d", 0);
+        expectEquals(chord.rootNote, NoteSymbol::d);
+        expectEquals(chord.octave, 0);
+        expectEquals((int)chord.notes.size(), 3);
+        expectEquals(chord.notes[0].noteSymbol, NoteSymbol::d);
+        expectEquals(chord.notes[1].noteSymbol, NoteSymbol::f);
+        expectEquals(chord.notes[2].noteSymbol, NoteSymbol::a);
+
     }
 
     void testScales(){

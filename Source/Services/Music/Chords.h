@@ -5,8 +5,70 @@
 #include "../../Models/Scale/ScaleDegree.h"
 #include "../Util/Util.h"
 #include<vector>
+#include<string>
+#include<map>
+#include<unordered_map>
 using s = ScaleDegree;
 using namespace std;
+
+
+vector<string> chordTypes = {
+        "major",
+        "minor",
+        "major7th",
+        "minor7th",
+        "minorMajor7th",
+        "sustained4",
+        "sustained2",
+        "_6",
+        "minor6",
+        "_9",
+        "minor9",
+        "major9",
+        "minorMajor9",
+        "_11",
+        "minor11",
+        "major11",
+        "minorMajor11",
+        "_13",
+        "minor13",
+        "major13",
+        "minorMajor13",
+        "add9",
+        "minorAdd9",
+        "_6add9",
+        "minor6add9",
+        "dominant7th",
+        "dominant7thAdd11",
+        "major7thAdd11",
+        "minor7thAdd11",
+        "minorMajor7thAdd11",
+        "dominant7thAdd13",
+        "major7thAdd13",
+        "minor7thAdd13",
+        "minorMajor7thAdd13",
+        "dominant7thFlat5",
+        "dominant7thSharp5",
+        "dominant7thFlat9",
+        "dominant7thSharp9",
+        "dominant7thSharp5Flat9",
+        "diminished",
+        "minor7Flat5",
+        "minor7Sharp5",
+        "minor7Flat9",
+        "_9Sharp11",
+        "_9Flat13",
+        "_6Sustained4",
+        "_7Sustained4",
+        "major7thSustained4",
+        "_9Sustained4",
+        "major9thSustained4",
+        "root",
+        "dyad1And5",
+        "dyad1And3",
+};
+
+
 
 class Chords{
 public:
@@ -66,6 +128,63 @@ public:
         static Chord dyad1And3(NoteSymbol rootNote, int octave){ return buildChord("Dyad 1 & 3", rootNote, octave, {s::_1, s::_3 }); };
     };
 
+    static Chord createChord(string chordType, string rootNoteAsString, int octave){
+        NoteSymbol rootNote = stringToNoteSymbol(rootNoteAsString);
+        if(chordType == "major"){ return ChordFuncs::major(rootNote, octave); }
+        if(chordType == "minor"){ return ChordFuncs::minor(rootNote, octave); }
+        if(chordType == "major7th"){ return ChordFuncs::major7th(rootNote, octave); }
+        if(chordType == "minor7th"){ return ChordFuncs::minor7th(rootNote, octave); }
+        if(chordType == "minorMajor7th"){ return ChordFuncs::minorMajor7th(rootNote, octave); }
+        if(chordType == "sustained4"){ return ChordFuncs::sustained4(rootNote, octave); }
+        if(chordType == "sustained2"){ return ChordFuncs::sustained2(rootNote, octave); }
+        if(chordType == "_6"){ return ChordFuncs::_6(rootNote, octave); }
+        if(chordType == "minor6"){ return ChordFuncs::minor6(rootNote, octave); }
+        if(chordType == "_9"){ return ChordFuncs::_9(rootNote, octave); }
+        if(chordType == "minor9"){ return ChordFuncs::minor9(rootNote, octave); }
+        if(chordType == "major9"){ return ChordFuncs::major9(rootNote, octave); }
+        if(chordType == "minorMajor9"){ return ChordFuncs::minorMajor9(rootNote, octave); }
+        if(chordType == "_11"){ return ChordFuncs::_11(rootNote, octave); }
+        if(chordType == "minor11"){ return ChordFuncs::minor11(rootNote, octave); }
+        if(chordType == "major11"){ return ChordFuncs::major11(rootNote, octave); }
+        if(chordType == "minorMajor11"){ return ChordFuncs::minorMajor11(rootNote, octave); }
+        if(chordType == "_13"){ return ChordFuncs::_13(rootNote, octave); }
+        if(chordType == "minor13"){ return ChordFuncs::minor13(rootNote, octave); }
+        if(chordType == "major13"){ return ChordFuncs::major13(rootNote, octave); }
+        if(chordType == "minorMajor13"){ return ChordFuncs::minorMajor13(rootNote, octave); }
+        if(chordType == "add9"){ return ChordFuncs::add9(rootNote, octave); }
+        if(chordType == "minorAdd9"){ return ChordFuncs::minorAdd9(rootNote, octave); }
+        if(chordType == "_6add9"){ return ChordFuncs::_6add9(rootNote, octave); }
+        if(chordType == "minor6add9"){ return ChordFuncs::minor6add9(rootNote, octave); }
+        if(chordType == "dominant7th"){ return ChordFuncs::dominant7th(rootNote, octave); }
+        if(chordType == "dominant7thAdd11"){ return ChordFuncs::dominant7thAdd11(rootNote, octave); }
+        if(chordType == "major7thAdd11"){ return ChordFuncs::major7thAdd11(rootNote, octave); }
+        if(chordType == "minor7thAdd11"){ return ChordFuncs::minor7thAdd11(rootNote, octave); }
+        if(chordType == "minorMajor7thAdd11"){ return ChordFuncs::minorMajor7thAdd11(rootNote, octave); }
+        if(chordType == "dominant7thAdd13"){ return ChordFuncs::dominant7thAdd13(rootNote, octave); }
+        if(chordType == "major7thAdd13"){ return ChordFuncs::major7thAdd13(rootNote, octave); }
+        if(chordType == "minor7thAdd13"){ return ChordFuncs::minor7thAdd13(rootNote, octave); }
+        if(chordType == "minorMajor7thAdd13"){ return ChordFuncs::minorMajor7thAdd13(rootNote, octave); }
+        if(chordType == "dominant7thFlat5"){ return ChordFuncs::dominant7thFlat5(rootNote, octave); }
+        if(chordType == "dominant7thSharp5"){ return ChordFuncs::dominant7thSharp5(rootNote, octave); }
+        if(chordType == "dominant7thFlat9"){ return ChordFuncs::dominant7thFlat9(rootNote, octave); }
+        if(chordType == "dominant7thSharp9"){ return ChordFuncs::dominant7thSharp9(rootNote, octave); }
+        if(chordType == "dominant7thSharp5Flat9"){ return ChordFuncs::dominant7thSharp5Flat9(rootNote, octave); }
+        if(chordType == "diminished"){ return ChordFuncs::diminished(rootNote, octave); }
+        if(chordType == "minor7Flat5"){ return ChordFuncs::minor7Flat5(rootNote, octave); }
+        if(chordType == "minor7Sharp5"){ return ChordFuncs::minor7Sharp5(rootNote, octave); }
+        if(chordType == "minor7Flat9"){ return ChordFuncs::minor7Flat9(rootNote, octave); }
+        if(chordType == "_9Sharp11"){ return ChordFuncs::_9Sharp11(rootNote, octave); }
+        if(chordType == "_9Flat13"){ return ChordFuncs::_9Flat13(rootNote, octave); }
+        if(chordType == "_6Sustained4"){ return ChordFuncs::_6Sustained4(rootNote, octave); }
+        if(chordType == "_7Sustained4"){ return ChordFuncs::_7Sustained4(rootNote, octave); }
+        if(chordType == "major7thSustained4"){ return ChordFuncs::major7thSustained4(rootNote, octave); }
+        if(chordType == "_9Sustained4"){ return ChordFuncs::_9Sustained4(rootNote, octave); }
+        if(chordType == "major9thSustained4"){ return ChordFuncs::major9thSustained4(rootNote, octave); }
+        if(chordType == "root"){ return ChordFuncs::root(rootNote, octave); }
+        if(chordType == "dyad1And5"){ return ChordFuncs::dyad1And5(rootNote, octave); }
+        if(chordType == "dyad1And3"){ return ChordFuncs::dyad1And3(rootNote, octave); }
+        return ChordFuncs::major(rootNote, octave);
+    }
 
     static Chord buildChord(string type, NoteSymbol rootNote, int octave, vector<ScaleDegree> pattern){
         auto majorScaleNotes = getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(rootNote, octave);
@@ -189,28 +308,14 @@ public:
         }
         return result;
     }
-//    function buildChord({type='Major', rootNote='c', octave=3, pattern=[], id=generateRandomId(), label=`${rootNote} ${type}`}: Partial<IBuildChordParam>){
-//        // console.log('buildChord called for ', type, rootNote, octave, pattern);
-//        const majorScaleNotes = getMajorScaleNotes({rootNote, octave});
-//        // console.log('majorScaleNotes', majorScaleNotes);
-//        const notes = getNotesFromPattern({pattern, notes: majorScaleNotes});
-//        // console.log('notes', notes);
-//        const chord: IChord = {
-//                id,
-//                label,
-//                octave, //useful when we need to regenerate a chord based on type. let's us construct a new chord with settings of previous.
-//                rootNote,
-//                type,
-//                notes,
-//        };
-//        return chord;
-//    }
 
-
-
-    //function getMajorScaleNotes({rootNote='c', octave=3}: {rootNote: NoteSymbolTypes, octave: number}){
-    //  const notesWithStartingOctave = getNotesWithinOctaveRange({begin: octave, end: octave + 2});
-    //  const majorScaleNotes = getNotesForScale({scale: ScaleTypesEnum.majorIonian, rootNote, notes: notesWithStartingOctave});
-    //  return majorScaleNotes;
-    //}
 };
+
+//
+//void main(){
+//    map<string, std::function<Chord(NoteSymbol, int)> > m = {
+//            {"major", [](NoteSymbol rootNote, int octave){ return Chords::ChordFuncs::major(rootNote, octave); } },
+//    };
+////    m.emplace("major", &Chords::ChordFuncs::major);
+////    m["major"] = [](NoteSymbol rootNote, int octave){ Chords::ChordFuncs::major(rootNote, octave); };
+//}
