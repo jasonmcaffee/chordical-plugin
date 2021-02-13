@@ -2568,6 +2568,8 @@ JuceHeader.h
 string
 -
 
+/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h
+
 /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
 PluginProcessor.h
 /Users/jason/dev/chordical-plugin/Source/PluginProcessor.h
@@ -2634,6 +2636,14 @@ vector
 optional
 -
 
+/Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h
+../../Models/Scale/ScaleType.h
+/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h
+unordered_map
+-
+vector
+-
+
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 ../JuceLibraryCode/JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/JuceLibraryCode/JuceHeader.h
@@ -2651,4 +2661,6 @@ JuceHeader.h
 -
 ../Services/Music/PredefinedNotes.h
 /Users/jason/dev/chordical-plugin/Source/Services/Music/PredefinedNotes.h
+../Services/Music/Scales.h
+/Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h
 

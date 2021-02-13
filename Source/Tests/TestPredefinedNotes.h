@@ -1,6 +1,7 @@
 #pragma once
 #include <JuceHeader.h>
 #include "../Services/Music/PredefinedNotes.h"
+#include "../Services/Music/Scales.h"
 
 class TestPredefinedNotes  : public UnitTest
 {
@@ -9,7 +10,35 @@ public:
 
     void runTest() override
     {
-        beginTest ("Part 1");
+        testPredefinedNotes();
+        testScales();
+
+    }
+
+    void testScales(){
+        beginTest ("Scales");
+        auto noteIndexes = Scales::getScaleNoteIndexes(ScaleType::majorIonian);
+        vector<int> majorIndexes = { 0, 2, 4, 5, 7, 9, 11 };
+        expectEquals(noteIndexes.size(), majorIndexes.size());
+        expectEquals(noteIndexes[0], majorIndexes[0]);
+        expectEquals(noteIndexes[3], majorIndexes[3]);
+        expectEquals(noteIndexes[4], majorIndexes[4]);
+
+        auto notesForKey = Scales::getNotesForKey(ScaleType::majorIonian, NoteSymbol::c);
+        expectEquals(notesForKey[0].noteSymbol, NoteSymbol::c);
+        expectEquals(notesForKey[0].octave, 0);
+        expectEquals(notesForKey[1].noteSymbol, NoteSymbol::d);
+        expectEquals(notesForKey[2].noteSymbol, NoteSymbol::e);
+        expectEquals(notesForKey[3].noteSymbol, NoteSymbol::f);
+        expectEquals(notesForKey[4].noteSymbol, NoteSymbol::g);
+        expectEquals(notesForKey[5].noteSymbol, NoteSymbol::a);
+        expectEquals(notesForKey[6].noteSymbol, NoteSymbol::b);
+        expectEquals(notesForKey[7].noteSymbol, NoteSymbol::c);
+        expectEquals(notesForKey[7].octave, 1);
+    }
+
+    void testPredefinedNotes(){
+        beginTest ("Predefined Notes");
 
         auto predefinedNote = PredefinedNotes::findNoteByNoteSymbolAndOctave(NoteSymbol::c, 0);
         expectEquals(predefinedNote->octave, 0);
@@ -23,8 +52,40 @@ public:
         expectEquals(note.noteSymbol, NoteSymbol::g);
         expect((note.octave == 1));//should always be 1 since a0 is not on 88 key keyboard
 
-        beginTest ("Part 2");
+        note = *PredefinedNotes::getNoteByMidiNoteNumber(108);
+        expectEquals(note.noteSymbol, NoteSymbol::c);
+        expectEquals(note.octave, 8);
 
+        auto predefinedNotes = PredefinedNotes::getNotesStartingAtRootNote(NoteSymbol::c);
+        expectEquals((int)predefinedNotes.size(), 144);
+        expectEquals(predefinedNotes[0].noteSymbol, NoteSymbol::c);
+        predefinedNotes = PredefinedNotes::getNotesStartingAtRootNote(NoteSymbol::d);
+        expectEquals((int)predefinedNotes.size(), 142);
+        expectEquals(predefinedNotes[0].noteSymbol, NoteSymbol::d);
+
+        predefinedNotes = PredefinedNotes::getNotesWithinOctaveRange(0, 0);
+        expectEquals((int)predefinedNotes.size(), 12);
+        expectEquals(predefinedNotes[0].noteSymbol, NoteSymbol::c);
+
+        //flatten note
+        note = PredefinedNotes::getNotes()[1]; //cSharp 0
+        auto flattenedNote = PredefinedNotes::flattenNote(note);
+        expectEquals(flattenedNote.noteSymbol, NoteSymbol::c);
+        expectEquals(flattenedNote.octave, 0);
+        //if first note, flatten should return first note (rather than have to deal with null checking all the time)
+        note = PredefinedNotes::getNotes()[0]; //c 0
+        flattenedNote = PredefinedNotes::flattenNote(note);
+        expectEquals(note.midiNoteNumber, flattenedNote.midiNoteNumber);
+
+        //sharpen note
+        note = PredefinedNotes::getNotes()[0]; //c 0
+        auto sharpenedNote = PredefinedNotes::sharpenNote(note);
+        expectEquals(sharpenedNote.noteSymbol, NoteSymbol::cSharp);
+        expectEquals(sharpenedNote.octave, 0);
+        //if last note, sharpen should return the last not (rather than have to deal with null checking all the time)
+        note = PredefinedNotes::getNotes()[143];
+        sharpenedNote = PredefinedNotes::sharpenNote(note);
+        expectEquals(note.midiNoteNumber, sharpenedNote.midiNoteNumber);
     }
 };
 

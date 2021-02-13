@@ -174,15 +174,21 @@ public:
         return note.midiNoteNumber >= 21 && note.midiNoteNumber <= 108;
     }
 
+    /**
+     * When we want to get a predefined note with random octave for a note symbol.
+     * Useful when randomizing the voicings of a chord.
+     * @param noteSymbol
+     * @param minOctave
+     * @param maxOctave
+     * @return
+     */
     static PredefinedNote createNoteWithRandomOctave(NoteSymbol noteSymbol, int minOctave, int maxOctave){
         int octave = generateRandomNumber(minOctave, maxOctave);
-        cout << "random octave: " << octave << endl;
         // console.error(`octave is : ${octave}`);
         auto note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
-        cout << "note found: " << note->midiNoteNumber << endl;
         //if the random octave isn't on the keyboard, try min then max
         if(note && !isNoteOn88KeyKeyboard(*note)){
-            cout << "note is not on 88 keyboard" << endl;
+            //find lowest note for note symbol that is on the keyboard
             PredefinedNote* lowestNoteOnKeyboard;
             for(int i = minOctave; i <= maxOctave; ++i){
                 auto n = findNoteByNoteSymbolAndOctave(noteSymbol, i);
@@ -191,7 +197,7 @@ public:
                     break;
                 }
             }
-            cout << "lowest found: " << lowestNoteOnKeyboard->midiNoteNumber << endl;
+            //find highest note for note symbol on the keyboard
             PredefinedNote* highestNoteOnKeyboard;
             for(int i = maxOctave; i >= minOctave; --i){
                 auto n = findNoteByNoteSymbolAndOctave(noteSymbol, i);
@@ -200,15 +206,69 @@ public:
                     break;
                 }
             }
-            cout << "highest found: " << highestNoteOnKeyboard->midiNoteNumber << endl;
             if(lowestNoteOnKeyboard && highestNoteOnKeyboard){
                 octave = generateRandomNumber(lowestNoteOnKeyboard->octave, highestNoteOnKeyboard->octave);
-                cout << " new octave " << octave << endl;
                 note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
-                cout << " new note found: " << note-> midiNoteNumber << endl;
             }
         }
         return *note;
+    }
+
+    static PredefinedNote *getNoteByMidiNoteNumber(int midiNoteNumber){
+        for(auto & note : predefinedNotesVector){
+            if(note.midiNoteNumber == midiNoteNumber){
+                return &note;
+            }
+        }
+        return nullptr;
+    }
+
+    static vector<PredefinedNote> getNotesStartingAtRootNote(NoteSymbol rootNoteSymbol){
+        int beginIndex = 0;
+        int endIndex = predefinedNotesVector.size();
+        for(int i = 0; i < predefinedNotesVector.size(); ++i){
+            auto note = predefinedNotesVector[i];
+            if(note.noteSymbol == rootNoteSymbol){
+                beginIndex = i;
+                break;
+            }
+        }
+        auto first = predefinedNotesVector.begin() + beginIndex;
+        auto last = predefinedNotesVector.begin() + endIndex;
+        return vector<PredefinedNote>(first, last);
+    }
+
+    static vector<PredefinedNote> getNotesWithinOctaveRange(int minOctave, int maxOctave){
+        vector<PredefinedNote> result = {};
+        for(auto & note : predefinedNotesVector){
+            if(note.octave >= minOctave && note.octave <= maxOctave){
+                result.push_back(note);
+            }
+        }
+        return result;
+    }
+
+    static PredefinedNote flattenNote(const PredefinedNote note){
+        //find the index
+        vector<PredefinedNote>::iterator it = std::find(predefinedNotesVector.begin(), predefinedNotesVector.end(), note);
+        if(it != predefinedNotesVector.end()){ // If element is found then it returns an iterator to the first element in the given range that’s equal to given element, else it returns an end of the list
+            auto index = std::distance(predefinedNotesVector.begin(), it);
+            auto newIndex = index - 1 >= 0 ? index - 1 : 0;
+            auto flattenedNote = predefinedNotesVector[newIndex];
+            return flattenedNote;
+        }
+        return note;
+    }
+
+    static PredefinedNote sharpenNote(const PredefinedNote note){
+        vector<PredefinedNote>::iterator it = std::find(predefinedNotesVector.begin(), predefinedNotesVector.end(), note);
+        if(it != predefinedNotesVector.end()){ // If element is found then it returns an iterator to the first element in the given range that’s equal to given element, else it returns an end of the list
+            auto index = std::distance(predefinedNotesVector.begin(), it);
+            auto newIndex = index + 1 >= predefinedNotesVector.size() ? predefinedNotesVector.size() - 1 : index + 1;
+            auto sharpenedNote = predefinedNotesVector[newIndex];
+            return sharpenedNote;
+        }
+        return note;
     }
 
     static int generateRandomNumber(int min, int max){

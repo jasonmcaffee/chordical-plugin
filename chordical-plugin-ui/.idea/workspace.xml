@@ -2,38 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Source/Models/Scale/ScaleType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Services/Music/Scales.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_basics.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_devices.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_formats.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_processors.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_audio_utils.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_cryptography.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/VST3.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/VST3.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/MacOSX/chordical-plugin.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/MacOSX/chordical-plugin.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Models/Note/PredefinedNote.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Models/Note/PredefinedNote.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Services/Music/PredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/PredefinedNotes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/music/notes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/music/notes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +30,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="3" />
           <entry key="scss" value="16" />
-          <entry key="ts" value="29" />
+          <entry key="ts" value="31" />
           <entry key="tsx" value="14" />
         </counts>
       </usages-collector>
@@ -60,7 +41,7 @@
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="SCSS" value="16" />
-          <entry key="TypeScript" value="29" />
+          <entry key="TypeScript" value="31" />
           <entry key="TypeScript JSX" value="14" />
         </counts>
       </usages-collector>
@@ -135,17 +116,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="59" column="14" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="59" selection-end-column="14" />
+            <state relative-caret-position="1325">
+              <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style/components/keyboard/keyboard.scss">
+        <entry file="file://$PROJECT_DIR$/src/models/music/scales.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+            <state relative-caret-position="1352">
+              <caret line="52" column="49" lean-forward="true" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="618">
+              <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -173,15 +163,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/style/components/autochorder/slot-card.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -869,19 +850,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30356000" />
+    <option name="totallyTimeSpent" value="32503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12568952" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12568952" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32967836" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32967836" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -891,7 +872,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34502923" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.34502923" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1074,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="441" column="59" selection-start-line="441" selection-start-column="59" selection-end-line="441" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/ISlot.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1201,10 +1175,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/music/scales.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1352">
+          <caret line="52" column="49" lean-forward="true" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/music/notes.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="59" column="14" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="59" selection-end-column="14" />
+        <state relative-caret-position="1325">
+          <caret line="122" column="45" lean-forward="true" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
         </state>
       </provider>
     </entry>
