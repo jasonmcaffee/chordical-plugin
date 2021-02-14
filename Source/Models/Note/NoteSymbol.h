@@ -1,6 +1,8 @@
 #pragma once
-using<vector>;
+
+#include<vector>
 using namespace std;
+
 enum NoteSymbol{
     c,
     cSharp,

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Models/Scale/ScaleType.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Models/Scale/ScaleType.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

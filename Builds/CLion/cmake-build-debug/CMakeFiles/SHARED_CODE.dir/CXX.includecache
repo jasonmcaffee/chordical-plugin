@@ -2571,6 +2571,8 @@ vector
 -
 
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
+vector
+-
 
 /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
 ./NoteSymbol.h
@@ -2581,6 +2583,10 @@ string
 /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h
 
 /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h
+vector
+-
+string
+-
 
 /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp
 PluginProcessor.h
