@@ -26,15 +26,17 @@ public:
     }
 
     static String toJSONString(const vector<PredefinedNote>& notes){
-        String result = "";
+//        String result = "";
+        var array;
         for(auto & note : notes){
             String noteString = toJSONString(note);
-            result = result + noteString;
+//            result = result + noteString;
+            array.append(noteString);
         }
-        return result;
+        return JSON::toString(array);
     }
 
-    static PredefinedNote fromJSONString(String& noteString){
+    static PredefinedNote fromJSONString(String noteString){
         String decodedNoteString = Util::urlDecode(noteString.toStdString());
         juce::var json;
         if(juce::JSON::parse(decodedNoteString, json).wasOk()){
@@ -50,10 +52,29 @@ public:
                 return note;
             }catch(exception& e){
                 std::cout << "exception parsing predefined note json: " << e.what() << std::endl;
+                throw e;
+            }
+        }
+        throw std::invalid_argument("json for PredefinedNote could not be parsed");
+    }
+
+    static vector<PredefinedNote> fromJSONStringArray(String notesString){
+        vector<PredefinedNote> result = {};
+        String decodedNoteString = Util::urlDecode(notesString.toStdString());
+        juce::var json;
+        if(juce::JSON::parse(decodedNoteString, json).wasOk()){
+            try{
+                Array<var>* notesArray = json.getArray();
+                for(auto & note: *notesArray){
+                    auto deserializedNote = fromJSONString(note.toString());
+                    result.push_back(deserializedNote);
+                }
+            }catch(exception& e){
+                std::cout << "exception parsing predefined note array: " << e.what() << std::endl;
+                throw e;
             }
 
         }
-        throw 20;
-//        return nullptr;
+        return result;
     }
 };

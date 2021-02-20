@@ -2735,4 +2735,6 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
 JuceHeader.h
 -
+vector
+-
 

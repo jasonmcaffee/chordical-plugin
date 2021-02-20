@@ -5,7 +5,9 @@
 #include "../Services/Music/Chords.h"
 #include "../Factories/PredefinedNoteFactory.h"
 #include <JuceHeader.h>
+#include <vector>
 using namespace juce;
+using namespace std;
 
 class TestPredefinedNotes  : public UnitTest
 {
@@ -31,6 +33,17 @@ public:
         expectEquals(note.octave, parsedNote.octave);
         expectEquals(note.midiNoteNumber, parsedNote.midiNoteNumber);
         expectEquals(note.frequency, parsedNote.frequency);
+
+        auto note2 = PredefinedNote{"d0", NoteSymbol::d, 0, 14, 9.177023997418988};
+        vector<PredefinedNote> notes = {note, note2};
+        String notesString = PredefinedNoteFactory::toJSONString(notes);
+        std::cout << "notes string: " << notesString.toStdString() << std::endl;
+        auto parsedNotes = PredefinedNoteFactory::fromJSONStringArray(notesString);
+        expectEquals(notes.size(), parsedNotes.size());
+        expectEquals(notes[0].noteSymbol, parsedNotes[0].noteSymbol);
+        expectEquals(notes[1].noteSymbol, parsedNotes[1].noteSymbol);
+        expectEquals(notes[0].frequency, parsedNotes[0].frequency);
+        expectEquals(notes[1].frequency, parsedNotes[1].frequency);
     }
 
     void testChords(){
