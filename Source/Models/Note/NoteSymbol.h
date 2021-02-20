@@ -4,18 +4,18 @@
 using namespace std;
 
 enum NoteSymbol{
-    c,
-    cSharp,
-    d,
-    dSharp,
-    e,
-    f,
-    fSharp,
-    g,
-    gSharp,
-    a,
-    aSharp,
-    b,
+    c = 0,
+    cSharp = 1,
+    d = 2,
+    dSharp = 3,
+    e = 4,
+    f = 5,
+    fSharp = 6,
+    g = 7,
+    gSharp = 8,
+    a = 9,
+    aSharp = 10,
+    b = 11,
 };
 
 vector<string> notes = { "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b" };

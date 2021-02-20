@@ -158,11 +158,11 @@ vector<PredefinedNote> predefinedNotesVector = {
 class PredefinedNotes{
 public:
 
-    static vector<PredefinedNote> getNotes(){
+    const static vector<PredefinedNote> &getNotes(){
         return predefinedNotesVector;
     }
 
-    static PredefinedNote *findNoteByNoteSymbolAndOctave(NoteSymbol noteSymbol, int octave){
+    static PredefinedNote *findNoteByNoteSymbolAndOctave(const NoteSymbol& noteSymbol, const int& octave){
         for(auto & note : predefinedNotesVector){
             if(note.noteSymbol == noteSymbol && note.octave == octave){
                 return &note;
@@ -171,7 +171,7 @@ public:
         return nullptr;
     }
 
-    static bool isNoteOn88KeyKeyboard(PredefinedNote note){
+    static bool isNoteOn88KeyKeyboard(const PredefinedNote& note){
         return note.midiNoteNumber >= 21 && note.midiNoteNumber <= 108;
     }
 
@@ -183,7 +183,7 @@ public:
      * @param maxOctave
      * @return
      */
-    static PredefinedNote createNoteWithRandomOctave(NoteSymbol noteSymbol, int minOctave, int maxOctave){
+    static PredefinedNote createNoteWithRandomOctave(const NoteSymbol& noteSymbol, const int& minOctave, const int& maxOctave){
         int octave = Util::generateRandomNumber(minOctave, maxOctave);
         // console.error(`octave is : ${octave}`);
         auto note = findNoteByNoteSymbolAndOctave(noteSymbol, octave);
@@ -215,7 +215,7 @@ public:
         return *note;
     }
 
-    static PredefinedNote *getNoteByMidiNoteNumber(int midiNoteNumber){
+    static PredefinedNote *getNoteByMidiNoteNumber(const int& midiNoteNumber){
         for(auto & note : predefinedNotesVector){
             if(note.midiNoteNumber == midiNoteNumber){
                 return &note;
@@ -224,7 +224,7 @@ public:
         return nullptr;
     }
 
-    static vector<PredefinedNote> getNotesStartingAtRootNote(NoteSymbol rootNoteSymbol, vector<PredefinedNote> predefinedNotesParam = predefinedNotesVector){
+    static vector<PredefinedNote> getNotesStartingAtRootNote(const NoteSymbol& rootNoteSymbol, const vector<PredefinedNote>& predefinedNotesParam = predefinedNotesVector){
         int beginIndex = 0;
         int endIndex = predefinedNotesParam.size();
         for(int i = 0; i < predefinedNotesParam.size(); ++i){
@@ -239,7 +239,7 @@ public:
         return vector<PredefinedNote>(first, last);
     }
 
-    static vector<PredefinedNote> getNotesWithinOctaveRange(int minOctave, int maxOctave){
+    static vector<PredefinedNote> getNotesWithinOctaveRange(const int& minOctave, const int& maxOctave){
         vector<PredefinedNote> result = {};
         for(auto & note : predefinedNotesVector){
             if(note.octave >= minOctave && note.octave <= maxOctave){
@@ -249,7 +249,7 @@ public:
         return result;
     }
 
-    static PredefinedNote flattenNote(const PredefinedNote note){
+    static PredefinedNote flattenNote(const PredefinedNote& note){
         //find the index
         vector<PredefinedNote>::iterator it = std::find(predefinedNotesVector.begin(), predefinedNotesVector.end(), note);
         if(it != predefinedNotesVector.end()){ // If element is found then it returns an iterator to the first element in the given range that’s equal to given element, else it returns an end of the list
@@ -261,7 +261,7 @@ public:
         return note;
     }
 
-    static PredefinedNote sharpenNote(const PredefinedNote note){
+    static PredefinedNote sharpenNote(const PredefinedNote& note){
         vector<PredefinedNote>::iterator it = std::find(predefinedNotesVector.begin(), predefinedNotesVector.end(), note);
         if(it != predefinedNotesVector.end()){ // If element is found then it returns an iterator to the first element in the given range that’s equal to given element, else it returns an end of the list
             auto index = std::distance(predefinedNotesVector.begin(), it);

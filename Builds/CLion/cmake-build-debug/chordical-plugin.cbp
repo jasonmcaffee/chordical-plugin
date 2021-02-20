@@ -4802,6 +4802,18 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm">
 			<Option target="SHARED_CODE"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h">
 			<Option target="AU"/>
 			<Option target="STANDALONE_PLUGIN"/>
@@ -4809,6 +4821,30 @@
 			<Option target="VST3"/>
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Preset/KeySignatureGroup.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Preset/Slot.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Scale/KeySignature.h">
 			<Option target="AU"/>
 			<Option target="STANDALONE_PLUGIN"/>
 			<Option target="SHARED_CODE"/>

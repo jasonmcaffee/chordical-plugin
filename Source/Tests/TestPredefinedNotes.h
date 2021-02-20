@@ -3,6 +3,9 @@
 #include "../Services/Music/PredefinedNotes.h"
 #include "../Services/Music/Scales.h"
 #include "../Services/Music/Chords.h"
+#include "../Factories/PredefinedNoteFactory.h"
+#include <JuceHeader.h>
+using namespace juce;
 
 class TestPredefinedNotes  : public UnitTest
 {
@@ -14,6 +17,20 @@ public:
         testPredefinedNotes();
         testScales();
         testChords();
+        testFactories();
+    }
+
+    void testFactories(){
+        beginTest("Factories");
+
+        auto note = PredefinedNote{"c0", NoteSymbol::c, 0, 12, 8.175798915643707};
+        String noteString = PredefinedNoteFactory::toJSONString(note);
+        auto parsedNote = PredefinedNoteFactory::fromJSONString(noteString);
+        expectEquals(note.id, parsedNote.id);
+        expectEquals(note.noteSymbol, parsedNote.noteSymbol);
+        expectEquals(note.octave, parsedNote.octave);
+        expectEquals(note.midiNoteNumber, parsedNote.midiNoteNumber);
+        expectEquals(note.frequency, parsedNote.frequency);
     }
 
     void testChords(){

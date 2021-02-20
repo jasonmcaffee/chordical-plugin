@@ -2560,6 +2560,24 @@ JuceHeader.h
 ../Services/EventBus/EventBus.h
 /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 
+/Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
+../Models/Chord/Chord.h
+/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
+../Models/Note/PredefinedNote.h
+/Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
+../Services/Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+../Models/Note/NoteSymbol.h
+/Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
+../Services/Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+JuceHeader.h
+-
+vector
+-
+exception
+-
+
 /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
 ../Note/NoteSymbol.h
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
@@ -2689,6 +2707,8 @@ vector
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/JuceLibraryCode/JuceHeader.h
 
 /Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+JuceHeader.h
+-
 cstdlib
 -
 string
@@ -2711,4 +2731,8 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h
 ../Services/Music/Chords.h
 /Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h
+../Factories/PredefinedNoteFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
+JuceHeader.h
+-
 

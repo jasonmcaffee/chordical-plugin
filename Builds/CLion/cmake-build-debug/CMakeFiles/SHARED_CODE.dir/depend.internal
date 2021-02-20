@@ -5765,6 +5765,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
  /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
  /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
  /Users/jason/dev/chordical-plugin/Source/Factories/Message.h
+ /Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
  /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
  /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
  /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h

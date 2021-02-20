@@ -53,12 +53,12 @@ unordered_map<ScaleType, vector<int>> scaleNoteIndexes = {
 
 class Scales{
 public:
-    static vector<int> getScaleNoteIndexes(ScaleType scaleType){
+    static vector<int> getScaleNoteIndexes(const ScaleType& scaleType){
         auto noteIndexes = scaleNoteIndexes[scaleType];
         return noteIndexes;
     }
 
-    static vector<PredefinedNote> getNotesForKey(ScaleType scaleType, NoteSymbol rootNote, vector<PredefinedNote> predefinedNotesParam = PredefinedNotes::getNotes()){
+    static vector<PredefinedNote> getNotesForKey(const ScaleType& scaleType, const NoteSymbol& rootNote, const vector<PredefinedNote>& predefinedNotesParam = PredefinedNotes::getNotes()){
         auto notes = PredefinedNotes::getNotesStartingAtRootNote(rootNote, predefinedNotesParam);
         auto noteIndexes = getScaleNoteIndexes(scaleType);
         vector<PredefinedNote> result = {};
