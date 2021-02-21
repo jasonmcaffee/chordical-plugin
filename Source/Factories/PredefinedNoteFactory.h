@@ -26,25 +26,28 @@ public:
     }
 
     static String toJSONString(const vector<PredefinedNote>& notes){
-//        String result = "";
-        var array;
-        for(auto & note : notes){
-            String noteString = toJSONString(note);
-//            result = result + noteString;
-            array.append(noteString);
-        }
+        var array = toVarArray(notes);
         return JSON::toString(array);
     }
 
+    static var toVarArray(const vector<PredefinedNote>& notes){
+        var array;
+        for(auto & note : notes){
+            String noteString = toJSONString(note);
+            array.append(noteString);
+        }
+        return array;
+    }
+
     static PredefinedNote fromJSONString(String noteString){
-        String decodedNoteString = Util::urlDecode(noteString.toStdString());
-        juce::var json;
-        if(juce::JSON::parse(decodedNoteString, json).wasOk()){
+//        String decodedNoteString = Util::urlDecode(noteString.toStdString());
+        String decodedNoteString = noteString;
+        var json;
+        if(JSON::parse(decodedNoteString, json).wasOk()){
             try{
                 string id = json["id"].toString().toStdString();
                 string noteSymbolString = json["noteSymbol"].toString().toStdString();
                 NoteSymbol noteSymbol = stringToNoteSymbol(json["noteSymbol"].toString().toStdString());
-                std::cout << "note symbol string: " << noteSymbolString << " noteSymbol: " << noteSymbol << std::endl;
                 int octave = json["octave"];
                 int midiNoteNumber = json["midiNoteNumber"];
                 float frequency = json["frequency"];
@@ -60,9 +63,10 @@ public:
 
     static vector<PredefinedNote> fromJSONStringArray(String notesString){
         vector<PredefinedNote> result = {};
-        String decodedNoteString = Util::urlDecode(notesString.toStdString());
-        juce::var json;
-        if(juce::JSON::parse(decodedNoteString, json).wasOk()){
+//        String decodedNoteString = Util::urlDecode(notesString.toStdString());
+        String decodedNoteString = notesString;
+        var json;
+        if(JSON::parse(decodedNoteString, json).wasOk()){
             try{
                 Array<var>* notesArray = json.getArray();
                 for(auto & note: *notesArray){

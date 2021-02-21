@@ -4,6 +4,7 @@
 #include "../Services/Music/Scales.h"
 #include "../Services/Music/Chords.h"
 #include "../Factories/PredefinedNoteFactory.h"
+#include "../Factories/ChordFactory.h"
 #include <JuceHeader.h>
 #include <vector>
 using namespace juce;
@@ -24,7 +25,30 @@ public:
 
     void testFactories(){
         beginTest("Factories");
+        testPredefinedNotesFactory();
+        testChordFactory();
 
+    }
+
+    void testChordFactory(){
+        beginTest("ChordFactory");
+        auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        String chordString = ChordFactory::toJsonString(chord);
+        auto parsedChord = ChordFactory::fromJSONString(chordString);
+        expectEquals(chord.id, parsedChord.id);
+        expectEquals(chord.label, parsedChord.label);
+        expectEquals(chord.octave, parsedChord.octave);
+        expectEquals(chord.rootNote, parsedChord.rootNote);
+        expectEquals(chord.type, parsedChord.type);
+        expectEquals(chord.notes.size(), parsedChord.notes.size());
+        expectEquals(chord.notes[0].noteSymbol, parsedChord.notes[0].noteSymbol);
+        expectEquals(chord.notes[1].noteSymbol, parsedChord.notes[1].noteSymbol);
+        expectEquals(chord.notes[2].noteSymbol, parsedChord.notes[2].noteSymbol);
+
+    }
+
+    void testPredefinedNotesFactory(){
+        beginTest("PredefinedNotesFactory");
         auto note = PredefinedNote{"c0", NoteSymbol::c, 0, 12, 8.175798915643707};
         String noteString = PredefinedNoteFactory::toJSONString(note);
         auto parsedNote = PredefinedNoteFactory::fromJSONString(noteString);

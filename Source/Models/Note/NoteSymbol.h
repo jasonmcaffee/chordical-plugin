@@ -18,7 +18,7 @@ enum NoteSymbol{
     b = 11,
 };
 
-vector<string> notes = { "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b" };
+//vector<string> notes = { "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b" };
 
 inline string noteSymbolToString(NoteSymbol noteSymbol){
     switch(noteSymbol){

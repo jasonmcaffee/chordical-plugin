@@ -2554,6 +2554,20 @@ random
 sstream
 -
 
+/Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h
+../Models/Chord/Chord.h
+/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
+../Services/Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+../Models/Note/NoteSymbol.h
+/Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
+./PredefinedNoteFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
+JuceHeader.h
+-
+vector
+-
+
 /Users/jason/dev/chordical-plugin/Source/Factories/Message.h
 JuceHeader.h
 -
@@ -2733,6 +2747,8 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h
 ../Factories/PredefinedNoteFactory.h
 /Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
+../Factories/ChordFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h
 JuceHeader.h
 -
 vector
