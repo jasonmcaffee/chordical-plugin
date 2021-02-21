@@ -77,8 +77,10 @@ public:
                 std::cout << "exception parsing predefined note array: " << e.what() << std::endl;
                 throw e;
             }
+            return result;
 
         }
-        return result;
+        std::cout << "notes string could not be parsed" << std::endl;
+        throw std::invalid_argument("notes string could not be parsed");
     }
 };

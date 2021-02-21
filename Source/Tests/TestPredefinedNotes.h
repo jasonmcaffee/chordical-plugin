@@ -45,6 +45,18 @@ public:
         expectEquals(chord.notes[1].noteSymbol, parsedChord.notes[1].noteSymbol);
         expectEquals(chord.notes[2].noteSymbol, parsedChord.notes[2].noteSymbol);
 
+        auto chord2 = Chords::ChordFuncs::major(NoteSymbol::d, 0);
+        vector<Chord> chords = {chord, chord2};
+        auto chordsString = ChordFactory::toJsonString(chords);
+        auto parsedChords = ChordFactory::fromJSONStringArray(chordsString);
+        expectEquals(chords.size(), parsedChords.size());
+        expectEquals(chords[0].notes.size(), parsedChords[0].notes.size());
+        expectEquals(chords[1].notes.size(), parsedChords[1].notes.size());
+        expectEquals(chords[0].notes[0].noteSymbol, parsedChords[0].notes[0].noteSymbol);
+        expectEquals(chords[0].notes[1].noteSymbol, parsedChords[0].notes[1].noteSymbol);
+        expectEquals(chords[1].notes[0].noteSymbol, parsedChords[1].notes[0].noteSymbol);
+        expectEquals(chords[1].notes[1].noteSymbol, parsedChords[1].notes[1].noteSymbol);
+
     }
 
     void testPredefinedNotesFactory(){
@@ -61,7 +73,6 @@ public:
         auto note2 = PredefinedNote{"d0", NoteSymbol::d, 0, 14, 9.177023997418988};
         vector<PredefinedNote> notes = {note, note2};
         String notesString = PredefinedNoteFactory::toJSONString(notes);
-        std::cout << "notes string: " << notesString.toStdString() << std::endl;
         auto parsedNotes = PredefinedNoteFactory::fromJSONStringArray(notesString);
         expectEquals(notes.size(), parsedNotes.size());
         expectEquals(notes[0].noteSymbol, parsedNotes[0].noteSymbol);

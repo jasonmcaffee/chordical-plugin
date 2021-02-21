@@ -24,20 +24,23 @@ public:
     }
 
     static String toJsonString(const vector<Chord>& chords){
-        var array;
-        for(auto & chord: chords){
-            auto chordString = toJsonString(chord);
-            array.append(chordString);
-        }
+        var array = toVarArray(chords);
         return JSON::toString(array);
+    }
+
+    static var toVarArray(const vector<Chord>& chords){
+        var array;
+        for(auto & chord : chords){
+            array.append(toJsonString(chord));
+        }
+        return array;
     }
 
     static Chord fromJSONString(String chordString){
 //        String decodedNoteString = Util::urlDecode(chordString.toStdString());
-        String decodedNoteString = chordString;
-        std::cout << "chord string: " << decodedNoteString << std::endl;
+        String decodedChordString = chordString;
         var json;
-        if(JSON::parse(decodedNoteString, json).wasOk()){
+        if(JSON::parse(decodedChordString, json).wasOk()){
             try{
                 string id = json["id"].toString().toStdString();
                 string label = json["label"].toString().toStdString();
@@ -49,7 +52,6 @@ public:
                 Array<var>* notesArray = json["notes"].getArray();
                 if(notesArray != nullptr){
                     String notesArrayString = JSON::toString(*notesArray);
-                    std::cout << "notesArrayString : " << notesArrayString << std::endl;
                     notes = PredefinedNoteFactory::fromJSONStringArray(notesArrayString);
                 }
 
@@ -60,7 +62,27 @@ public:
                 throw e;
             }
         }
-        throw std::invalid_argument("json for PredefinedNote could not be parsed");
+        throw std::invalid_argument("json for Chord could not be parsed");
+    }
+
+    static vector<Chord> fromJSONStringArray(String chordsString){
+        std::cout << "chordsString: " << chordsString << std::endl;
+        vector<Chord> result = {};
+        var json;
+        if(JSON::parse(chordsString, json).wasOk()){
+            try{
+                Array<var>* chordsArray = json.getArray();
+                for(auto & chord : *chordsArray){
+                    auto deserializedChord = fromJSONString(chord.toString());
+                    result.push_back(deserializedChord);
+                }
+            }catch(exception& e){
+                std::cout << "error parsing chord in chords string: " << e.what() << std::endl;
+                throw e;
+            }
+            return result;
+        }
+        throw std::invalid_argument("chordsString could not be parsed");
     }
 };
 
