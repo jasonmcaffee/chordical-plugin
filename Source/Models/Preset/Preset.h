@@ -7,6 +7,4 @@ class Preset{
 public:
     string id;
     vector<KeySignatureGroup> keySignatureGroups;
-    int randomizationMinOctave;
-    int randomizationMaxOctave;
 };

@@ -5766,9 +5766,11 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/Message.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/SlotFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Preset/Slot.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp

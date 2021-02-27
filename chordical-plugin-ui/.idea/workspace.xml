@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Source/Factories/ChordFactory.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Preset/KeySignatureGroup.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Preset/Preset.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Preset/Slot.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/Models/Scale/KeySignature.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Services/Util/Util.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Util/Util.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="412">
+              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -239,7 +228,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -851,10 +840,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35508000" />
+    <option name="totallyTimeSpent" value="35660000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12568952" />
@@ -1192,8 +1181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="412">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>

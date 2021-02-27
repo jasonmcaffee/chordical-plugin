@@ -9,5 +9,4 @@ public:
     Chord chord;
     int midiNoteTrigger;
     int qwertyKeyCodeTrigger;
-
 };

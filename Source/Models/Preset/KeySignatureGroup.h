@@ -10,4 +10,6 @@ public:
     string id;
     vector<Slot> slots;
     KeySignature keySignature;
+    int randomizationMinOctave;
+    int randomizationMaxOctave;
 };

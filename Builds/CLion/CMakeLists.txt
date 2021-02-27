@@ -20,7 +20,7 @@ add_library (VST3 MODULE
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp"
     "PkgInfo"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h)
+        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/VST3/juce_VST3_Wrapper.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -35,7 +35,7 @@ add_library (AU MODULE
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm"
     "PkgInfo"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h)
+        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/AU/juce_AU_Wrapper.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -46,7 +46,7 @@ set_source_files_properties ("../../../JUCE/modules/juce_audio_processors/format
 add_executable (STANDALONE_PLUGIN
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h)
+        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h)
 
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 
@@ -1527,7 +1527,7 @@ add_library (SHARED_CODE STATIC
     "../../JuceLibraryCode/include_juce_gui_extra.mm"
     "../../JuceLibraryCode/include_juce_opengl.mm"
     "../../JuceLibraryCode/JuceHeader.h"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h)
+        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h)
 
 set_source_files_properties ("../../Source/ResourceFiles/c4.wav" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/PluginProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)

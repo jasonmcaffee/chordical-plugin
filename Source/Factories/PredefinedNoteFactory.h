@@ -4,7 +4,6 @@
 #include "../Models/Note/PredefinedNote.h"
 #include "../Services/Util/Util.h"
 #include "../Models/Note/NoteSymbol.h"
-#include "../Services/Util/Util.h"
 #include <JuceHeader.h>
 #include <vector>
 #include <exception>

@@ -5,6 +5,8 @@
 #include "../Services/Music/Chords.h"
 #include "../Factories/PredefinedNoteFactory.h"
 #include "../Factories/ChordFactory.h"
+#include "../Factories/SlotFactory.h"
+#include "../Models/Preset/Slot.h"
 #include <JuceHeader.h>
 #include <vector>
 using namespace juce;
@@ -27,6 +29,38 @@ public:
         beginTest("Factories");
         testPredefinedNotesFactory();
         testChordFactory();
+        testSlotFactory();
+    }
+
+    void testSlotFactory(){
+        beginTest("SlotFactory");
+        auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        int midiNoteTrigger = 11;
+        int qwertyKeyCodeTrigger = 12;
+        auto slot = Slot{chord, midiNoteTrigger, qwertyKeyCodeTrigger};
+        String slotString = SlotFactory::toJSONString(slot);
+        auto parsedSlot = SlotFactory::fromJSONString(slotString);
+        expectEquals(slot.chord.id, parsedSlot.chord.id);
+        expectEquals(slot.chord.rootNote, parsedSlot.chord.rootNote);
+        expectEquals(slot.chord.notes.size(), parsedSlot.chord.notes.size());
+        expectEquals(slot.qwertyKeyCodeTrigger, parsedSlot.qwertyKeyCodeTrigger);
+        expectEquals(slot.midiNoteTrigger, parsedSlot.midiNoteTrigger);
+
+        auto chord2 = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        int midiNoteTrigger2 = 11;
+        int qwertyKeyCodeTrigger2 = 12;
+        auto slot2 = Slot{chord2, midiNoteTrigger2, qwertyKeyCodeTrigger2};
+
+        vector<Slot> slots = {slot, slot2};
+        String slotsString = SlotFactory::toJSONString(slots);
+        auto parsedSlots = SlotFactory::fromJsonStringArray(slotsString);
+        expectEquals(slots.size(), parsedSlots.size());
+        expectEquals(slots[0].chord.rootNote, parsedSlots[0].chord.rootNote);
+        expectEquals(slots[0].chord.octave, parsedSlots[0].chord.octave);
+        expectEquals(slots[0].chord.type, parsedSlots[0].chord.type);
+        expectEquals(slots[1].chord.rootNote, parsedSlots[1].chord.rootNote);
+        expectEquals(slots[1].chord.octave, parsedSlots[1].chord.octave);
+        expectEquals(slots[1].chord.type, parsedSlots[1].chord.type);
 
     }
 
