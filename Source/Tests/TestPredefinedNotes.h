@@ -11,6 +11,8 @@
 #include "../Factories/KeySignatureFactory.h"
 #include "../Models/Scale/KeySignature.h"
 #include "../Models/Preset/KeySignatureGroup.h"
+#include "../Models/Preset/Preset.h"
+#include "../Factories/PresetFactory.h"
 
 #include <JuceHeader.h>
 #include <vector>
@@ -37,6 +39,28 @@ public:
         testSlotFactory();
         keySignatureFactory();
         keySignatureGroupFactory();
+        presetFactory();
+    }
+
+    void presetFactory(){
+        auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        int midiNoteTrigger = 11;
+        int qwertyKeyCodeTrigger = 12;
+        auto slot = Slot{chord, midiNoteTrigger, qwertyKeyCodeTrigger};
+        vector<Slot> slots = {slot};
+        auto key = KeySignature {NoteSymbol::c, ScaleType::majorIonian};
+        auto k1 = KeySignatureGroup {"id", slots, key, 1, 1,};
+        vector<KeySignatureGroup> keySignatureGroups = {k1};
+
+        auto preset = Preset {"id", keySignatureGroups};
+        auto presetString = PresetFactory::toJSONString(preset);
+        auto parsedPreset = PresetFactory::fromJSONString(presetString);
+
+        expectEquals(preset.id, parsedPreset.id);
+        expectEquals(preset.keySignatureGroups.size(), parsedPreset.keySignatureGroups.size());
+        expectEquals(preset.keySignatureGroups[0].id, parsedPreset.keySignatureGroups[0].id);
+        expectEquals(preset.keySignatureGroups[0].keySignature.rootNote, parsedPreset.keySignatureGroups[0].keySignature.rootNote);
+        expectEquals(preset.keySignatureGroups[0].slots.size(), parsedPreset.keySignatureGroups[0].slots.size());
     }
 
     void keySignatureGroupFactory(){

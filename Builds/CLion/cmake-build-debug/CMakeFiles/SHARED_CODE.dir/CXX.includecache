@@ -2620,6 +2620,18 @@ vector
 exception
 -
 
+/Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
+../Services/Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+../Models/Preset/Preset.h
+/Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h
+./KeySignatureGroupFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureGroupFactory.h
+JuceHeader.h
+-
+vector
+-
+
 /Users/jason/dev/chordical-plugin/Source/Factories/SlotFactory.h
 ../Models/Preset/Slot.h
 /Users/jason/dev/chordical-plugin/Source/Models/Preset/Slot.h
@@ -2662,6 +2674,12 @@ string
 vector
 -
 string
+-
+
+/Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h
+./KeySignatureGroup.h
+/Users/jason/dev/chordical-plugin/Source/Models/Preset/KeySignatureGroup.h
+vector
 -
 
 /Users/jason/dev/chordical-plugin/Source/Models/Preset/Slot.h
@@ -2825,6 +2843,10 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Models/Scale/KeySignature.h
 ../Models/Preset/KeySignatureGroup.h
 /Users/jason/dev/chordical-plugin/Source/Models/Preset/KeySignatureGroup.h
+../Models/Preset/Preset.h
+/Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h
+../Factories/PresetFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
 JuceHeader.h
 -
 vector
