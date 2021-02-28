@@ -309,13 +309,184 @@ public:
         return result;
     }
 
-};
+    static vector<Chord> buildChordProgressionUsingAuto(const vector<PredefinedNote>& notesForScale){
+        vector<Chord> result = {};
 
-//
-//void main(){
-//    map<string, std::function<Chord(NoteSymbol, int)> > m = {
-//            {"major", [](NoteSymbol rootNote, int octave){ return Chords::ChordFuncs::major(rootNote, octave); } },
-//    };
-////    m.emplace("major", &Chords::ChordFuncs::major);
-////    m["major"] = [](NoteSymbol rootNote, int octave){ Chords::ChordFuncs::major(rootNote, octave); };
-//}
+        return result;
+    }
+
+    static Chord findFirstChordWithNotesInScale(const vector<PredefinedNote>& notesForScale, const NoteSymbol rootNote, const int octave){
+
+        Chord chord;
+        chord = ChordFuncs::major(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major7th(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor7th(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorMajor7th(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::sustained4(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::sustained2(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_6(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor6(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorMajor9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorMajor11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorMajor13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::add9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorAdd9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_6add9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor6add9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7th(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thAdd11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major7thAdd11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor7thAdd11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorMajor7thAdd11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thAdd13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major7thAdd13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor7thAdd13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minorMajor7thAdd13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thFlat5(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thSharp5(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thFlat9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thSharp9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dominant7thSharp5Flat9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::diminished(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor7Flat5(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor7Sharp5(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::minor7Flat9(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_9Sharp11(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_9Flat13(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_6Sustained4(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_7Sustained4(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major7thSustained4(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::_9Sustained4(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::major9thSustained4(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::root(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dyad1And5(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::dyad1And3(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        throw std::invalid_argument("no chord could be found for those notes");
+    }
+
+    static bool doesChordContainOnlyTheseNotes(const Chord& chord, const vector<PredefinedNote>& notes){
+        for(auto & note : notes){
+            if(std::find(chord.notes.begin(), chord.notes.end(), note) == chord.notes.end()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+};

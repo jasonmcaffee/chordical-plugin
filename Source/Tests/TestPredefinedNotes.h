@@ -238,6 +238,13 @@ public:
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::f);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::a);
 
+        auto cMajorNotes = Chords::getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(NoteSymbol::c, 1);
+        chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        bool result = Chords::doesChordContainOnlyTheseNotes(chord, cMajorNotes);
+        expect(result == true);
+        auto gSharpMajor = Chords::getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(NoteSymbol::gSharp, 1);
+        result = Chords::doesChordContainOnlyTheseNotes(chord, gSharpMajor);
+        expect(result == false);
     }
 
     void testScales(){
