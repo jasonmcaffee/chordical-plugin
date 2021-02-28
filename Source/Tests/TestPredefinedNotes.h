@@ -7,6 +7,11 @@
 #include "../Factories/ChordFactory.h"
 #include "../Factories/SlotFactory.h"
 #include "../Models/Preset/Slot.h"
+#include "../Factories/KeySignatureGroupFactory.h"
+#include "../Factories/KeySignatureFactory.h"
+#include "../Models/Scale/KeySignature.h"
+#include "../Models/Preset/KeySignatureGroup.h"
+
 #include <JuceHeader.h>
 #include <vector>
 using namespace juce;
@@ -30,6 +35,38 @@ public:
         testPredefinedNotesFactory();
         testChordFactory();
         testSlotFactory();
+        keySignatureFactory();
+        keySignatureGroupFactory();
+    }
+
+    void keySignatureGroupFactory(){
+        beginTest("KeySignatureGroupFactory");
+        auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        int midiNoteTrigger = 11;
+        int qwertyKeyCodeTrigger = 12;
+        auto slot = Slot{chord, midiNoteTrigger, qwertyKeyCodeTrigger};
+        vector<Slot> slots = {slot};
+        auto key = KeySignature {NoteSymbol::c, ScaleType::majorIonian};
+        auto k1 = KeySignatureGroup {"id", slots, key, 1, 1,};
+
+        auto kString = KeySignatureGroupFactory::toJSONString(k1);
+        auto parsedK1 = KeySignatureGroupFactory::fromJSONString(kString);
+        expectEquals(k1.id, parsedK1.id);
+        expectEquals(k1.randomizationMinOctave, parsedK1.randomizationMinOctave);
+        expectEquals(k1.randomizationMaxOctave, parsedK1.randomizationMaxOctave);
+        expectEquals(k1.keySignature.scale, parsedK1.keySignature.scale);
+        expectEquals(k1.keySignature.rootNote, parsedK1.keySignature.rootNote);
+        expectEquals(k1.slots.size(), parsedK1.slots.size());
+        expectEquals(k1.slots[0].chord.rootNote, parsedK1.slots[0].chord.rootNote);
+
+    }
+    void keySignatureFactory(){
+        beginTest("KeySignatureFactory");
+        auto key = KeySignature {NoteSymbol::c, ScaleType::majorIonian};
+        auto keyString = KeySignatureFactory::toJSONString(key);
+        auto parsedKey = KeySignatureFactory::fromJSONString(keyString);
+        expectEquals(key.rootNote, parsedKey.rootNote);
+        expectEquals(key.scale, parsedKey.scale);
     }
 
     void testSlotFactory(){

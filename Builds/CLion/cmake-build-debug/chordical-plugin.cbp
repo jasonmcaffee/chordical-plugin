@@ -4808,6 +4808,12 @@
 			<Option target="SHARED_CODE"/>
 			<Option target="VST3"/>
 		</Unit>
+		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureFactory.h">
+			<Option target="AU"/>
+			<Option target="STANDALONE_PLUGIN"/>
+			<Option target="SHARED_CODE"/>
+			<Option target="VST3"/>
+		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureGroupFactory.h">
 			<Option target="AU"/>
 			<Option target="STANDALONE_PLUGIN"/>
