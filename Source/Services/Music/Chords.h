@@ -306,6 +306,20 @@ public:
         return result;
     }
 
+    static vector<Chord> buildChordProgression(NoteSymbol rootNote, ScaleType scaleType, int octave){
+        auto notesWithStartingOctave = PredefinedNotes::getNotesWithinOctaveRange(octave, octave + 2);
+        auto notesForScalePlusExtra = Scales::getNotesForKey(scaleType, rootNote, notesWithStartingOctave);
+        auto scaleNoteIndexesForScale = Scales::getScaleNoteIndexes(scaleType);
+        vector<PredefinedNote> notesForScale(notesForScalePlusExtra.begin() + 0, notesForScalePlusExtra.begin() + scaleNoteIndexesForScale.size());
+        std::cout << "notes for scale" << std::endl;
+        for(auto & note : notesForScale){
+            std::cout << noteSymbolToString(note.noteSymbol) << note.octave << std::endl;
+        }
+
+        auto result = buildChordProgressionUsingAuto(notesForScale);
+        return result;
+    }
+
     static vector<Chord> buildChordProgressionUsingAuto(const vector<PredefinedNote>& notesForScale){
         vector<Chord> result = {};
 //        auto notesWithStartingOctave = PredefinedNotes::getNotesWithinOctaveRange()
@@ -473,13 +487,13 @@ public:
         chord = ChordFuncs::major9thSustained4(rootNote, octave);
         if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
 
-        chord = ChordFuncs::root(rootNote, octave);
-        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
-
         chord = ChordFuncs::dyad1And5(rootNote, octave);
         if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
 
         chord = ChordFuncs::dyad1And3(rootNote, octave);
+        if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
+
+        chord = ChordFuncs::root(rootNote, octave);
         if(doesChordContainOnlyTheseNotes(chord, notesForScale)){ return chord; }
 
         throw std::invalid_argument("no chord could be found for those notes");
@@ -487,11 +501,21 @@ public:
 
     static bool doesChordContainOnlyTheseNotes(const Chord& chord, const vector<PredefinedNote>& notes){
         for(auto & note : chord.notes){
-            if(std::find(notes.begin(), notes.end(), note) == notes.end()){
-                return false;
-            }
+//            if(std::find(notes.begin(), notes.end(), note) == notes.end()){ //equals compares both noteSymbol and octave. we just want noteSymbol
+//                return false;
+//            }
+            if(!isNoteIncluded(note, notes)){ return false; }
         }
         return true;
+    }
+
+    static bool isNoteIncluded(const PredefinedNote& note, const vector<PredefinedNote>& notes){
+        for(auto & n : notes){
+            if(n.noteSymbol == note.noteSymbol){
+                return true;
+            }
+        }
+        return false;
     }
 
 };
