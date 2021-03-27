@@ -5771,6 +5771,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/SlotFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Note/PredefinedNote.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Preset/KeySignatureGroup.h

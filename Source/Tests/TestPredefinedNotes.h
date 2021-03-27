@@ -13,6 +13,7 @@
 #include "../Models/Preset/KeySignatureGroup.h"
 #include "../Models/Preset/Preset.h"
 #include "../Factories/PresetFactory.h"
+#include "../Models/Chord/ChordType.h"
 
 #include <JuceHeader.h>
 #include <vector>
@@ -192,6 +193,7 @@ public:
         expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::e);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+        expectEquals(chord.type, chordTypeToFormattedString(ChordType::major));
 
         chord = Chords::ChordFuncs::minor(NoteSymbol::c, 0);
         expectEquals(chord.rootNote, NoteSymbol::c);
@@ -200,6 +202,7 @@ public:
         expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::dSharp);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+        expectEquals(chord.type, chordTypeToFormattedString(ChordType::minor));
 
         chord = Chords::ChordFuncs::major13(NoteSymbol::c, 0);
         expectEquals(chord.rootNote, NoteSymbol::c);
@@ -213,6 +216,7 @@ public:
         expectEquals(chord.notes[4].octave, 1);
         expectEquals(chord.notes[5].noteSymbol, NoteSymbol::a);
         expectEquals(chord.notes[5].octave, 1);
+        expectEquals(chord.type, chordTypeToFormattedString(ChordType::major13));
 
         chord = Chords::ChordFuncs::major(NoteSymbol::d, 0);
         expectEquals(chord.rootNote, NoteSymbol::d);
@@ -221,6 +225,7 @@ public:
         expectEquals(chord.notes[0].noteSymbol, NoteSymbol::d);
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::fSharp);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::a);
+        expectEquals(chord.type, chordTypeToFormattedString(ChordType::major));
 
         chord = Chords::createChord("major", "c", 0);
         expectEquals(chord.rootNote, NoteSymbol::c);
@@ -229,6 +234,7 @@ public:
         expectEquals(chord.notes[0].noteSymbol, NoteSymbol::c);
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::e);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::g);
+        expectEquals(chord.type, chordTypeToFormattedString(ChordType::major));
 
         chord = Chords::createChord("minor", "d", 0);
         expectEquals(chord.rootNote, NoteSymbol::d);
@@ -237,14 +243,42 @@ public:
         expectEquals(chord.notes[0].noteSymbol, NoteSymbol::d);
         expectEquals(chord.notes[1].noteSymbol, NoteSymbol::f);
         expectEquals(chord.notes[2].noteSymbol, NoteSymbol::a);
+        expectEquals(chord.type, chordTypeToFormattedString(ChordType::minor));
 
         auto cMajorNotes = Chords::getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(NoteSymbol::c, 1);
-        chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        chord = Chords::ChordFuncs::major(NoteSymbol::c, 1);
+
         bool result = Chords::doesChordContainOnlyTheseNotes(chord, cMajorNotes);
         expect(result == true);
         auto gSharpMajor = Chords::getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(NoteSymbol::gSharp, 1);
         result = Chords::doesChordContainOnlyTheseNotes(chord, gSharpMajor);
         expect(result == false);
+
+        notes = Chords::getMajorScaleNotesNeededToBuildAChordUsingScaleDegrees(NoteSymbol::c, 1);
+        auto chords = Chords::buildChordProgressionUsingAuto(notes);
+        expect(chords.size() == 21); //notes spans 3 octaves. 7 notes in major. 7 x 3 = 21
+        expectEquals(chords[0].rootNote, NoteSymbol::c);
+        expectEquals(chords[0].octave, 1);
+        expectEquals(chords[0].type, chordTypeToFormattedString(ChordType::major));
+        expectEquals(chords[1].rootNote, NoteSymbol::d);
+        expectEquals(chords[1].octave, 1);
+        expectEquals(chords[1].type, chordTypeToFormattedString(ChordType::minor));
+        expectEquals(chords[2].rootNote, NoteSymbol::e);
+        expectEquals(chords[2].octave, 1);
+        expectEquals(chords[2].type, chordTypeToFormattedString(ChordType::minor));
+        expectEquals(chords[3].rootNote, NoteSymbol::f);
+        expectEquals(chords[3].octave, 1);
+        expectEquals(chords[3].type, chordTypeToFormattedString(ChordType::major));
+        expectEquals(chords[4].rootNote, NoteSymbol::g);
+        expectEquals(chords[4].octave, 1);
+        expectEquals(chords[4].type, chordTypeToFormattedString(ChordType::major));
+        expectEquals(chords[5].rootNote, NoteSymbol::a);
+        expectEquals(chords[5].octave, 1);
+        expectEquals(chords[5].type, chordTypeToFormattedString(ChordType::minor));
+        expectEquals(chords[6].rootNote, NoteSymbol::b);
+        expectEquals(chords[6].octave, 1);
+        expectEquals(chords[6].type, chordTypeToFormattedString(ChordType::diminished));
+
     }
 
     void testScales(){

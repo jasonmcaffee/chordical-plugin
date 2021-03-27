@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-enum ChordType{
+enum class ChordType{
     major,
     minor,
     major7th,
@@ -56,7 +56,7 @@ enum ChordType{
     major9thSustained4,
     root,
     dyad1And5,
-    dyad1And3,
+    dyad1And3
 };
 
 vector<string> chordTypes = {
@@ -113,6 +113,62 @@ vector<string> chordTypes = {
         "root",
         "dyad1And5",
         "dyad1And3",
+};
+
+vector<string> formattedChordTypes = {
+        "Major",
+        "Minor",
+        "Major 7th",
+        "Minor 7th",
+        "Minor Major 7th",
+        "Sustained 4",
+        "Sustained 2",
+        "6",
+        "Minor 6",
+        "9",
+        "Minor 9",
+        "Major 9",
+        "Minor Major 9",
+        "11",
+        "Minor 11",
+        "Major 11",
+        "Minor Major 11",
+        "13",
+        "Minor 13",
+        "Major 13",
+        "Minor Major 13",
+        "Add 9",
+        "Minor Add 9",
+        "6 Add 9",
+        "Minor 6 Add 9",
+        "Dominant 7th",
+        "Dominant 7th Add 11",
+        "Major 7th Add 11",
+        "Minor 7th Add 11",
+        "Minor Major 7th Add 11",
+        "Dominant 7th Add 13",
+        "Major 7th Add 13",
+        "Minor 7th Add 13",
+        "Minor Major 7th Add 13",
+        "Dominant 7th Flat 5",
+        "Dominant 7th Sharp 5",
+        "Dominant 7th Flat 9",
+        "Dominant 7th Sharp 9",
+        "Dominant 7th Sharp 5 Flat 9",
+        "Diminished / Minor Flat 5",
+        "Minor 7 Flat 5",
+        "Minor 7 Sharp 5",
+        "Minor 7 Flat 9",
+        "9 Sharp 11",
+        "9 Flat 13",
+        "6 Sustained 4",
+        "7 Sustained 4",
+        "Major 7th Sustained 4",
+        "9 Sustained 4",
+        "Major 9th Sustained 4",
+        "Root",
+        "Dyad 1 & 5",
+        "Dyad 1 & 3",
 };
 
 /**
@@ -234,4 +290,118 @@ inline string chordTypeToString(ChordType chordType){
     if(chordType == ChordType::dyad1And5){ return "dyad1And5"; }
     if(chordType == ChordType::dyad1And3){ return "dyad1And3"; }
     return "major";
+}
+
+inline string chordTypeToFormattedString(ChordType chordType){
+    if(chordType == ChordType::major){ return "Major"; }
+    if(chordType == ChordType::minor){ return "Minor"; }
+    if(chordType == ChordType::major7th){ return "Major 7th"; }
+    if(chordType == ChordType::minor7th){ return "Minor 7th"; }
+    if(chordType == ChordType::minorMajor7th){ return "Minor Major 7th"; }
+    if(chordType == ChordType::sustained4){ return "Sustained 4"; }
+    if(chordType == ChordType::sustained2){ return "Sustained 2"; }
+    if(chordType == ChordType::_6){ return "6"; }
+    if(chordType == ChordType::minor6){ return "Minor 6"; }
+    if(chordType == ChordType::_9){ return "9"; }
+    if(chordType == ChordType::minor9){ return "Minor 9"; }
+    if(chordType == ChordType::major9){ return "Major 9"; }
+    if(chordType == ChordType::minorMajor9){ return "Minor Major 9"; }
+    if(chordType == ChordType::_11){ return "11"; }
+    if(chordType == ChordType::minor11){ return "Minor 11"; }
+    if(chordType == ChordType::major11){ return "Major 11"; }
+    if(chordType == ChordType::minorMajor11){ return "Minor Major 11"; }
+    if(chordType == ChordType::_13){ return "13"; }
+    if(chordType == ChordType::minor13){ return "Minor 13"; }
+    if(chordType == ChordType::major13){ return "Major 13"; }
+    if(chordType == ChordType::minorMajor13){ return "Minor Major 13"; }
+    if(chordType == ChordType::add9){ return "Add 9"; }
+    if(chordType == ChordType::minorAdd9){ return "Minor Add 9"; }
+    if(chordType == ChordType::_6add9){ return "6 Add 9"; }
+    if(chordType == ChordType::minor6add9){ return "Minor 6 Add 9"; }
+    if(chordType == ChordType::dominant7th){ return "Dominant 7th"; }
+    if(chordType == ChordType::dominant7thAdd11){ return "Dominant 7th Add 11"; }
+    if(chordType == ChordType::major7thAdd11){ return "Major 7th Add 11"; }
+    if(chordType == ChordType::minor7thAdd11){ return "Minor 7th Add 11"; }
+    if(chordType == ChordType::minorMajor7thAdd11){ return "Minor Major 7th Add 11"; }
+    if(chordType == ChordType::dominant7thAdd13){ return "Dominant 7th Add 13"; }
+    if(chordType == ChordType::major7thAdd13){ return "Major 7th Add 13"; }
+    if(chordType == ChordType::minor7thAdd13){ return "Minor 7th Add 13"; }
+    if(chordType == ChordType::minorMajor7thAdd13){ return "Minor Major 7th Add 13"; }
+    if(chordType == ChordType::dominant7thFlat5){ return "Dominant 7th Flat 5"; }
+    if(chordType == ChordType::dominant7thSharp5){ return "Dominant 7th Sharp 5"; }
+    if(chordType == ChordType::dominant7thFlat9){ return "Dominant 7th Flat 9"; }
+    if(chordType == ChordType::dominant7thSharp9){ return "Dominant 7th Sharp 9"; }
+    if(chordType == ChordType::dominant7thSharp5Flat9){ return "Dominant 7th Sharp 5 Flat 9"; }
+    if(chordType == ChordType::diminished){ return "Diminished / Minor Flat 5"; }
+    if(chordType == ChordType::minor7Flat5){ return "Minor 7 Flat 5"; }
+    if(chordType == ChordType::minor7Sharp5){ return "Minor 7 Sharp 5"; }
+    if(chordType == ChordType::minor7Flat9){ return "Minor 7 Flat 9"; }
+    if(chordType == ChordType::_9Sharp11){ return "9 Sharp 11"; }
+    if(chordType == ChordType::_9Flat13){ return "9 Flat 13"; }
+    if(chordType == ChordType::_6Sustained4){ return "6 Sustained 4"; }
+    if(chordType == ChordType::_7Sustained4){ return "7 Sustained 4"; }
+    if(chordType == ChordType::major7thSustained4){ return "Major 7th Sustained 4"; }
+    if(chordType == ChordType::_9Sustained4){ return "9 Sustained 4"; }
+    if(chordType == ChordType::major9thSustained4){ return "Major 9th Sustained 4"; }
+    if(chordType == ChordType::root){ return "Root"; }
+    if(chordType == ChordType::dyad1And5){ return "Dyad 1 & 5"; }
+    if(chordType == ChordType::dyad1And3){ return "Dyad 1 & 3"; }
+    return "Major";
+}
+
+inline ChordType formattedStringToChordType(string formattedString){
+    if(formattedString == "Major"){ return ChordType::major; }
+    if(formattedString == "Minor"){ return ChordType::minor; }
+    if(formattedString == "Major 7th"){ return ChordType::major7th; }
+    if(formattedString == "Minor 7th"){ return ChordType::minor7th; }
+    if(formattedString == "Minor Major 7th"){ return ChordType::minorMajor7th; }
+    if(formattedString == "Sustained 4"){ return ChordType::sustained4; }
+    if(formattedString == "Sustained 2"){ return ChordType::sustained2; }
+    if(formattedString == "6"){ return ChordType::_6; }
+    if(formattedString == "Minor 6"){ return ChordType::minor6; }
+    if(formattedString == "9"){ return ChordType::_9; }
+    if(formattedString == "Minor 9"){ return ChordType::minor9; }
+    if(formattedString == "Major 9"){ return ChordType::major9; }
+    if(formattedString == "Minor Major 9"){ return ChordType::minorMajor9; }
+    if(formattedString == "11"){ return ChordType::_11; }
+    if(formattedString == "Minor 11"){ return ChordType::minor11; }
+    if(formattedString == "Major 11"){ return ChordType::major11; }
+    if(formattedString == "Minor Major 11"){ return ChordType::minorMajor11; }
+    if(formattedString == "13"){ return ChordType::_13; }
+    if(formattedString == "Minor 13"){ return ChordType::minor13; }
+    if(formattedString == "Major 13"){ return ChordType::major13; }
+    if(formattedString == "Minor Major 13"){ return ChordType::minorMajor13; }
+    if(formattedString == "Add 9"){ return ChordType::add9; }
+    if(formattedString == "Minor Add 9"){ return ChordType::minorAdd9; }
+    if(formattedString == "6 Add 9"){ return ChordType::_6add9; }
+    if(formattedString == "Minor 6 Add 9"){ return ChordType::minor6add9; }
+    if(formattedString == "Dominant 7th"){ return ChordType::dominant7th; }
+    if(formattedString == "Dominant 7th Add 11"){ return ChordType::dominant7thAdd11; }
+    if(formattedString == "Major 7th Add 11"){ return ChordType::major7thAdd11; }
+    if(formattedString == "Minor 7th Add 11"){ return ChordType::minor7thAdd11; }
+    if(formattedString == "Minor Major 7th Add 11"){ return ChordType::minorMajor7thAdd11; }
+    if(formattedString == "Dominant 7th Add 13"){ return ChordType::dominant7thAdd13; }
+    if(formattedString == "Major 7th Add 13"){ return ChordType::major7thAdd13; }
+    if(formattedString == "Minor 7th Add 13"){ return ChordType::minor7thAdd13; }
+    if(formattedString == "Minor Major 7th Add 13"){ return ChordType::minorMajor7thAdd13; }
+    if(formattedString == "Dominant 7th Flat 5"){ return ChordType::dominant7thFlat5; }
+    if(formattedString == "Dominant 7th Sharp 5"){ return ChordType::dominant7thSharp5; }
+    if(formattedString == "Dominant 7th Flat 9"){ return ChordType::dominant7thFlat9; }
+    if(formattedString == "Dominant 7th Sharp 9"){ return ChordType::dominant7thSharp9; }
+    if(formattedString == "Dominant 7th Sharp 5 Flat 9"){ return ChordType::dominant7thSharp5Flat9; }
+    if(formattedString == "Diminished / Minor Flat 5"){ return ChordType::diminished; }
+    if(formattedString == "Minor 7 Flat 5"){ return ChordType::minor7Flat5; }
+    if(formattedString == "Minor 7 Sharp 5"){ return ChordType::minor7Sharp5; }
+    if(formattedString == "Minor 7 Flat 9"){ return ChordType::minor7Flat9; }
+    if(formattedString == "9 Sharp 11"){ return ChordType::_9Sharp11; }
+    if(formattedString == "9 Flat 13"){ return ChordType::_9Flat13; }
+    if(formattedString == "6 Sustained 4"){ return ChordType::_6Sustained4; }
+    if(formattedString == "7 Sustained 4"){ return ChordType::_7Sustained4; }
+    if(formattedString == "Major 7th Sustained 4"){ return ChordType::major7thSustained4; }
+    if(formattedString == "9 Sustained 4"){ return ChordType::_9Sustained4; }
+    if(formattedString == "Major 9th Sustained 4"){ return ChordType::major9thSustained4; }
+    if(formattedString == "Root"){ return ChordType::root; }
+    if(formattedString == "Dyad 1 & 5"){ return ChordType::dyad1And5; }
+    if(formattedString == "Dyad 1 & 3"){ return ChordType::dyad1And3; }
+    return ChordType::major;
 }

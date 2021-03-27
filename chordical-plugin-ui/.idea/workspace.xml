@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Services/Music/Chords.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state relative-caret-position="111">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -198,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/models/view/keyboard/IPianoKey.ts" />
         <option value="$PROJECT_DIR$/src/components/autochorder/AutoChorder.tsx" />
         <option value="$PROJECT_DIR$/src/components/keyboard/keys.ts" />
-        <option value="$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts" />
         <option value="$PROJECT_DIR$/src/services/music/predefinedNotes.ts" />
         <option value="$PROJECT_DIR$/src/components/common/Select.tsx" />
         <option value="$PROJECT_DIR$/src/style/components/autochorder/autochorder.scss" />
@@ -219,6 +219,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/services/music/notes.ts" />
         <option value="$PROJECT_DIR$/src/services/music/chords.ts" />
+        <option value="$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts" />
       </list>
     </option>
   </component>
@@ -228,7 +229,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -840,10 +841,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35660000" />
+    <option name="totallyTimeSpent" value="36028000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12568952" />
@@ -1181,8 +1182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="111">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>

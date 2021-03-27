@@ -11,64 +11,61 @@
 using s = ScaleDegree;
 using namespace std;
 
-
-vector<string> chordTypes = {
-        "major",
-        "minor",
-        "major7th",
-        "minor7th",
-        "minorMajor7th",
-        "sustained4",
-        "sustained2",
-        "_6",
-        "minor6",
-        "_9",
-        "minor9",
-        "major9",
-        "minorMajor9",
-        "_11",
-        "minor11",
-        "major11",
-        "minorMajor11",
-        "_13",
-        "minor13",
-        "major13",
-        "minorMajor13",
-        "add9",
-        "minorAdd9",
-        "_6add9",
-        "minor6add9",
-        "dominant7th",
-        "dominant7thAdd11",
-        "major7thAdd11",
-        "minor7thAdd11",
-        "minorMajor7thAdd11",
-        "dominant7thAdd13",
-        "major7thAdd13",
-        "minor7thAdd13",
-        "minorMajor7thAdd13",
-        "dominant7thFlat5",
-        "dominant7thSharp5",
-        "dominant7thFlat9",
-        "dominant7thSharp9",
-        "dominant7thSharp5Flat9",
-        "diminished",
-        "minor7Flat5",
-        "minor7Sharp5",
-        "minor7Flat9",
-        "_9Sharp11",
-        "_9Flat13",
-        "_6Sustained4",
-        "_7Sustained4",
-        "major7thSustained4",
-        "_9Sustained4",
-        "major9thSustained4",
-        "root",
-        "dyad1And5",
-        "dyad1And3",
-};
-
-
+//vector<string> chordTypes = {
+//        "major",
+//        "minor",
+//        "major7th",
+//        "minor7th",
+//        "minorMajor7th",
+//        "sustained4",
+//        "sustained2",
+//        "_6",
+//        "minor6",
+//        "_9",
+//        "minor9",
+//        "major9",
+//        "minorMajor9",
+//        "_11",
+//        "minor11",
+//        "major11",
+//        "minorMajor11",
+//        "_13",
+//        "minor13",
+//        "major13",
+//        "minorMajor13",
+//        "add9",
+//        "minorAdd9",
+//        "_6add9",
+//        "minor6add9",
+//        "dominant7th",
+//        "dominant7thAdd11",
+//        "major7thAdd11",
+//        "minor7thAdd11",
+//        "minorMajor7thAdd11",
+//        "dominant7thAdd13",
+//        "major7thAdd13",
+//        "minor7thAdd13",
+//        "minorMajor7thAdd13",
+//        "dominant7thFlat5",
+//        "dominant7thSharp5",
+//        "dominant7thFlat9",
+//        "dominant7thSharp9",
+//        "dominant7thSharp5Flat9",
+//        "diminished",
+//        "minor7Flat5",
+//        "minor7Sharp5",
+//        "minor7Flat9",
+//        "_9Sharp11",
+//        "_9Flat13",
+//        "_6Sustained4",
+//        "_7Sustained4",
+//        "major7thSustained4",
+//        "_9Sustained4",
+//        "major9thSustained4",
+//        "root",
+//        "dyad1And5",
+//        "dyad1And3",
+//};
 
 class Chords{
 public:
@@ -311,7 +308,15 @@ public:
 
     static vector<Chord> buildChordProgressionUsingAuto(const vector<PredefinedNote>& notesForScale){
         vector<Chord> result = {};
-
+//        auto notesWithStartingOctave = PredefinedNotes::getNotesWithinOctaveRange()
+        for(auto & note : notesForScale){
+            try{
+                auto chord = findFirstChordWithNotesInScale(notesForScale, note.noteSymbol, note.octave);
+                result.push_back(chord);
+            }catch(exception &e){
+                std::cout << "could not find chord in scale for note" << std::endl;
+            }
+        }
         return result;
     }
 
@@ -481,8 +486,8 @@ public:
     }
 
     static bool doesChordContainOnlyTheseNotes(const Chord& chord, const vector<PredefinedNote>& notes){
-        for(auto & note : notes){
-            if(std::find(chord.notes.begin(), chord.notes.end(), note) == chord.notes.end()){
+        for(auto & note : chord.notes){
+            if(std::find(notes.begin(), notes.end(), note) == notes.end()){
                 return false;
             }
         }

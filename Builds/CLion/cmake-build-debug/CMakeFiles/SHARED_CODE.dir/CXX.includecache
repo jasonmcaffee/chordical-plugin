@@ -2656,6 +2656,12 @@ string
 vector
 -
 
+/Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h
+string
+-
+vector
+-
+
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 vector
 -
@@ -2847,6 +2853,8 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h
 ../Factories/PresetFactory.h
 /Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
+../Models/Chord/ChordType.h
+/Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h
 JuceHeader.h
 -
 vector

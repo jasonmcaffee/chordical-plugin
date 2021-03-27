@@ -1,6 +1,6 @@
 #pragma once
 
-enum ScaleDegree{
+enum class ScaleDegree{
     _1,
     _2,
     _3b,
