@@ -7,11 +7,11 @@ C_FLAGS =   -fno-common -Wswitch -Wunused-variable -Wparentheses -Wnon-virtual-d
 
 C_DEFINES = -DDEBUG=1 -DJUCER_XCODE_MAC_F6D2F4CF=1 -DJUCE_APP_VERSION=0.0.1 -DJUCE_APP_VERSION_HEX=0x1 -DJUCE_SHARED_CODE=1 -DJucePlugin_Build_AAX=0 -DJucePlugin_Build_AU=1 -DJucePlugin_Build_AUv3=0 -DJucePlugin_Build_RTAS=0 -DJucePlugin_Build_Standalone=1 -DJucePlugin_Build_Unity=0 -DJucePlugin_Build_VST3=1 -DJucePlugin_Build_VST=0 -D_DEBUG=1
 
-C_INCLUDES = -I/Users/jason/dev/VST_SDK/VST3_SDK -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode -I/Users/jason/dev/JUCE/modules -I/Users/jason/dev/JUCE/modules/juce_audio_plugin_client 
+C_INCLUDES = -I/Users/jason/dev/VST_SDK/VST3_SDK -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode -I/Users/jason/dev/JUCE/modules -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include -I/Users/jason/dev/JUCE/modules/juce_audio_plugin_client 
 
 CXX_FLAGS =  -fno-common -Wswitch -Wunused-variable -Wparentheses -Wnon-virtual-dtor -Wshorten-64-to-32 -Wundeclared-selector -Wuninitialized -Wunused-function -Wbool-conversion -Wcomma -Wconstant-conversion -Wempty-body -Wenum-conversion -Winfinite-recursion -Wint-conversion -Wrange-loop-analysis -Wstrict-prototypes -Wmove -Wunreachable-code -Wduplicate-method-match -Wreorder -fvisibility-inlines-hidden -g   -mmacosx-version-min=10.11 -O0 -stdlib=libc++ -std=c++17
 
 CXX_DEFINES = -DDEBUG=1 -DJUCER_XCODE_MAC_F6D2F4CF=1 -DJUCE_APP_VERSION=0.0.1 -DJUCE_APP_VERSION_HEX=0x1 -DJUCE_SHARED_CODE=1 -DJucePlugin_Build_AAX=0 -DJucePlugin_Build_AU=1 -DJucePlugin_Build_AUv3=0 -DJucePlugin_Build_RTAS=0 -DJucePlugin_Build_Standalone=1 -DJucePlugin_Build_Unity=0 -DJucePlugin_Build_VST3=1 -DJucePlugin_Build_VST=0 -D_DEBUG=1
 
-CXX_INCLUDES = -I/Users/jason/dev/VST_SDK/VST3_SDK -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode -I/Users/jason/dev/JUCE/modules -I/Users/jason/dev/JUCE/modules/juce_audio_plugin_client 
+CXX_INCLUDES = -I/Users/jason/dev/VST_SDK/VST3_SDK -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode -I/Users/jason/dev/JUCE/modules -I/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include -I/Users/jason/dev/JUCE/modules/juce_audio_plugin_client 
 

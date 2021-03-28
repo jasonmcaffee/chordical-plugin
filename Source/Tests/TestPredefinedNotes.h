@@ -14,6 +14,7 @@
 #include "../Models/Preset/Preset.h"
 #include "../Factories/PresetFactory.h"
 #include "../Models/Chord/ChordType.h"
+#include <cereal/archives/json.hpp>
 
 #include <JuceHeader.h>
 #include <vector>

@@ -5231,6 +5231,46 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
  ../../../JuceLibraryCode/AppConfig.h
  ../../../JuceLibraryCode/BinaryData.h
  ../../../JuceLibraryCode/JuceHeader.h
+ ../../../cereal-include/cereal/access.hpp
+ ../../../cereal-include/cereal/archives/json.hpp
+ ../../../cereal-include/cereal/cereal.hpp
+ ../../../cereal-include/cereal/details/helpers.hpp
+ ../../../cereal-include/cereal/details/polymorphic_impl_fwd.hpp
+ ../../../cereal-include/cereal/details/static_object.hpp
+ ../../../cereal-include/cereal/details/traits.hpp
+ ../../../cereal-include/cereal/details/util.hpp
+ ../../../cereal-include/cereal/external/base64.hpp
+ ../../../cereal-include/cereal/external/rapidjson/allocators.h
+ ../../../cereal-include/cereal/external/rapidjson/document.h
+ ../../../cereal-include/cereal/external/rapidjson/encodedstream.h
+ ../../../cereal-include/cereal/external/rapidjson/encodings.h
+ ../../../cereal-include/cereal/external/rapidjson/error/error.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/biginteger.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/diyfp.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/dtoa.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/ieee754.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/itoa.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/meta.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/pow10.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/stack.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/strfunc.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/strtod.h
+ ../../../cereal-include/cereal/external/rapidjson/internal/swap.h
+ ../../../cereal-include/cereal/external/rapidjson/istreamwrapper.h
+ ../../../cereal-include/cereal/external/rapidjson/memorystream.h
+ ../../../cereal-include/cereal/external/rapidjson/msinttypes/inttypes.h
+ ../../../cereal-include/cereal/external/rapidjson/msinttypes/stdint.h
+ ../../../cereal-include/cereal/external/rapidjson/ostreamwrapper.h
+ ../../../cereal-include/cereal/external/rapidjson/prettywriter.h
+ ../../../cereal-include/cereal/external/rapidjson/rapidjson.h
+ ../../../cereal-include/cereal/external/rapidjson/reader.h
+ ../../../cereal-include/cereal/external/rapidjson/stream.h
+ ../../../cereal-include/cereal/external/rapidjson/stringbuffer.h
+ ../../../cereal-include/cereal/external/rapidjson/writer.h
+ ../../../cereal-include/cereal/macros.hpp
+ ../../../cereal-include/cereal/specialize.hpp
+ ../../../cereal-include/cereal/types/base_class.hpp
+ ../../../cereal-include/cereal/types/common.hpp
  /Users/jason/dev/JUCE/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h
  /Users/jason/dev/JUCE/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h
  /Users/jason/dev/JUCE/modules/juce_audio_basics/buffers/juce_AudioDataConverters.h

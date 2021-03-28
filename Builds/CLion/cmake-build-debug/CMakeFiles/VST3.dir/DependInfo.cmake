@@ -31,6 +31,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/Users/jason/dev/VST_SDK/VST3_SDK"
   "../../../JuceLibraryCode"
   "/Users/jason/dev/JUCE/modules"
+  "../../../cereal-include"
   "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
   )
 

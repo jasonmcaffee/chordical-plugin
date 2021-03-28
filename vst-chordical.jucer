@@ -8,7 +8,7 @@
               pluginDesc="chordical" version="0.0.1" companyName="Chordical"
               companyWebsite="chordical.com" companyEmail="jasonlmcaffee@gmail.com"
               pluginFormats="buildAU,buildStandalone,buildVST3" pluginAUMainType="'aumu'"
-              cppLanguageStandard="17">
+              cppLanguageStandard="17" headerPath="../../cereal-include">
   <MAINGROUP id="CC5xg6" name="chordical-plugin">
     <GROUP id="{B4769F89-E00F-7CBF-CEE5-6620BB0BC9B6}" name="Source">
       <FILE id="AYv3Z3" name="index.html" compile="1" resource="1" file="chordical-plugin-ui/build/index.html"/>

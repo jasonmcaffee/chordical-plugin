@@ -50,6 +50,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -89,6 +90,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -138,6 +140,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -177,6 +180,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -217,6 +221,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -257,6 +262,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -296,6 +302,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -335,6 +342,7 @@
 					<Add directory="/Users/jason/dev/VST_SDK/VST3_SDK"/>
 					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../JuceLibraryCode"/>
 					<Add directory="/Users/jason/dev/JUCE/modules"/>
+					<Add directory="/Users/jason/dev/chordical-plugin/Builds/CLion/../../cereal-include"/>
 					<Add directory="/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -4802,90 +4810,6 @@
 		<Unit filename="/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm">
 			<Option target="SHARED_CODE"/>
 		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureFactory.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureGroupFactory.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Factories/SlotFactory.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Preset/KeySignatureGroup.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Preset/Slot.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Scale/KeySignature.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp">
 			<Option target="SHARED_CODE"/>
 		</Unit>
@@ -4903,24 +4827,6 @@
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/Source/ResourceFiles/test.html">
 			<Option target="SHARED_CODE"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Music/Scales.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
-		</Unit>
-		<Unit filename="/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h">
-			<Option target="AU"/>
-			<Option target="STANDALONE_PLUGIN"/>
-			<Option target="SHARED_CODE"/>
-			<Option target="VST3"/>
 		</Unit>
 		<Unit filename="/Users/jason/dev/chordical-plugin/chordical-plugin-ui/build/index.html">
 			<Option target="SHARED_CODE"/>

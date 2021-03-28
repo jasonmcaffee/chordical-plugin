@@ -20,7 +20,7 @@ add_library (VST3 MODULE
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_VST3.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp"
     "PkgInfo"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h ../../Source/Factories/KeySignatureFactory.h)
+)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/VST3/juce_VST3_Wrapper.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -35,7 +35,7 @@ add_library (AU MODULE
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm"
     "PkgInfo"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h ../../Source/Factories/KeySignatureFactory.h)
+)
 
 set_source_files_properties ("PkgInfo" PROPERTIES MACOSX_PACKAGE_LOCATION .)
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/AU/juce_AU_Wrapper.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -46,7 +46,7 @@ set_source_files_properties ("../../../JUCE/modules/juce_audio_processors/format
 add_executable (STANDALONE_PLUGIN
     "../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp"
     "../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h ../../Source/Factories/KeySignatureFactory.h)
+)
 
 set_source_files_properties ("../../../JUCE/modules/juce_audio_plugin_client/juce_audio_plugin_client_Standalone.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 
@@ -1527,7 +1527,7 @@ add_library (SHARED_CODE STATIC
     "../../JuceLibraryCode/include_juce_gui_extra.mm"
     "../../JuceLibraryCode/include_juce_opengl.mm"
     "../../JuceLibraryCode/JuceHeader.h"
-        ../../Source/Models/Scale/ScaleType.h ../../Source/Services/Music/Scales.h ../../Source/Services/Music/Chords.h ../../Source/Models/Scale/ScaleDegree.h ../../Source/Models/Chord/ChordType.h ../../Source/Models/Chord/Chord.h ../../Source/Services/Util/Util.h ../../Source/Models/Scale/KeySignature.h ../../Source/Models/Preset/Preset.h ../../Source/Models/Preset/Slot.h ../../Source/Models/Preset/KeySignatureGroup.h ../../Source/Factories/ChordFactory.h ../../Source/Factories/PredefinedNoteFactory.h ../../Source/Factories/PresetFactory.h ../../Source/Factories/KeySignatureGroupFactory.h ../../Source/Factories/SlotFactory.h ../../Source/Factories/KeySignatureFactory.h)
+)
 
 set_source_files_properties ("../../Source/ResourceFiles/c4.wav" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties ("../../Source/PluginProcessor.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -3004,6 +3004,7 @@ target_include_directories (VST3 PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3084,6 +3085,7 @@ target_include_directories (AU PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3125,6 +3127,7 @@ if (RC_COMPILER)
         -I "/Users/jason/dev/VST_SDK/VST3_SDK"
         -I "${PROJECT_SOURCE_DIR}/../../JuceLibraryCode"
         -I "/Users/jason/dev/JUCE/modules"
+        -I "${PROJECT_SOURCE_DIR}/../../cereal-include"
         -I "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
         ${AU_REZ_SOURCES}
         -o ${AU_REZ_OUTPUT}
@@ -3191,6 +3194,7 @@ target_include_directories (STANDALONE_PLUGIN PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3257,6 +3261,7 @@ target_include_directories (SHARED_CODE PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3333,6 +3338,7 @@ target_include_directories (VST3 PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3415,6 +3421,7 @@ target_include_directories (AU PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3457,6 +3464,7 @@ if (RC_COMPILER)
         -I "/Users/jason/dev/VST_SDK/VST3_SDK"
         -I "${PROJECT_SOURCE_DIR}/../../JuceLibraryCode"
         -I "/Users/jason/dev/JUCE/modules"
+        -I "${PROJECT_SOURCE_DIR}/../../cereal-include"
         -I "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
         ${AU_REZ_SOURCES}
         -o ${AU_REZ_OUTPUT}
@@ -3524,6 +3532,7 @@ target_include_directories (STANDALONE_PLUGIN PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
@@ -3592,6 +3601,7 @@ target_include_directories (SHARED_CODE PRIVATE
     "/Users/jason/dev/VST_SDK/VST3_SDK"
     "../../JuceLibraryCode"
     "/Users/jason/dev/JUCE/modules"
+    "../../cereal-include"
     "/Users/jason/dev/JUCE/modules/juce_audio_plugin_client"
 )
 
