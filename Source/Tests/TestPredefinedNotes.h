@@ -13,7 +13,9 @@
 #include "../Models/Preset/KeySignatureGroup.h"
 #include "../Models/Preset/Preset.h"
 #include "../Factories/PresetFactory.h"
+#include "../Factories/AppStateFactory.h"
 #include "../Models/Chord/ChordType.h"
+#include "../Models/AppState/AppStateHost.h"
 #include <cereal/archives/json.hpp>
 
 #include <JuceHeader.h>
@@ -42,9 +44,32 @@ public:
         keySignatureFactory();
         keySignatureGroupFactory();
         presetFactory();
+        appStateFactory();
     }
 
+    void appStateFactory(){
+        beginTest("AppStateFactory");
+        auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
+        int midiNoteTrigger = 11;
+        int qwertyKeyCodeTrigger = 12;
+        auto slot = Slot{chord, midiNoteTrigger, qwertyKeyCodeTrigger};
+        vector<Slot> slots = {slot};
+        auto key = KeySignature {NoteSymbol::c, ScaleType::majorIonian};
+        auto k1 = KeySignatureGroup {"id", slots, key, 1, 1,};
+        vector<KeySignatureGroup> keySignatureGroups = {k1};
+
+        auto preset = Preset {"id", keySignatureGroups};
+        auto appState = AppStateHost {preset};
+
+        auto appStateString = AppStateFactory::toJSONString(appState);
+        auto parsedAppState = AppStateFactory::fromJSONString(appStateString);
+
+        expectEquals(appState.preset.keySignatureGroups.size(), parsedAppState.preset.keySignatureGroups.size());
+        expectEquals(appState.preset.keySignatureGroups[0].keySignature.rootNote, parsedAppState.preset.keySignatureGroups[0].keySignature.rootNote);
+
+    }
     void presetFactory(){
+        beginTest("PresetFactory");
         auto chord = Chords::ChordFuncs::major(NoteSymbol::c, 0);
         int midiNoteTrigger = 11;
         int qwertyKeyCodeTrigger = 12;

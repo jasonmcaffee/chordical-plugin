@@ -2936,6 +2936,16 @@ random
 sstream
 -
 
+/Users/jason/dev/chordical-plugin/Source/Factories/AppStateFactory.h
+../Models/AppState/AppStateHost.h
+/Users/jason/dev/chordical-plugin/Source/Models/AppState/AppStateHost.h
+../Services/Util/Util.h
+/Users/jason/dev/chordical-plugin/Source/Services/Util/Util.h
+JuceHeader.h
+-
+./PresetFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
+
 /Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h
 ../Models/Chord/Chord.h
 /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
@@ -3028,6 +3038,10 @@ vector
 exception
 -
 
+/Users/jason/dev/chordical-plugin/Source/Models/AppState/AppStateHost.h
+../Preset/Preset.h
+/Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h
+
 /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
 ../Note/NoteSymbol.h
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
@@ -3081,6 +3095,8 @@ vector
 /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
 ../Scale/ScaleType.h
 /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleType.h
+cereal/archives/json.hpp
+-
 
 /Users/jason/dev/chordical-plugin/Source/Models/Scale/ScaleDegree.h
 
@@ -3117,6 +3133,8 @@ Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h
 Services/EventBus/EventMessage.h
 /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
+Services/AutoChorder/AutoChorder.h
+/Users/jason/dev/chordical-plugin/Source/Services/AutoChorder/AutoChorder.h
 
 /Users/jason/dev/chordical-plugin/Source/Processors/FilterProcessor.h
 ./ProcessorBase.h
@@ -3133,6 +3151,8 @@ Services/EventBus/EventMessage.h
 /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
 JuceHeader.h
 -
+
+/Users/jason/dev/chordical-plugin/Source/Services/AutoChorder/AutoChorder.h
 
 /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 functional
@@ -3235,8 +3255,12 @@ JuceHeader.h
 /Users/jason/dev/chordical-plugin/Source/Models/Preset/Preset.h
 ../Factories/PresetFactory.h
 /Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
+../Factories/AppStateFactory.h
+/Users/jason/dev/chordical-plugin/Source/Factories/AppStateFactory.h
 ../Models/Chord/ChordType.h
 /Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h
+../Models/AppState/AppStateHost.h
+/Users/jason/dev/chordical-plugin/Source/Models/AppState/AppStateHost.h
 cereal/archives/json.hpp
 -
 JuceHeader.h

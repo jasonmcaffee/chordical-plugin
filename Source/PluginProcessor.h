@@ -14,6 +14,7 @@
 #include "Synthesizer/ChordicalSynthesizer.h"
 #include "Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h"
 #include "Services/EventBus/EventMessage.h"
+#include "Services/AutoChorder/AutoChorder.h"
 
 using AudioGraphIOProcessor = juce::AudioProcessorGraph::AudioGraphIOProcessor;
 using Node = juce::AudioProcessorGraph::Node;
@@ -89,6 +90,7 @@ private:
     Node::Ptr midiOutputNode;
 
     std::string appState;
+    AutoChorder autoChorder;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

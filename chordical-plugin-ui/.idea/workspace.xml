@@ -2,120 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebfd8af1-1e94-48f6-9549-8144e036dbb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/access.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/archives/adapters.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/archives/binary.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/archives/json.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/archives/portable_binary.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/archives/xml.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/cereal.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/details/helpers.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/details/polymorphic_impl.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/details/polymorphic_impl_fwd.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/details/static_object.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/details/traits.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/details/util.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/base64.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/allocators.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/cursorstreamwrapper.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/document.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/encodedstream.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/encodings.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/error/en.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/error/error.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/filereadstream.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/filewritestream.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/fwd.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/biginteger.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/diyfp.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/dtoa.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/ieee754.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/itoa.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/meta.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/pow10.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/regex.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/stack.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/strfunc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/strtod.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/internal/swap.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/istreamwrapper.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/memorybuffer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/memorystream.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/msinttypes/inttypes.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/msinttypes/stdint.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/ostreamwrapper.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/pointer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/prettywriter.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/rapidjson.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/reader.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/schema.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/stream.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/stringbuffer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidjson/writer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidxml/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidxml/manual.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidxml/rapidxml.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidxml/rapidxml_iterators.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidxml/rapidxml_print.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/external/rapidxml/rapidxml_utils.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/macros.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/specialize.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/array.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/atomic.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/base_class.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/bitset.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/boost_variant.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/chrono.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/common.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/complex.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/concepts/pair_associative_container.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/deque.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/forward_list.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/functional.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/list.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/map.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/memory.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/optional.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/polymorphic.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/queue.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/set.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/stack.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/string.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/tuple.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/unordered_map.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/unordered_set.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/utility.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/valarray.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/variant.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/types/vector.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cerial-include/cereal/version.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/Factories/AutoChorderMessage.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/AU.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_core.mm.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_data_structures.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_dsp.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_events.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_graphics.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_basics.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_gui_extra.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/JuceLibraryCode/include_juce_opengl.mm.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/STANDALONE_PLUGIN.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/VST3.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/VST3.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/VST3.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/VST3.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/chordical-plugin.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Builds/MacOSX/chordical-plugin.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/MacOSX/chordical-plugin.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.h" beforeDir="false" afterPath="$PROJECT_DIR$/../JuceLibraryCode/BinaryData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Tests/TestPredefinedNotes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vst-chordical.jucer" beforeDir="false" afterPath="$PROJECT_DIR$/../vst-chordical.jucer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" beforeDir="false" afterPath="$PROJECT_DIR$/../Builds/CLion/cmake-build-debug/libchordical-plugin.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Factories/KeySignatureFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Factories/KeySignatureFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/Models/Scale/KeySignature.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/Models/Scale/KeySignature.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="245" column="87" lean-forward="true" selection-start-line="245" selection-start-column="87" selection-end-line="245" selection-end-column="87" />
+            <state relative-caret-position="176">
+              <caret line="92" column="56" lean-forward="true" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -241,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="494">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -953,7 +847,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36131000" />
+    <option name="totallyTimeSpent" value="36369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -965,7 +859,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32967836" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.1630117" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1271,13 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="245" column="87" lean-forward="true" selection-start-line="245" selection-start-column="87" selection-end-line="245" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/music/chords.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -1294,8 +1181,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/view/autochorder/AutoChorderPreset.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="494">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/pages/autochorder.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="92" column="56" lean-forward="true" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
         </state>
       </provider>
     </entry>

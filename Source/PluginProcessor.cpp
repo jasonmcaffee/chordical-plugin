@@ -27,6 +27,8 @@ PluginProcessor::PluginProcessor()
 ),
           mainProcessor  (new juce::AudioProcessorGraph())
 {
+    autoChorder = AutoChorder{};
+
     synth.clearSounds();
     synth.clearVoices(); //clean up before next note?
     for (auto i = 0; i < 9; ++i){

@@ -5803,6 +5803,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/JUCE/modules/juce_opengl/opengl/juce_OpenGLTexture.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/JUCE/modules/juce_opengl/utils/juce_OpenGLAppComponent.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Components/WebBrowserWithMessaging.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/AppStateFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/ChordFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/KeySignatureGroupFactory.h
@@ -5810,6 +5811,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/PredefinedNoteFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/PresetFactory.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Factories/SlotFactory.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/AppState/AppStateHost.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Chord/Chord.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Chord/ChordType.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Models/Note/NoteSymbol.h
@@ -5827,6 +5829,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/AutoChorder/AutoChorder.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginEditor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/Music/Chords.h
@@ -6381,6 +6384,7 @@ CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcess
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/GainProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/OscillatorProcessor.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Processors/ProcessorBase.h
+CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/AutoChorder/AutoChorder.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventBus.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/EventBus/EventMessage.h
 CMakeFiles/SHARED_CODE.dir/Users/jason/dev/chordical-plugin/Source/PluginProcessor.cpp.o: /Users/jason/dev/chordical-plugin/Source/Services/Synthesizer/ChordicalOscillator/ChordicalJuceSynth.h

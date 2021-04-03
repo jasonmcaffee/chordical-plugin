@@ -6,6 +6,7 @@
 #include <JuceHeader.h>
 #include <vector>
 #include <exception>
+//#include <cereal/archives/json.hpp>
 using namespace juce;
 using namespace std;
 
@@ -35,4 +36,14 @@ public:
         }
         throw std::invalid_argument("json for keySignature could not be parsed");
     }
+
+//    static String toJSONStringV2(const KeySignature& key){
+//        std::stringstream ss;
+//        {
+//            cereal::JSONOutputArchive oarchive(ss);
+//            oarchive(key);
+//        }
+//        return ss.str();
+//    }
+
 };
